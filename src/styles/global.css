@@ -4,7 +4,7 @@
 
 @layer utilities {
     .hoverable {
-        @apply hover:text-primary;
+        /* @apply hover:text-primary; */
         @apply transition;
         @apply ease-in-out;
         @apply duration-300;

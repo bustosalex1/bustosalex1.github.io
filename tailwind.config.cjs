@@ -4,30 +4,5 @@ module.exports = {
     theme: {
         extend: {},
     },
-    plugins: [require("daisyui"), require("@tailwindcss/typography")],
-
-    theme: {
-        extend: {
-            colors: {
-                "sane-bg": "oklch(var(--sane-bg) / <alpha-value>)",
-            },
-        },
-    },
-    daisyui: {
-        themes: [
-            {
-                bumblebee: {
-                    ...require("daisyui/src/theming/themes")["bumblebee"],
-                    "--sane-bg": "var(--b1)",
-                },
-            },
-
-            {
-                dracula: {
-                    ...require("daisyui/src/theming/themes")["dracula"],
-                    "--sane-bg": "var(--b3)",
-                },
-            },
-        ],
-    },
+    plugins: [require("@tailwindcss/typography")],
 };
