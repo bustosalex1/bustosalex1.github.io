@@ -1,3 +1,12 @@
+---
+author: "Alex Bustos"
+class: "Rust"
+pubDate: 2025-3-2
+title: "Rust Notes"
+---
+
+Rust notes, mostly from _The Rust Programming Language_.
+
 ## Variables and Mutability
 
 ### Shadowing
@@ -125,3 +134,13 @@ fn main() {
 
     let slice = &a[1..3];
 ```
+
+## Packages, Crates, and Modules
+
+Rust's module system includes the following:
+
+- **Packages**, which contain crates.
+- **Crates**, which contain modules.
+- **Modules**, which let you control organization, scope, and privacy of paths.
+- **Paths**, which are a way of naming things like structs, functions, and
+  modules.
