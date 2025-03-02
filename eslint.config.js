@@ -35,7 +35,6 @@ export default [
             "astro.config.mjs",
             "src/env.d.ts",
             "tailwind.config.cjs",
-            "postcss.config.cjs",
         ],
     },
 ];

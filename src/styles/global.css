@@ -1,16 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-@layer utilities {
-    .hoverable {
-        /* @apply hover:text-primary; */
-        @apply transition;
-        @apply ease-in-out;
-        @apply duration-300;
-    }
-}
+@plugin '@tailwindcss/typography';
 
 .katex-display {
-    overflow: auto hidden;
+  overflow: auto hidden;
 }
