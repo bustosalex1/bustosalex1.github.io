@@ -1,8 +1,8 @@
 ---
 /**
- * The basic layout that wraps all pages, including MarkdownPostLayout.astro. This just provides
- * consistent theming and spacing around the edges of each page. Also persists the header and footer
- * across pages.
+ * The basic layout that wraps all pages, including MarkdownPostLayout.astro.
+ * This just provides consistent theming and spacing around the edges of each
+ * page. Also persists the header and footer across pages.
  */
 import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
@@ -17,25 +17,28 @@ interface Props {
 const { pageTitle, fullWidth } = Astro.props;
 ---
 
-<html lang="en" class="bg-sane-bg">
+<html
+    lang="en"
+    id="html-root"
+    class="bg-light-background dark:bg-dark-background"
+>
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.png" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
         <title>Alex Bustos | {pageTitle}</title>
-        <script is:inline>
-            // `theme-change` said I needed this!
-            const theme = localStorage.getItem("theme");
-            if (theme !== null) {
-                document.documentElement.setAttribute("data-theme", theme);
-            }
-        </script>
-        <script>
-            import { themeChange } from "theme-change";
-            themeChange();
-        </script>
     </head>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const html = document.getElementById("html-root") as HTMLElement;
+            const theme = localStorage.getItem("theme")
+            if (theme === "dark") {
+                html.classList.add("dark");
+            }
+        })
+    </script>
 
     <body>
         <div
