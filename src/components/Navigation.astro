@@ -22,7 +22,6 @@ const links = [
 
 <div class="flex flex-row w-full items-center">
     <!-- only render "Alex Bustos" when we're not on the notes page -->
-    <!--TODO: fix this! remove daisyUI drawer stuff.-->
     {
         currentPage.includes("notes") ? (
             <label
@@ -32,7 +31,10 @@ const links = [
                 <Menu class="w-5 h-5" />
             </label>
         ) : (
-            <a href="/" class="font-bold whitespace-nowrap pr-5">
+            <a
+                href="/"
+                class="font-bold whitespace-nowrap pr-5 text-content transition-all duration-300 hover:text-primary"
+            >
                 Alex Bustos
             </a>
         )
@@ -43,11 +45,7 @@ const links = [
             return (
                 <a
                     href={link}
-                    class="hoverable pr-5"
-                    class:list={[
-                        { underline: currentPage === link },
-                        { "text-primary": currentPage === link },
-                    ]}
+                    class={`pr-5 hover:text-primary transition-all duration-300 ${currentPage === link ? "text-primary underline" : "text-content"}`}
                 >
                     {title}
                 </a>

@@ -25,24 +25,20 @@ to provide a way to embed other web projects on my website.
 -->
 <!--rounded rectangle that wraps the iframe and title.-->
 <div
-    class={`flex flex-col ring-1 bg-base-100 ${selected ? "fixed top-0 left-0 h-screen w-screen z-50 overflow-auto" : "h-[75vh] overflow-clip rounded-md ring-base-content/20 ring-1 my-2"}`}
+    class={`flex flex-col ring-1 bg-background dark:bg-alt-background ${selected ? "fixed top-0 left-0 h-screen w-screen z-50 overflow-auto" : "h-[75vh] overflow-clip rounded-md ring-light-accent ring-1 my-2 "}`}
 >
     <!--row providing a title and some buttons to full screen or go to the page-->
     <div
-        class="flex flex-row justify-between border-b border-1 items-center p-2"
+        class="flex flex-row justify-between border-b border-light-accent items-center p-2"
     >
         <div class="font-semibold">{title}</div>
 
         <div class="flex flex-row space-x-1">
-            <a
-                class="btn btn-xs btn-square btn-ghost"
-                href={link}
-                target="_blank"
-            >
+            <a class="p-1 btn-hover rounded-md" href={link} target="_blank">
                 <Launch class="w-4 h-4" />
             </a>
             <button
-                class="btn btn-xs btn-square btn-ghost"
+                class="p-1 btn-hover rounded-md"
                 onclick={() => {
                     selected = !selected;
                 }}
@@ -56,5 +52,6 @@ to provide a way to embed other web projects on my website.
         </div>
     </div>
     <!--the actual external page content-->
-    <iframe src={link} class={`w-full flex-1 h-full`} {title}></iframe>
+    <iframe src={link} class="w-full flex-1 h-full focus:outline-none" {title}
+    ></iframe>
 </div>

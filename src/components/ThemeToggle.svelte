@@ -2,8 +2,8 @@
     /**
      * Toggle that swaps between light and dark modes.
      */
-    import Sun from "~icons/line-md/sunny-outline-loop";
-    import Moon from "~icons/line-md/moon-alt-loop";
+    import Sun from "~icons/line-md/moon-alt-to-sunny-outline-loop-transition";
+    import Moon from "~icons/line-md/sunny-outline-to-moon-alt-loop-transition";
 
     function loadTheme() {
         const theme = localStorage.getItem("theme");
@@ -29,12 +29,13 @@
         }
         localStorage.setItem("theme", theme);
     }}
+    class="cursor-pointer"
 >
     {#if theme === "light"}
         <!-- moon icon (shows when light mode is enabled) -->
-        <Moon class="w-5 h-5" />
+        <Moon class="w-5 h-5 text-content" />
     {:else}
         <!-- sun icon (shows when dark mode is enabled) -->
-        <Sun class="w-5 h-5" />
+        <Sun class="w-5 h-5 text-content" />
     {/if}
 </button>

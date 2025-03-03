@@ -38,7 +38,7 @@ collection.
     <!-- search box -->
     <input
         type="text"
-        class="input input-bordered input-sm w-full"
+        class="w-full border-light-accent border rounded-md p-1 focus:ring-none text-content focus:outline-2 focus:outline-offset-1 focus:outline-light-accent"
         placeholder="Search notes..."
         bind:value={searchValue}
         tabindex="0"

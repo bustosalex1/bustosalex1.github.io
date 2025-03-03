@@ -10,7 +10,7 @@ const { tag } = Astro.props;
 ---
 
 <div
-    class="badge badge-outline text-xs capitalize text-neutral-400 hoverable whitespace-nowrap"
+    class="ring-1 ring-light-accent px-2 py-0.5 rounded-full text-xs capitalize text-neutral-400 primary-hover hover:ring-primary hover:text-primary whitespace-nowrap"
 >
     <a href={"/tags/" + tag}>{tag}</a>
 </div>

@@ -1,8 +1,9 @@
 ---
 /**
- * Clickable card providing an image, title, short description, and date of a project from the
- * `posts` content collection. This component is used on the `projects` page (which is the current
- * index of the site) to display information about all projects in the `posts` content collection.
+ * Clickable card providing an image, title, short description, and date of a
+ * project from the `posts` content collection. This component is used on the
+ * `projects` page (which is the current index of the site) to display
+ * information about all projects in the `posts` content collection.
  */
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
@@ -16,17 +17,21 @@ const { post } = Astro.props;
 
 <a href={"/posts/" + post.slug}>
     <div
-        class="transition ease-in-out w-full bg-base-100 shadow-xl hover:shadow-2xl hover:-translate-y-1 duration-300 ring-1 ring-base-content/20 h-full group"
+        class="transition rounded-xl overflow-hidden ease-in-out w-full shadow-xl hover:shadow-2xl hover:-translate-y-1 duration-300 ring-1 ring-light-accent group dark:bg-alt-background text-content flex flex-col h-full"
     >
         <Image src={post.data.image} alt={post.data.imageAlt} />
-        <div class="p-3">
-            <h2
-                class="leading-tight text-md font-bold group-hover:text-primary transition ease-in-out duration-300"
+        <div class="p-3 flex flex-col grow">
+            <h1
+                class="text-lg font-bold group-hover:text-primary transition ease-in-out duration-300"
             >
                 {post.data.title}
-            </h2>
-            <p class="text-sm">{post.data.description}</p>
-            <div class="card-actions justify-end">
+            </h1>
+            <p
+                class="group-hover:text-primary transition ease-in-out duration-300 grow"
+            >
+                {post.data.description}
+            </p>
+            <div class="self-end pt-4">
                 <FormattedDate date={post.data.pubDate} />
             </div>
         </div>
