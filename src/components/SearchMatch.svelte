@@ -8,23 +8,25 @@
     let { result }: Props = $props();
 </script>
 
-<div
-    class="flex flex-col w-full gap-1 rounded-md ring-1 ring-base-content/20 p-2 bg-base-100 drop-shadow-md"
->
-    <div class="flex flex-row justify-between items-center">
-        <a href={"/notes/" + result.item.slug} class="hoverable"
-            >{result.item.data.title}</a
-        >
-        <div class="text-xs font-mono">
-            {result.item.data.pubDate.toLocaleDateString("en-US", {
-                year: "numeric",
-                month: "2-digit",
-                day: "2-digit",
-                timeZone: "UTC",
-            })}
+<a href={"/notes/" + result.item.slug} class="group">
+    <div
+        class="flex flex-col w-full gap-1 rounded-md ring-1 ring-light-accent p-2 bg-background drop-shadow-md text-content"
+    >
+        <div class="flex flex-row justify-between items-center">
+            <div class="group-hover:text-primary duration-300 transition-all">
+                {result.item.data.title}
+            </div>
+            <div class="text-xs font-mono">
+                {result.item.data.pubDate.toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "2-digit",
+                    day: "2-digit",
+                    timeZone: "UTC",
+                })}
+            </div>
+        </div>
+        <div class="text-xs">
+            {result.item.data.class}
         </div>
     </div>
-    <div class="text-xs">
-        {result.item.data.class}
-    </div>
-</div>
+</a>

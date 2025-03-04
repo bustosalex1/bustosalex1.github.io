@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-import NoteMenu from "@components/NoteMenu.astro";
+import NoteMenu from "@components/NoteMenu.svelte";
 import Search from "@components/Search.svelte";
 import { getCollection } from "astro:content";
 
@@ -12,13 +12,14 @@ const noteSearchKeys = ["body", "data.title"];
 const pageTitle = "Notes";
 ---
 
-<NoteMenu notes={allNotes}>
-    <BaseLayout pageTitle={pageTitle}>
-        <div class="pt-4">
-            <div class="pb-2">
-                <div class="text-2xl font-bold text-center">Alex's Notes</div>
+<BaseLayout pageTitle={pageTitle}>
+    <NoteMenu notes={allNotes} client:load />
+    <div class="pt-4">
+        <div class="pb-2">
+            <div class="text-2xl font-bold text-center text-content">
+                Alex's Notes
             </div>
-            <Search keys={noteSearchKeys} posts={allNotes} client:load />
         </div>
-    </BaseLayout>
-</NoteMenu>
+        <Search keys={noteSearchKeys} posts={allNotes} client:load />
+    </div>
+</BaseLayout>
