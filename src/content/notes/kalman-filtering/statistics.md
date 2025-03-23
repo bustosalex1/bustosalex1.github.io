@@ -6,7 +6,7 @@ title: "Statistics Review"
 draft: true
 ---
 
-### Set Theory
+## Set Theory
 
 A **set** is a collection of things, for example, $\set{ 1, 2, 3}$ or
 $\set{\text{heads}, \text{tails}}$. Sets are comprised of **elements**, as shown

@@ -9,7 +9,7 @@ import axisOrder from "@assets/notes/numpy-cheatsheet/axis-order.svg";
 
 Things about NumPy that I am prone to forgetting.
 
-### Axis Ordering
+## Axis Ordering
 
 - 2D NumPy arrays are ordered as shown.
 
@@ -19,7 +19,7 @@ Things about NumPy that I am prone to forgetting.
     style="width:300px; margin-left: auto; margin-right: auto"
 />
 
-### Indexing
+## Indexing
 
 - To get a row of a two-dimensional array as a one-dimensional array, you can
   use a single index. For example:
@@ -102,7 +102,7 @@ Things about NumPy that I am prone to forgetting.
 - If index arrays are not the same shape, but can be broadcasted, the output of
   the indexing operation will be the same shape as the broadcasted array.
 
-### Broadcasting
+## Broadcasting
 
 - Suppose we want to add two arrays, `A` and `B`.
 
@@ -112,7 +112,7 @@ Things about NumPy that I am prone to forgetting.
     - If all of `A`'s dimensions are compatible with `B`'s dimensions, or vice
       versa, they are compatible arrays.
 
-### Reshaping Arrays
+## Reshaping Arrays
 
 - You can insert new axes in front of and behind existing axes using `None` or
   `np.newaxis` (which is just an alias for `None`). For example:
@@ -145,13 +145,13 @@ Things about NumPy that I am prone to forgetting.
     A.shape = (4, 2)  # directly modifies `A`
     ```
 
-### Logical Indexing
+## Logical Indexing
 
 - To combine logical statements, use bitwise operators like `&` and `|`.
 - When combining logical statements, each statement should be wrapped with
   parentheses, so that they are evaluated before the any bitwise operators.
 
-### NaN
+## NaN
 
 - `np.nan` is a special floating point constant. It cannot be inserted into
   arrays of non-floating point values.
@@ -159,7 +159,7 @@ Things about NumPy that I am prone to forgetting.
   such a way that `np.nan == np.nan` evaluates to `False`, but
   `np.nan != np.nan` evaluates to `True.`
 
-### Math Functions
+## Math Functions
 
 - NumPy has a number of math functions that behave similarly.
 
