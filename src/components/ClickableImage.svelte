@@ -73,7 +73,7 @@ be passed in using the `caption` prop, when a user hovers over the image if
 {#if selected && !newTab}
     <!-- modal container -->
     <button
-        class="fixed top-0 left-0 h-[100vh] w-[100vw] bg-black bg-opacity-70 flex items-center justify-center cursor-pointer z-50"
+        class="fixed top-0 left-0 h-[100vh] w-[100vw] bg-black/90 flex items-center justify-center cursor-pointer z-50"
         onclick={toggleModal}
         transition:fade={{ duration: 250, easing: cubicInOut }}
     >
