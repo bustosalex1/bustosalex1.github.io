@@ -15,7 +15,7 @@ interface Props {
 const { post } = Astro.props;
 ---
 
-<a href={"/posts/" + post.slug}>
+<a href={"/posts/" + post.id}>
     <div
         class="transition rounded-xl overflow-hidden ease-in-out w-full shadow-xl hover:shadow-2xl hover:-translate-y-1 duration-300 ring-1 ring-light-accent group dark:bg-alt-background text-content flex flex-col h-full"
     >

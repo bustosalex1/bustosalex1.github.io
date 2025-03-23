@@ -55,7 +55,7 @@
                     <ul class="">
                         {#each notes as note}
                             <a
-                                href={"/notes/" + note.slug}
+                                href={"/notes/" + note.id}
                                 class="duration-300 transition-all rounded-md"
                             >
                                 <li
