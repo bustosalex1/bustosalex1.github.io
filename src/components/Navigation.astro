@@ -6,14 +6,7 @@
  */
 import ThemeToggle from "@components/ThemeToggle.svelte";
 import NoteMenuToggle from "@components/NoteMenuToggle.svelte";
-import Search from "./Search.svelte";
 import SearchToggle from "./SearchToggle.svelte";
-import { getCollection } from "astro:content";
-const allNotes = (await getCollection("notes")).filter(
-    (note) => !note.data.draft,
-);
-
-const noteSearchKeys = ["body", "data.title"];
 let currentPage = Astro.url.pathname;
 const links = [
     ["Projects", "/"],
