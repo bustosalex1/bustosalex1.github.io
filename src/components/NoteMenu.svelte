@@ -1,11 +1,11 @@
 <script lang="ts">
     /**
-     * Component for the "Notes" section of my website that provides links to all
-     * of the pages in the "Notes" content collection. Also responsive -- it will
-     * display on the left side on larger screens and be hidden on smaller screens
-     * like phones. On these screens there's a button on the nav bar that can be
-     * used to access the notes menu. Which... maybe that's like bad in terms of
-     * coupling.
+     * Component for the "Notes" section of my website that provides links to
+     * all of the pages in the "Notes" content collection. Also responsive --
+     * it will display on the left side on larger screens and be hidden on
+     * smaller screens like phones. On these screens there's a button on the
+     * nav bar that can be used to access the notes menu. Which... maybe that's
+     * like bad in terms of coupling.
      */
     import { type CollectionEntry } from "astro:content";
     import { sidebar } from "./state.svelte";
