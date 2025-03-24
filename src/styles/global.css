@@ -20,6 +20,17 @@
   --primary-color: oklch(75.461% 0.183 346.812);
   --content-color: oklch(97.747% 0.007 106.545);
   --light-accent-color: #393a3f;
+
+  /* Allow shiki to style code blocks differently in light and dark mode. */
+  .astro-code,
+  .astro-code span {
+    color: var(--shiki-dark) !important;
+    background-color: var(--shiki-dark-bg) !important;
+    /* Optional, if you also want font styles */
+    font-style: var(--shiki-dark-font-style) !important;
+    font-weight: var(--shiki-dark-font-weight) !important;
+    text-decoration: var(--shiki-dark-text-decoration) !important;
+  }
 }
 
 @theme inline {

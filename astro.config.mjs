@@ -11,6 +11,12 @@ export default defineConfig({
     integrations: [svelte(), mdx()],
     site: "https://bustosalex1.github.io",
     markdown: {
+        shikiConfig: {
+            themes: {
+                light: "catppuccin-latte",
+                dark: "dracula",
+            },
+        },
         remarkPlugins: [remarkMath],
         rehypePlugins: [
             [
