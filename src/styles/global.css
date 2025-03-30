@@ -2,7 +2,14 @@
 
 @plugin '@tailwindcss/typography';
 
+/* `dark:` selector that can be used when toggling dark mode programatically. */
 @custom-variant dark (&:where(.dark, .dark *));
+
+/*
+* `prose-inline-code:` selector for only selecting inline code (instead of also
+* selecting code blocks) in typography `prose` blocks.
+* */
+@custom-variant prose-inline-code (&.prose :where(:not(pre)>code):not(:where([class~="not-prose"] *)));
 
 /* Light theme based on DaisyUI's `bumblebee`. */
 :root {
@@ -32,6 +39,7 @@
     text-decoration: var(--shiki-dark-text-decoration) !important;
   }
 }
+
 
 @theme inline {
   --color-background: var(--background-color);
