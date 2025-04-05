@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import NoteMenu from "@components/NoteMenu.svelte";
-import Search from "@components/Search.svelte";
+import Search from "@components/search/Search.svelte";
 import { getCollection } from "astro:content";
 
 const allNotes = (await getCollection("notes")).filter(

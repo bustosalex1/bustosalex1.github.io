@@ -8,9 +8,9 @@
     let { result }: Props = $props();
 </script>
 
-<a href={"/notes/" + result.item.slug} class="group">
+<a href={"/notes/" + result.item.id} class="group">
     <div
-        class="flex flex-col w-full gap-1 rounded-md ring-1 ring-light-accent p-2 bg-background drop-shadow-md text-content"
+        class="flex flex-col w-full gap-1 rounded-md ring-1 ring-light-accent p-2 bg-background drop-shadow-md text-content dark:bg-alt-background"
     >
         <div class="flex flex-row justify-between items-center">
             <div class="group-hover:text-primary duration-300 transition-all">
