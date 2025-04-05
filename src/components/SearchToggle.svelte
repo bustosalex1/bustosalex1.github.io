@@ -1,6 +1,7 @@
 <script lang="ts">
     import { search } from "./state.svelte";
     import Magnify from "~icons/mdi/magnify";
+    import Close from "~icons/mdi/close";
 </script>
 
 <button
@@ -9,5 +10,9 @@
         search.opened = !search.opened;
     }}
 >
-    <Magnify class="text-content" />
+    {#if !search.opened}
+        <Magnify class="text-content" />
+    {:else}
+        <Close class="text-content" />
+    {/if}
 </button>
