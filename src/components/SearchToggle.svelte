@@ -4,8 +4,9 @@
 </script>
 
 <button
+    class="cursor-pointer"
     onclick={() => {
-        search.opened = true;
+        search.opened = !search.opened;
     }}
 >
     <Magnify class="text-content" />
