@@ -86,7 +86,7 @@ be passed in using the `caption` prop, when a user hovers over the image if
                 <img
                     src={imgSrc}
                     alt={caption}
-                    class="w-auto h-auto max-h-full object-contain rounded-md not-prose"
+                    class="w-auto h-auto max-h-full object-contain rounded-md not-prose m-2"
                 />
             {/if}
             {#if caption}

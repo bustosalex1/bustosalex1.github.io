@@ -6,6 +6,8 @@
 import FormattedDate from "@components/FormattedDate.astro";
 import Tag from "@components/Tag.astro";
 import BaseLayout from "./BaseLayout.astro";
+import Article from "@components/Article.astro";
+import ArticleTitle from "@components/ArticleTitle.astro";
 import type { CollectionEntry } from "astro:content";
 interface Props {
     data: CollectionEntry<"posts">["data"];
@@ -14,30 +16,13 @@ const { data } = Astro.props;
 ---
 
 <BaseLayout pageTitle={data.title} fullWidth={data.fullWidth}>
-    <article
-        class={`prose prose-img:rounded-md prose-img:my-0 prose-img:max-h-[85vh] prose-img:w-auto prose-img:mx-auto leading-snug mx-auto pb-20 prose-h3:m-0 max-w-none text-content prose-headings:text-content prose-strong:text-content prose-code:text-content prose-a:text-content {data.fullWidth ? "w-full" : ""}`}
-    >
-        <h1 class="mb-0">
-            {data.title}
-        </h1>
-        <div class="not-prose flex flex-row items-center my-2 h-6">
-            <div class="my-1">
-                <FormattedDate date={data.pubDate} posted />
-            </div>
-            <div class="rotate-12 bg-light-accent h-full w-[1px] mx-2"></div>
-            <div class="flex gap-2 flex-row flex-wrap">
-                {data.tags.map((tag: any) => <Tag tag={tag} />)}
-            </div>
-        </div>
+    <Article>
+        <ArticleTitle
+            title={data.title}
+            pubDate={data.pubDate}
+            posted={true}
+            tags={data.tags}
+        />
         <slot />
-    </article>
+    </Article>
 </BaseLayout>
-
-<!-- styling to make images with captions look nice -->
-<style is:global>
-    img + em {
-        @apply flex;
-        @apply justify-center;
-        @apply text-center;
-    }
-</style>

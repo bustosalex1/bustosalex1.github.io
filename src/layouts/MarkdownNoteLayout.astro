@@ -1,13 +1,9 @@
 ---
-/**
- * A layout for rendering notes written in Markdown. Very similar to
- * MarkdownPostLayout, basically just wrapping that with a <NoteMenu> component
- * and making minor style adjustments.
- */
-import FormattedDate from "@components/FormattedDate.astro";
 import NoteMenu from "@components/NoteMenu.svelte";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
+import Article from "@components/Article.astro";
+import ArticleTitle from "@components/ArticleTitle.astro";
 const { data } = Astro.props;
 
 const notes = (await getCollection("notes")).filter((note) => !note.data.draft);
@@ -15,32 +11,13 @@ const notes = (await getCollection("notes")).filter((note) => !note.data.draft);
 
 <BaseLayout pageTitle={data.title}>
     <NoteMenu notes={notes} client:load />
-    <!--TODO: remove this!-->
-    <article
-        class="prose prose-img:rounded-md prose-img:my-0 prose-img:w-full leading-snug mx-auto
-            pb-20 prose-h3:m-0 w-full max-w-none"
-    >
-        <h2 class="text-left py-0 px-0 my-1">
-            {data.title}
-        </h2>
-        <div class="not-prose flex flex-row items-center mb-2">
-            <div class="my-1">
-                <FormattedDate date={data.pubDate} />
-            </div>
-            <div class="divider divider-horizontal mx-2"></div>
-            <div class="text-sm">
-                {data.class}
-            </div>
-        </div>
+    <Article>
+        <ArticleTitle
+            title={data.title}
+            pubDate={data.pubDate}
+            posted={false}
+            cls={data.class}
+        />
         <slot />
-    </article>
+    </Article>
 </BaseLayout>
-
-<!-- styling to make images with captions look nice -->
-<style is:global>
-    img + em {
-        @apply flex;
-        @apply justify-center;
-        @apply text-center;
-    }
-</style>

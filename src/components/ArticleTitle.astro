@@ -1,0 +1,38 @@
+---
+import Tag from "./Tag.astro";
+import FormattedDate from "./FormattedDate.astro";
+interface Props {
+    title: string;
+    pubDate: Date;
+    tags?: string[];
+    posted: boolean;
+    cls?: string;
+}
+
+const { title, pubDate, tags, posted, cls } = Astro.props;
+---
+
+<h1 class="mb-0">
+    {title}
+</h1>
+<div class="not-prose flex flex-row items-center my-2 h-6">
+    <div class="my-1">
+        <FormattedDate date={pubDate} posted={posted} />
+    </div>
+    <!--divider-->
+    <div class="rotate-12 bg-light-accent h-full w-[1px] mx-2"></div>
+
+    <!--list of tags-->
+    {
+        tags && (
+            <div class="flex gap-2 flex-row flex-wrap">
+                {tags.map((tag) => (
+                    <Tag tag={tag} />
+                ))}
+            </div>
+        )
+    }
+
+    <!--or, alternatively, a class-->
+    {cls && <div class="text-sm">{cls}</div>}
+</div>
