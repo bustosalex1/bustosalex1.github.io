@@ -5,7 +5,7 @@
 </script>
 
 <button
-    class="cursor-pointer"
+    class="cursor-pointer rounded-full hover:bg-neutral-400/30 p-1 transition-all duration-300"
     onclick={() => {
         search.opened = !search.opened;
     }}

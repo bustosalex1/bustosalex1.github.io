@@ -29,7 +29,7 @@
         }
         localStorage.setItem("theme", theme);
     }}
-    class="cursor-pointer"
+    class="cursor-pointer duration-300 hover:bg-neutral-400/30 p-1 rounded-full transition-all"
 >
     {#if theme === "light"}
         <!-- moon icon (shows when light mode is enabled) -->
