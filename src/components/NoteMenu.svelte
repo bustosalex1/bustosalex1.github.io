@@ -9,7 +9,7 @@
      */
     import { type CollectionEntry } from "astro:content";
     import { sidebar } from "./state.svelte";
-    import { fade, slide } from "svelte/transition";
+    import { slide } from "svelte/transition";
     import { cubicInOut } from "svelte/easing";
     import { onClickOutside } from "@utils/utils.svelte";
 
@@ -33,12 +33,8 @@
 
 {#if sidebar.opened}
     <div
-        class="fixed left-0 top-0 bottom-0 right-0 bg-black/50 z-[5] backdrop-blur-xs"
-        transition:fade={{ duration: 300 }}
-    ></div>
-    <div
-        class="fixed left-0 top-0 h-dvh bg-alt-background w-80 z-10 text-content whitespace-nowrap"
-        transition:slide={{ axis: "x", duration: 200, easing: cubicInOut }}
+        class="fixed left-0 top-0 h-dvh bg-alt-background w-80 z-10 text-content whitespace-nowrap border-r border-light-accent shadow-md"
+        transition:slide={{ axis: "x", duration: 300, easing: cubicInOut }}
         use:onClickOutside={() => {
             sidebar.opened = false;
         }}
@@ -54,12 +50,9 @@
                     <div class="font-semibold">{cls}</div>
                     <ul class="">
                         {#each notes as note}
-                            <a
-                                href={"/notes/" + note.id}
-                                class="duration-300 transition-all rounded-md"
-                            >
+                            <a href={"/notes/" + note.id}>
                                 <li
-                                    class="w-full group hover:bg-neutral-400/30 rounded-mdtransition-all duration-300 rounded-md py-1 pl-5"
+                                    class="w-full group hover:bg-neutral-400/30 transition-all duration-300 rounded-md py-1 pl-5"
                                 >
                                     {note.data.title}
                                 </li>
