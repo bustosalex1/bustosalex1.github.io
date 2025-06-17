@@ -20,10 +20,14 @@ export default [
         },
     },
     {
-        files: ["**/*.svelte"],
+        files: ["**/*.svelte", "**/*.svelte.ts"],
         languageOptions: {
             parserOptions: {
                 parser: ts.parser,
+                extraFileExtensions: [".svelte", ".svelte.ts"],
+                svelteFeatures: {
+                    experimentalGenerics: true,
+                },
             },
         },
     },

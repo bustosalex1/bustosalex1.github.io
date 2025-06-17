@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @plugin '@tailwindcss/typography';
 
@@ -13,63 +13,63 @@
 
 /* Light theme based on DaisyUI's `bumblebee`. */
 :root {
-  --background-color: oklch(100% 0 0);
-  --alt-background-color: oklch(97% 0 0);
-  --primary-color: oklch(75.461% 0.183 346.812);
-  --content-color: oklch(20% 0 0);
-  --light-accent-color: #bababa;
+    --background-color: oklch(100% 0 0);
+    --alt-background-color: oklch(97% 0 0);
+    --primary-color: oklch(75.461% 0.183 346.812);
+    --content-color: oklch(20% 0 0);
+    --light-accent-color: #bababa;
 }
 
 /* Dark theme based on DaisyUI's `dracula` theme colors. */
 :root[class~="dark"] {
-  --background-color: oklch(24.787% 0.019 277.508);
-  --alt-background-color: oklch(28.822% 0.022 277.508);
-  --primary-color: oklch(75.461% 0.183 346.812);
-  --content-color: oklch(97.747% 0.007 106.545);
-  --light-accent-color: #393a3f;
+    --background-color: oklch(24.787% 0.019 277.508);
+    --alt-background-color: oklch(28.822% 0.022 277.508);
+    --primary-color: oklch(75.461% 0.183 346.812);
+    --content-color: oklch(97.747% 0.007 106.545);
+    --light-accent-color: #393a3f;
 
-  /* Allow shiki to style code blocks differently in light and dark mode. */
-  .astro-code,
-  .astro-code span {
-    color: var(--shiki-dark) !important;
-    background-color: var(--shiki-dark-bg) !important;
-    /* Optional, if you also want font styles */
-    font-style: var(--shiki-dark-font-style) !important;
-    font-weight: var(--shiki-dark-font-weight) !important;
-    text-decoration: var(--shiki-dark-text-decoration) !important;
-  }
+    /* Allow shiki to style code blocks differently in light and dark mode. */
+    .astro-code,
+    .astro-code span {
+        color: var(--shiki-dark) !important;
+        background-color: var(--shiki-dark-bg) !important;
+        /* Optional, if you also want font styles */
+        font-style: var(--shiki-dark-font-style) !important;
+        font-weight: var(--shiki-dark-font-weight) !important;
+        text-decoration: var(--shiki-dark-text-decoration) !important;
+    }
 }
 
-
 @theme inline {
-  --color-background: var(--background-color);
-  --color-alt-background: var(--alt-background-color);
-  --color-light-accent: var(--light-accent-color);
-  --color-primary: var(--primary-color);
-  --color-content: var(--content-color);
-  --font-mono: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --color-background: var(--background-color);
+    --color-alt-background: var(--alt-background-color);
+    --color-light-accent: var(--light-accent-color);
+    --color-primary: var(--primary-color);
+    --color-content: var(--content-color);
+    --font-mono:
+        "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
 }
 
 @layer components {
-  .btn-hover {
-    @apply transition-all hover:bg-neutral-400/30 cursor-pointer duration-300;
-  }
-
-  .primary-hover {
-    transition-property: all;
-    transition-duration: 300ms;
-    cursor: pointer;
-
-    &:hover {
-      @media (hover: hover) {
-        color: var(--primary-color);
-      }
+    .btn-hover {
+        @apply transition-all hover:bg-neutral-400/30 cursor-pointer duration-300;
     }
 
-  }
+    .primary-hover {
+        transition-property: all;
+        transition-duration: 300ms;
+        cursor: pointer;
+
+        &:hover {
+            @media (hover: hover) {
+                color: var(--primary-color);
+            }
+        }
+    }
 }
 
 /* Some styling for KaTeX sections. */
 .katex-display {
-  overflow: auto hidden;
+    overflow: auto hidden;
 }
