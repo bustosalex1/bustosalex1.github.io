@@ -9,7 +9,9 @@ const commitHash = await import.meta.env.COMMIT_HASH;
 const version = await import.meta.env.WEBSITE_VERSION;
 ---
 
-<footer class="p-4 text-content rounded-md mx-auto">
+<footer
+    class="p-4 text-content border-l border-r border-b border-light-accent w-full text-center"
+>
     <span class="inline-block">
         Alex's website <b>v{version}</b> on
         <span class="primary-hover">

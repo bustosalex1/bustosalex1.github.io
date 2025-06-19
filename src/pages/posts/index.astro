@@ -12,7 +12,9 @@ const pageTitle = "Posts";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <div class="flex flex-col gap-4">
+    <div
+        class="flex flex-col divide-y divide-light-accent border-l border-r border-b border-light-accent"
+    >
         {
             filteredPosts.map((post) => (
                 <PostEntry

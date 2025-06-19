@@ -14,7 +14,9 @@ const links = [
 ];
 ---
 
-<div class="flex flex-row w-full items-center">
+<div
+    class="flex flex-row w-full items-stretch border border-light-accent divide-light-accent divide-x"
+>
     <!-- only render "Alex Bustos" when we're not on the notes page -->
     {
         currentPage.includes("notes") ? (
@@ -22,7 +24,7 @@ const links = [
         ) : (
             <a
                 href="/"
-                class="font-bold whitespace-nowrap pr-5 text-content transition-all duration-300 hover:text-primary"
+                class="font-bold whitespace-nowrap text-content transition-all duration-300 hover:bg-neutral-400/30 content-center px-4"
             >
                 Alex Bustos
             </a>
@@ -34,7 +36,7 @@ const links = [
             return (
                 <a
                     href={link}
-                    class={`pr-5 hover:text-primary transition-all duration-300 ${currentPage === link ? "text-primary underline" : "text-content"}`}
+                    class={`px-4 content-center hover:text-primary transition-all duration-300 ${currentPage === link ? "text-primary underline" : "text-content"}`}
                 >
                     {title}
                 </a>
@@ -43,7 +45,7 @@ const links = [
     }
 
     <!-- this div is to space the `ThemeToggle` and `SearchToggle` to be at the opposite end of the flex box -->
-    <div class="grow"></div>
+    <div class="grow border-r border-light-accent"></div>
     <div class="flex items-center flex-row space-x-2">
         <!--only include the search toggle on the notes page-->
         {
