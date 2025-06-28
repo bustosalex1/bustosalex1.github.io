@@ -25,20 +25,24 @@ to provide a way to embed other web projects on my website.
 -->
 <!--rounded rectangle that wraps the iframe and title.-->
 <div
-    class={`flex flex-col ring-1 bg-background dark:bg-alt-background ${selected ? "fixed top-0 left-0 h-screen w-screen z-50 overflow-auto" : "h-[75vh] overflow-clip rounded-md ring-light-accent ring-1 my-2 "}`}
+    class={`flex flex-col border border-light-accent bg-background dark:bg-alt-background ${selected ? "fixed top-0 left-0 h-screen w-screen z-50 overflow-auto" : "h-[75vh] overflow-clip my-2 "}`}
 >
     <!--row providing a title and some buttons to full screen or go to the page-->
     <div
-        class="flex flex-row justify-between border-b border-light-accent items-center p-2"
+        class="flex flex-row justify-between border-b border-light-accent items-center"
     >
-        <div class="font-semibold">{title}</div>
+        <div class="font-semibold px-2">{title}</div>
 
-        <div class="flex flex-row space-x-1">
-            <a class="p-1 btn-hover rounded-md" href={link} target="_blank">
-                <Launch class="w-4 h-4" />
+        <div class="flex flex-row h-8 items-stretch">
+            <a
+                class="p-1 btn-hover border-l border-r border-light-accent content-center h-8 w-8"
+                href={link}
+                target="_blank"
+            >
+                <Launch class="w-4 h-4 mx-auto" />
             </a>
             <button
-                class="p-1 btn-hover rounded-md"
+                class="p-1 btn-hover content-center h-8 w-8"
                 onclick={() => {
                     selected = !selected;
                 }}
@@ -46,7 +50,7 @@ to provide a way to embed other web projects on my website.
                 {#if selected}
                     <Minimize class="w-4 h-4" />
                 {:else}
-                    <Maximize class="w-4 h-4" />
+                    <Maximize class="w-4 h-4 mx-auto" />
                 {/if}
             </button>
         </div>

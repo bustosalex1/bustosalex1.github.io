@@ -36,12 +36,12 @@ collection.
 <!-- search box -->
 <input
     type="text"
-    class="w-full border-light-accent border rounded-md p-1.5 focus:ring-none text-content focus:outline-2 focus:outline-offset-1 focus:outline-light-accent bg-alt-background"
+    class="w-full border-light-accent border p-1.5 focus:ring-none text-content focus:outline-2 focus:outline-offset-1 focus:outline-light-accent bg-alt-background"
     placeholder="Search notes..."
     bind:value={searchValue}
 />
 <!-- search results -->
-<div class="flex flex-col gap-2 w-full mt-4">
+<div class="flex flex-col w-full mt-4">
     {#each results as result (result.item.id)}
         <SearchMatch {result} />
     {/each}

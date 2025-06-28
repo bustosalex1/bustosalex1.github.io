@@ -14,13 +14,13 @@ const { data } = Astro.props;
 ---
 
 <BaseLayout pageTitle={data.title} fullWidth={data.fullWidth}>
+    <ArticleTitle
+        title={data.title}
+        pubDate={data.pubDate}
+        posted={true}
+        tags={data.tags}
+    />
     <Article>
-        <ArticleTitle
-            title={data.title}
-            pubDate={data.pubDate}
-            posted={true}
-            tags={data.tags}
-        />
         <slot />
     </Article>
 </BaseLayout>

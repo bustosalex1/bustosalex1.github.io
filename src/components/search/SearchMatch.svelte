@@ -10,7 +10,7 @@
 
 <a href={"/notes/" + result.item.id} class="group">
     <div
-        class="flex flex-col w-full gap-1 rounded-md ring-1 ring-light-accent p-2 bg-background drop-shadow-md text-content dark:bg-alt-background"
+        class="flex flex-col w-full gap-1 ring-1 ring-light-accent p-2 bg-background text-content dark:bg-alt-background"
     >
         <div class="flex flex-row justify-between items-center">
             <div class="group-hover:text-primary duration-300 transition-all">

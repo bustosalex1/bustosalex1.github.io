@@ -15,7 +15,7 @@ const links = [
 ---
 
 <div
-    class="flex flex-row w-full items-stretch border border-light-accent divide-light-accent divide-x"
+    class="flex flex-row w-full items-stretch border-black divide-black divide-x border shadow-[3px_3px_0px_0px] shadow-neutral-200 h-10"
 >
     <!-- only render "Alex Bustos" when we're not on the notes page -->
     {
@@ -24,7 +24,7 @@ const links = [
         ) : (
             <a
                 href="/"
-                class="font-bold whitespace-nowrap text-content transition-all duration-300 hover:bg-neutral-400/30 content-center px-4"
+                class="font-bold whitespace-nowrap text-content transition-all duration-300 hover:bg-primary content-center px-4 hover:text-white"
             >
                 Alex Bustos
             </a>
@@ -36,7 +36,7 @@ const links = [
             return (
                 <a
                     href={link}
-                    class={`px-4 content-center hover:text-primary transition-all duration-300 ${currentPage === link ? "text-primary underline" : "text-content"}`}
+                    class={`px-4 border-r border-black content-center hover:text-white hover:bg-primary transition-all duration-150 ${currentPage === link ? "bg-primary text-white" : "text-content"}`}
                 >
                     {title}
                 </a>
@@ -45,18 +45,18 @@ const links = [
     }
 
     <!-- this div is to space the `ThemeToggle` and `SearchToggle` to be at the opposite end of the flex box -->
-    <div class="grow border-r border-light-accent"></div>
-    <div class="flex items-center flex-row space-x-2">
-        <!--only include the search toggle on the notes page-->
-        {
-            currentPage.includes("notes") && (
-                <div>
-                    <SearchToggle client:load />
-                </div>
-            )
-        }
-        <div>
-            <ThemeToggle client:only />
-        </div>
-    </div>
+    <!-- <div class="grow border-r border-black"></div> -->
+    <!-- <div class="flex items-center flex-row space-x-2"> -->
+    <!--only include the search toggle on the notes page-->
+    <!--     { -->
+    <!--         currentPage.includes("notes") && ( -->
+    <!--             <div> -->
+    <!--                 <SearchToggle client:load /> -->
+    <!--             </div> -->
+    <!--         ) -->
+    <!--     } -->
+    <!--     <div> -->
+    <!--         <ThemeToggle client:only /> -->
+    <!--     </div> -->
+    <!-- </div> -->
 </div>

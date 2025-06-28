@@ -18,7 +18,7 @@ const pageTitle = "Projects";
 
 <BaseLayout pageTitle={pageTitle}>
     <div
-        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 content-stretch border-l border-r border-b border-light-accent gap-[1px] bg-light-accent"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 content-stretch gap-[1px] bg-black mt-4 border-black border shadow-[3px_3px_0px_0px] shadow-neutral-200"
     >
         {filteredPosts.map((post) => <ProjectCard post={post} />)}
     </div>

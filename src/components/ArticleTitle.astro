@@ -12,27 +12,29 @@ interface Props {
 const { title, pubDate, tags, posted, cls } = Astro.props;
 ---
 
-<h1 class="mb-0">
-    {title}
-</h1>
-<div class="not-prose flex flex-row items-center my-2 h-6">
-    <div class="my-1">
-        <FormattedDate date={pubDate} posted={posted} />
+<div class="border border-black mt-4 bg-background">
+    <h1 class="!m-0 p-2 border-b border-black font-black text-3xl">
+        {title}
+    </h1>
+    <div
+        class="not-prose flex flex-row h-8 items-stretch divide-x divide-black border-black"
+    >
+        <div class="px-2 content-center">
+            <FormattedDate date={pubDate} posted={posted} />
+        </div>
+
+        <!--list of tags-->
+        {
+            tags && (
+                <div class="flex gap-2 flex-row flex-wrap px-2 items-center">
+                    {tags.map((tag) => (
+                        <Tag tag={tag} />
+                    ))}
+                </div>
+            )
+        }
+
+        <!--or, alternatively, a class-->
+        {cls && <div class="text-sm content-center px-2">{cls}</div>}
     </div>
-    <!--divider-->
-    <div class="rotate-12 bg-light-accent h-full w-[1px] mx-2"></div>
-
-    <!--list of tags-->
-    {
-        tags && (
-            <div class="flex gap-2 flex-row flex-wrap">
-                {tags.map((tag) => (
-                    <Tag tag={tag} />
-                ))}
-            </div>
-        )
-    }
-
-    <!--or, alternatively, a class-->
-    {cls && <div class="text-sm">{cls}</div>}
 </div>

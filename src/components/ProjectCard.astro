@@ -17,21 +17,23 @@ const { post } = Astro.props;
 
 <a href={"/posts/" + post.id}>
     <div
-        class="transition overflow-hidden ease-in-out w-full hover:inset-shadow-black/50 duration-300 group bg-background dark:bg-alt-background text-content flex flex-col h-full"
+        class="transition overflow-hidden ease-in-out w-full duration-300 group bg-background dark:bg-alt-background text-content flex flex-col h-full"
     >
         <Image src={post.data.image} alt={post.data.imageAlt} />
-        <div class="p-3 flex flex-col grow border-t border-light-accent">
+        <div
+            class="p-3 flex flex-col grow border-t border-black group-hover:bg-primary duration-300 ease-in-out transition-all"
+        >
             <h1
-                class="text-lg font-bold group-hover:text-primary transition ease-in-out duration-300"
+                class="text-lg font-bold group-hover:text-white transition ease-in-out duration-300"
             >
                 {post.data.title}
             </h1>
             <p
-                class="group-hover:text-primary transition ease-in-out duration-300 grow"
+                class="group-hover:text-white transition ease-in-out duration-300 grow"
             >
                 {post.data.description}
             </p>
-            <div class="self-end pt-4">
+            <div class="self-end pt-4 group-hover:text-white">
                 <FormattedDate date={post.data.pubDate} />
             </div>
         </div>
