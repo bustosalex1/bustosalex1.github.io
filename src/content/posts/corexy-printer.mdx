@@ -7,10 +7,28 @@ image: "@assets/posts/corexy-printer/printer-thumbnail.webp"
 imageAlt: "A picture of a 3D printer."
 project: true
 tags: ["3D printing", "CAD"]
+gallery:
+    - image: "@assets/posts/corexy-printer/printer-front.webp"
+      alt: an image of a 3D printer
+      caption: Current iteration of 3D printer.
+    - image: "@assets/posts/corexy-printer/printer-front.webp"
+      alt: an image of a 3D printer
+      caption: Current iteration of 3D printer.
+    - image: "@assets/posts/corexy-printer/printer-iso-render.webp"
+      alt: an image of a 3D printer
+      caption: Current iteration of 3D printer.
+    - image: "@assets/posts/corexy-printer/printer-top-angle.webp"
+      alt: an image of a 3D printer
+      caption: Current iteration of 3D printer.
+    - image: "@assets/posts/corexy-printer/toolhead-render.webp"
+      alt: an image of a 3D printer
+      caption: Current iteration of 3D printer.
+    - image: "@assets/posts/corexy-printer/sample-print.webp"
+      alt: an image of a 3D printer
+      caption: Current iteration of 3D printer.
 ---
 
 import ImageGrid from "@components/ImageGrid.astro";
-import ImageMasonry from "@components/ImageMasonry.astro";
 
 import printerFrontAngle from "@assets/posts/corexy-printer/printer-front-angle.webp";
 import printerFront from "@assets/posts/corexy-printer/printer-front.webp";
@@ -74,37 +92,34 @@ but I've also successfully run prints at up to 100 mm/s print speed with no
 errors and little drop in print quality. I'm happy with the print quality and
 parts dimensions come out accurately.
 
-<ImageMasonry
+<ImageGrid
     images={[
         [
-            [
-                printerFront,
-                "a picture of the front of a 3D printer",
-                "Front of printer.",
-            ],
-            [
-                printerTopAngle,
-                "3D render of a small wooden box design",
-                "Top of printer.",
-            ],
+            printerFront,
+            "a picture of the front of a 3D printer",
+            "Front of printer.",
         ],
         [
-            [
-                printerIsoRender,
-                "Isometric CAD Render of 3D printer.",
-                "CAD render of printer.",
-            ],
-            [
-                toolheadRender,
-                "CAD render of 3D printer toolhead assembly.",
-                "CAD render of printer toolhead.",
-            ],
+            printerTopAngle,
+            "3D render of a small wooden box design",
+            "Top of printer.",
+        ],
+        [
+            printerIsoRender,
+            "Isometric CAD Render of 3D printer.",
+            "CAD render of printer.",
+        ],
+        [
+            toolheadRender,
+            "CAD render of 3D printer toolhead assembly.",
+            "CAD render of printer toolhead.",
         ],
     ]}
     caption="Finshed printer and CAD renders of current design."
     cols="grid-cols-2"
+    rows="grid-rows-2"
     clickable
-    captionMode="hover"
+    captionMode="below"
 />
 
 If I were to start over, there would be a few things I would do differently. To

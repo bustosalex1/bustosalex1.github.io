@@ -4,10 +4,10 @@
 </script>
 
 <button
-    class="mr-5 cursor-pointer text-content transition-all duration-300 hover:bg-neutral-400/30 p-1 rounded-full group"
+    class="cursor-pointer text-content transition-all duration-300 hover:bg-neutral-400/30 group h-10 w-10"
     onclick={() => {
         sidebar.opened = !sidebar.opened;
     }}
 >
-    <Menu class="w-5 h-5" />
+    <Menu class="w-5 h-5 mx-auto" />
 </button>

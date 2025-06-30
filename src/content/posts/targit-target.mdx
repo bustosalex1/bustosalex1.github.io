@@ -10,7 +10,7 @@ tags: ["3D printing", "CAD", "Research"]
 ---
 
 import ClickableImage from "@components/ClickableImage.svelte";
-import ImageMasonry from "@components/ImageMasonry.astro";
+import ImageGrid from "@components/ImageGrid.astro";
 import poster from "@assets/posts/targit-target/ssi-poster.webp";
 import labeledExplodedView from "@assets/posts/targit-target/labeled-exploded-view.webp";
 import assembledPrototype from "@assets/posts/targit-target/assembled-prototype.webp";
@@ -91,45 +91,42 @@ Formlabs Form 2 SLA 3D printer with standard resin. Using the same printing
 technology as the professional manufacturers allowed me to see what sort of
 features were possible to print and which features would be problematic.
 
-<ImageMasonry
+<ImageGrid
     images={[
         [
-            [
-                assembledPrototype,
-                "A 3D printed and machined prototype of a small satellite subsystem.",
-                "Assembled prototype of target subsystem.",
-            ],
-            [
-                bottomRender,
-                "CAD render of bottom of small satellite subsystem.",
-                "CAD render of bottom of target subassembly.",
-            ],
-            [
-                deployedIsoRender,
-                "Isometric CAD render of small satellite subsystem in deployed configuration.",
-                "CAD render of deployed target assembly.",
-            ],
+            assembledPrototype,
+            "A 3D printed and machined prototype of a small satellite subsystem.",
+            "Assembled prototype of target subsystem.",
         ],
         [
-            [
-                internalChambers,
-                "CAD render highlighting internal geometry of small satellite subsystem.",
-                "Internal gas chambers and passages (highlighted in orange).",
-            ],
-            [
-                stowedIsoRender,
-                "Isometric CAD render of small satellite subsystem in stowed configuration.",
-                "CAD render of stowed target assembly.",
-            ],
-            [
-                unprocessedPrintedParts,
-                "SLA 3D printed parts for a small satellite subsystem.",
-                "Unprocessed SLA 3D printed parts.",
-            ],
+            bottomRender,
+            "CAD render of bottom of small satellite subsystem.",
+            "CAD render of bottom of target subassembly.",
+        ],
+        [
+            deployedIsoRender,
+            "Isometric CAD render of small satellite subsystem in deployed configuration.",
+            "CAD render of deployed target assembly.",
+        ],
+        [
+            internalChambers,
+            "CAD render highlighting internal geometry of small satellite subsystem.",
+            "Internal gas chambers and passages (highlighted in orange).",
+        ],
+        [
+            stowedIsoRender,
+            "Isometric CAD render of small satellite subsystem in stowed configuration.",
+            "CAD render of stowed target assembly.",
+        ],
+        [
+            unprocessedPrintedParts,
+            "SLA 3D printed parts for a small satellite subsystem.",
+            "Unprocessed SLA 3D printed parts.",
         ],
     ]}
     caption="Renders and images of target subsystem."
     cols="grid-cols-2"
+    rows="grid-rows-3"
     clickable
     captionMode="hover"
 />

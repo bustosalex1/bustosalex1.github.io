@@ -16,6 +16,15 @@ const postCollection = defineCollection({
             tags: z.string().array(),
             project: z.boolean().optional(),
             fullWidth: z.boolean().optional(),
+            gallery: z
+                .array(
+                    z.object({
+                        image: image(),
+                        alt: z.string(),
+                        caption: z.string(),
+                    }),
+                )
+                .or(z.undefined()),
         }),
 });
 

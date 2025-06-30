@@ -22,7 +22,9 @@ interface Props {
 const { images, caption, clickable, captionMode, rows, cols } = Astro.props;
 ---
 
-<div class={`grid ${cols} ${rows} gap-2`}>
+<div
+    class={`grid ${cols} ${rows} gap-[1px] bg-default-outline border border-default-outline shadow-[3px_3px_0px_0px] shadow-default-shadow`}
+>
     {
         images.map(([src, alt, caption]) =>
             clickable ? (
@@ -32,7 +34,11 @@ const { images, caption, clickable, captionMode, rows, cols } = Astro.props;
                     imgSrc={src.src}
                     client:load
                 >
-                    <Image src={src} alt={alt} />
+                    <Image
+                        src={src}
+                        alt={alt}
+                        class="not-prose object-cover h-full w-full"
+                    />
                 </ClickableImage>
             ) : (
                 <Image src={src} alt={alt} />

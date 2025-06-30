@@ -52,7 +52,7 @@
                         {#each notes as note}
                             <a href={"/notes/" + note.id}>
                                 <li
-                                    class="w-full group hover:bg-neutral-400/30 transition-all duration-300 rounded-md py-1 pl-5"
+                                    class="w-full group hover:border-neutral-400/30 hover:font-bold duration-150 py-1 pl-5"
                                 >
                                     {note.data.title}
                                 </li>

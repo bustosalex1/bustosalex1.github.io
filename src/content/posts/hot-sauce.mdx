@@ -10,7 +10,6 @@ tags: ["sauce", "horticulture"]
 ---
 
 import ImageGrid from "@components/ImageGrid.astro";
-import ImageMasonry from "@components/ImageMasonry.astro";
 import boxPanels from "@assets/posts/hot-sauce/box-panels.webp";
 import crowbar from "@assets/posts/hot-sauce/crowbar.webp";
 import labelDesign from "@assets/posts/hot-sauce/label-design.webp";
@@ -39,34 +38,31 @@ idea to make laser cut balsa wood crates as packaging. With the help of a friend
 I machined a small aluminum crowbar for opening the crate. I'm sure if we ever
 get the chance we'll make some more sauce.
 
-<ImageMasonry
+<ImageGrid
     images={[
         [
-            [
-                boxPanels,
-                "laser cut balsa wood box panels",
-                "Laser Cut V2 packaging.",
-            ],
-            [
-                boxRender,
-                "3D render of a small wooden box design",
-                "V2 packaging render.",
-            ],
+            boxPanels,
+            "laser cut balsa wood box panels",
+            "Laser Cut V2 packaging.",
         ],
         [
-            [
-                crowbar,
-                "a small aluminum crowbar",
-                "Machined aluminum crowbar accessory.",
-            ],
-            [
-                labelDesign,
-                "label design for a hot sauce bottle",
-                "V2 label design.",
-            ],
+            boxRender,
+            "3D render of a small wooden box design",
+            "V2 packaging render.",
+        ],
+        [
+            crowbar,
+            "a small aluminum crowbar",
+            "Machined aluminum crowbar accessory.",
+        ],
+        [
+            labelDesign,
+            "label design for a hot sauce bottle",
+            "V2 label design.",
         ],
     ]}
     caption="Fahrenheit 406 V2 design, packaging, and accessories."
+    rows="grid-rows-2"
     cols="grid-cols-2"
     clickable
     captionMode="hover"

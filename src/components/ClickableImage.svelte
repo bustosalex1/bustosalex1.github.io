@@ -52,7 +52,7 @@ be passed in using the `caption` prop, when a user hovers over the image if
 <!-- default image -->
 <button
     onclick={toggleModal}
-    class="relative cursor-pointer overflow-hidden rounded-md mx-auto block"
+    class="relative cursor-pointer overflow-hidden"
     onmouseenter={() => (hovered = true)}
     onmouseleave={() => (hovered = false)}
 >
@@ -60,13 +60,17 @@ be passed in using the `caption` prop, when a user hovers over the image if
     <!-- if `hoverCaption` is defined, only show the caption on hover. otherwise, just show the caption without any animation -->
     {#if hovered && caption && captionMode === "hover"}
         <div
-            class="absolute bottom-0 left-0 h-auto w-full bg-black bg-opacity-70 p-2 rounded-b-md text-white flex justify-start items-center text-left"
+            class="absolute bottom-0 left-0 h-auto w-full bg-black/70 p-2 text-white flex justify-start items-center text-left border-t border-default-outline"
             transition:fly={{ y: 50, duration: 250, easing: cubicInOut }}
         >
             {caption}
         </div>
     {:else if caption && captionMode === "below"}
-        <em class="text-center">{caption}</em>
+        <div
+            class="flex flex-row items-center justify-center w-full bg-background border-t border-default-outline"
+        >
+            <em class="text-center text-content">{caption}</em>
+        </div>
     {/if}
 </button>
 

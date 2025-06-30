@@ -1,0 +1,16 @@
+---
+/**
+ * Simple `Image` wrapper that adds styling for
+ */
+interface Props {
+	tag: string;
+}
+
+const { tag } = Astro.props;
+---
+
+<div
+	class="ring-1 ring-light-accent px-2 py-0.5 rounded-full text-xs capitalize text-neutral-400 hover:bg-primary hover:text-white hover:ring-white whitespace-nowrap"
+>
+	<a href={"/tags/" + tag}>{tag}</a>
+</div>
