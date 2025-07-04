@@ -34,19 +34,25 @@ const formattedTag = tag
 ---
 
 <BaseLayout pageTitle={`Tag: ${formattedTag}`}>
-    <div class="font-bold text-content">
-        Posts tagged with <span class="capitalize">{tag}</span>
-    </div>
-    <div class="flex flex-col gap-4">
-        {
-            posts.map((post) => (
-                <PostEntry
-                    url={"/posts/" + post.slug}
-                    title={post.data.title}
-                    date={post.data.pubDate}
-                    tags={post.data.tags}
-                />
-            ))
-        }
+    <div
+        class="mt-4 border border-default-outline shadow-default-shadow shadow-[3px_3px_0px_0px] bg-background dark:bg-alt-background"
+    >
+        <div
+            class="font-bold text-content p-2 w-full border-b border-default-outline"
+        >
+            Posts tagged with <span class="capitalize">{tag}</span>
+        </div>
+        <div class="flex flex-col divide-y divide-light-accent">
+            {
+                posts.map((post) => (
+                    <PostEntry
+                        url={"/posts/" + post.id}
+                        title={post.data.title}
+                        date={post.data.pubDate}
+                        tags={post.data.tags}
+                    />
+                ))
+            }
+        </div>
     </div>
 </BaseLayout>

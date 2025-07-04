@@ -62,6 +62,10 @@
         @apply transition-all hover:bg-neutral-400/30 cursor-pointer duration-300;
     }
 
+    .hard-shadow {
+        box-shadow: 3px 3px 0px 0px var(--color-default-shadow);
+    }
+
     .primary-hover {
         transition-property: all;
         transition-duration: 300ms;

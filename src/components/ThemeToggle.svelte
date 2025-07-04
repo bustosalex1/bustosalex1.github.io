@@ -29,13 +29,13 @@
         }
         localStorage.setItem("theme", theme);
     }}
-    class="cursor-pointer duration-300 hover:bg-black h-10 w-10 transition-all group"
+    class="cursor-pointer h-full aspect-square group hover:bg-primary transition-all duration-300"
 >
     {#if theme === "light"}
         <!-- moon icon (shows when light mode is enabled) -->
-        <Moon class="w-5 h-5 text-content group-hover:text-white mx-auto" />
+        <Moon class="w-5 h-5 text-content mx-auto group-hover:text-white" />
     {:else}
         <!-- sun icon (shows when dark mode is enabled) -->
-        <Sun class="w-5 h-5 text-content mx-auto" />
+        <Sun class="w-5 h-5 text-content mx-auto group-hover:text-white" />
     {/if}
 </button>

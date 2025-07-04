@@ -23,7 +23,7 @@ const { data } = Astro.props;
     />
     {
         data.gallery && (
-            <div class="py-4 border-b border-default-outline shadow-alt-background ">
+            <div class="py-4 border-b border-default-outline">
                 <ImageGrid
                     images={data.gallery.map(({ image, alt, caption }) => [
                         image,

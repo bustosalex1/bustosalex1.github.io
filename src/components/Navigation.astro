@@ -10,33 +10,25 @@ import SearchToggle from "./SearchToggle.svelte";
 let currentPage = Astro.url.pathname;
 const links = [
     ["Projects", "/"],
-    ["Notes", "/notes/"],
+    ["Experiments", "/experiments/"],
 ];
 ---
 
 <div
-    class="flex flex-row w-full items-stretch border-default-outline divide-default-outline divide-x border shadow-[3px_3px_0px_0px] shadow-default-shadow h-10 bg-background dark:bg-alt-background"
+    class="flex flex-row w-full items-stretch border-default-outline border hard-shadow h-10 dark:bg-alt-background bg-background"
 >
-    <!-- only render "Alex Bustos" when we're not on the notes page -->
-    {
-        currentPage.includes("notes") ? (
-            <NoteMenuToggle client:load />
-        ) : (
-            <a
-                href="/"
-                class="font-bold whitespace-nowrap text-content transition-all duration-300 hover:bg-primary content-center px-4 hover:text-white"
-            >
-                Alex Bustos
-            </a>
-        )
-    }
-
+    <a
+        href="/"
+        class="font-bold whitespace-nowrap text-content transition-all duration-150 hover:bg-primary content-center px-2 sm:px-4 hover:text-white"
+    >
+        Alex Bustos
+    </a>
     {
         links.map(([title, link]) => {
             return (
                 <a
                     href={link}
-                    class={`px-4 border-r border-default-outline content-center hover:text-white hover:bg-primary transition-all duration-150 ${currentPage === link ? "bg-primary text-white" : "text-content"}`}
+                    class={`px-2 sm:px-4 border-l last-of-type:grow sm:last-of-type:grow-0 text-center last-of-type:border-r border-default-outline content-center hover:text-white hover:bg-primary transition-all duration-150 ${currentPage === link ? "bg-primary text-white" : "text-content"}`}
                 >
                     {title}
                 </a>
@@ -45,18 +37,6 @@ const links = [
     }
 
     <!-- this div is to space the `ThemeToggle` and `SearchToggle` to be at the opposite end of the flex box -->
-    <div class="grow border-r border-default-outline"></div>
-    <div class="flex items-center flex-row space-x-2">
-        <!--only include the search toggle on the notes page-->
-        {
-            currentPage.includes("notes") && (
-                <div>
-                    <SearchToggle client:load />
-                </div>
-            )
-        }
-        <div>
-            <ThemeToggle client:only />
-        </div>
-    </div>
+    <div class="sm:visible sm:grow sm:border-r sm:border-default-outline"></div>
+    <ThemeToggle client:only />
 </div>
