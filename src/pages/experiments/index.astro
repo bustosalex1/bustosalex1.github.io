@@ -1,7 +1,5 @@
 ---
-import ProjectCard from "@components/ProjectCard.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import DummyProjectCards from "@components/DummyProjectCards.svelte";
 import { getCollection } from "astro:content";
 
 const allPosts = await getCollection("posts");
@@ -26,10 +24,12 @@ const links = [["Quotes I Like", "/quotes/"]];
         <h1 class="font-bold text-lg p-2 border-b border-default-outline">
             Experiments
         </h1>
-        {
-            links.map(([title, link]) => (
-                <a href={`/experiments${link}`}>{title}</a>
-            ))
-        }
+        <div class="flex p-2 flex-col divide-y divide-light-accent">
+            {
+                links.map(([title, link]) => (
+                    <a href={`/experiments${link}`}>{title}</a>
+                ))
+            }
+        </div>
     </div>
 </BaseLayout>

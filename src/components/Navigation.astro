@@ -5,12 +5,10 @@
  * title of the website (my name) and the theme toggle.
  */
 import ThemeToggle from "@components/ThemeToggle.svelte";
-import NoteMenuToggle from "@components/NoteMenuToggle.svelte";
-import SearchToggle from "./SearchToggle.svelte";
 let currentPage = Astro.url.pathname;
 const links = [
     ["Projects", "/"],
-    ["Experiments", "/experiments/"],
+    ["Quotes I Like", "/experiments/quotes"],
 ];
 ---
 
