@@ -11,9 +11,6 @@ importers:
       '@fontsource/crimson-text':
         specifier: ^5.2.6
         version: 5.2.6
-      '@fontsource/fira-code':
-        specifier: ^5.2.6
-        version: 5.2.6
       fuse.js:
         specifier: ^7.1.0
         version: 7.1.0
@@ -373,9 +370,6 @@ packages:
 
   '@fontsource/crimson-text@5.2.6':
     resolution: {integrity: sha512-qy2ZgWzwMYapa5yBnc1XO5XQM1txC1x7uQSag6a9y2yVFSilBmeH70tzY8zSfozi+vC+5udoUzk+gsrecxAnPA==}
-
-  '@fontsource/fira-code@5.2.6':
-    resolution: {integrity: sha512-wCkIpPm0BqlkCPLYeY4Vui96ODmVUV0/GpEe3OfJ4v8EJn/BF2SlyxvarFsTs1CKiGjrO2cXlIZbBrKi9F+hUQ==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -2966,8 +2960,6 @@ snapshots:
       levn: 0.4.1
 
   '@fontsource/crimson-text@5.2.6': {}
-
-  '@fontsource/fira-code@5.2.6': {}
 
   '@humanfs/core@0.19.1': {}
 
