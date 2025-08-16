@@ -2,7 +2,6 @@
     import Launch from "~icons/carbon/launch";
     import Maximize from "~icons/carbon/maximize";
     import Minimize from "~icons/carbon/minimize";
-    import Dots from "./Dots.svelte";
 
     interface Props {
         /** The URL of the page to link to. */

@@ -48,7 +48,7 @@
     >
         Alex Bustos
     </a>
-    {#each links as [title, link]}
+    {#each links as [title, link] (link)}
         <a
             href={link}
             class={[
@@ -92,7 +92,7 @@
         transition:slide={{ axis: "x", duration: 150 }}
     >
         <Dots
-            class={"p-2 border-b border-neutral-300"}
+            class="p-2 border-b border-neutral-300"
             topLeft={false}
             topRight={false}
             bottomLeft={false}
@@ -104,7 +104,7 @@
                 Alex Bustos
             </a>
         </Dots>
-        {#each links as [title, link]}
+        {#each links as [title, link] (link)}
             <a
                 href={link}
                 class={[

@@ -166,7 +166,7 @@
 <div
     class="flex flex-col gap-4 px-4 pb-4 pt-10 diagonal-lines border-l border-r border-b border-neutral-300 border-dashed"
 >
-    {#each groupedQuotes as [key, quoteList]}
+    {#each groupedQuotes as [key, quoteList] (key)}
         <div
             class="flex flex-col divide-y divide-neutral-300 border rounded-sm hard-shadow border-neutral-300 bg-background"
         >
