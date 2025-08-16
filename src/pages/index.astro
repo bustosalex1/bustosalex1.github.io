@@ -1,7 +1,7 @@
 ---
 import ProjectCard from "@components/ProjectCard.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import DummyProjectCards from "@components/DummyProjectCards.svelte";
+import Dots from "@components/Dots.svelte";
 import { getCollection } from "astro:content";
 
 const allPosts = await getCollection("posts");
@@ -18,10 +18,27 @@ const pageTitle = "Projects";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <div
-        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 content-stretch gap-[1px] bg-default-outline mt-4 border-default-outline border shadow-[3px_3px_0px_0px] shadow-default-shadow"
+    <Dots
+        class="flex flex-col border border-neutral-300 bg-background"
+        bottomLeft={false}
+        bottomRight={false}
+    >
+        <h1 class="text-4xl font-crimson italic mx-auto px-2 py-5">Posts</h1>
+        <div class="flex flex-row border-t border-dashed border-neutral-300">
+            <div
+                class="hidden md:block grow diagonal-lines border-r border-dashed border-neutral-300"
+            >
+            </div>
+            <div
+                class="h-10 content-center border-neutral-300 mx-auto font-crimson text-lg px-2"
+            >
+                Projects and other things.
+            </div>
+        </div>
+    </Dots>
+    <Dots
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 content-stretch border-neutral-300 border-dashed border-l border-r border-b gap-4 p-4 diagonal-lines"
     >
         {filteredPosts.map((post) => <ProjectCard post={post} />).slice(0, 10)}
-        <DummyProjectCards cards={filteredPosts.length - 1} client:load />
-    </div>
+    </Dots>
 </BaseLayout>

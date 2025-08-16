@@ -9,8 +9,9 @@ interface Props {
 const { tag } = Astro.props;
 ---
 
-<div
-    class="ring-1 ring-light-accent px-2 py-0.5 rounded-full text-xs capitalize text-neutral-400 hover:bg-primary hover:text-white hover:ring-white whitespace-nowrap"
+<a
+    class="border border-neutral-400 hover:hard-shadow-hover-no-displacement transition-all duration-300 px-2 py-0.5 text-xs rounded-sm hard-shadow capitalize hover:text-primary hover:border-primary whitespace-nowrap text-neutral-400"
+    href={"/tags/" + tag}
 >
-    <a href={"/tags/" + tag}>{tag}</a>
-</div>
+    {tag}
+</a>

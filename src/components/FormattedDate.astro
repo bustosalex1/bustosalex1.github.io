@@ -10,9 +10,7 @@ interface Props {
 const { date, posted } = Astro.props;
 ---
 
-<div
-    class="text-sm font-mono whitespace-nowrap text-content group-hover:text-white"
->
+<div class="text-sm whitespace-nowrap font-mono">
     {posted ? "Posted " : ""}
     {
         date.toLocaleDateString("en-US", {

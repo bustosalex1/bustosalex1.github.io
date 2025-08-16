@@ -23,7 +23,7 @@ const { images, caption, clickable, captionMode, rows, cols } = Astro.props;
 ---
 
 <div
-    class={`grid ${cols} ${rows} gap-[1px] bg-default-outline border border-default-outline shadow-[3px_3px_0px_0px] shadow-default-shadow`}
+    class={`grid ${cols} ${rows} gap-[1px] bg-neutral-300 border border-neutral-300 hard-shadow rounded-sm overflow-clip`}
 >
     {
         images.map(([src, alt, caption]) =>
@@ -46,4 +46,10 @@ const { images, caption, clickable, captionMode, rows, cols } = Astro.props;
         )
     }
 </div>
-{caption && <em class="flex justify-center text-center">{caption}</em>}
+{
+    caption && (
+        <em class="flex justify-center text-center font-crimson text-lg">
+            {caption}
+        </em>
+    )
+}

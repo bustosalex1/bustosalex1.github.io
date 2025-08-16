@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { flip } from "svelte/animate";
+    import Dots from "@components/Dots.svelte";
 
     type Quote = {
         quote: string;
@@ -89,7 +89,7 @@
             quote: `She went around that afternoon feeling happy, and that evening when she joined Art she said, "Hey! I did some work today."<br>"Well!" Art said. "Let's go out and celebrate."`,
             source: "Blue Mars",
             author: "Kim Stanley Robinson",
-            aboutCharacter: "Nadia Charneshevsky",
+            aboutCharacter: "Nadia Cherneshevsky",
         },
         {
             quote: "Then over the black open water of the strait &mdash; the biggest stretch of open water he had ever seen on Mars. For twenty kilometers he floated over the open water, exclaiming out loud at the sight. Then ahead an immense airy bridge arced over the strait. The black-violet plate of water below it was dotted with sailboats, ferries, long barges, all trailing the white Vs of their wakes. Nirgal floated over them, circling the bridge twice to marvel at the sight &mdash; like nothing he had ever seen on Mars before: water, the sea, a whole future world.",
@@ -140,76 +140,86 @@
     });
 </script>
 
-<div class="mt-4 text-content">
+<Dots class="border-neutral-300 border bg-background">
+    <h1 class="pt-5 pb-10 px-2 text-4xl text-center font-crimson italic">
+        Quotes I Like
+    </h1>
     <div
-        class="border border-default-outline bg-background dark:bg-alt-background hard-shadow"
+        class="flex flex-row border-neutral-300 h-10 justify-center absolute -bottom-5 border w-fit mx-auto left-0 right-0 rounded-sm bg-background hard-shadow"
     >
-        <h1 class="text-3xl font-black p-2 border-b border-light-accent">
-            Quotes I Like
-        </h1>
-        <div class="flex flex-row w-full">
-            <div
-                class="whitespace-nowrap border-r border-light-accent p-2 text-sm"
-            >
-                Sort By
-            </div>
-            <select
-                bind:value={sortBy}
-                class="p-2 w-full text-sm cursor-pointer"
-            >
-                <option value="source">Source Material</option>
-                <option value="author">Author</option>
-                <option value="character">Character</option>
-            </select>
+        <div
+            class="whitespace-nowrap p-2 rounded-l-sm border-neutral-300 border-r content-center text-center"
+        >
+            Sort by
         </div>
+        <select
+            bind:value={sortBy}
+            class="p-2 w-fit rounded-r-sm cursor-pointer content-center"
+        >
+            <option value="source">Source Material</option>
+            <option value="author">Author</option>
+            <option value="character">Character</option>
+        </select>
     </div>
+</Dots>
 
-    <div class="flex flex-col my-2 gap-2">
-        {#each groupedQuotes as quoteGroup}
-            <div
-                class="flex flex-col bg-background dark:bg-alt-background divide-y divide-default-outline border border-default-outline hard-shadow"
+<div
+    class="flex flex-col gap-4 px-4 pb-4 pt-10 diagonal-lines border-l border-r border-b border-neutral-300 border-dashed"
+>
+    {#each groupedQuotes as [key, quoteList]}
+        <div
+            class="flex flex-col divide-y divide-neutral-300 border rounded-sm hard-shadow border-neutral-300 bg-background"
+        >
+            <a
+                class="text-xl font-semibold font-crimson p-2 sticky top-0 bg-background rounded-t-sm"
+                id={key}
+                href={`#${key}`}
             >
-                <h2 class="text-xl font-bold p-2">{quoteGroup[0]}</h2>
-                {#each quoteGroup[1] as quote (quote.quote)}
+                {key}
+            </a>
+            {#each quoteList as quote (quote.quote)}
+                <div class="flex flex-col w-full">
                     <div
-                        class="flex flex-col w-full bg-background dark:bg-alt-background"
-                        animate:flip
+                        class="border-b border-neutral-300 border-dashed p-8 font-crimson text-lg"
                     >
-                        <div class="border-b border-light-accent p-8 font-mono">
-                            {@html quote.quote}
-                        </div>
-                        <div
-                            class="flex flex-row justify-end h-10 items-stretch overflow-y-scroll"
-                        >
-                            {#if quote.character !== undefined}
-                                <div
-                                    class="border-l border-r border-light-accent content-center px-2 whitespace-nowrap"
-                                >
-                                    &mdash; {quote.character}
-                                </div>
-                            {/if}
-                            <div
-                                class="border-r border-light-accent content-center px-2 whitespace-nowrap"
-                            >
-                                <em>{quote.source}</em>
-                                {#if quote.additionalSourceInfo}
-                                    {quote.additionalSourceInfo}
-                                {/if}
-                                {#if quote.author}
-                                    by {quote.author}
-                                {/if}
-                            </div>
-                            {#if quote.aboutCharacter}
-                                <div
-                                    class="border-light-accent content-center px-2 whitespace-nowrap"
-                                >
-                                    Regarding {quote.aboutCharacter}
-                                </div>
-                            {/if}
-                        </div>
+                        {@html quote.quote}
                     </div>
-                {/each}
-            </div>
-        {/each}
-    </div>
+                    <div
+                        class="flex flex-row h-10 items-stretch overflow-y-scroll"
+                    >
+                        <div class="grow"></div>
+                        {#if quote.character !== undefined}
+                            <div
+                                class="border-r border-neutral-300 border-dashed content-center px-2 whitespace-nowrap"
+                            >
+                                &mdash; {quote.character}
+                            </div>
+                        {/if}
+                        <div
+                            class={[
+                                "content-center px-2 whitespace-nowrap",
+                                {
+                                    "border-r border-dashed border-neutral-300":
+                                        quote.aboutCharacter !== undefined,
+                                },
+                            ]}
+                        >
+                            <em>{quote.source}</em>
+                            {#if quote.additionalSourceInfo}
+                                {quote.additionalSourceInfo}
+                            {/if}
+                            {#if quote.author}
+                                by {quote.author}
+                            {/if}
+                        </div>
+                        {#if quote.aboutCharacter}
+                            <div class="content-center px-2 whitespace-nowrap">
+                                Regarding {quote.aboutCharacter}
+                            </div>
+                        {/if}
+                    </div>
+                </div>
+            {/each}
+        </div>
+    {/each}
 </div>

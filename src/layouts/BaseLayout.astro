@@ -7,18 +7,22 @@
 import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
 import "@styles/global.css";
-import "@fontsource/fira-code";
+import "@fontsource/crimson-text/400-italic.css";
+import "@fontsource/crimson-text/600-italic.css";
+import "@fontsource/crimson-text/700-italic.css";
+import "@fontsource/crimson-text/400.css";
+import "@fontsource/crimson-text/600.css";
+import "@fontsource/crimson-text/700.css";
 import "katex/dist/katex.min.css";
 
 interface Props {
     pageTitle: string;
-    fullWidth?: boolean;
 }
 
-const { pageTitle, fullWidth } = Astro.props;
+const { pageTitle } = Astro.props;
 ---
 
-<html lang="en" id="html-root" class="bg-background">
+<html lang="en" id="html-root" class="bg-slate-50">
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.png" />
@@ -40,12 +44,13 @@ const { pageTitle, fullWidth } = Astro.props;
     >
 
     <body>
-        <div
-            class={`flex flex-col w-[90vw] ${fullWidth ? "lg:w-[90vw]" : "lg:w-[50vw]"} mx-auto my-4`}
-        >
+        <div class="w-[90vw] xl:w-[50vw] mx-auto mt-4 mb-10">
             <Header />
-            <slot />
-            <Footer />
         </div>
+
+        <div class="flex flex-col w-[90vw] xl:w-[50vw] mx-auto">
+            <slot />
+        </div>
+        <Footer />
     </body>
 </html>

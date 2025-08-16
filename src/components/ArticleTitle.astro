@@ -1,6 +1,7 @@
 ---
 import Tag from "./Tag.astro";
 import FormattedDate from "./FormattedDate.astro";
+import Dots from "./Dots.svelte";
 interface Props {
     title: string;
     pubDate: Date;
@@ -12,33 +13,33 @@ interface Props {
 const { title, pubDate, tags, posted, cls } = Astro.props;
 ---
 
-<div
-    class="border border-default-outline dark:bg-alt-background mt-4 bg-background hard-shadow"
->
-    <h1
-        class="!m-0 p-2 border-b border-default-outline font-black text-3xl text-content"
-    >
+<Dots class="border border-neutral-300 bg-background">
+    <h1 class="py-5 px-2 text-4xl text-center font-crimson italic">
         {title}
+
+        <!--or, alternatively, a class-->
+        {cls && <div class="text-sm content-center px-2">{cls}</div>}
     </h1>
     <div
-        class="not-prose flex flex-row h-8 items-stretch divide-x divide-default-outline border-default-outline"
+        class="flex flex-row items-center w-full border-neutral-300 border-dashed border-t justify-center md:justify-start"
     >
-        <div class="px-2 content-center">
-            <FormattedDate date={pubDate} posted={posted} />
+        <div
+            class="grow h-10 diagonal-lines border-r border-neutral-300 border-dashed hidden md:block"
+        >
         </div>
 
         <!--list of tags-->
         {
             tags && (
-                <div class="flex gap-2 flex-row flex-nowrap px-2 items-center overflow-x-auto">
+                <div class="flex gap-2 flex-row flex-nowrap items-center px-4 h-10 border-r border-neutral-300 border-dashed overflow-y-scroll">
                     {tags.map((tag) => (
                         <Tag tag={tag} />
                     ))}
                 </div>
             )
         }
-
-        <!--or, alternatively, a class-->
-        {cls && <div class="text-sm content-center px-2">{cls}</div>}
+        <div class="px-4 font-normal">
+            <FormattedDate date={pubDate} posted={posted} />
+        </div>
     </div>
-</div>
+</Dots>

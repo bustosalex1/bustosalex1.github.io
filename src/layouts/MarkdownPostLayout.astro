@@ -6,7 +6,6 @@
 import BaseLayout from "./BaseLayout.astro";
 import Article from "@components/Article.astro";
 import ArticleTitle from "@components/ArticleTitle.astro";
-import ImageGrid from "@components/ImageGrid.astro";
 import type { CollectionEntry } from "astro:content";
 interface Props {
     data: CollectionEntry<"posts">["data"];
@@ -14,31 +13,13 @@ interface Props {
 const { data } = Astro.props;
 ---
 
-<BaseLayout pageTitle={data.title} fullWidth={data.fullWidth}>
+<BaseLayout pageTitle={data.title}>
     <ArticleTitle
         title={data.title}
         pubDate={data.pubDate}
         posted={true}
         tags={data.tags}
     />
-    {
-        data.gallery && (
-            <div class="py-4 border-b border-default-outline">
-                <ImageGrid
-                    images={data.gallery.map(({ image, alt, caption }) => [
-                        image,
-                        alt,
-                        caption,
-                    ])}
-                    caption={undefined}
-                    clickable={true}
-                    captionMode="hover"
-                    rows="grid-rows-2"
-                    cols="grid-cols-3"
-                />
-            </div>
-        )
-    }
     <Article>
         <slot />
     </Article>

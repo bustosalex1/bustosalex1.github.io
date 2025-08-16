@@ -2,6 +2,7 @@
     import Launch from "~icons/carbon/launch";
     import Maximize from "~icons/carbon/maximize";
     import Minimize from "~icons/carbon/minimize";
+    import Dots from "./Dots.svelte";
 
     interface Props {
         /** The URL of the page to link to. */
@@ -25,17 +26,17 @@ to provide a way to embed other web projects on my website.
 -->
 <!--rounded rectangle that wraps the iframe and title.-->
 <div
-    class={`flex flex-col border border-light-accent bg-background dark:bg-alt-background ${selected ? "fixed top-0 left-0 h-screen w-screen z-50 overflow-auto" : "h-[75vh] overflow-clip my-2 "}`}
+    class={`flex flex-col border border-neutral-300 bg-background dark:bg-alt-background ${selected ? "fixed inset-0 z-50 overflow-auto" : "h-[50vh] my-2 hard-shadow rounded-sm overflow-clip"}`}
 >
     <!--row providing a title and some buttons to full screen or go to the page-->
     <div
-        class="flex flex-row justify-between border-b border-light-accent items-center"
+        class="flex flex-row justify-between border-b border-neutral-300 items-center"
     >
         <div class="font-semibold px-2">{title}</div>
 
         <div class="flex flex-row h-8 items-stretch">
             <a
-                class="p-1 btn-hover border-l border-r border-light-accent content-center h-8 w-8"
+                class="p-1 btn-hover border-l border-r border-neutral-300 content-center h-8 w-8"
                 href={link}
                 target="_blank"
             >
