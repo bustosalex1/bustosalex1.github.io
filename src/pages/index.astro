@@ -39,6 +39,6 @@ const pageTitle = "Projects";
     <Dots
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 content-stretch border-neutral-300 border-dashed border-l border-r border-b gap-4 p-4 diagonal-lines"
     >
-        {filteredPosts.map((post) => <ProjectCard post={post} />).slice(0, 10)}
+        {filteredPosts.map((post) => <ProjectCard post={post} />)}
     </Dots>
 </BaseLayout>

@@ -30,18 +30,7 @@ const { pageTitle } = Astro.props;
         <meta name="generator" content={Astro.generator} />
         <meta name="description" content="Alex Bustos's personal website." />
         <title>Alex Bustos | {pageTitle}</title>
-        <script>
-            document.addEventListener("DOMContentLoaded", () => {
-                const html = document.getElementById(
-                    "html-root",
-                ) as HTMLElement;
-                const theme = localStorage.getItem("theme");
-                if (theme === "dark") {
-                    html.classList.add("dark");
-                }
-            });
-        </script></head
-    >
+    </head>
 
     <body>
         <div class="w-[90vw] xl:w-[50vw] mx-auto mt-4 mb-10">

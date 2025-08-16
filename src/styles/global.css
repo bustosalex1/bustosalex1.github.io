@@ -1,16 +1,13 @@
 @import "tailwindcss";
 @plugin '@tailwindcss/typography';
 
-/* `dark:` selector that can be used when toggling dark mode programatically. */
-@custom-variant dark (&:where(.dark, .dark *));
-
 /*
 * `prose-inline-code:` selector for only selecting inline code (instead of also
 * selecting code blocks) in typography `prose` blocks.
 * */
 @custom-variant prose-inline-code (&.prose :where(:not(pre)>code):not(:where([class~="not-prose"] *)));
 
-/* Light theme based on DaisyUI's `bumblebee`. */
+/* Light theme colors. */
 :root {
     --background-color: oklch(100% 0 0);
     --alt-background-color: oklch(97% 0 0);
@@ -21,28 +18,6 @@
     --default-outline-color: #000000;
 }
 
-/* Dark theme based on DaisyUI's `dracula` theme colors. */
-:root[class~="dark"] {
-    --background-color: oklch(24.787% 0.019 277.508);
-    --alt-background-color: oklch(28.822% 0.022 277.508);
-    --primary-color: oklch(75.461% 0.183 346.812);
-    --content-color: oklch(97.747% 0.007 106.545);
-    --light-accent-color: #393a3f;
-    --default-shadow-color: rgba(0, 0, 0, 0.3);
-    --default-outline-color: oklch(40.38% 0.0092 278.52);
-
-    /* Allow shiki to style code blocks differently in light and dark mode. */
-    .astro-code,
-    .astro-code span {
-        color: var(--shiki-dark) !important;
-        background-color: var(--background-color) !important;
-        /* Optional, if you also want font styles */
-        font-style: var(--shiki-dark-font-style) !important;
-        font-weight: var(--shiki-dark-font-weight) !important;
-        text-decoration: var(--shiki-dark-text-decoration) !important;
-    }
-}
-
 @theme inline {
     --color-background: var(--background-color);
     --color-alt-background: var(--alt-background-color);
@@ -51,25 +26,12 @@
     --color-content: var(--content-color);
     --color-default-shadow: var(--default-shadow-color);
     --color-default-outline: var(--default-outline-color);
-    --font-proto: "Proto Mono";
     --font-crimson: "Crimson Text", serif;
 }
 
 @layer components {
     .btn-hover {
         @apply transition-all hover:bg-neutral-400/30 cursor-pointer duration-300;
-    }
-
-    .primary-hover {
-        transition-property: all;
-        transition-duration: 300ms;
-        cursor: pointer;
-
-        &:hover {
-            @media (hover: hover) {
-                color: var(--primary-color);
-            }
-        }
     }
 }
 
@@ -94,13 +56,15 @@
     overflow: auto hidden;
 }
 
-.graph-paper {
-    background-color: #ffffff;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23cecece' fill-opacity='0.4'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+.prose figure {
+
+    @apply rounded-sm border-neutral-300 border mx-auto w-fit my-4 hard-shadow
 }
 
-@utility dots {
-    ::after {
-        @apply border-neutral-300 w-2 h-2 absolute -left-1 -top-1 bg-background border;
-    }
+.prose figure img {
+    @apply border-b border-neutral-300 rounded-t-sm max-h-[75vh] w-auto m-0
+}
+
+.prose figcaption {
+    @apply font-crimson text-lg bg-background rounded-b-sm italic text-center m-0 text-content
 }
