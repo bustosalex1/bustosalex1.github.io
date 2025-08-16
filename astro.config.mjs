@@ -4,6 +4,7 @@ import Icons from "unplugin-icons/vite";
 import mdx from "@astrojs/mdx";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
+import rehypeCaptionImages from "./src/utils/rehype-caption-images.ts";
 import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
@@ -23,6 +24,12 @@ export default defineConfig({
                 rehypeKatex,
                 {
                     // katex plugin options
+                },
+            ],
+            [
+                rehypeCaptionImages,
+                {
+                    // rehype caption images options
                 },
             ],
         ],
