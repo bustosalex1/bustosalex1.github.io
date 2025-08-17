@@ -10,7 +10,7 @@
     import { fade, slide } from "svelte/transition";
     import { MediaQuery } from "svelte/reactivity";
 
-    const md = new MediaQuery("min-width: 768px"); // 2 columns
+    const md = new MediaQuery("min-width: 768px");
     interface Props {
         url: string;
     }
