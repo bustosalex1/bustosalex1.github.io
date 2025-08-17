@@ -57,14 +57,13 @@
 }
 
 .prose figure {
-
-    @apply rounded-sm border-neutral-300 border mx-auto w-fit my-4 hard-shadow
+    @apply rounded-sm border-neutral-300 border mx-auto w-fit my-4 hard-shadow;
 }
 
 .prose figure img {
-    @apply border-b border-neutral-300 rounded-t-sm max-h-[75vh] w-auto m-0
+    @apply border-b border-neutral-300 rounded-t-sm max-h-[75vh] w-auto m-0;
 }
 
 .prose figcaption {
-    @apply font-crimson text-lg bg-background rounded-b-sm italic text-center m-0 text-content
+    @apply font-crimson text-lg bg-background rounded-b-sm italic text-center m-0 text-content;
 }

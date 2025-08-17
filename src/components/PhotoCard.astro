@@ -1,0 +1,39 @@
+---
+/**
+ * Clickable card providing an image, title, short description, and date of a
+ * project from the `posts` content collection. This component is used on the
+ * `projects` page (which is the current index of the site) to display
+ * information about all projects in the `posts` content collection.
+ */
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+import FormattedDate from "@components/FormattedDate.astro";
+interface Props {
+    post: CollectionEntry<"posts">;
+}
+
+const { post } = Astro.props;
+---
+
+<a href={"/posts/" + post.id}>
+    <div
+        class="transition ease-in-out w-full duration-300 group flex flex-col h-full border-neutral-400 hover:border-primary bg-background border hover:-translate-y-1 hard-shadow relative hover:hard-shadow-hover rounded-sm overflow-hidden"
+    >
+        <Image src={post.data.image} alt={post.data.imageAlt} />
+        <div
+            class="p-3 flex flex-col grow border-t border-neutral-400 duration-300 ease-in-out transition-all group-hover:border-primary"
+        >
+            <h1
+                class="font-bold group-hover:text-primary transition ease-in-out duration-300"
+            >
+                {post.data.title}
+            </h1>
+            <p class="transition ease-in-out duration-300 grow">
+                {post.data.description}
+            </p>
+            <div class="self-end pt-4">
+                <FormattedDate date={post.data.pubDate} />
+            </div>
+        </div>
+    </div>
+</a>
