@@ -3,13 +3,13 @@ title: "Machined Aluminum Carabiner"
 pubDate: 2019-12-7
 description: "Learning about CNC."
 author: "Alex Bustos"
-image: "../../assets/posts/carabiner/toolpaths.webp"
+image: "./toolpaths.webp"
 imageAlt: "an image of CAM toolpaths for a small aluminum carabiner"
 project: true
 tags: ["machining", "CAD", "CAM"]
 ---
 
-![a machined aluminum carabiner](../../assets/posts/carabiner/finished-carabiner.webp "Finished Carabiner.")
+![a machined aluminum carabiner](./finished-carabiner.webp "Finished Carabiner.")
 
 This was one of the first projects I made while figuring out the CNC machining
 process. With the help of some friends, I first learned how to operate the mill
@@ -28,7 +28,7 @@ of the CAM operations I used:
 - Drill holes with 1/16" drill bit
 - Chamfer with 1/4" chamfer bit
 
-![machined carabiner in progress](../../assets/posts/carabiner/in-progress-carabiner.webp "Carabiner after initial machining operations.")
+![machined carabiner in progress](./in-progress-carabiner.webp "Carabiner after initial machining operations.")
 
 Overall I think the carabiner came out pretty nice. It definitely isn't perfect,
 but I had fun making it and definitely learned a lot about CNC machining.

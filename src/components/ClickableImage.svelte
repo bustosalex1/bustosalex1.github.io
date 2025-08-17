@@ -1,4 +1,5 @@
 <script lang="ts">
+    import type { Snippet } from "svelte";
     import { cubicInOut } from "svelte/easing";
     import { fade, fly } from "svelte/transition";
     interface Props {
@@ -6,30 +7,34 @@
          * The caption to display below the image. Also used as the image's alt
          * tag.
          */
-        caption: string | undefined;
+        caption?: string;
+
         /**
-         * How the caption should be displayed. `hover` will display the
-         * caption whenever a user hovers over the image. `below` will
-         * permanently display the caption below the image.
+         * The alt text for the image. If not supplied, the caption will be
+         * used.
          */
-        captionMode: "hover" | "below" | undefined;
+        alt?: string;
+
         /** The source for the image to display. */
-        imgSrc: string | undefined;
+        imgSrc?: string;
         /**
          * Whether or not to display the image in a new tab, instead of in a
          * modal.
          */
-        newTab: true | undefined;
-        children?: import("svelte").Snippet;
+        newTab?: boolean;
+        children?: Snippet;
     }
 
-    let { caption, captionMode, imgSrc, newTab, children }: Props = $props();
+    let {
+        caption = undefined,
+        alt = undefined,
+        imgSrc = undefined,
+        newTab = false,
+        children,
+    }: Props = $props();
 
     // flag to set when the modal is clicked
     let selected = $state(false);
-
-    // flag to set when the image is hovered over
-    let hovered = $state(false);
 
     // callback whenever you click on the image
     const toggleModal = () => {
@@ -52,24 +57,14 @@ be passed in using the `caption` prop, when a user hovers over the image if
 <!-- default image -->
 <button
     onclick={toggleModal}
-    class="relative cursor-pointer overflow-hidden"
-    onmouseenter={() => (hovered = true)}
-    onmouseleave={() => (hovered = false)}
+    class="relative cursor-pointer overflow-hidden rounded-md border border-neutral-300 hard-shadow bg-background not-prose"
 >
     {@render children?.()}
-    <!-- if `hoverCaption` is defined, only show the caption on hover. otherwise, just show the caption without any animation -->
-    {#if hovered && caption && captionMode === "hover"}
+    {#if caption !== undefined}
         <div
-            class="absolute bottom-0 left-0 h-auto w-full bg-black/70 p-2 text-white flex justify-start items-center text-left border-t border-default-outline"
-            transition:fly={{ y: 50, duration: 250, easing: cubicInOut }}
+            class="w-full text-center content-center italic font-crimson text-lg border-t border-neutral-300"
         >
             {caption}
-        </div>
-    {:else if caption && captionMode === "below"}
-        <div
-            class="flex flex-row items-center justify-center w-full bg-background border-t border-default-outline"
-        >
-            <em class="text-center text-content">{caption}</em>
         </div>
     {/if}
 </button>
@@ -77,24 +72,26 @@ be passed in using the `caption` prop, when a user hovers over the image if
 {#if selected && !newTab}
     <!-- modal container -->
     <button
-        class="fixed top-0 left-0 h-[100vh] w-[100vw] bg-black/90 flex items-center justify-center cursor-pointer z-50"
+        class="fixed inset-0 bg-black/90 flex items-center justify-center cursor-pointer z-50"
         onclick={toggleModal}
-        transition:fade={{ duration: 250, easing: cubicInOut }}
+        transition:fade={{ duration: 150, easing: cubicInOut }}
     >
         <!-- modal content -->
         <div
             class="min-h-fit h-[75vh] max-h-[75vh] max-w-[75vw]"
-            transition:fly={{ duration: 250, y: 50, easing: cubicInOut }}
+            transition:fly={{ duration: 150, y: 50, easing: cubicInOut }}
         >
             {#if imgSrc}
                 <img
                     src={imgSrc}
-                    alt={caption}
-                    class="w-auto h-auto max-h-full object-contain rounded-md not-prose m-2"
+                    alt={alt ?? caption}
+                    class="w-auto h-auto max-h-full object-contain rounded-sm not-prose m-2"
                 />
             {/if}
             {#if caption}
-                <em class="text-white">{caption}</em>
+                <div class="italic text-white font-crimson text-lg">
+                    {caption}
+                </div>
             {/if}
         </div>
     </button>

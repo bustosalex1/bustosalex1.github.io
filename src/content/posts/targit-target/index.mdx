@@ -3,7 +3,7 @@ title: "TARGIT CubeSat Target Subsystem"
 pubDate: 2020-05-05
 description: "A CubeSat subsystem."
 author: "Alex Bustos"
-image: "../../assets/posts/targit-target/space-render.webp"
+image: "./space-render.webp"
 imageAlt: "A 3D render of a small satellite in space."
 project: true
 tags: ["3D printing", "CAD", "Research"]
@@ -11,16 +11,16 @@ tags: ["3D printing", "CAD", "Research"]
 
 import ClickableImage from "@components/ClickableImage.svelte";
 import ImageGrid from "@components/ImageGrid.astro";
-import poster from "@assets/posts/targit-target/ssi-poster.webp";
-import labeledExplodedView from "@assets/posts/targit-target/labeled-exploded-view.webp";
-import assembledPrototype from "@assets/posts/targit-target/assembled-prototype.webp";
-import bottomRender from "@assets/posts/targit-target/bottom-render.webp";
-import deployedIsoRender from "@assets/posts/targit-target/deployed-iso-render.webp";
-import internalChambers from "@assets/posts/targit-target/internal-chambers.webp";
-import panelAndHinge from "@assets/posts/targit-target/panel-and-hinge.webp";
-import spaceRender from "@assets/posts/targit-target/space-render.webp";
-import stowedIsoRender from "@assets/posts/targit-target/stowed-iso-render.webp";
-import unprocessedPrintedParts from "@assets/posts/targit-target/unprocessed-printed-parts.webp";
+import poster from "./ssi-poster.webp";
+import labeledExplodedView from "./labeled-exploded-view.webp";
+import assembledPrototype from "./assembled-prototype.webp";
+import bottomRender from "./bottom-render.webp";
+import deployedIsoRender from "./deployed-iso-render.webp";
+import internalChambers from "./internal-chambers.webp";
+import panelAndHinge from "./panel-and-hinge.webp";
+import spaceRender from "./space-render.webp";
+import stowedIsoRender from "./stowed-iso-render.webp";
+import unprocessedPrintedParts from "./unprocessed-printed-parts.webp";
 import { Image } from "astro:assets";
 
 ## Background
@@ -35,7 +35,6 @@ the satellite's imaging operations.
 
 <ClickableImage
     caption="Target architecture breakdown."
-    captionMode="below"
     client:load
     imgSrc={labeledExplodedView.src}
 >
