@@ -6,5 +6,5 @@ const photos = await getCollection("photos");
 ---
 
 <BaseLayout pageTitle="Photos">
-	{photos.map((p) => <p>{p.data.title}</p>)}
+    {photos.map((p) => <p>{p.data.title}</p>)}
 </BaseLayout>

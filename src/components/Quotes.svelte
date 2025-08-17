@@ -140,7 +140,7 @@
     });
 </script>
 
-<Dots class="border-neutral-300 border bg-background">
+<Dots class="border-neutral-300 border bg-background z-10">
     <h1 class="pt-5 pb-10 px-2 text-4xl text-center font-crimson italic">
         Quotes I Like
     </h1>
@@ -163,8 +163,10 @@
     </div>
 </Dots>
 
-<div
+<Dots
     class="flex flex-col gap-4 px-4 pb-4 pt-10 diagonal-lines border-l border-r border-b border-neutral-300 border-dashed"
+    topLeft={false}
+    topRight={false}
 >
     {#each groupedQuotes as [key, quoteList] (key)}
         <div
@@ -222,4 +224,4 @@
             {/each}
         </div>
     {/each}
-</div>
+</Dots>

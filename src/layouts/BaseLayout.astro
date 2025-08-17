@@ -22,7 +22,7 @@ interface Props {
 const { pageTitle } = Astro.props;
 ---
 
-<html lang="en" id="html-root" class="bg-slate-50">
+<html lang="en" id="html-root">
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.png" />
@@ -32,7 +32,8 @@ const { pageTitle } = Astro.props;
         <title>Alex Bustos | {pageTitle}</title>
     </head>
 
-    <body>
+    <body class="bg-slate-50">
+        <!--In the future, I feel like I may want the option to add stuff in the side bars, which is why the header and the content slot both have the same breakpoints.-->
         <div class="w-[90vw] xl:w-[50vw] mx-auto mt-4 mb-10">
             <Header />
         </div>
