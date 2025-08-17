@@ -1,3 +1,3 @@
 # My Website
 
-My website, made mostly with Astro, Svelte and TailwindCSS.
+My website, made mostly with Astro, Svelte, and TailwindCSS.
