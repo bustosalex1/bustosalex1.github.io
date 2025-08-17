@@ -56,7 +56,7 @@ to provide a way to embed other web projects on my website.
                 }}
             >
                 {#if selected}
-                    <Minimize class="w-4 h-4" />
+                    <Minimize class="w-4 h-4 mx-auto" />
                 {:else}
                     <Maximize class="w-4 h-4 mx-auto" />
                 {/if}
