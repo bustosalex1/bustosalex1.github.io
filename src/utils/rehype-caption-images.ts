@@ -1,6 +1,11 @@
 import { visit } from "unist-util-visit";
 import type { Root, Element } from "hast";
 
+/**
+ * A Rehype plugin that takes images with captions (represented by the `title`
+ * attribute on an `img` tag) and transforms them into `figure` with `img` and
+ * `figcaption` child elements.
+ */
 export default function rehypeCaptionImages() {
     return (tree: Root) => {
         visit(tree, "element", (node, index, parent) => {
