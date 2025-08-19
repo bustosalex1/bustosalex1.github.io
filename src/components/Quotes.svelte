@@ -187,7 +187,7 @@
                         {@html quote.quote}
                     </div>
                     <div
-                        class="flex flex-row h-10 items-stretch overflow-y-scroll"
+                        class="flex flex-row h-10 items-stretch overflow-x-auto w-full"
                     >
                         <div class="grow"></div>
                         {#if quote.character !== undefined}
