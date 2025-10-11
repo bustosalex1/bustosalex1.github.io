@@ -1,7 +1,7 @@
 {
     "name": "website",
     "type": "module",
-    "version": "0.3",
+    "version": "0.4",
     "packageManager": "pnpm@9.4.0",
     "scripts": {
         "stamp": "echo \"COMMIT_HASH=$(git rev-parse --short HEAD)\"> .env && echo \"WEBSITE_VERSION=$(node -p \"require('./package.json').version\")\">>.env",
@@ -14,25 +14,25 @@
         "lint": "prettier --check . && eslint . && svelte-check --tsconfig ./tsconfig.json"
     },
     "dependencies": {
-        "@fontsource/crimson-text": "^5.2.6",
+        "@fontsource/crimson-text": "^5.2.7",
         "fuse.js": "^7.1.0",
-        "katex": "^0.16.22"
+        "katex": "^0.16.23"
     },
     "devDependencies": {
-        "@astrojs/mdx": "^4.3.4",
-        "@astrojs/svelte": "^7.1.0",
+        "@astrojs/mdx": "^4.3.7",
+        "@astrojs/svelte": "^7.2.0",
         "@astrojs/ts-plugin": "^1.10.4",
-        "@iconify-json/carbon": "^1.2.13",
-        "@iconify-json/material-symbols": "^1.2.32",
-        "@iconify-json/octicon": "^1.2.10",
-        "@tailwindcss/typography": "^0.5.16",
-        "@tailwindcss/vite": "^4.1.12",
+        "@iconify-json/carbon": "^1.2.14",
+        "@iconify-json/material-symbols": "^1.2.41",
+        "@iconify-json/octicon": "^1.2.16",
+        "@tailwindcss/typography": "^0.5.19",
+        "@tailwindcss/vite": "^4.1.14",
         "@types/eslint": "^9.6.1",
         "@types/hast": "^3.0.4",
-        "astro": "^5.13.2",
-        "eslint": "^9.33.0",
+        "astro": "^5.14.4",
+        "eslint": "^9.37.0",
         "eslint-config-prettier": "^10.1.8",
-        "eslint-plugin-svelte": "^3.11.0",
+        "eslint-plugin-svelte": "^3.12.4",
         "globals": "16.0.0",
         "prettier": "^3.6.2",
         "prettier-plugin-astro": "^0.14.1",
@@ -40,13 +40,13 @@
         "rehype-katex": "^7.0.1",
         "remark-math": "^6.0.0",
         "sharp": "^0.33.5",
-        "svelte": "^5.38.1",
-        "svelte-check": "^4.3.1",
-        "tailwindcss": "^4.1.12",
-        "typescript": "^5.9.2",
-        "typescript-eslint": "^8.39.1",
+        "svelte": "^5.39.11",
+        "svelte-check": "^4.3.3",
+        "tailwindcss": "^4.1.14",
+        "typescript": "^5.9.3",
+        "typescript-eslint": "^8.46.0",
         "unist-util-visit": "^5.0.0",
-        "unplugin-icons": "^22.2.0",
-        "vite": "^6.3.5"
+        "unplugin-icons": "^22.4.2",
+        "vite": "^6.3.6"
     }
 }
