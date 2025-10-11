@@ -1,9 +1,4 @@
 <script lang="ts">
-    /**
-     * Component providing links to main pages on my website. New links and their
-     * slugs can be added in the `links` variable. This component also displays the
-     * title of the website (my name) and the theme toggle.
-     */
     import Dots from "@components/Dots.svelte";
     import Menu from "~icons/material-symbols/menu-rounded";
     import Close from "~icons/material-symbols/close-rounded";
@@ -18,12 +13,18 @@
     let { url }: Props = $props();
     const links = [
         ["Posts", "/"],
-        ["Photos", "/experiments/photos"],
         ["Quotes I Like", "/experiments/quotes"],
     ];
 
+    /**
+     * A bit of state to keep track of whether or not a sidebar menu is shown,
+     * instead of a row of links at the top of the page. This is done for
+     * smaller screens.
+     */
     let show = $state(false);
 
+    // a little bit of reactivity to make it so that the page can't be scrolled
+    // if the screen is small enough to have the links displayed as a sidebar
     $effect(() => {
         if (show) {
             document.body.classList.add("overflow-hidden");
@@ -39,6 +40,11 @@
     });
 </script>
 
+<!--@component
+Component providing links to main pages on my website. New links and their
+slugs can be added in the `links` variable. This component also displays the
+title of the website (my name).
+-->
 <Dots
     class="flex flex-row w-full bg-background h-10 mx-auto pl-4 pr-1 border-neutral-300 border items-center"
 >

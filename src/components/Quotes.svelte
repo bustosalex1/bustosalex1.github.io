@@ -140,13 +140,23 @@
     });
 </script>
 
+<!--@component
+Basically most of the page for the `quotes.astro` page, since I'm currently
+using a bit of reactivity to sort posts. in the future it would probably be
+good to statically render these and maybe make a content collection for quotes,
+or something like that.
+-->
+
+<!--title section-->
 <Dots class="border-neutral-300 border bg-background z-10">
+    <!--title-->
     <h1 class="pt-5 pb-10 px-2 text-4xl text-center font-crimson italic">
         Quotes I Like
     </h1>
     <div
         class="flex flex-row border-neutral-300 h-10 justify-center absolute -bottom-5 border w-fit mx-auto left-0 right-0 rounded-sm bg-background hard-shadow"
     >
+        <!--sorting controls-->
         <div
             class="whitespace-nowrap p-2 rounded-l-sm border-neutral-300 border-r content-center text-center"
         >
@@ -163,11 +173,13 @@
     </div>
 </Dots>
 
+<!--box containing all of the quotes-->
 <Dots
     class="flex flex-col gap-4 px-4 pb-4 pt-10 diagonal-lines border-l border-r border-b border-neutral-300 border-dashed"
     topLeft={false}
     topRight={false}
 >
+    <!--render each quote list-->
     {#each groupedQuotes as [key, quoteList] (key)}
         <div
             class="flex flex-col divide-y divide-neutral-300 border rounded-sm hard-shadow border-neutral-300 bg-background"
@@ -179,6 +191,8 @@
             >
                 {key}
             </a>
+
+            <!--render each quote in the quote list-->
             {#each quoteList as quote (quote.quote)}
                 <div class="flex flex-col w-full">
                     <div
