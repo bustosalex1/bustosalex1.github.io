@@ -1,9 +1,16 @@
 ---
 /**
- * A simple component that basically just provides a link to a larger image
+ * A simple component that basically just provides a link to a larger image.
  */
+import { Image } from "astro:assets";
+interface Props {
+    src: string;
+    externalSrc: string;
+    caption?: string;
+    alt?: string;
+}
+
+let { src, externalSrc, caption, alt }: Props = Astro.props;
 ---
 
-<div>
-    <slot />
-</div>
+<div></div>
