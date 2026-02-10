@@ -6,10 +6,11 @@ import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import rehypeCaptionImages from "./src/utils/rehype-caption-images.ts";
 import tailwindcss from "@tailwindcss/vite";
+import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-    integrations: [svelte(), mdx()],
+    integrations: [svelte(), mdx(), sitemap()],
     site: "https://bustosalex1.github.io",
     markdown: {
         shikiConfig: {
