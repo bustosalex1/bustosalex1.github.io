@@ -13,7 +13,7 @@ interface Props {
 const { data } = Astro.props;
 ---
 
-<BaseLayout pageTitle={data.title}>
+<BaseLayout pageTitle={data.title} math={data.math}>
     <ArticleTitle
         title={data.title}
         pubDate={data.pubDate}

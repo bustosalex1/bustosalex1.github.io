@@ -13,13 +13,15 @@ import "@fontsource/crimson-text/700-italic.css";
 import "@fontsource/crimson-text/400.css";
 import "@fontsource/crimson-text/600.css";
 import "@fontsource/crimson-text/700.css";
-import "katex/dist/katex.min.css";
-
 interface Props {
     pageTitle: string;
+    math?: boolean;
 }
 
-const { pageTitle } = Astro.props;
+const { pageTitle, math } = Astro.props;
+if (math) {
+    await import("katex/dist/katex.min.css");
+}
 ---
 
 <html lang="en" id="html-root">
