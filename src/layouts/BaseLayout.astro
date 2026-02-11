@@ -36,11 +36,13 @@ if (math) {
 
     <body class="bg-slate-50">
         <!--In the future, I feel like I may want the option to add stuff in the side bars, which is why the header and the content slot both have the same breakpoints.-->
-        <div class="w-[90vw] xl:w-[50vw] mx-auto mt-4 mb-10">
+        <div class="w-[90vw] xl:w-[50vw] mx-auto mt-4">
             <Header />
         </div>
 
-        <div class="flex flex-col w-[90vw] xl:w-[50vw] mx-auto">
+        <div
+            class="flex flex-col w-[90vw] xl:w-[50vw] mx-auto border-l border-r border-neutral-300"
+        >
             <slot />
         </div>
         <Footer />

@@ -1,5 +1,4 @@
 <script lang="ts">
-    import Dots from "@components/Dots.svelte";
     import Menu from "~icons/material-symbols/menu-rounded";
     import Close from "~icons/material-symbols/close-rounded";
     import { fade, slide } from "svelte/transition";
@@ -45,12 +44,12 @@ Component providing links to main pages on my website. New links and their
 slugs can be added in the `links` variable. This component also displays the
 title of the website (my name).
 -->
-<Dots
-    class="flex flex-row w-full bg-background h-10 mx-auto pl-4 pr-1 border-neutral-300 border items-center"
+<div
+    class="flex flex-row w-full bg-background h-11 mx-auto pl-4 border-neutral-300 border items-center"
 >
     <a
         href="/"
-        class="font-bold whitespace-nowrap text-content transition-all duration-150 content-center hover:text-primary pr-4 border-neutral-300 border-r h-10"
+        class="font-bold whitespace-nowrap text-content transition-all duration-150 content-center hover:text-primary pr-4 border-neutral-300 border-r h-10 font-mono text-sm"
     >
         Alex Bustos
     </a>
@@ -65,15 +64,18 @@ title of the website (my name).
                         (url === "/" && link === "/") ||
                         (url === "" && link === "/"),
                 },
-                "hover:text-primary transition-all duration-300 px-4 border-neutral-300 content-center whitespace-nowrap border-r hidden md:block h-10",
+                "hover:text-primary transition-all duration-300 px-4 border-neutral-300 content-center whitespace-nowrap border-r hidden md:block h-10 font-mono text-sm",
             ]}
         >
             {title}
         </a>
     {/each}
+    <div
+        class="grow h-full border-neutral-300 diagonal-lines md:border-none border-r"
+    ></div>
     <button
         class={[
-            "ml-auto md:hidden content-center rounded-sm h-8 w-8 hover:text-primary group transition-all duration-150 hover:bg-primary/10 cursor-pointer active:scale-90",
+            "md:hidden content-center h-full aspect-square hover:text-primary group transition-all duration-150 hover:bg-primary/10 cursor-pointer active:scale-90",
             { "z-50": show },
         ]}
         onclick={() => {
@@ -90,26 +92,21 @@ title of the website (my name).
             />
         {/if}
     </button>
-</Dots>
+</div>
 
 {#if show}
     <div
         class="fixed left-0 top-0 h-full bg-background border-r border-neutral-300 z-50 flex flex-col items-stretch min-w-60"
         transition:slide={{ axis: "x", duration: 150 }}
     >
-        <Dots
-            class="p-2 border-b border-neutral-300"
-            topLeft={false}
-            topRight={false}
-            bottomLeft={false}
-        >
+        <div class="p-2 border-b border-neutral-300">
             <a
                 href="/"
                 class="font-bold whitespace-nowrap transition-all duration-150 content-center hover:text-primary"
             >
                 Alex Bustos
             </a>
-        </Dots>
+        </div>
         {#each links as [title, link] (link)}
             <a
                 href={link}
