@@ -19,6 +19,7 @@
     --line-color: oklch(0.8168 0.0133 266.68);
     --line-secondary-color: oklch(0.8912 0.0101 267.35);
     --primary-color: oklch(75.461% 0.183 346.812);
+    --diagonal-lines-svg: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23cecece' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 /* Dark theme colors. */
@@ -33,6 +34,8 @@
     --line-color: oklch(0.364 0.0181 268.19);
     --line-secondary-color: oklch(0.3169 0.017 266.41);
     --primary-color: oklch(78% 0.18 346.812);
+    --diagonal-lines-svg: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23636770' fill-opacity='0.25' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+
 }
 
 @theme inline {
@@ -51,7 +54,7 @@
 }
 
 @utility diagonal-lines {
-    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23cecece' fill-opacity='0.3' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+    background-image: var(--diagonal-lines-svg);
 }
 
 @utility text-shadow-hero {
