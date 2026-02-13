@@ -45,13 +45,6 @@
     --font-mono: "Fira Code", mono;
 }
 
-/*TODO: remove!*/
-@layer components {
-    .btn-hover {
-        @apply transition-all hover:bg-neutral-400/30 cursor-pointer duration-300;
-    }
-}
-
 @utility diagonal-lines {
     background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23cecece' fill-opacity='0.3' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
 }
@@ -60,9 +53,6 @@
 .katex-display {
     overflow: auto hidden;
 }
-
-
-
 
 /* Article styling rules */
 .prose {
@@ -87,8 +77,6 @@
         }
     }
 
-
-
     & :where(h1, h2, h3, h4, h5, h6) {
         @apply font-mono text-ink m-0 p-0 border-y border-line;
     }
@@ -105,8 +93,8 @@
 
         /* After primary headers, fill the remaining space with diagonal lines. */
         &::after {
-            content: '';
-            @apply diagonal-lines grow self-stretch border-l border-line ml-4
+            content: "";
+            @apply diagonal-lines grow self-stretch border-l border-line ml-4;
         }
     }
 
@@ -116,7 +104,7 @@
     }
 
     & :where(tr) {
-        @apply border-b border-dashed border-line
+        @apply border-b border-dashed border-line;
     }
 
     & :where(tr:last-child) {
@@ -136,7 +124,7 @@
     }
 
     & :where(thead tr)::before {
-        content: '';
+        content: "";
         display: table-cell;
         @apply border-b border-r border-line;
     }
@@ -149,7 +137,6 @@
         @apply border-r-0;
     }
 
-
     & :where(td) {
         @apply border-r border-line px-2;
     }
@@ -159,7 +146,7 @@
     }
 
     & :where(table caption) {
-        @apply text-left p-2 border-t border-line uppercase text-xs
+        @apply text-left p-2 border-t border-line uppercase text-xs;
     }
 
     & :where(table caption)::before {
@@ -167,6 +154,4 @@
         content: "Table " counter(table, decimal-leading-zero) ". ";
         @apply text-ink-secondary;
     }
-
-
 }
