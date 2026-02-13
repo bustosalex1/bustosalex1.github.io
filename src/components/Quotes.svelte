@@ -198,6 +198,7 @@ or something like that.
                     <div
                         class="border-b border-line border-dashed p-8 font-crimson text-lg text-ink"
                     >
+                        <!--eslint-disable-next-line svelte/no-at-html-tags-->
                         {@html quote.quote}
                     </div>
                     <div
