@@ -37,7 +37,7 @@ export default defineConfig({
             [
                 rehypeCaptionTables,
                 {
-                    // rehype caption images options
+                    // rehype caption tables options
                 },
             ],
         ],

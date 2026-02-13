@@ -26,7 +26,7 @@ export default function rehypeCaptionImages() {
                         },
                         {
                             type: "element",
-                            tagName: "figCaption",
+                            tagName: "figcaption",
                             properties: {},
                             children: [
                                 {
