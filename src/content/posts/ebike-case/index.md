@@ -5,11 +5,12 @@ description: "An actual box."
 author: "Alex Bustos"
 image: "./installed-case.webp"
 imageAlt: "a picture of an e-bike with a 3D printed controller case"
+useImage: true
 project: true
 tags: ["3D printing", "CAD"]
 ---
 
-![a picture of an e-bike with a 3D printed controller case](./installed-case.webp "Completed case installed on bike.")
+## Intro
 
 Recently I purchased a kit to turn my regular bike into an electric bike. It
 came with a hub-style motor, 1000W controller, a throttle, and a battery. To
@@ -22,6 +23,8 @@ for neater wire management and an overall cleaner design. I ended up designing a
 together. It also had anchors for zip-ties to keep cables neatly stowed away.
 
 ![a picture of an e-bike without a 3D printed controller case](./old-bike.webp "Bike prior to 3D printed case.")
+
+## Work
 
 This project ended up being a great test of my recently upgraded CoreXY 3D
 Printer. Up until this point, I had only ever printed relatively small parts. I

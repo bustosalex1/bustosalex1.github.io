@@ -5,6 +5,7 @@ description: "A small 3D printer build."
 author: "Alex Bustos"
 image: "./printer-thumbnail.webp"
 imageAlt: "A picture of a 3D printer."
+useImage: true
 project: true
 tags: ["3D printing", "CAD"]
 ---
@@ -17,8 +18,6 @@ import printerIsoRender from "./printer-iso-render.webp";
 import printerTopAngle from "./printer-top-angle.webp";
 import toolheadRender from "./toolhead-render.webp";
 import samplePrint from "./sample-print.webp";
-
-![an image of a 3D printer](./printer-front-angle.webp "Current iteration of the 3D printer.")
 
 ## Background
 
@@ -43,22 +42,25 @@ available at Georgia Tech to print these parts out. I also designed the X-axis
 to be machined out of aluminum, which I machined on a CNC mill. Once I reached a
 point where my printer was able to somewhat function on its own, I started using
 it to print upgrades for itself. Here's a rundown of some of the printer
-specifications:
+specifications.
 
-- 250mm x 250mm x 330mm (X x Y x Z) Footprint
-- 150mm x 150mm x 180mm (X x Y x Z) Build Volume
-- CoreXY Motion System
-- 32-Bit SKR Mini E3 Control Board
-- TMC 2209 Stepper Drivers
-- Automatic Bed Leveling via Inductive Sensor
-- Dual-Gear Bowden Extruder
-- Magnetic Build Plate
-- Linear Rails on X and Y Axes
+_Printer Specifications_
+
+| Spec            | Value                             |
+| --------------- | --------------------------------- |
+| Footprint       | 250mm x 250mm x 330mm (X x Y x Z) |
+| Build Volume    | 150mm x 150mm x 180mm (X x Y x Z) |
+| Motion System   | CoreXY                            |
+| Control Board   | 32-Bit SKR Mini E3                |
+| Stepper Drivers | TMC 2209                          |
+| Bed Leveling    | Automatic via Inductive Sensor    |
+| Extruder        | Dual-Gear Bowden                  |
+| Build Plate     | Magnetic                          |
+| Linear Motion   | Linear Rails on X and Y Axes      |
 
 The first version of the printer (a partially disassembled version is shown
 below), was used to print a bunch of parts for what I would consider the "final"
 version.
-
 ![initial version of 3D printer](./old-printer.webp "Initial version of printer.")
 
 ![printed parts for final version of 3D printer](./printer-parts.webp "Printed parts for final version of printer.")
@@ -108,5 +110,4 @@ be valuable to fine-tune the belt tension. Also, the printer currently runs on
 smaller wires and faster motor speeds. While there's a number of things I would
 change and the printer is far from perfect, I'm very happy with the final result
 and I had a lot of fun building it.
-
 ![a 3D printed carabiner](./sample-print.webp "Sample printed part.")

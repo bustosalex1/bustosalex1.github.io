@@ -1,44 +1,45 @@
 ---
 import Tag from "./Tag.astro";
 import FormattedDate from "./FormattedDate.astro";
+import Image from "astro/components/Image.astro";
+import type { CollectionEntry } from "astro:content";
 interface Props {
-    title: string;
-    pubDate: Date;
-    tags?: string[];
-    posted: boolean;
-    cls?: string;
+    data: CollectionEntry<"posts">["data"];
 }
 
-const { title, pubDate, tags, posted, cls } = Astro.props;
+const { data }: Props = Astro.props;
 ---
 
-<div class="border border-neutral-300 bg-background">
-    <h1 class="py-5 px-2 text-4xl text-center font-crimson italic">
-        {title}
-
-        <!--or, alternatively, a class-->
-        {cls && <div class="text-sm content-center px-2">{cls}</div>}
-    </h1>
-    <div
-        class="flex flex-row items-center w-full border-neutral-300 border-dashed border-t justify-center md:justify-start"
-    >
-        <div
-            class="grow h-10 diagonal-lines border-r border-neutral-300 border-dashed hidden md:block"
-        >
-        </div>
-
-        <!--list of tags-->
-        {
-            tags && (
-                <div class="flex gap-2 flex-row flex-nowrap items-center px-4 h-10 border-r border-neutral-300 border-dashed overflow-x-auto">
-                    {tags.map((tag) => (
-                        <Tag tag={tag} />
-                    ))}
+    {
+        data.useImage && (
+            <div class="relative w-full overflow-hidden">
+                <Image
+                    src={data.image}
+                    alt={data.imageAlt}
+                    class="object-cover w-full h-full"
+                />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+        <div class="absolute bottom-0 p-5 text-white flex flex-col items-center w-full gap-3">
+            <h1 class="text-2xl md:text-5xl text-center font-crimson italic">
+                {data.title}
+            </h1>
+            <p class="text-sm font-mono">{data.description}</p>
+            <div class="flex flex-row items-center w-full justify-center">
+                <!--list of tags-->
+                {
+                    data.tags && (
+                        <div class="flex gap-2 flex-row flex-nowrap items-center border-line border-dashed overflow-x-auto">
+                            {data.tags.map((tag) => (
+                                <Tag tag={tag} />
+                            ))}
+                        </div>
+                    )
+                }
+                <div class="px-2">
+                    <FormattedDate date={data.pubDate} posted={true} />
                 </div>
-            )
-        }
-        <div class="px-4 font-normal">
-            <FormattedDate date={pubDate} posted={posted} />
+            </div>
         </div>
-    </div>
-</div>
+            </div>
+        )
+    }

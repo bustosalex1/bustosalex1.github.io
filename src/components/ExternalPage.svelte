@@ -33,17 +33,17 @@ to provide a way to embed other web projects on my website.
 -->
 <!--rounded rectangle that wraps the iframe and title.-->
 <div
-    class={`flex flex-col border border-neutral-300 bg-background ${selected ? "fixed inset-0 z-50 overflow-auto" : "h-[50vh] my-2 hard-shadow rounded-sm overflow-clip"}`}
+    class={`flex flex-col border border-line bg-bg ${selected ? "fixed inset-0 z-50 overflow-auto" : "h-[50vh] my-2   rounded-sm overflow-clip"}`}
 >
     <!--row providing a title and some buttons to full screen or go to the page-->
     <div
-        class="flex flex-row justify-between border-b border-neutral-300 items-center"
+        class="flex flex-row justify-between border-b border-line items-center"
     >
         <div class="font-semibold px-2">{title}</div>
 
         <div class="flex flex-row h-8 items-stretch">
             <a
-                class="p-1 btn-hover border-l border-r border-neutral-300 content-center h-8 w-8"
+                class="p-1 btn-hover border-l border-r border-line content-center h-8 w-8"
                 href={link}
                 target="_blank"
             >

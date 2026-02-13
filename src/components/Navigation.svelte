@@ -1,6 +1,8 @@
 <script lang="ts">
     import Menu from "~icons/material-symbols/menu-rounded";
     import Close from "~icons/material-symbols/close-rounded";
+    import ThemeToggle from "@components/ThemeToggle.svelte";
+
     import { fade, slide } from "svelte/transition";
     import { MediaQuery } from "svelte/reactivity";
 
@@ -45,11 +47,11 @@ slugs can be added in the `links` variable. This component also displays the
 title of the website (my name).
 -->
 <div
-    class="flex flex-row w-full bg-background h-11 mx-auto pl-4 border-neutral-300 border items-center"
+    class="flex flex-row w-full h-11 mx-auto pl-4 border-line border items-center"
 >
     <a
         href="/"
-        class="font-bold whitespace-nowrap text-content transition-all duration-150 content-center hover:text-primary pr-4 border-neutral-300 border-r h-10 font-mono text-sm"
+        class="font-bold whitespace-nowrap text-ink transition-all duration-150 content-center hover:text-primary pr-4 border-line border-r h-10 font-mono text-sm"
     >
         Alex Bustos
     </a>
@@ -64,15 +66,17 @@ title of the website (my name).
                         (url === "/" && link === "/") ||
                         (url === "" && link === "/"),
                 },
-                "hover:text-primary transition-all duration-300 px-4 border-neutral-300 content-center whitespace-nowrap border-r hidden md:block h-10 font-mono text-sm",
+                "hover:text-primary transition-all duration-300 px-4 border-line content-center whitespace-nowrap border-r hidden md:block h-10 font-mono text-sm text-ink",
             ]}
         >
             {title}
         </a>
     {/each}
     <div
-        class="grow h-full border-neutral-300 diagonal-lines md:border-none border-r"
+        class="grow h-full border-line diagonal-lines md:border-none border-r"
     ></div>
+
+    <ThemeToggle />
     <button
         class={[
             "md:hidden content-center h-full aspect-square hover:text-primary group transition-all duration-150 hover:bg-primary/10 cursor-pointer active:scale-90",
@@ -96,10 +100,10 @@ title of the website (my name).
 
 {#if show}
     <div
-        class="fixed left-0 top-0 h-full bg-background border-r border-neutral-300 z-50 flex flex-col items-stretch min-w-60"
+        class="fixed left-0 top-0 h-full bg-bg border-r border-line z-50 flex flex-col items-stretch min-w-60"
         transition:slide={{ axis: "x", duration: 150 }}
     >
-        <div class="p-2 border-b border-neutral-300">
+        <div class="p-2 border-b border-line">
             <a
                 href="/"
                 class="font-bold whitespace-nowrap transition-all duration-150 content-center hover:text-primary"
@@ -118,7 +122,7 @@ title of the website (my name).
                             (url === "/" && link === "/") ||
                             (url === "" && link === "/"),
                     },
-                    "hover:text-primary transition-all duration-300 pr-4 pl-6 border-neutral-300 content-center whitespace-nowrap border-b py-2",
+                    "hover:text-primary transition-all duration-300 pr-4 pl-6 border-line content-center whitespace-nowrap border-b py-2",
                 ]}
             >
                 {title}

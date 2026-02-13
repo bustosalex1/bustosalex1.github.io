@@ -146,63 +146,67 @@ or something like that.
 -->
 
 <!--title section-->
-<div class="border-neutral-300 border bg-background z-10">
+<div class="border-line border-b">
     <!--title-->
-    <h1 class="pt-5 pb-10 px-2 text-4xl text-center font-crimson italic">
+    <h1
+        class="pt-10 pb-10 px-2 text-4xl text-center font-crimson italic text-ink"
+    >
         Quotes I Like
     </h1>
-    <div
-        class="flex flex-row border-neutral-300 h-10 justify-center absolute -bottom-5 border w-fit mx-auto left-0 right-0 rounded-sm bg-background hard-shadow"
-    >
-        <!--sorting controls-->
-        <div
-            class="whitespace-nowrap p-2 rounded-l-sm border-neutral-300 border-r content-center text-center"
-        >
-            Sort by
+    <div class="flex flex-row items-stretch w-full h-11 border-line border-t">
+        <div class="grow diagonal-lines"></div>
+        <div class="flex flex-row w-fit">
+            <!--sorting controls-->
+            <div
+                class="whitespace-nowrap p-2 border-l border-line font-mono border-r content-center text-center text-ink"
+            >
+                Sort by
+            </div>
+            <select
+                bind:value={sortBy}
+                class="p-2 w-fit cursor-pointer content-center font-mono text-ink"
+            >
+                <option value="source">Source Material</option>
+                <option value="author">Author</option>
+                <option value="character">Character</option>
+            </select>
         </div>
-        <select
-            bind:value={sortBy}
-            class="p-2 w-fit rounded-r-sm cursor-pointer content-center"
-        >
-            <option value="source">Source Material</option>
-            <option value="author">Author</option>
-            <option value="character">Character</option>
-        </select>
     </div>
 </div>
 
 <!--box containing all of the quotes-->
-<div
-    class="flex flex-col gap-4 px-4 pb-4 pt-10 diagonal-lines border-l border-r border-b border-neutral-300 border-dashed"
->
+<div class="flex flex-col gap-4 p-4">
     <!--render each quote list-->
     {#each groupedQuotes as [key, quoteList] (key)}
         <div
-            class="flex flex-col divide-y divide-neutral-300 border rounded-sm hard-shadow border-neutral-300 bg-background"
+            class="flex flex-col divide-y divide-line border border-line bg-secondary-bg"
         >
-            <a
-                class="text-xl font-semibold font-crimson p-2 sticky top-0 bg-background rounded-t-sm"
-                id={key}
-                href={`#${key}`}
-            >
-                {key}
-            </a>
+            <div class="flex flex-row sticky top-0 bg-secondary-bg">
+                <a
+                    class="font-semibold p-2 text-ink font-mono text-sm"
+                    id={key}
+                    href={`#${key}`}
+                >
+                    {key}
+                </a>
+                <div class="grow diagonal-lines border-l border-line"></div>
+            </div>
 
             <!--render each quote in the quote list-->
             {#each quoteList as quote (quote.quote)}
                 <div class="flex flex-col w-full">
                     <div
-                        class="border-b border-neutral-300 border-dashed p-8 font-crimson text-lg"
+                        class="border-b border-line border-dashed p-8 font-crimson text-lg text-ink"
                     >
                         {@html quote.quote}
                     </div>
                     <div
-                        class="flex flex-row h-10 items-stretch overflow-x-auto w-full"
+                        class="flex flex-row h-10 items-stretch overflow-x-auto w-full text-ink-secondary font-mono text-sm"
                     >
                         <div class="grow"></div>
                         {#if quote.character !== undefined}
                             <div
-                                class="border-r border-neutral-300 border-dashed content-center px-2 whitespace-nowrap"
+                                class="border-r border-line border-dashed content-center px-2 whitespace-nowrap"
                             >
                                 &mdash; {quote.character}
                             </div>
@@ -211,7 +215,7 @@ or something like that.
                             class={[
                                 "content-center px-2 whitespace-nowrap",
                                 {
-                                    "border-r border-dashed border-neutral-300":
+                                    "border-r border-dashed border-line":
                                         quote.aboutCharacter !== undefined,
                                 },
                             ]}

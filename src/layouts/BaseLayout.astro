@@ -13,6 +13,7 @@ import "@fontsource/crimson-text/700-italic.css";
 import "@fontsource/crimson-text/400.css";
 import "@fontsource/crimson-text/600.css";
 import "@fontsource/crimson-text/700.css";
+import "@fontsource/fira-code";
 interface Props {
     pageTitle: string;
     math?: boolean;
@@ -32,19 +33,26 @@ if (math) {
         <meta name="generator" content={Astro.generator} />
         <meta name="description" content="Alex Bustos's personal website." />
         <title>Alex Bustos | {pageTitle}</title>
+        <script is:inline>
+            const t = localStorage.getItem("theme");
+            if (t) document.documentElement.setAttribute("data-theme", t);
+        </script>
     </head>
 
-    <body class="bg-slate-50">
+    <body class="bg-bg">
         <!--In the future, I feel like I may want the option to add stuff in the side bars, which is why the header and the content slot both have the same breakpoints.-->
-        <div class="w-[90vw] xl:w-[50vw] mx-auto mt-4">
+        <div class="w-[90vw] xl:w-[40vw] mx-auto mt-4">
             <Header />
         </div>
 
         <div
-            class="flex flex-col w-[90vw] xl:w-[50vw] mx-auto border-l border-r border-neutral-300"
+            class="flex flex-col w-[90vw] xl:w-[40vw] mx-auto border-l border-r border-line"
         >
             <slot />
         </div>
-        <Footer />
+
+        <div class="w-[90vw] xl:w-[40vw] mx-auto">
+            <Footer />
+        </div>
     </body>
 </html>

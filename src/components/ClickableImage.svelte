@@ -57,13 +57,11 @@ be passed in using the `caption` prop, when a user hovers over the image if
 <!-- default image -->
 <button
     onclick={toggleModal}
-    class="relative cursor-pointer overflow-hidden rounded-md border border-neutral-300 hard-shadow bg-background not-prose"
+    class="relative cursor-pointer overflow-hidden not-prose"
 >
     {@render children?.()}
     {#if caption !== undefined}
-        <div
-            class="w-full text-center content-center italic font-crimson text-lg border-t border-neutral-300"
-        >
+        <div class="w-full text-left font-crimson text-lg border-t border-line">
             {caption}
         </div>
     {/if}

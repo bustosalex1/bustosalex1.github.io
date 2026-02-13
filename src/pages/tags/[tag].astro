@@ -33,11 +33,11 @@ const formattedTag = tag
 ---
 
 <BaseLayout pageTitle={`Tag: ${formattedTag}`}>
-    <div class="font-bold p-2 w-full border-neutral-300 border bg-background">
+    <div class="font-bold p-2 w-full border-line border bg-bg">
         Posts tagged with <span class="capitalize">{tag}</span>
     </div>
     <div
-        class="flex flex-col gap-4 p-4 border-neutral-300 border-l border-r border-b border-dashed diagonal-lines"
+        class="flex flex-col gap-4 p-4 border-line border-l border-r border-b border-dashed diagonal-lines"
     >
         {
             posts.map((post) => (

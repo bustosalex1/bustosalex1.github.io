@@ -5,6 +5,7 @@ import mdx from "@astrojs/mdx";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import rehypeCaptionImages from "./src/utils/rehype-caption-images.ts";
+import rehypeCaptionTables from "./src/utils/rehype-caption-tables.ts";
 import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
 
@@ -29,6 +30,12 @@ export default defineConfig({
             ],
             [
                 rehypeCaptionImages,
+                {
+                    // rehype caption images options
+                },
+            ],
+            [
+                rehypeCaptionTables,
                 {
                     // rehype caption images options
                 },

@@ -1,55 +1,39 @@
 ---
 /**
- * A flexible grid of images with the same aspect ratio. If the images provided do not have the same
- * aspect ratio, they will be justified appropriately to maintain an aspect ratio. Images can be
- * `ClickableImage` components, or just regular images. This option is specified using the
- * `clickable` boolean prop.
+ * A flexible grid of images with the same aspect ratio. If the images provided
+ * do not have the same aspect ratio, they will be justified appropriately to
+ * maintain an aspect ratio. Images can be `ClickableImage` components, or just
+ * regular images. This option is specified using the `clickable` boolean prop.
  */
 import { Image } from "astro:assets";
 import type { ImageTuple } from "@types";
-import ClickableImage from "@components/ClickableImage.svelte";
 
-// provide types for props
 interface Props {
     images: ImageTuple[];
     caption: string | undefined;
-    clickable: boolean | undefined;
-    captionMode: "hover" | "below" | undefined;
     rows: string;
     cols: string;
 }
 
-const { images, caption, clickable, captionMode, rows, cols } = Astro.props;
+const { images, caption, rows, cols } = Astro.props;
 ---
 
-<div
-    class={`grid ${cols} ${rows} gap-[1px] bg-neutral-300 border border-neutral-300 hard-shadow rounded-sm overflow-clip`}
->
-    {
-        images.map(([src, alt, caption]) =>
-            clickable ? (
-                <ClickableImage
-                    caption={caption}
-                    captionMode={captionMode}
-                    imgSrc={src.src}
-                    client:load
-                >
+<figure>
+    <div class={`grid ${cols} ${rows} gap-[1px] bg-line overflow-clip`}>
+        {
+            images.map(([src, alt, caption], i) => (
+                <div class="not-prose h-full w-full relative">
                     <Image
                         src={src}
                         alt={alt}
-                        class="not-prose object-cover h-full w-full"
+                        class="object-cover h-full w-full"
                     />
-                </ClickableImage>
-            ) : (
-                <Image src={src} alt={alt} />
-            ),
-        )
-    }
-</div>
-{
-    caption && (
-        <em class="flex justify-center text-center font-crimson text-lg">
-            {caption}
-        </em>
-    )
-}
+                    <div class="absolute left-0 right-0 bottom-0 border-t md:border md:left-2 md:bottom-2 md:right-auto border-line-secondary bg-secondary-bg text-xs font-mono p-1 ">
+                        {String.fromCharCode(97 + i)}. {caption}
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+    {caption && <figcaption>{caption}</figcaption>}
+</figure>
