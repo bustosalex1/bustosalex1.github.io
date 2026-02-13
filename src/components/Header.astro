@@ -2,11 +2,13 @@
 /**
  * Global header for my website. Basically just contains the navigation bar.
  */
-import Navigation from "@components/Navigation.astro";
+import Navigation from "@components/Navigation.svelte";
+
+const url = Astro.url.pathname;
 ---
 
 <header class="w-full">
     <nav class="w-full">
-        <Navigation />
+        <Navigation url={url} client:load />
     </nav>
 </header>

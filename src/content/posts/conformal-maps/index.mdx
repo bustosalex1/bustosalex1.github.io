@@ -1,0 +1,49 @@
+---
+title: "Conformal Map Explorer"
+pubDate: 2022-11-29
+description: "A math project for school."
+author: "Alex Bustos"
+image: "./atlas.webp"
+imageAlt:
+    "An atlas projected using a Mercator projection and rotated at an off-normal
+    angle."
+project: true
+tags: ["Math", "School", "React"]
+---
+
+import ExternalPage from "@components/ExternalPage.svelte";
+
+<ExternalPage client:load link="https://alexbustos.com/phys-6124" />
+
+## Overview
+
+This was a project I did for a graduate class, _PHYS 6124: Mathematical Methods
+of Physics_. The class covered a wide range of important math topics for
+physics, one of which was complex numbers and conformal maps. I'll be honest,
+when I was taking the class, an intuitive understanding of conformal maps eluded
+me. And at the time of writing this post, I still can't say I really understand
+them that well. At the very least, I could appreciate that some prominent map
+projections -- such as the stereographic projection and the Mercator projection
+-- were conformal.
+
+At the time, I was just starting to explore frontend web development, and I was
+really interested in D3.js, so I decided to try and tailor my final project for
+the class to fit in some of these interests.
+
+## Implementation
+
+The project page shown above is basically intended to give some sort of greater
+understanding to conformal maps by allowing users to see how different maps
+transition to each other, and how panning and rotating a map affects its
+contents.
+
+Ultimately, this ended up being more or less a React-based implementation of
+some other D3 projects out there
+([like this one](https://observablehq.com/@d3/projection-transitions)). And
+unfortunately, using React was not a great experience for this particular use
+case and probably just overcomplicated things. Based on my (limited)
+understanding of React and D3, this is basically because React, with its virtual
+DOM, and D3, are both trying to control the DOM, and managing this control
+between the two can get tricky. You can check out the implementation on the
+[project repo](https://github.com/bustosalex1/phys-6124) to see how weird it is
+(or at least, how weird I managed to make it).

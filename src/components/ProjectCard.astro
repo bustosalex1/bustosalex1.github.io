@@ -1,35 +1,71 @@
 ---
 /**
- * Clickable card providing an image, title, short description, and date of a project from the
- * `posts` content collection. This component is used on the `projects` page (which is the current
- * index of the site) to display information about all projects in the `posts` content collection.
+ * Clickable card providing an image, title, short description, and date of a
+ * project from the `posts` content collection. This component is used on the
+ * `projects` page (which is the current index of the site) to display
+ * information about all projects in the `posts` content collection.
  */
 import { Image } from "astro:assets";
+import Tag from "./Tag.astro";
 import type { CollectionEntry } from "astro:content";
 import FormattedDate from "@components/FormattedDate.astro";
 interface Props {
     post: CollectionEntry<"posts">;
 }
 
-const { post } = Astro.props;
+const { post }: Props = Astro.props;
 ---
 
-<a href={"/posts/" + post.slug}>
+<a href={"/posts/" + post.id}>
     <div
-        class="transition ease-in-out card w-full bg-base-100 shadow-xl hover:shadow-2xl hover:-translate-y-1 duration-300 ring-1 ring-base-content/20 h-full group"
+        class="group flex flex-col sm:flex-row border-line transition-all duration-150 hover:border-primary bg-secondary-bg border overflow-x-hidden"
     >
-        <figure>
-            <Image src={post.data.image} alt={post.data.imageAlt} />
-        </figure>
-        <div class="p-3 card-body">
-            <h2
-                class="leading-tight text-md font-bold group-hover:text-primary transition ease-in-out duration-300"
+        <!--image thumbnail-->
+        <div
+            class="aspect-square w-full sm:w-28 overflow-hidden shrink-0 border-b sm:border-r sm:border-b-0 border-line group-hover:border-primary transition-all duration-150"
+        >
+            <Image
+                src={post.data.image}
+                alt={post.data.imageAlt}
+                class="object-cover w-full h-full"
+            />
+        </div>
+
+        <!--div containing title text, tagline and other stuff-->
+        <div class="flex flex-col grow">
+            <!--flex row for title, description, and date.-->
+            <div class="flex flex-row w-full justify-between flex-wrap p-4">
+                <div class="flex flex-col justify-start gap-1">
+                    <h1
+                        class="font-bold font-mono text-sm group-hover:text-primary text-ink transition-all duration-150"
+                    >
+                        {post.data.title}
+                    </h1>
+                    <div class="text-sm font-mono text-ink-secondary">
+                        {post.data.description}
+                    </div>
+                </div>
+                <FormattedDate
+                    date={post.data.pubDate}
+                    class="text-ink-tertiary ml-auto pt-2 sm:ml-0 sm:pt-0"
+                />
+            </div>
+
+            <!--diagonal lines bar and tags-->
+            <div
+                class="flex flex-row w-full border-dashed border-line border-t items-stretch"
             >
-                {post.data.title}
-            </h2>
-            <p class="text-sm">{post.data.description}</p>
-            <div class="card-actions justify-end">
-                <FormattedDate date={post.data.pubDate} />
+                <div
+                    class="diagonal-lines border-r border-line border-dashed grow"
+                >
+                </div>
+                <div class="flex flex-row p-2 space-x-2">
+                    {
+                        post.data.tags.map((t) => {
+                            return <Tag tag={t} link={false} />;
+                        })
+                    }
+                </div>
             </div>
         </div>
     </div>

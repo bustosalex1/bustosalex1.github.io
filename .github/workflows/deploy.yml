@@ -17,9 +17,11 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout your repository using git
-              uses: actions/checkout@v4
+              uses: actions/checkout@v6
+              with:
+                  lfs: true
             - name: Install, build, and upload your site
-              uses: withastro/action@v2.0.1
+              uses: withastro/action@v5
 
     deploy:
         needs: build

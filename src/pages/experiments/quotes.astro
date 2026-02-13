@@ -1,0 +1,11 @@
+---
+/**
+ * Page displaying some quotes I like.
+ */
+import BaseLayout from "@layouts/BaseLayout.astro";
+import QuoteList from "@components/Quotes.svelte";
+---
+
+<BaseLayout pageTitle="Quotes I Like">
+    <QuoteList client:load />
+</BaseLayout>

@@ -9,12 +9,18 @@ const commitHash = await import.meta.env.COMMIT_HASH;
 const version = await import.meta.env.WEBSITE_VERSION;
 ---
 
-<footer class="footer footer-center p-4 text-base-content rounded-md">
-    <span class="inline-block">
-        Alex's website <b>v{version}</b> on
-        <span class="hoverable group">
+<footer
+    class="h-11 mb-20 border border-line flex flex-row w-full items-stretch"
+>
+    <div class="grow diagonal-lines border-r border-line"></div>
+    <span
+        class="inline-block mx-auto font-mono content-center px-4 text-sm text-ink-tertiary"
+    >
+        Alex's website <b class="text-ink-secondary">v{version}</b> on
+        <span class="transition-all duration:150 hover:text-primary">
             <a
-                href={`http://www.github.com/bustosalex1/bustosalex1.github.io/tree/${commitHash}`}
+                href={`https://github.com/bustosalex1/bustosalex1.github.io/tree/${commitHash}`}
+                class="text-ink-secondary"
             >
                 <GitBranch class="inline-block align-text-top" />
                 <b>

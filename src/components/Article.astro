@@ -1,0 +1,12 @@
+<article
+    class="prose leading-normal mx-auto text-ink font-crimson text-lg prose-strong:text-ink prose-a:text-primary prose-inline-code:font-mono prose-inline-code:text-ink prose-inline-code:text-sm prose-inline-code:before:hidden prose-inline-code:after:hidden prose-inline-code:px-2 max-w-full prose-p:px-5 prose-ul:pr-5 prose-ol:pr-5 prose-ul:pl-10 prose-ol:pl-10 mb-5"
+>
+    <slot />
+</article>
+
+<script>
+    document.querySelectorAll<HTMLImageElement>(".prose img").forEach((img) => {
+        img.style.cursor = "pointer";
+        img.addEventListener("click", () => window.open(img.src, "_blank"));
+    });
+</script>

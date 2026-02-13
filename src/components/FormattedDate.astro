@@ -5,12 +5,15 @@
 interface Props {
     date: Date;
     posted?: boolean;
+    class?: string;
 }
 
-const { date, posted } = Astro.props;
+const { date, posted, class: className } = Astro.props;
 ---
 
-<div class="text-xs font-mono whitespace-nowrap">
+<div
+    class={`text-xs whitespace-nowrap font-mono ${className ?? "text-ink-tertiary"}`}
+>
     {posted ? "Posted " : ""}
     {
         date.toLocaleDateString("en-US", {

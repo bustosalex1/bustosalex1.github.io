@@ -6,8 +6,8 @@
             "@components/*": ["src/components/*"],
             "@types": ["src/types/"],
             "@layouts/*": ["src/layouts/*"],
-            "@assets/*": ["src/assets/*"],
-            "@styles/*": ["src/styles/*"]
+            "@styles/*": ["src/styles/*"],
+            "@utils/*": ["src/utils/*"]
         },
         "types": ["unplugin-icons/types/astro"],
         "plugins": [

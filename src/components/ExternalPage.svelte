@@ -2,52 +2,70 @@
     import Launch from "~icons/carbon/launch";
     import Maximize from "~icons/carbon/maximize";
     import Minimize from "~icons/carbon/minimize";
-    /** The URL of the page to link to. */
-    export let link: string;
 
-    /** An optional title to display. if not specified, this defaults to "Project Page".*/
-    export let title = "Project Page";
+    interface Props {
+        /** The URL of the page to link to. */
+        link: string;
+        /**
+         * An optional title to display. if not specified, this defaults to
+         * "Project Page".
+         */
+        title?: string;
+    }
 
-    let selected = false;
+    let { link, title = "Project Page" }: Props = $props();
+
+    let selected = $state(false);
+
+    $effect(() => {
+        if (selected) {
+            document.body.classList.add("overflow-hidden");
+        } else {
+            document.body.classList.remove("overflow-hidden");
+        }
+    });
 </script>
 
 <!--@component
-Simple component that wraps an external page in an `iframe` and provides options to full-screen the
-page or go to the page. My intent with this is just to provide a way to embed other web projects on
-my website.
+Simple component that wraps an external page in an `iframe` and provides
+options to full-screen the page or go to the page. My intent with this is just
+to provide a way to embed other web projects on my website.
 -->
 <!--rounded rectangle that wraps the iframe and title.-->
 <div
-    class={`flex flex-col ring-1 bg-base-100 ${selected ? "fixed top-0 left-0 h-screen w-screen z-50 overflow-auto" : "h-[75vh] overflow-clip rounded-md ring-base-content/20 ring-1 my-2"}`}
+    class={`flex flex-col border-y border-line bg-secondary-bg ${selected ? "fixed inset-0 z-50 overflow-auto" : "h-[50vh] my-4 overflow-clip"}`}
 >
     <!--row providing a title and some buttons to full screen or go to the page-->
     <div
-        class="flex flex-row justify-between border-b border-1 items-center p-2"
+        class="flex flex-row justify-between border-b border-line items-center"
     >
-        <div class="font-semibold">{title}</div>
+        <div class="font-mono font-semibold text-sm px-2">{title}</div>
 
-        <div class="flex flex-row space-x-1">
+        <div
+            class="flex flex-row h-8 items-stretch divide-line divide-x border-l border-line"
+        >
             <a
-                class="btn btn-xs btn-square btn-ghost"
+                class="not-prose content-center w-8 text-ink-secondary transition-all duration-150 hover:text-primary hover:bg-primary/10"
                 href={link}
                 target="_blank"
             >
-                <Launch class="w-4 h-4" />
+                <Launch class="w-4 h-4 mx-auto" />
             </a>
             <button
-                class="btn btn-xs btn-square btn-ghost"
-                on:click={() => {
+                class="content-center w-8 text-ink-secondary cursor-pointer transition-all duration-150 hover:text-primary hover:bg-primary/10"
+                onclick={() => {
                     selected = !selected;
                 }}
             >
                 {#if selected}
-                    <Minimize class="w-4 h-4" />
+                    <Minimize class="w-4 h-4 mx-auto" />
                 {:else}
-                    <Maximize class="w-4 h-4" />
+                    <Maximize class="w-4 h-4 mx-auto" />
                 {/if}
             </button>
         </div>
     </div>
     <!--the actual external page content-->
-    <iframe src={link} class={`w-full flex-1 h-full`} {title}></iframe>
+    <iframe src={link} class="w-full flex-1 h-full focus:outline-none" {title}
+    ></iframe>
 </div>

@@ -4,13 +4,26 @@
  */
 interface Props {
     tag: string;
+    link?: boolean;
+    class?: string;
 }
 
-const { tag } = Astro.props;
+const { tag, link = true, class: className } = Astro.props;
 ---
 
-<div
-    class="badge badge-outline text-xs capitalize text-neutral-400 hoverable whitespace-nowrap"
->
-    <a href={"/tags/" + tag}>{tag}</a>
-</div>
+{
+    link ? (
+        <a
+            class={`border px-2 py-0.5 text-xs uppercase hover:text-primary hover:border-primary whitespace-nowrap font-mono ${className ?? "text-ink-tertiary border-line-secondary"}`}
+            href={"/tags/" + tag}
+        >
+            {tag}
+        </a>
+    ) : (
+        <div
+            class={`border px-2 py-0.5 text-xs uppercase font-mono whitespace-nowrap ${className ?? "text-ink-tertiary border-line-secondary"}`}
+        >
+            {tag}
+        </div>
+    )
+}
