@@ -5,21 +5,24 @@
 interface Props {
     tag: string;
     link?: boolean;
+    class?: string;
 }
 
-const { tag, link = true } = Astro.props;
+const { tag, link = true, class: className } = Astro.props;
 ---
 
 {
     link ? (
         <a
-            class="border border-line-secondary px-2 py-0.5 text-xs uppercase hover:text-primary hover:border-primary whitespace-nowrap text-ink-tertiary font-mono"
+            class={`border px-2 py-0.5 text-xs uppercase hover:text-primary hover:border-primary whitespace-nowrap font-mono ${className ?? "text-ink-tertiary border-line-secondary"}`}
             href={"/tags/" + tag}
         >
             {tag}
         </a>
     ) : (
-        <div class="border border-line-secondary px-2 py-0.5 text-xs uppercase font-mono whitespace-nowrap text-ink-tertiary">
+        <div
+            class={`border px-2 py-0.5 text-xs uppercase font-mono whitespace-nowrap ${className ?? "text-ink-tertiary border-line-secondary"}`}
+        >
             {tag}
         </div>
     )
