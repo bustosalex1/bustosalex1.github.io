@@ -11,9 +11,6 @@ tags: ["CAD", "school", "systems engineering"]
 ---
 
 import ImageGrid from "@components/ImageGrid.astro";
-import ClickableImage from "@components/ClickableImage.svelte";
-import { Image } from "astro:assets";
-import conops from "./conops.webp";
 import architecture from "./labeled-diagram.webp";
 import modularity from "./modularity.webp";
 
@@ -26,17 +23,7 @@ engineering aspects of such a vehicle &mdash; defining the problem through
 requirements and goals, creating CONOPS, developing mission timelines, creating
 interface diagrams and morphological matrices, etc.
 
-<ClickableImage
-    caption="Space Crane concept of operations (CONOPS)."
-    imgSrc={conops.src}
-    client:load
-    captionMode="below"
->
-    <Image
-        src={conops}
-        alt="concept of operations for a reusable lunar lander"
-    />
-</ClickableImage>
+![concept of operations for a reusable lunar lander](./conops.webp "Space Crane concept of operations (CONOPS).")
 
 I worked with two of my friends to create a concept architecture that we called
 the "Space Crane," which was inspired, at least in design, by the Eagle

@@ -10,11 +10,7 @@ project: true
 tags: ["MATLAB", "orbital mechanics", "school"]
 ---
 
-import ClickableImage from "@components/ClickableImage.svelte";
 import ImageGrid from "@components/ImageGrid.astro";
-import { Image } from "astro:assets";
-import overallTrajectory from "./overall-trajectory.webp";
-import earthDeparture from "./earth-departure.webp";
 import saturnFlyby from "./saturn-flyby.webp";
 import saturnCloseup from "./saturn-flyby-closeup.webp";
 import jupiterFlyby from "./jupiter-flyby.webp";
@@ -27,14 +23,7 @@ class. The prompt was to pick an interplanetary spacecraft and simulate its
 orbit using MATLAB and then visualize the results. I had fun with the problem,
 so I figured I would share some of the results.
 
-<ClickableImage
-    caption={"Overall Voyager 1 trajectory."}
-    captionMode="below"
-    imgSrc={overallTrajectory.src}
-    client:load
->
-    <Image src={overallTrajectory} alt="overall voyager 1 trajectory" />
-</ClickableImage>
+![overall voyager 1 trajectory](./overall-trajectory.webp "Overall Voyager 1 trajectory.")
 
 ## Work
 

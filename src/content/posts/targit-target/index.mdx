@@ -10,19 +10,13 @@ tags: ["3D printing", "CAD", "Research"]
 useImage: true
 ---
 
-import ClickableImage from "@components/ClickableImage.svelte";
 import ImageGrid from "@components/ImageGrid.astro";
-import poster from "./ssi-poster.webp";
-import labeledExplodedView from "./labeled-exploded-view.webp";
 import assembledPrototype from "./assembled-prototype.webp";
 import bottomRender from "./bottom-render.webp";
 import deployedIsoRender from "./deployed-iso-render.webp";
 import internalChambers from "./internal-chambers.webp";
-import panelAndHinge from "./panel-and-hinge.webp";
-import spaceRender from "./space-render.webp";
 import stowedIsoRender from "./stowed-iso-render.webp";
 import unprocessedPrintedParts from "./unprocessed-printed-parts.webp";
-import { Image } from "astro:assets";
 
 ## Background
 
@@ -34,16 +28,7 @@ its own power system, electronics, communications equipment, and sensors, that
 will inflate a mylar balloon. This mylar balloon will serve as the target for
 the satellite's imaging operations.
 
-<ClickableImage
-    caption="Target architecture breakdown."
-    client:load
-    imgSrc={labeledExplodedView.src}
->
-    <Image
-        src={labeledExplodedView}
-        alt="a labeled exploded view of the target subsytem CAD"
-    />
-</ClickableImage>
+![a labeled exploded view of the target subsytem CAD](./labeled-exploded-view.webp "Target architecture breakdown.")
 
 ## System Overview
 
@@ -60,18 +45,7 @@ number of other systems. The poster below, which a friend and I presented at the
 2019 Symposium on Space Innovations, gives a good overview of the system
 operations.
 
-<ClickableImage
-    caption="Target Subsystem SSI poster."
-    captionMode="below"
-    imgSrc={poster.src}
-    newTab
-    client:load
->
-    <Image
-        src={poster}
-        alt="a poster presentation for a small cubesat subsystem"
-    />
-</ClickableImage>
+![a poster presentation for a small cubesat subsystem](./ssi-poster.webp "Target Subsystem SSI poster.")
 
 In order to inflate the balloon, pressurized gas must flow from a reservoir
 through air channels and valves and into the balloon. Due to the complexity of
