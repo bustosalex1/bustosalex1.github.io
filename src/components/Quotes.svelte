@@ -158,13 +158,13 @@ or something like that.
         <div class="flex flex-row w-fit">
             <!--sorting controls-->
             <div
-                class="whitespace-nowrap p-2 border-l border-line font-mono border-r content-center text-center text-ink"
+                class="whitespace-nowrap p-2 border-l border-line font-mono border-r content-center text-center text-ink text-sm"
             >
                 Sort by
             </div>
             <select
                 bind:value={sortBy}
-                class="p-2 w-fit cursor-pointer content-center font-mono text-ink"
+                class="p-2 w-fit cursor-pointer content-center font-mono text-ink text-sm"
             >
                 <option value="source">Source Material</option>
                 <option value="author">Author</option>

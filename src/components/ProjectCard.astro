@@ -18,11 +18,11 @@ const { post }: Props = Astro.props;
 
 <a href={"/posts/" + post.id}>
     <div
-        class="group flex flex-row border-line hover:border-primary bg-secondary-bg border overflow-x-hidden"
+        class="group flex flex-col sm:flex-row border-line transition-all duration-150 hover:border-primary bg-secondary-bg border overflow-x-hidden"
     >
         <!--image thumbnail-->
         <div
-            class="aspect-square w-28 overflow-hidden shrink-0 border-r border-line group-hover:border-primary"
+            class="aspect-square w-full sm:w-28 overflow-hidden shrink-0 border-b sm:border-r sm:border-b-0 border-line group-hover:border-primary transition-all duration-150"
         >
             <Image
                 src={post.data.image}
@@ -37,7 +37,7 @@ const { post }: Props = Astro.props;
             <div class="flex flex-row w-full justify-between flex-wrap p-4">
                 <div class="flex flex-col justify-start gap-1">
                     <h1
-                        class="font-bold font-mono text-sm group-hover:text-primary text-ink"
+                        class="font-bold font-mono text-sm group-hover:text-primary text-ink transition-all duration-150"
                     >
                         {post.data.title}
                     </h1>
@@ -45,7 +45,10 @@ const { post }: Props = Astro.props;
                         {post.data.description}
                     </div>
                 </div>
-                <FormattedDate date={post.data.pubDate} />
+                <FormattedDate
+                    date={post.data.pubDate}
+                    class="text-ink-tertiary ml-auto pt-2 sm:ml-0 sm:pt-0"
+                />
             </div>
 
             <!--diagonal lines bar and tags-->

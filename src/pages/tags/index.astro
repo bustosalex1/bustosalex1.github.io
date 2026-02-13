@@ -10,7 +10,12 @@ const pageTitle = "Tags";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <div class="flex gap-2 flex-row flex-wrap">
+    <div
+        class="font-mono text-sm font-bold w-full text-left p-2 border-b border-line"
+    >
+        All Tags
+    </div>
+    <div class="flex gap-2 flex-row flex-wrap p-4">
         {tags.map((tag) => <Tag tag={tag} />)}
     </div>
 </BaseLayout>

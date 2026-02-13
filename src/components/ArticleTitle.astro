@@ -1,7 +1,7 @@
 ---
 import Tag from "./Tag.astro";
 import FormattedDate from "./FormattedDate.astro";
-import Image from "astro/components/Image.astro";
+import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 interface Props {
     data: CollectionEntry<"posts">["data"];

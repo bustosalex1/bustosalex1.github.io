@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-import PostEntry from "@components/PostEntry.astro";
+import ProjectCard from "@components/ProjectCard.astro";
 import { type CollectionEntry, getCollection } from "astro:content";
 export const getStaticPaths = async () => {
     const allPosts = await getCollection("posts");
@@ -33,21 +33,12 @@ const formattedTag = tag
 ---
 
 <BaseLayout pageTitle={`Tag: ${formattedTag}`}>
-    <div class="font-bold p-2 w-full border-line border bg-bg">
-        Posts tagged with <span class="capitalize">{tag}</span>
-    </div>
     <div
-        class="flex flex-col gap-4 p-4 border-line border-l border-r border-b border-dashed diagonal-lines"
+        class="font-bold p-2 w-full border-line border-b bg-bg font-mono text-sm"
     >
-        {
-            posts.map((post) => (
-                <PostEntry
-                    url={"/posts/" + post.id}
-                    title={post.data.title}
-                    date={post.data.pubDate}
-                    tags={post.data.tags}
-                />
-            ))
-        }
+        Posts tagged with <span class="uppercase">{tag}</span>
+    </div>
+    <div class="flex flex-col gap-4 p-4">
+        {posts.map((post) => <ProjectCard post={post} />)}
     </div>
 </BaseLayout>

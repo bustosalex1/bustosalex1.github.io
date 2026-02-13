@@ -9,8 +9,10 @@
 
 /* Light theme colors. */
 :root {
+    color-scheme: light;
     --bg-color: oklch(0.9635 0.0045 258.32);
     --bg-secondary-color: oklch(0.9819 0.0029 264.54);
+    --bg-figure-color: oklch(0.9435 0.0045 258.32);
     --ink-color: oklch(0.2303 0.0125 264.29);
     --ink-secondary-color: oklch(0.4236 0.0158 266.54);
     --ink-tertiary-color: oklch(0.5927 0.0145 266.63);
@@ -21,8 +23,10 @@
 
 /* Dark theme colors. */
 [data-theme="dark"] {
+    color-scheme: dark;
     --bg-color: oklch(0.1993 0.0068 258.37);
     --bg-secondary-color: oklch(0.2383 0.0106 260.69);
+    --bg-figure-color: oklch(0.2383 0.0106 260.69);
     --ink-color: oklch(0.8886 0.0085 271.32);
     --ink-secondary-color: oklch(0.6992 0.0153 268.44);
     --ink-tertiary-color: oklch(0.5134 0.015 266.6);
@@ -34,6 +38,7 @@
 @theme inline {
     --color-bg: var(--bg-color);
     --color-secondary-bg: var(--bg-secondary-color);
+    --color-figure-bg: var(--bg-figure-color);
     --color-ink: var(--ink-color);
     --color-ink-secondary: var(--ink-secondary-color);
     --color-ink-tertiary: var(--ink-tertiary-color);
@@ -67,7 +72,7 @@
     counter-reset: section figure table;
 
     & :where(figure) {
-        @apply mx-auto bg-secondary-bg my-0 py-0 flex flex-col justify-center border-y border-line;
+        @apply mx-auto bg-figure-bg my-0 py-0 flex flex-col justify-center border-y border-line;
         line-height: 0;
     }
 
@@ -108,7 +113,7 @@
 
     /* Table styling for markdown posts.*/
     & :where(table) {
-        @apply font-mono text-sm w-full border-collapse border-y border-line my-0 py-0;
+        @apply font-mono text-xs w-full border-collapse border-y border-line my-0 py-0;
     }
 
     & :where(tr) {

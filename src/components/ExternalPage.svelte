@@ -44,11 +44,15 @@ to provide a way to embed other web projects on my website.
         <div
             class="flex flex-row h-8 items-stretch divide-line divide-x border-l border-line"
         >
-            <a class="content-center w-8" href={link} target="_blank">
+            <a
+                class="not-prose content-center w-8 text-ink-secondary transition-all duration-150 hover:text-primary hover:bg-primary/10"
+                href={link}
+                target="_blank"
+            >
                 <Launch class="w-4 h-4 mx-auto" />
             </a>
             <button
-                class="content-center w-8"
+                class="content-center w-8 text-ink-secondary cursor-pointer transition-all duration-150 hover:text-primary hover:bg-primary/10"
                 onclick={() => {
                     selected = !selected;
                 }}

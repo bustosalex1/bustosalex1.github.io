@@ -19,10 +19,10 @@
 
 <button
     onclick={toggleTheme}
-    class="h-11 w-11 content-center text-center border-l border-line hover:cursor-pointer text-ink-tertiary hover:text-ink"
+    class="w-11 content-center text-center border-l border-line hover:cursor-pointer text-ink-secondary hover:text-primary transition-all duration-150 hover:bg-primary/10"
 >
     {#if isDark}
-        <Moon class="mx-auto h-5 w-5 " />
+        <Moon class="mx-auto h-5 w-5" />
     {:else}
         <Sun class="mx-auto h-5 w-5" />
     {/if}

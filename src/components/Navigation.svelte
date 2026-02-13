@@ -46,12 +46,10 @@ Component providing links to main pages on my website. New links and their
 slugs can be added in the `links` variable. This component also displays the
 title of the website (my name).
 -->
-<div
-    class="flex flex-row w-full h-11 mx-auto pl-4 border-line border items-center"
->
+<div class="flex flex-row w-full h-11 border-line border items-stretch">
     <a
         href="/"
-        class="font-bold whitespace-nowrap text-ink transition-all duration-150 content-center hover:text-primary pr-4 border-line border-r h-10 font-mono text-sm"
+        class="font-bold whitespace-nowrap text-ink transition-all duration-150 content-center hover:text-primary px-4 border-line border-r font-mono text-sm"
     >
         Alex Bustos
     </a>
@@ -66,21 +64,21 @@ title of the website (my name).
                         (url === "/" && link === "/") ||
                         (url === "" && link === "/"),
                 },
-                "hover:text-primary transition-all duration-300 px-4 border-line content-center whitespace-nowrap border-r hidden md:block h-10 font-mono text-sm text-ink",
+                "hover:text-primary transition-all duration-150 px-4 border-line content-center whitespace-nowrap border-r hidden md:block font-mono text-sm text-ink",
             ]}
         >
             {title}
         </a>
     {/each}
-    <div
-        class="grow h-full border-line diagonal-lines md:border-none border-r"
-    ></div>
+
+    <!--diagonal line spacing between links and menu / theme toggle-->
+    <div class="grow diagonal-lines"></div>
 
     <ThemeToggle />
     <button
         class={[
-            "md:hidden content-center h-full aspect-square hover:text-primary group transition-all duration-150 hover:bg-primary/10 cursor-pointer active:scale-90",
-            { "z-50": show },
+            "md:hidden content-center w-11 hover:text-primary group transition-all duration-150 hover:bg-primary/10 cursor-pointer border-line border-l",
+            { "z-50 border-none": show },
         ]}
         onclick={() => {
             show = !show;
@@ -88,11 +86,11 @@ title of the website (my name).
     >
         {#if show}
             <Close
-                class="h-5 w-5 mx-auto text-neutral-500 group-hover:text-primary transition-all duration-150"
+                class="h-5 w-5 mx-auto text-ink-secondary group-hover:text-primary transition-all duration-150"
             />
         {:else}
             <Menu
-                class="h-5 w-5 mx-auto text-neutral-500 group-hover:text-primary transition-all duration-150"
+                class="h-5 w-5 mx-auto text-ink-secondary group-hover:text-primary transition-all duration-150"
             />
         {/if}
     </button>
@@ -106,7 +104,7 @@ title of the website (my name).
         <div class="p-2 border-b border-line">
             <a
                 href="/"
-                class="font-bold whitespace-nowrap transition-all duration-150 content-center hover:text-primary"
+                class="font-bold whitespace-nowrap transition-all duration-150 content-center hover:text-primary font-mono"
             >
                 Alex Bustos
             </a>
@@ -122,7 +120,7 @@ title of the website (my name).
                             (url === "/" && link === "/") ||
                             (url === "" && link === "/"),
                     },
-                    "hover:text-primary transition-all duration-300 pr-4 pl-6 border-line content-center whitespace-nowrap border-b py-2",
+                    "hover:text-primary transition-all duration-300 pr-4 pl-6 border-line content-center whitespace-nowrap border-b py-2 font-mono text-sm",
                 ]}
             >
                 {title}
