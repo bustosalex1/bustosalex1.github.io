@@ -15,6 +15,7 @@
     const links = [
         ["Posts", "/"],
         ["Quotes I Like", "/experiments/quotes"],
+        ["Book Reviews", "/books"],
     ];
 
     /**
@@ -64,7 +65,7 @@ title of the website (my name).
                         (url === "/" && link === "/") ||
                         (url === "" && link === "/"),
                 },
-                "hover:text-primary transition-all duration-150 px-4 border-line content-center whitespace-nowrap border-r hidden md:block font-mono text-sm text-ink",
+                "hover:text-primary transition-all duration-150 px-4 border-line content-center whitespace-nowrap border-r hidden md:block font-mono text-sm text-ink relative hover:bg-primary/10",
             ]}
         >
             {title}
