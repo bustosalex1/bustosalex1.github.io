@@ -1,18 +1,29 @@
 ---
 title: Full Speed to a Crash Landing
 author: Beth Revis
-pubDate: 2026-02-13
+pubDate: 2026-02-14
 ---
 
-## Overview
+## Background
 
-Late last summer, my grandma and I went to Oregon, and we stopped by Powell's
-Books. I spent some time browsing the sci-fi _floor_, and I took a ton of
-pictures of books with recommendations from the Powell's staff so that I could
-grab them later when I was looking for something to read. _Full Speed to a Crash
-Landing_ had the following recommendation.
+I read this book because I saw it in Powell's Books in Portland, with a
+recommendation that said:
 
 > If you like: Murderbot, my Martha Wells; The Wayfarers Series, by Becky
 > Chambers; Heists!
 
+And Becky Chambers is one of my favorite sci-fi authors, so I figured I'd give
+it a shot.
+
 ## Summary
+
+This is a bit fuzzy; I read this book about a month and a half ago at this
+point. The story centers around Ada Lamarr whose name is, interestingly, an ode
+to Ada Lovelace and Hedy Lamarr (I'd never heard of the latter until reading
+this book). Ada, it appears, is basically a space scavenger, and has come across
+a crashed spacecraft.
+
+## Thoughts
+
+I enjoyed this book; I don't know if I will pick up the next book in the series,
+but it was a fun read. I can see why it's been compared to _The Wayfarers_.
