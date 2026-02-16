@@ -71,7 +71,7 @@
 
 /* Article styling rules */
 .prose {
-    counter-reset: section figure table;
+    counter-reset: section subsection figure table;
 
     & :where(figure) {
         @apply mx-auto bg-figure-bg my-0 py-0 flex flex-col justify-center border-y border-line;
@@ -107,6 +107,7 @@
 
     & :where(h2) {
         counter-increment: section;
+        counter-reset: subsection;
         @apply flex flex-row items-center text-sm;
 
         /* Before primary headers, add a section number like 01, 02, ... */
@@ -119,6 +120,23 @@
         &::after {
             content: "";
             @apply diagonal-lines grow self-stretch border-l border-line ml-4;
+        }
+    }
+
+    & :where(h3) {
+        counter-increment: subsection;
+        @apply flex flex-row items-center text-sm border-y-0 py-2;
+
+        /* Subsection label before heading text. */
+        &::before {
+            content: counter(section, decimal-leading-zero) counter(subsection, lower-alpha);
+            @apply text-ink-tertiary text-sm px-4;
+        }
+
+        /* Line after heading text, extending to the right edge. */
+        &::after {
+            content: "";
+            @apply grow border-t border-line ml-3;
         }
     }
 

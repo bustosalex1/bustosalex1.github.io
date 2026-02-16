@@ -20,7 +20,7 @@ const sortedBooks = allBooks.sort((a, b) => {
             sortedBooks.map((book, i) => (
                 <a
                     href={"/books/" + book.id}
-                    class="group flex flex-row items-stretch"
+                    class="group flex flex-row items-stretch hover:bg-primary/10 transition-all duration-150"
                 >
                     <div class="font-mono text-xs text-ink-tertiary content-center px-4 border-r border-line shrink-0 group-hover:text-primary transition-all duration-150">
                         {String(i + 1).padStart(2, "0")}

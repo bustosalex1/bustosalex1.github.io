@@ -50,7 +50,7 @@ title of the website (my name).
 <div class="flex flex-row w-full h-11 border-line border items-stretch">
     <a
         href="/"
-        class="font-bold whitespace-nowrap text-ink transition-all duration-150 content-center hover:text-primary px-4 border-line border-r font-mono text-sm"
+        class="font-bold whitespace-nowrap text-ink transition-all duration-150 content-center hover:text-primary px-4 border-line border-r font-mono text-sm hover:bg-primary/10"
     >
         Alex Bustos
     </a>

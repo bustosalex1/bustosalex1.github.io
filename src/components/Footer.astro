@@ -17,10 +17,11 @@ const version = await import.meta.env.WEBSITE_VERSION;
         class="inline-block mx-auto font-mono content-center px-4 text-sm text-ink-tertiary"
     >
         Alex's website <b class="text-ink-secondary">v{version}</b> on
-        <span class="transition-all duration:150 hover:text-primary">
+        <span
+            class="transition-all duration:150 text-ink-secondary hover:text-primary"
+        >
             <a
                 href={`https://github.com/bustosalex1/bustosalex1.github.io/tree/${commitHash}`}
-                class="text-ink-secondary"
             >
                 <GitBranch class="inline-block align-text-top" />
                 <b>
