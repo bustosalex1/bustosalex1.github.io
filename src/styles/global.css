@@ -99,18 +99,12 @@
 
     & :where(h2) {
         counter-increment: section;
-        @apply flex flex-row items-center text-sm;
-
-        /* Before primary headers, add a section number like 01, 02, ... */
-        &::before {
-            content: counter(section, decimal-leading-zero);
-            @apply text-ink-tertiary text-sm px-4 py-3;
-        }
+        @apply flex flex-row items-stretch text-sm pl-4 py-3;
 
         /* After primary headers, fill the remaining space with diagonal lines. */
         &::after {
             content: "";
-            @apply diagonal-lines grow self-stretch border-l border-line ml-4;
+            @apply diagonal-lines grow self-stretch border-l border-line ml-4 -my-3;
         }
     }
 
@@ -125,24 +119,6 @@
 
     & :where(tr:last-child) {
         @apply border-none;
-    }
-
-    & :where(tbody) {
-        counter-reset: table-row;
-    }
-
-    /* Insert numbering before every row in a table. */
-    & :where(tbody tr)::before {
-        counter-increment: table-row;
-        content: counter(table-row, decimal-leading-zero);
-        display: table-cell;
-        @apply text-ink-tertiary text-center w-10 border-r border-line text-xs content-center;
-    }
-
-    & :where(thead tr)::before {
-        content: "";
-        display: table-cell;
-        @apply border-b border-r border-line;
     }
 
     & :where(thead th) {
@@ -162,12 +138,12 @@
     }
 
     & :where(table caption) {
-        @apply text-left p-2 border-t border-line uppercase text-xs;
+        @apply text-left p-2 border-t border-line text-xs;
     }
 
     & :where(table caption)::before {
         counter-increment: table;
-        content: "Table " counter(table, decimal-leading-zero) ". ";
+        content: "Table " counter(table, decimal) ". ";
         @apply text-ink-secondary;
     }
 }
