@@ -71,7 +71,7 @@
 
 /* Article styling rules */
 .prose {
-    counter-reset: section subsection figure table;
+    counter-reset: subsection figure table;
 
     & :where(figure) {
         @apply mx-auto bg-figure-bg my-0 py-0 flex flex-col justify-center border-y border-line;
@@ -106,32 +106,17 @@
     }
 
     & :where(h2) {
-        counter-increment: section;
-        counter-reset: subsection;
-        @apply flex flex-row items-center text-sm;
-
-        /* Before primary headers, add a section number like 01, 02, ... */
-        &::before {
-            content: counter(section, decimal-leading-zero);
-            @apply text-ink-tertiary text-sm px-4 py-3;
-        }
+        @apply flex flex-row items-stretch text-sm pl-4 py-3;
 
         /* After primary headers, fill the remaining space with diagonal lines. */
         &::after {
             content: "";
-            @apply diagonal-lines grow self-stretch border-l border-line ml-4;
+            @apply diagonal-lines grow self-stretch border-l border-line ml-4 -my-3;
         }
     }
 
     & :where(h3) {
-        counter-increment: subsection;
-        @apply flex flex-row items-center text-sm border-y-0 py-2;
-
-        /* Subsection label before heading text. */
-        &::before {
-            content: counter(section, decimal-leading-zero) counter(subsection, lower-alpha);
-            @apply text-ink-tertiary text-sm px-4;
-        }
+        @apply flex flex-row items-center text-sm border-y-0 py-2 pl-4;
 
         /* Line after heading text, extending to the right edge. */
         &::after {
@@ -153,24 +138,6 @@
         @apply border-none;
     }
 
-    & :where(tbody) {
-        counter-reset: table-row;
-    }
-
-    /* Insert numbering before every row in a table. */
-    & :where(tbody tr)::before {
-        counter-increment: table-row;
-        content: counter(table-row, decimal-leading-zero);
-        display: table-cell;
-        @apply text-ink-tertiary text-center w-10 border-r border-line text-xs content-center;
-    }
-
-    & :where(thead tr)::before {
-        content: "";
-        display: table-cell;
-        @apply border-b border-r border-line;
-    }
-
     & :where(thead th) {
         @apply p-2 text-ink border-b border-line border-r;
     }
@@ -188,12 +155,12 @@
     }
 
     & :where(table caption) {
-        @apply text-left p-2 border-t border-line uppercase text-xs;
+        @apply text-left p-2 border-t border-line text-xs;
     }
 
     & :where(table caption)::before {
         counter-increment: table;
-        content: "Table " counter(table, decimal-leading-zero) ". ";
+        content: "Table " counter(table, decimal) ". ";
         @apply text-ink-secondary;
     }
 }
