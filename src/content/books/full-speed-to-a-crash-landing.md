@@ -21,7 +21,12 @@ This is a bit fuzzy; I read this book about a month and a half ago at this
 point. The story centers around Ada Lamarr whose name is, interestingly, an ode
 to Ada Lovelace and Hedy Lamarr (I'd never heard of the latter until reading
 this book). Ada, it appears, is basically a space scavenger, and has come across
-a crashed spacecraft.
+a crashed spacecraft carrying... something valuable. This is where things start
+to get fuzzy for me. She gets rescued by another crew and there's a whole lot of
+will-they-won't they going on between Ada and this one guy Rian. Eventually, the
+team goes down to the planet where the spacecraft crashed and Ada pulls some
+heroics to retrieve the valuable thing. Rian is shocked when she then escapes
+with said thing. To be continued.
 
 ## Thoughts
 
