@@ -48,6 +48,12 @@
     --color-line-secondary: var(--line-secondary-color);
     --color-primary: var(--primary-color);
 
+    --color-ivory: #f6f7eb;
+    --color-fiery-terracotta: #e94f37;
+    --color-gunmetal: #393e41;
+    --color-steel-blue: #3f88c5;
+    --color-ocean-mist: #44bba4;
+
     --font-crimson: "Crimson Text", serif;
     --font-mono: "Fira Code", mono;
 }
