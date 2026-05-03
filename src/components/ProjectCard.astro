@@ -8,7 +8,7 @@
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import FormattedDate from "@components/FormattedDate.astro";
-import TagList from "@components/TagList.astro";
+import Tag from "./Tag.astro";
 interface Props {
     post: CollectionEntry<"posts">;
 }
@@ -52,14 +52,10 @@ const { post }: Props = Astro.props;
             </div>
 
             <!--tags-->
-            <div class="flex flex-row w-full items-stretch mt-auto">
-                <TagList
-                    tags={post.data.tags}
-                    class="ml-auto border-t border-line"
-                    link={false}
-                    tagClass="border-l border-line"
-                    textClass="block px-2 py-1 text-xs uppercase font-mono text-ink-tertiary whitespace-nowrap"
-                />
+            <div
+                class="flex flex-row ml-auto items-stretch mt-auto justify-end border-l border-t border-line divide-x divide-line"
+            >
+                {post.data.tags.map((tag) => <Tag tag={tag} link={false} />)}
             </div>
         </div>
     </div>

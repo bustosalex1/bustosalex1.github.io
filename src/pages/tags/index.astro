@@ -16,6 +16,13 @@ const pageTitle = "Tags";
         All Tags
     </div>
     <div class="flex gap-2 flex-row flex-wrap p-4">
-        {tags.map((tag) => <Tag tag={tag} />)}
+        {
+            tags.map((tag) => (
+                <Tag
+                    tag={tag}
+                    class="border border-line-secondary text-ink-tertiary hover:text-primary"
+                />
+            ))
+        }
     </div>
 </BaseLayout>
