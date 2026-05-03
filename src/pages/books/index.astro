@@ -15,14 +15,15 @@ const sortedBooks = allBooks.sort((a, b) => {
 
 <BaseLayout pageTitle="Books">
     <!--list of book entries-->
-    <div class="flex flex-col divide-y divide-line">
+    <div
+        class="flex flex-col divide-y divide-line border border-line bg-secondary-bg hard-shadow"
+    >
         {
-            sortedBooks.map((book, i) => (
+            sortedBooks.map((book) => (
                 <a
                     href={"/books/" + book.id}
                     class="group flex flex-row items-stretch hover:bg-primary/10 transition-all duration-150"
                 >
-
                     <div class="flex flex-wrap flex-row grow items-center justify-between gap-1 p-4">
                         <div class="flex flex-col gap-0.5">
                             <span class="font-mono text-sm text-ink group-hover:text-primary transition-all duration-150 font-bold">

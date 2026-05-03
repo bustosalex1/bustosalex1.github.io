@@ -6,9 +6,9 @@
  * information about all projects in the `posts` content collection.
  */
 import { Image } from "astro:assets";
-import Tag from "./Tag.astro";
 import type { CollectionEntry } from "astro:content";
 import FormattedDate from "@components/FormattedDate.astro";
+import TagList from "@components/TagList.astro";
 interface Props {
     post: CollectionEntry<"posts">;
 }
@@ -18,7 +18,7 @@ const { post }: Props = Astro.props;
 
 <a href={"/posts/" + post.id}>
     <div
-        class="group flex flex-col sm:flex-row border-line transition-all duration-150 hover:border-primary bg-secondary-bg border overflow-x-hidden hover:bg-primary/10"
+        class="group flex flex-col sm:flex-row border border-line transition-all duration-150 hover:border-primary bg-secondary-bg overflow-x-hidden hard-shadow hover:-translate-y-1 hover:hard-shadow-hover"
     >
         <!--image thumbnail-->
         <div
@@ -51,21 +51,15 @@ const { post }: Props = Astro.props;
                 />
             </div>
 
-            <!--diagonal lines bar and tags-->
-            <div
-                class="flex flex-row w-full border-dashed border-line border-t items-stretch"
-            >
-                <div
-                    class="diagonal-lines border-r border-line border-dashed grow"
-                >
-                </div>
-                <div class="flex flex-row p-2 space-x-2">
-                    {
-                        post.data.tags.map((t) => {
-                            return <Tag tag={t} link={false} />;
-                        })
-                    }
-                </div>
+            <!--tags-->
+            <div class="flex flex-row w-full items-stretch mt-auto">
+                <TagList
+                    tags={post.data.tags}
+                    class="ml-auto border-t border-line"
+                    link={false}
+                    tagClass="border-l border-line"
+                    textClass="block px-2 py-1 text-xs uppercase font-mono text-ink-tertiary whitespace-nowrap"
+                />
             </div>
         </div>
     </div>

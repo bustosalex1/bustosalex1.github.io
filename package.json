@@ -1,7 +1,7 @@
 {
     "name": "website",
     "type": "module",
-    "version": "0.4",
+    "version": "0.5",
     "packageManager": "pnpm@9.4.0",
     "scripts": {
         "stamp": "echo \"COMMIT_HASH=$(git rev-parse --short HEAD)\"> .env && echo \"WEBSITE_VERSION=$(node -p \"require('./package.json').version\")\">>.env",

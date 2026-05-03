@@ -34,11 +34,11 @@ const formattedTag = tag
 
 <BaseLayout pageTitle={`Tag: ${formattedTag}`}>
     <div
-        class="font-bold p-2 w-full border-line border-b bg-bg font-mono text-sm"
+        class="font-bold p-2 w-full border-line bg-secondary-bg font-mono text-sm border mb-4 hard-shadow"
     >
         Posts tagged with <span class="uppercase">{tag}</span>
     </div>
-    <div class="flex flex-col gap-4 p-4">
+    <div class="flex flex-col gap-4">
         {posts.map((post) => <ProjectCard post={post} />)}
     </div>
 </BaseLayout>

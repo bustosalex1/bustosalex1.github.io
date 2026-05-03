@@ -146,7 +146,7 @@ or something like that.
 -->
 
 <!--title section-->
-<div class="border-line border-b">
+<div class="border-line border bg-secondary-bg hard-shadow">
     <!--title-->
     <h1
         class="pt-10 pb-10 px-2 text-4xl text-center font-crimson italic text-ink"
@@ -175,11 +175,11 @@ or something like that.
 </div>
 
 <!--box containing all of the quotes-->
-<div class="flex flex-col gap-4 p-4">
+<div class="flex flex-col gap-4 pt-4">
     <!--render each quote list-->
     {#each groupedQuotes as [key, quoteList] (key)}
         <div
-            class="flex flex-col divide-y divide-line border border-line bg-secondary-bg"
+            class="flex flex-col divide-y divide-line border border-line bg-secondary-bg hard-shadow"
         >
             <div class="flex flex-row sticky top-0 bg-secondary-bg">
                 <a
@@ -189,7 +189,6 @@ or something like that.
                 >
                     {key}
                 </a>
-                <div class="grow diagonal-lines border-l border-line"></div>
             </div>
 
             <!--render each quote in the quote list-->

@@ -17,22 +17,28 @@ interface Props {
 const { images, caption, rows, cols } = Astro.props;
 ---
 
-<figure>
-    <div class={`grid ${cols} ${rows} gap-[1px] bg-line overflow-clip`}>
+<div>
+    <div class={`grid ${cols} ${rows} gap-2 pb-2 overflow-clip`}>
         {
             images.map(([src, alt, caption], i) => (
-                <div class="not-prose h-full w-full relative">
+                <div class="not-prose h-full w-full relative border border-line hard-shadow">
                     <Image
                         src={src}
                         alt={alt}
                         class="object-cover h-full w-full"
                     />
-                    <div class="absolute left-0 right-0 bottom-0 border-t md:border md:left-2 md:bottom-2 md:right-auto border-line-secondary bg-secondary-bg text-xs font-mono p-1 ">
+                    <div class="absolute left-0 right-0 bottom-0 border-t border-line-secondary bg-secondary-bg text-xs font-mono p-1 ">
                         {String.fromCharCode(97 + i)}. {caption}
                     </div>
                 </div>
             ))
         }
     </div>
-    {caption && <figcaption>{caption}</figcaption>}
-</figure>
+    {
+        caption && (
+            <figcaption class="border-l border-r border-b border-line hard-shadow">
+                {caption}
+            </figcaption>
+        )
+    }
+</div>
