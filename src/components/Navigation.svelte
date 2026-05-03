@@ -15,7 +15,7 @@
     const links = [
         ["Posts", "/"],
         ["Quotes I Like", "/experiments/quotes"],
-        // ["Book Reviews", "/books"],
+
     ];
 
     /**

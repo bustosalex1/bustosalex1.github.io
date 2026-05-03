@@ -19,24 +19,6 @@ const postCollection = defineCollection({
             math: z.boolean().optional(),
         }),
 });
-
-const bookReviewCollection = defineCollection({
-    loader: glob({
-        pattern: "**/[^_]*.{md,mdx}",
-        base: "./src/content/books",
-    }),
-    schema: () =>
-        z.object({
-            title: z.string(),
-            author: z.string(),
-            pubDate: z
-                .string()
-                .or(z.date())
-                .transform((val) => new Date(val)),
-        }),
-});
-
 export const collections = {
     posts: postCollection,
-    books: bookReviewCollection,
 };
