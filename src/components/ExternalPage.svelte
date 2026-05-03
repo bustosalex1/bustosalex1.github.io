@@ -33,7 +33,7 @@ to provide a way to embed other web projects on my website.
 -->
 <!--rounded rectangle that wraps the iframe and title.-->
 <div
-    class={`flex flex-col border-y border-line bg-secondary-bg ${selected ? "fixed inset-0 z-50 overflow-auto" : "h-[50vh] my-4 overflow-clip"}`}
+    class={`flex flex-col border border-line bg-secondary-bg ${selected ? "fixed inset-0 z-50 overflow-auto" : "h-[50vh] my-4 overflow-clip hard-shadow"}`}
 >
     <!--row providing a title and some buttons to full screen or go to the page-->
     <div

@@ -12,61 +12,58 @@ const { data }: Props = Astro.props;
 
 {
     data.useImage ? (
-        <div class="relative w-full overflow-hidden">
+        <div class="relative w-full overflow-hidden border-line border hard-shadow mb-4">
             <Image
                 src={data.image}
                 alt={data.imageAlt}
                 class="object-cover w-full h-full"
             />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-            <div class="absolute bottom-0 p-5 text-white flex flex-col items-center w-full gap-3">
-                <h1 class="text-3xl md:text-4xl lg:text-5xl text-center font-crimson italic text-shadow-hero">
+            <div class="absolute inset-0 bg-linear-to-t from-black/60 to-transparent" />
+            <div class="absolute bottom-0 text-white flex flex-col items-center w-full">
+                <h1 class="text-3xl md:text-4xl lg:text-5xl text-center font-crimson italic text-shadow-hero pb-1 px-5">
                     {data.title}
                 </h1>
-                <p class="text-sm font-mono text-white/80 text-shadow-soft">
+                <p class="text-sm font-mono text-white/80 text-shadow-soft pb-5">
                     {data.description}
                 </p>
-                <div class="flex flex-row items-center w-full justify-center">
-                    {data.tags && (
-                        <div class="flex gap-2 flex-row flex-nowrap items-center border-line border-dashed overflow-x-auto p-2">
-                            {data.tags.map((tag) => (
-                                <Tag
-                                    tag={tag}
-                                    class="text-white/60 text-shadow-soft border-white/60"
-                                />
-                            ))}
-                        </div>
-                    )}
-                    <div class="px-2">
+                <div class="flex flex-row items-stretch w-full justify-center pb-3 px-2">
+                    <div class="px-2 content-center">
                         <FormattedDate
                             date={data.pubDate}
                             posted={true}
-                            class="text-white/60 text-shadow-soft"
+                            class="text-white/80 text-shadow-soft"
                         />
                     </div>
+                    {data.tags && (
+                        <div class="flex flex-row overflow-x-auto border border-white/80 divide-x divide-white/80">
+                            {data.tags.map((tag) => (
+                                <Tag tag={tag} class="text-white/90" />
+                            ))}
+                        </div>
+                    )}
                 </div>
             </div>
         </div>
     ) : (
         <div>
-            <div class="p-5 flex flex-col items-center w-full gap-3 border-b border-line">
-                <h1 class="text-3xl md:text-4xl lg:text-5xl text-center font-crimson italic text-ink">
+            <div class="flex flex-col items-center w-full border border-line bg-secondary-bg hard-shadow">
+                <h1 class="pt-7 pb-3 text-3xl md:text-4xl lg:text-4xl text-center font-crimson italic text-ink">
                     {data.title}
                 </h1>
-                <p class="text-sm font-mono text-ink-secondary">
+                <p class="text-sm font-mono text-ink-secondary pb-5">
                     {data.description}
                 </p>
-                <div class="flex flex-row items-center w-full justify-center">
+                <div class="flex flex-row items-stretch w-full justify-center p-2">
+                    <div class="px-2 content-center">
+                        <FormattedDate date={data.pubDate} posted={true} />
+                    </div>
                     {data.tags && (
-                        <div class="flex gap-2 flex-row flex-nowrap items-center border-line border-dashed overflow-x-auto">
+                        <div class="flex flex-row overflow-x-auto border border-line divide-x divide-line">
                             {data.tags.map((tag) => (
                                 <Tag tag={tag} />
                             ))}
                         </div>
                     )}
-                    <div class="px-2">
-                        <FormattedDate date={data.pubDate} posted={true} />
-                    </div>
                 </div>
             </div>
         </div>

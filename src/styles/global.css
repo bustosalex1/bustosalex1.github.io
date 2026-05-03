@@ -16,9 +16,10 @@
     --ink-color: oklch(0.2303 0.0125 264.29);
     --ink-secondary-color: oklch(0.4236 0.0158 266.54);
     --ink-tertiary-color: oklch(0.5927 0.0145 266.63);
-    --line-color: oklch(0.8168 0.0133 266.68);
-    --line-secondary-color: oklch(0.8912 0.0101 267.35);
-    --primary-color: oklch(75.461% 0.183 346.812);
+    --line-color: oklch(0.75 0.015 266.68);
+    --line-secondary-color: oklch(0.85 0.012 267.35);
+    --primary-color: oklch(63.7% 0.194 31.6);
+    --hard-shadow-color: oklch(0.9 0.005 266);
     --diagonal-lines-svg: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23cecece' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
 }
 
@@ -31,9 +32,10 @@
     --ink-color: oklch(0.8886 0.0085 271.32);
     --ink-secondary-color: oklch(0.6992 0.0153 268.44);
     --ink-tertiary-color: oklch(0.5134 0.015 266.6);
-    --line-color: oklch(0.364 0.0181 268.19);
-    --line-secondary-color: oklch(0.3169 0.017 266.41);
-    --primary-color: oklch(78% 0.18 346.812);
+    --line-color: oklch(0.32 0.02 268.19);
+    --line-secondary-color: oklch(0.28 0.018 266.41);
+    --primary-color: oklch(72% 0.19 31.6);
+    --hard-shadow-color: oklch(0.18 0.005 266);
     --diagonal-lines-svg: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23636770' fill-opacity='0.25' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
 }
 
@@ -52,6 +54,14 @@
     --font-mono: "Fira Code", mono;
 }
 
+@utility hard-shadow {
+    box-shadow: 0px 3px 0 0 var(--hard-shadow-color);
+}
+
+@utility hard-shadow-hover {
+    box-shadow: 0px 7px 0px 0px --alpha(var(--color-primary) / 25%);
+}
+
 @utility diagonal-lines {
     background-image: var(--diagonal-lines-svg);
 }
@@ -65,16 +75,20 @@
 }
 
 /* Some styling for KaTeX sections. */
+.katex {
+    font-size: 1em !important;
+}
+
 .katex-display {
     overflow: auto hidden;
 }
 
 /* Article styling rules */
 .prose {
-    counter-reset: section figure table;
+    counter-reset: figure table;
 
     & :where(figure) {
-        @apply mx-auto bg-figure-bg my-0 py-0 flex flex-col justify-center border-y border-line;
+        @apply mx-auto bg-figure-bg my-0 py-0 flex flex-col justify-center border border-line hard-shadow;
         line-height: 0;
     }
 
@@ -84,7 +98,7 @@
 
     & :where(figcaption) {
         counter-increment: figure;
-        @apply font-mono text-sm text-left m-0 p-2 text-ink border-t border-line bg-bg;
+        @apply font-mono text-sm text-left m-0 p-2 text-ink border-t border-line bg-secondary-bg;
 
         &::before {
             content: "Figure " counter(figure, decimal) ". ";
@@ -92,28 +106,46 @@
         }
     }
 
+    & :where(blockquote) {
+        @apply font-mono text-sm text-ink not-italic border-none px-10 mx-auto w-fit;
+        quotes: none;
+    }
+
+    & :where(blockquote p) {
+        @apply text-left;
+    }
+
     & :where(h1, h2, h3, h4, h5, h6) {
-        @apply font-mono text-ink mb-5 p-0 border-y border-line;
+        @apply font-mono text-ink mb-5 p-0;
     }
 
     & :where(h2) {
-        counter-increment: section;
-        @apply flex flex-row items-stretch text-sm pl-4 py-3;
+        @apply flex flex-row items-center text-lg;
 
         /* After primary headers, fill the remaining space with diagonal lines. */
         &::after {
             content: "";
-            @apply diagonal-lines grow self-stretch border-l border-line ml-4 -my-3;
+            @apply grow border-t border-line ml-4;
+        }
+    }
+
+    & :where(h3) {
+        @apply flex flex-row items-center text-sm border-y-0 py-2 pl-4;
+
+        /* Line after heading text, extending to the right edge. */
+        &::after {
+            content: "";
+            @apply grow border-t border-line ml-3;
         }
     }
 
     /* Table styling for markdown posts.*/
     & :where(table) {
-        @apply font-mono text-xs w-full border-collapse border-y border-line my-0 py-0;
+        @apply font-mono text-xs w-full border-collapse border border-line my-0 py-0 bg-secondary-bg hard-shadow;
     }
 
     & :where(tr) {
-        @apply border-b border-dashed border-line;
+        @apply border-b border-line-secondary border-dashed;
     }
 
     & :where(tr:last-child) {
@@ -137,7 +169,7 @@
     }
 
     & :where(table caption) {
-        @apply text-left p-2 border-t border-line text-xs;
+        @apply text-left p-2 border-t border-x border-line text-xs bg-secondary-bg;
     }
 
     & :where(table caption)::before {

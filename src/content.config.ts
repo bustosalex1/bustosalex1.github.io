@@ -19,7 +19,6 @@ const postCollection = defineCollection({
             math: z.boolean().optional(),
         }),
 });
-
 export const collections = {
     posts: postCollection,
 };

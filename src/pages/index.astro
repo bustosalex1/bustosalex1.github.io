@@ -17,7 +17,7 @@ const pageTitle = "Projects";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <div class="flex flex-col w-full gap-4 p-4">
+    <div class="flex flex-col w-full gap-4">
         {filteredPosts.map((post) => <ProjectCard post={post} />)}
     </div>
 </BaseLayout>

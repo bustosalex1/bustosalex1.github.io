@@ -15,6 +15,7 @@
     const links = [
         ["Posts", "/"],
         ["Quotes I Like", "/experiments/quotes"],
+
     ];
 
     /**
@@ -46,10 +47,12 @@ Component providing links to main pages on my website. New links and their
 slugs can be added in the `links` variable. This component also displays the
 title of the website (my name).
 -->
-<div class="flex flex-row w-full h-11 border-line border items-stretch">
+<div
+    class="flex flex-row w-full h-11 border-line border items-stretch bg-secondary-bg hard-shadow"
+>
     <a
         href="/"
-        class="font-bold whitespace-nowrap text-ink transition-all duration-150 content-center hover:text-primary px-4 border-line border-r font-mono text-sm"
+        class="font-bold whitespace-nowrap text-white transition-all duration-150 content-center px-4 border-line border-r font-mono text-sm bg-primary"
     >
         Alex Bustos
     </a>
@@ -64,7 +67,7 @@ title of the website (my name).
                         (url === "/" && link === "/") ||
                         (url === "" && link === "/"),
                 },
-                "hover:text-primary transition-all duration-150 px-4 border-line content-center whitespace-nowrap border-r hidden md:block font-mono text-sm text-ink",
+                "hover:text-primary transition-all duration-150 px-4 border-line content-center whitespace-nowrap border-r hidden md:block font-mono text-sm text-ink relative hover:bg-primary/10",
             ]}
         >
             {title}
@@ -101,10 +104,10 @@ title of the website (my name).
         class="fixed left-0 top-0 h-full bg-bg border-r border-line z-50 flex flex-col items-stretch min-w-60"
         transition:slide={{ axis: "x", duration: 150 }}
     >
-        <div class="p-2 border-b border-line">
+        <div class="p-2 border-b border-line bg-primary">
             <a
                 href="/"
-                class="font-bold whitespace-nowrap transition-all duration-150 content-center hover:text-primary font-mono"
+                class="font-bold whitespace-nowrap transition-all duration-150 content-center font-mono text-white"
             >
                 Alex Bustos
             </a>

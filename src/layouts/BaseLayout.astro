@@ -39,19 +39,17 @@ if (math) {
         </script>
     </head>
 
-    <body class="bg-bg">
+    <body class="bg-bg flex flex-col min-h-screen">
         <!--In the future, I feel like I may want the option to add stuff in the side bars, which is why the header and the content slot both have the same breakpoints.-->
-        <div class="w-[90vw] max-w-[700px] mx-auto mt-4">
+        <div class="w-[90vw] max-w-175 mx-auto mt-4">
             <Header />
         </div>
 
-        <div
-            class="flex flex-col w-[90vw] max-w-[700px] mx-auto border-l border-r border-line"
-        >
+        <div class="flex flex-col w-[90vw] max-w-175 mx-auto mt-4 grow">
             <slot />
         </div>
 
-        <div class="w-[90vw] max-w-[700px] mx-auto">
+        <div class="w-[90vw] max-w-175 mx-auto">
             <Footer />
         </div>
     </body>
