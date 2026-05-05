@@ -1,0 +1,113 @@
+[
+    {
+        "id": "sopranos-positive-visualization",
+        "quote": "In my thoughts I use the technique of positive visualization.",
+        "source": "The Sopranos",
+        "additionalSourceInfo": "S1E2",
+        "character": "Christopher Moltisanti"
+    },
+    {
+        "id": "sopranos-regularness-of-life",
+        "quote": "I don't know Tony. It's like just the fuckin' regularness of life is too fuckin' hard for me or something.",
+        "source": "The Sopranos",
+        "additionalSourceInfo": "S1E8",
+        "character": "Christopher Moltisanti"
+    },
+    {
+        "id": "andor-eedy-karn",
+        "quote": "Don't become too much of an individual, Syril.",
+        "source": "Andor",
+        "additionalSourceInfo": "S2E4",
+        "character": "Eedy Karn"
+    },
+    {
+        "id": "sopranos-cookie-shit",
+        "quote": "Log off. That cookie shit makes me nervous.",
+        "source": "The Sopranos",
+        "additionalSourceInfo": "S3E1",
+        "character": "Tony Soprano"
+    },
+    {
+        "id": "sopranos-gabagool",
+        "quote": "All this from a slice of <em>gabagool</em>?",
+        "source": "The Sopranos",
+        "additionalSourceInfo": "S3E3",
+        "character": "Tony Soprano"
+    },
+    {
+        "id": "other-two-red-lobster",
+        "quote": "And on the 7th day God took his ass to Red Lobster.",
+        "source": "The Other Two",
+        "additionalSourceInfo": "S2E5",
+        "character": "Streeter's T-Shirt"
+    },
+    {
+        "id": "bullshit-jobs-clement",
+        "quote": "If you're not destroying your mind and body via paid work, you're not living right.",
+        "source": "Bullshit Jobs",
+        "character": "Clement",
+        "author": "David Graeber"
+    },
+    {
+        "id": "rehearsal-feelings",
+        "quote": "But I've recently come to realize I've been neglecting one key component of every crucial life event. Feelings.",
+        "source": "The Rehearsal",
+        "additionalSourceInfo": "S1E3",
+        "character": "Nathan Fielder"
+    },
+    {
+        "id": "snowcrash-hiro-tap-water",
+        "quote": "Hiro climbs down from the roof of the turret and, throwing caution to the wind, drinks three glasses of L.A. tap water.",
+        "source": "Snowcrash",
+        "author": "Neal Stephenson",
+        "aboutCharacter": "Hiro Protagonist"
+    },
+    {
+        "id": "termination-shock-fussing",
+        "quote": "Fussing with these things was one of those deals where the longer it took, the longer it took.",
+        "source": "Termination Shock",
+        "author": "Neal Stephenson",
+        "aboutCharacter": "Rufus Grant"
+    },
+    {
+        "id": "blue-mars-ann-clayborne",
+        "quote": "But red Mars was gone, and gone for good. Soletta or not, ice age or not, the biosphere would grow and spread until it covered everything, with an ocean in the north, and lakes in the south, and streams, forests, prairies, cities and roads, oh she saw it all; white clouds raining mud on the ancient highlands while the uncaring masses built their cities as fast as they could, the long run-out of civilization burying her world.",
+        "source": "Blue Mars",
+        "author": "Kim Stanley Robinson",
+        "aboutCharacter": "Ann Clayborne"
+    },
+    {
+        "id": "blue-mars-sax-russell",
+        "quote": "That was how humans knew each other. Tiny fractions of their lives intersected or were known in any way to anybody else. It was much like living alone in the universe. Which was strange. A justification for living with friends, for marrying, for sharing rooms and lives as much as possible. Not that this made people truly intimate; but it reduced the sensation of solitude.",
+        "source": "Blue Mars",
+        "author": "Kim Stanley Robinson",
+        "aboutCharacter": "Sax Russell"
+    },
+    {
+        "id": "blue-mars-nadia-work",
+        "quote": "She went around that afternoon feeling happy, and that evening when she joined Art she said, \"Hey! I did some work today.\"<br>\"Well!\" Art said. \"Let's go out and celebrate.\"",
+        "source": "Blue Mars",
+        "author": "Kim Stanley Robinson",
+        "aboutCharacter": "Nadia Cherneshevsky"
+    },
+    {
+        "id": "blue-mars-nirgal-water",
+        "quote": "Then over the black open water of the strait &mdash; the biggest stretch of open water he had ever seen on Mars. For twenty kilometers he floated over the open water, exclaiming out loud at the sight. Then ahead an immense airy bridge arced over the strait. The black-violet plate of water below it was dotted with sailboats, ferries, long barges, all trailing the white Vs of their wakes. Nirgal floated over them, circling the bridge twice to marvel at the sight &mdash; like nothing he had ever seen on Mars before: water, the sea, a whole future world.",
+        "source": "Blue Mars",
+        "author": "Kim Stanley Robinson",
+        "aboutCharacter": "Nirgal"
+    },
+    {
+        "id": "invincible-mark-grayson",
+        "quote": "I will not calm down! This is insane! What do you think is gonna happen? That I'm gonna go enslave my friends for a bunch of aliens I've never met? This is my life! These are my people!",
+        "character": "Mark Grayson",
+        "additionalSourceInfo": "S1E8",
+        "source": "Invincible"
+    },
+    {
+        "id": "intown-ace-hardware-botany",
+        "quote": "You can't plant if you haven't botany.",
+        "additionalSourceInfo": "near Virginia-Highland",
+        "source": "Intown Ace Hardware"
+    }
+]
