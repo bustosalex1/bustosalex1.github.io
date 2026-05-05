@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=../../../../.astro/collections/photos.schema.json
+title: "Oregon"
+location: "Oregon"
+cover: ./oregon_lone_boat_crater_lake_08_26_2025.webp
+dateRange: "August, 2025"
+description: "Photos from my trip to Oregon."
+photos:
+  - src: ./oregon_lone_boat_crater_lake_08_26_2025.webp
+    alt: "A single boat on crater lake."

@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=../../../../.astro/collections/photos.schema.json
+title: "Panama"
+location: "Panama City, PA"
+cover: ./panama_cargo_ship_in_lock_12_07_2025.webp
+dateRange: "2024"
+description: "Photos from my trip to Panama"
+photos:
+  - src: ./panama_san_blas_palm_beach_12_08_2025.webp
+    alt: "Palm trees framing a beach."

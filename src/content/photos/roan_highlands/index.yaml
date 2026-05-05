@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=../../../../.astro/collections/photos.schema.json
+title: "Roan Highlands"
+location: "Roan Highlands, NC & TN"
+cover: ./roan_highlands_lone_tree_grassy_bald_05_23_2025.webp
+dateRange: "May 2025"
+description: "Photos from a backpacking trip in the Roan Highlands."
+photos:
+  - src: ./roan_highlands_lone_tree_grassy_bald_05_23_2025.webp
+    alt: "A tree on a grassy bald."

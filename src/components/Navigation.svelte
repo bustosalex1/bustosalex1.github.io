@@ -14,8 +14,8 @@
     let { url }: Props = $props();
     const links = [
         ["Posts", "/"],
+        ["Photos", "/photos"],
         ["Quotes I Like", "/experiments/quotes"],
-
     ];
 
     /**
