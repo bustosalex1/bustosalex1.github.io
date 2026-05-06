@@ -11,9 +11,6 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-    redirects: {
-        "/experiments/quotes": "/experiments/quotes/source",
-    },
     integrations: [svelte(), mdx(), sitemap()],
     site: "https://bustosalex1.github.io",
     markdown: {
