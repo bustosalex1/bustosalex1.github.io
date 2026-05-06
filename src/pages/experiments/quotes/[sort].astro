@@ -1,0 +1,140 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+type SortParam = { params: { sort: "source" | "author" | "character" } };
+
+export function getStaticPaths(): SortParam[] {
+    return [
+        { params: { sort: "source" } },
+        { params: { sort: "author" } },
+        { params: { sort: "character" } },
+    ];
+}
+
+const { sort } = Astro.params;
+
+const allQuotes = await getCollection("quotes");
+
+const groupings = allQuotes.reduce(
+    (acc, entry) => {
+        const quote = entry.data;
+        let key = quote[sort];
+
+        if (key === undefined) {
+            if (
+                sort === "character" &&
+                quote.aboutCharacter !== undefined
+            ) {
+                key = quote.aboutCharacter;
+            } else {
+                key = "Unknown";
+            }
+        }
+
+        if (acc[key] === undefined) {
+            acc[key] = [];
+        }
+        acc[key].push(quote);
+        return acc;
+    },
+    {} as Record<string, (typeof allQuotes)[number]["data"][]>,
+);
+
+const groupedQuotes = Object.entries(groupings).sort((a, b) =>
+    a[0].localeCompare(b[0]),
+);
+---
+
+<BaseLayout pageTitle="Quotes I Like">
+    <!-- title section -->
+    <div class="border-line border bg-secondary-bg hard-shadow">
+        <h1
+            class="pt-10 pb-10 px-2 text-4xl text-center font-crimson italic text-ink"
+        >
+            Quotes I Like
+        </h1>
+        <div
+            class="flex flex-row items-stretch w-full h-11 border-line border-t"
+        >
+            <div class="grow diagonal-lines"></div>
+            <div class="flex flex-row w-fit">
+                <div
+                    class="whitespace-nowrap p-2 border-l border-line font-mono border-r content-center text-center text-ink text-sm"
+                >
+                    Sort by
+                </div>
+                <select
+                    class="p-2 w-fit cursor-pointer content-center font-mono text-ink text-sm"
+                    onchange="window.location = this.value"
+                >
+                    <option
+                        value="/experiments/quotes/source/"
+                        selected={sort === "source"}>Source Material</option
+                    >
+                    <option
+                        value="/experiments/quotes/author/"
+                        selected={sort === "author"}>Author</option
+                    >
+                    <option
+                        value="/experiments/quotes/character/"
+                        selected={sort === "character"}>Character</option
+                    >
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- quote groups -->
+    <div class="flex flex-col gap-4 pt-4">
+        {
+            groupedQuotes.map(([key, quoteList]) => (
+                <div class="flex flex-col divide-y divide-line border border-line bg-secondary-bg hard-shadow">
+                    <div class="flex flex-row sticky top-0 bg-secondary-bg">
+                        <a
+                            class="font-semibold p-2 text-ink font-mono text-sm"
+                            id={key}
+                            href={`#${key}`}
+                        >
+                            {key}
+                        </a>
+                    </div>
+                    {quoteList.map((quote) => (
+                        <div class="flex flex-col w-full">
+                            <div class="border-b border-line border-dashed p-8 font-crimson text-lg text-ink">
+                                <Fragment set:html={quote.quote} />
+                            </div>
+                            <div class="flex flex-row h-10 items-stretch overflow-x-auto w-full text-ink-secondary font-mono text-sm">
+                                <div class="grow" />
+                                {quote.character !== undefined && (
+                                    <div class="border-r border-line border-dashed content-center px-2 whitespace-nowrap">
+                                        &mdash; {quote.character}
+                                    </div>
+                                )}
+                                <div
+                                    class={`content-center px-2 whitespace-nowrap ${quote.aboutCharacter !== undefined ? "border-r border-dashed border-line" : ""}`}
+                                >
+                                    <em>{quote.source}</em>
+                                    {quote.additionalSourceInfo && (
+                                        <Fragment>
+                                            {" "}
+                                            {quote.additionalSourceInfo}
+                                        </Fragment>
+                                    )}
+                                    {quote.author && (
+                                        <Fragment> by {quote.author}</Fragment>
+                                    )}
+                                </div>
+                                {quote.aboutCharacter !== undefined && (
+                                    <div class="content-center px-2 whitespace-nowrap">
+                                        Regarding {quote.aboutCharacter}
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            ))
+        }
+    </div>
+</BaseLayout>
