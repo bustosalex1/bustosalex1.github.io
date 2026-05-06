@@ -13,9 +13,13 @@
 
     let { url }: Props = $props();
     const links = [
-        ["Posts", "/"],
-        ["Photos", "/photos"],
-        ["Quotes I Like", "/experiments/quotes"],
+        { title: "Posts", link: "/" },
+        { title: "Photos", link: "/photos" },
+        {
+            title: "Quotes I Like",
+            link: "/experiments/quotes/source",
+            base: "/experiments/quotes",
+        },
     ];
 
     /**
@@ -56,13 +60,13 @@ title of the website (my name).
     >
         Alex Bustos
     </a>
-    {#each links as [title, link] (link)}
+    {#each links as { title, link, base } (link)}
         <a
             href={link}
             class={[
                 {
                     "underline text-primary":
-                        (url.includes(link) && link !== "/") ||
+                        (url.includes(base ?? link) && link !== "/") ||
                         (url.includes("posts") && link === "/") ||
                         (url === "/" && link === "/") ||
                         (url === "" && link === "/"),
@@ -112,13 +116,13 @@ title of the website (my name).
                 Alex Bustos
             </a>
         </div>
-        {#each links as [title, link] (link)}
+        {#each links as { title, link, base } (link)}
             <a
                 href={link}
                 class={[
                     {
                         "underline text-primary":
-                            (url.includes(link) && link !== "/") ||
+                            (url.includes(base ?? link) && link !== "/") ||
                             (url.includes("posts") && link === "/") ||
                             (url === "/" && link === "/") ||
                             (url === "" && link === "/"),
