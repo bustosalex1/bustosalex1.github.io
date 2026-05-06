@@ -2,9 +2,9 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
-export function getStaticPaths(): {
-    params: { sort: "source" | "author" | "character" };
-}[] {
+type SortParam = { params: { sort: "source" | "author" | "character" } };
+
+export function getStaticPaths(): SortParam[] {
     return [
         { params: { sort: "source" } },
         { params: { sort: "author" } },
