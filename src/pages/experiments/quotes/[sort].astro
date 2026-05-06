@@ -16,34 +16,34 @@ const { sort } = Astro.params;
 
 const allQuotes = await getCollection("quotes");
 
-const groupedQuotes = (() => {
-    const groupings = allQuotes.reduce(
-        (acc, entry) => {
-            const quote = entry.data;
-            let key = quote[sort];
+const groupings = allQuotes.reduce(
+    (acc, entry) => {
+        const quote = entry.data;
+        let key = quote[sort];
 
-            if (key === undefined) {
-                if (
-                    sort === "character" &&
-                    quote.aboutCharacter !== undefined
-                ) {
-                    key = quote.aboutCharacter;
-                } else {
-                    key = "Unknown";
-                }
+        if (key === undefined) {
+            if (
+                sort === "character" &&
+                quote.aboutCharacter !== undefined
+            ) {
+                key = quote.aboutCharacter;
+            } else {
+                key = "Unknown";
             }
+        }
 
-            if (acc[key] === undefined) {
-                acc[key] = [];
-            }
-            acc[key].push(quote);
-            return acc;
-        },
-        {} as Record<string, (typeof allQuotes)[number]["data"][]>,
-    );
+        if (acc[key] === undefined) {
+            acc[key] = [];
+        }
+        acc[key].push(quote);
+        return acc;
+    },
+    {} as Record<string, (typeof allQuotes)[number]["data"][]>,
+);
 
-    return Object.entries(groupings).sort((a, b) => a[0].localeCompare(b[0]));
-})();
+const groupedQuotes = Object.entries(groupings).sort((a, b) =>
+    a[0].localeCompare(b[0]),
+);
 ---
 
 <BaseLayout pageTitle="Quotes I Like">
