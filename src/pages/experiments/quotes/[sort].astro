@@ -22,10 +22,7 @@ const groupings = allQuotes.reduce(
         let key = quote[sort];
 
         if (key === undefined) {
-            if (
-                sort === "character" &&
-                quote.aboutCharacter !== undefined
-            ) {
+            if (sort === "character" && quote.aboutCharacter !== undefined) {
                 key = quote.aboutCharacter;
             } else {
                 key = "Unknown";

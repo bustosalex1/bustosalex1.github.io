@@ -5,5 +5,9 @@ cover: ./atlanta_brick_building_green_dome_03_25_2026.webp
 dateRange: "2026"
 description: "A collection of photos from around Atlanta."
 photos:
-  - src: ./atlanta_brick_building_green_dome_03_25_2026.webp
-    alt: "a brick building with a green dome."
+    - src: ./atlanta_brick_building_green_dome_03_25_2026.webp
+      alt: "A brick building with a green dome."
+    - src: ./atlanta_radio_tower_contrails_sunset_03_25_2026.webp
+      alt: "A radio tower with contrails at sunset."
+    - src: ./atlanta_string_lights_branches_dusk_03_25_2026.webp
+      alt: "String lights hanging from branches at dusk."

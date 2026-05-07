@@ -1,6 +1,7 @@
 import { defineCollection } from "astro:content";
 import { z } from "astro/zod";
 import { file, glob } from "astro/loaders";
+
 const quotesCollection = defineCollection({
     loader: file("src/content/quotes/index.json"),
     schema: z.object({
@@ -13,6 +14,7 @@ const quotesCollection = defineCollection({
         aboutCharacter: z.string().optional(),
     }),
 });
+
 const postCollection = defineCollection({
     loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/posts" }),
     schema: ({ image }) =>
@@ -55,6 +57,8 @@ const photoCollection = defineCollection({
                     .array(
                         z.object({
                             title: z.string().optional(),
+                            cover: image(),
+                            coverAlt: z.string(),
                             photos: z.array(photoSchema({ image })),
                         }),
                     )

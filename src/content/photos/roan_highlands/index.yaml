@@ -5,5 +5,31 @@ cover: ./roan_highlands_lone_tree_grassy_bald_05_23_2025.webp
 dateRange: "May 2025"
 description: "Photos from a backpacking trip in the Roan Highlands."
 photos:
-  - src: ./roan_highlands_lone_tree_grassy_bald_05_23_2025.webp
-    alt: "A tree on a grassy bald."
+    - src: ./roan_highlands_appalachian_trail_wooden_marker_05_23_2025.webp
+      alt: "An Appalachian Trail wooden marker."
+    - src: ./roan_highlands_blue_ridge_panoramic_view_05_23_2025.webp
+      alt: "Panoramic view of the Blue Ridge mountains."
+    - src: ./roan_highlands_camp_kitchen_sunset_overlook_05_23_2025.webp
+      alt: "Camp kitchen at a sunset overlook."
+    - src: ./roan_highlands_evergreen_silhouette_orange_sunset_05_23_2025.webp
+      alt: "Evergreen silhouette against an orange sunset."
+    - src: ./roan_highlands_glowing_shrubs_sunset_ridge_05_23_2025.webp
+      alt: "Glowing shrubs on a sunset ridge."
+    - src: ./roan_highlands_grassy_summit_orange_flora_05_23_2025.webp
+      alt: "A grassy summit with orange flora."
+    - src: ./roan_highlands_lone_tree_grassy_bald_05_23_2025.webp
+      alt: "A lone tree on a grassy bald."
+    - src: ./roan_highlands_mountain_view_through_branches_05_23_2025.webp
+      alt: "Mountain view through branches."
+    - src: ./roan_highlands_red_tent_trekking_poles_05_23_2025.webp
+      alt: "A red tent with trekking poles."
+    - src: ./roan_highlands_golden_grass_sunlit_hillside_05_24_2025.webp
+      alt: "Golden grass on a sunlit hillside."
+    - src: ./roan_highlands_morning_trail_uphill_path_05_24_2025.webp
+      alt: "Morning trail on an uphill path."
+    - src: ./roan_highlands_sunburst_through_silhouetted_trees_05_24_2025.webp
+      alt: "Sunburst through silhouetted trees."
+    - src: ./roan_highlands_trekking_poles_sunrise_silhouette_05_24_2025.webp
+      alt: "Trekking poles silhouetted at sunrise."
+    - src: ./roan_highlands_wispy_clouds_meadow_morning_05_24_2025.webp
+      alt: "Wispy clouds over a meadow in the morning."
