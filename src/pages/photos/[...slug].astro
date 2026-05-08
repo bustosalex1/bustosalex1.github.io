@@ -1,0 +1,73 @@
+---
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+    const photos = await getCollection("photos");
+    return photos.map((photo) => ({
+        params: { slug: photo.id },
+        props: photo,
+    }));
+}
+
+type Props = CollectionEntry<"photos">;
+const entry = Astro.props;
+---
+
+<BaseLayout pageTitle={`Photos - ${entry.data.title}`}>
+    <div class="flex flex-col gap-4">
+        <div class="flex flex-row flex-wrap justify-between items-center gap-2">
+            <h1 class="font-bold font-mono text-lg text-ink">
+                {entry.data.title}
+            </h1>
+            <span class="font-mono text-sm text-ink-tertiary">
+                {entry.data.location} &mdash; {entry.data.dateRange}
+            </span>
+        </div>
+
+        {
+            entry.data.sections ? (
+                <div class="flex flex-col gap-4">
+                    {entry.data.sections.map((section) => (
+                        <div class="border border-line hard-shadow">
+                            <div class="flex flex-row border-b border-line items-center bg-secondary-bg">
+                                <div class="font-mono font-bold text-xs px-2 py-2">
+                                    {section.title}
+                                </div>
+                            </div>
+                            <div class="columns-2 gap-2">
+                                {section.photos.map((photo) => (
+                                    <div class="break-inside-avoid mb-2">
+                                        <Image
+                                            src={photo.src}
+                                            alt={photo.alt || ""}
+                                            loading="lazy"
+                                            class="w-full h-auto"
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            ) : entry.data.photos ? (
+                <div class="border border-line hard-shadow">
+                    <div class="columns-2 gap-2">
+                        {entry.data.photos.map((photo) => (
+                            <div class="break-inside-avoid mb-2">
+                                <Image
+                                    src={photo.src}
+                                    alt={photo.alt || ""}
+                                    loading="lazy"
+                                    class="w-full h-auto"
+                                />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            ) : null
+        }
+    </div>
+</BaseLayout>

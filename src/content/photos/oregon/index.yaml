@@ -1,71 +1,71 @@
 # yaml-language-server: $schema=../../../../.astro/collections/photos.schema.json
 title: "Oregon"
 location: "Oregon"
-cover: ./oregon_lone_boat_crater_lake_08_26_2025.webp
+cover: ./oregon_trillium_lake_hood_reflection_08_25_2025.webp
 dateRange: "August, 2025"
 description: "Photos from my trip to Oregon."
 sections:
-    - title: "Day 1 — August 24, 2025"
-      cover: ./oregon_timberline_lodge_mountain_view_08_24_2025.webp
-      coverAlt: "Timberline Lodge with mountain view."
-      photos:
-          - src: ./oregon_timberline_lodge_mountain_view_08_24_2025.webp
-            alt: "Timberline Lodge with mountain view."
-          - src: ./oregon_columbia_river_gorge_overlook_08_24_2025.webp
-            alt: "Columbia River Gorge overlook."
-          - src: ./oregon_timberline_ski_lift_chairs_08_24_2025.webp
-            alt: "Ski lift chairs at Timberline."
-          - src: ./oregon_mount_hood_rocky_summit_08_24_2025.webp
-            alt: "Rocky summit of Mount Hood."
-          - src: ./oregon_forest_trail_evergreen_path_08_24_2025.webp
-            alt: "A forest trail through evergreens."
-          - src: ./oregon_multnomah_falls_through_leaves_08_24_2025.webp
-            alt: "Multnomah Falls through leaves."
-    - title: "Day 2 — August 25, 2025"
-      cover: ./oregon_trillium_lake_hood_reflection_08_25_2025.webp
-      coverAlt: "Mount Hood reflected in Trillium Lake."
-      photos:
-          - src: ./oregon_trillium_lake_hood_reflection_08_25_2025.webp
-            alt: "Mount Hood reflected in Trillium Lake."
-    - title: "Day 3 — August 26, 2025"
-      cover: ./oregon_lone_boat_crater_lake_08_26_2025.webp
-      coverAlt: "A single boat on Crater Lake."
-      photos:
-          - src: ./oregon_lone_boat_crater_lake_08_26_2025.webp
-            alt: "A single boat on Crater Lake."
-          - src: ./oregon_cleetwood_cove_dock_crater_lake_08_26_2025.webp
-            alt: "Dock at Cleetwood Cove, Crater Lake."
-          - src: ./oregon_crater_lake_wizard_island_dawn_08_26_2025.webp
-            alt: "Wizard Island at dawn, Crater Lake."
-          - src: ./oregon_end_of_maintained_trail_sign_08_26_2025.webp
-            alt: "End of maintained trail sign."
-          - src: ./oregon_golden_chipmunk_on_rocks_08_26_2025.webp
-            alt: "A golden chipmunk on rocks."
-          - src: ./oregon_crater_lake_caldera_blue_water_08_26_2025.webp
-            alt: "Crater Lake caldera with blue water."
-          - src: ./oregon_rocky_trail_volcanic_forest_08_26_2025.webp
-            alt: "Rocky trail through volcanic forest."
-    - title: "Day 4 — August 28, 2025"
-      cover: ./oregon_heceta_head_lighthouse_fog_coast_08_28_2025.webp
-      coverAlt: "Heceta Head Lighthouse on the foggy coast."
-      photos:
-          - src: ./oregon_heceta_head_lighthouse_fog_coast_08_28_2025.webp
-            alt: "Heceta Head Lighthouse on the foggy coast."
-          - src: ./oregon_cape_creek_arch_bridge_fog_08_28_2025.webp
-            alt: "Cape Creek arch bridge in fog."
-          - src: ./oregon_sea_lions_resting_on_dock_08_28_2025.webp
-            alt: "Sea lions resting on a dock."
-          - src: ./oregon_yaquina_head_lighthouse_overcast_08_28_2025.webp
-            alt: "Yaquina Head Lighthouse under overcast sky."
-          - src: ./oregon_newport_fishing_boats_harbor_08_28_2025.webp
-            alt: "Fishing boats in Newport harbor."
-          - src: ./oregon_keepers_house_foggy_forest_08_28_2025.webp
-            alt: "Keeper's house in foggy forest."
-          - src: ./oregon_heceta_head_lighthouse_red_dome_08_28_2025.webp
-            alt: "Red dome of Heceta Head Lighthouse."
-    - title: "Day 5 — August 29, 2025"
-      cover: ./oregon_portland_japanese_garden_koi_pond_08_29_2025.webp
-      coverAlt: "Koi pond at Portland Japanese Garden."
-      photos:
-          - src: ./oregon_portland_japanese_garden_koi_pond_08_29_2025.webp
-            alt: "Koi pond at Portland Japanese Garden."
+  - title: "Day 1 — August 24, 2025"
+    cover: ./oregon_timberline_lodge_mountain_view_08_24_2025.webp
+    coverAlt: "Timberline Lodge with mountain view."
+    photos:
+      - src: ./oregon_timberline_lodge_mountain_view_08_24_2025.webp
+        alt: "Timberline Lodge with mountain view."
+      - src: ./oregon_columbia_river_gorge_overlook_08_24_2025.webp
+        alt: "Columbia River Gorge overlook."
+      - src: ./oregon_timberline_ski_lift_chairs_08_24_2025.webp
+        alt: "Ski lift chairs at Timberline."
+      - src: ./oregon_mount_hood_rocky_summit_08_24_2025.webp
+        alt: "Rocky summit of Mount Hood."
+      - src: ./oregon_forest_trail_evergreen_path_08_24_2025.webp
+        alt: "A forest trail through evergreens."
+      - src: ./oregon_multnomah_falls_through_leaves_08_24_2025.webp
+        alt: "Multnomah Falls through leaves."
+  - title: "Day 2 — August 25, 2025"
+    cover: ./oregon_trillium_lake_hood_reflection_08_25_2025.webp
+    coverAlt: "Mount Hood reflected in Trillium Lake."
+    photos:
+      - src: ./oregon_trillium_lake_hood_reflection_08_25_2025.webp
+        alt: "Mount Hood reflected in Trillium Lake."
+  - title: "Day 3 — August 26, 2025"
+    cover: ./oregon_lone_boat_crater_lake_08_26_2025.webp
+    coverAlt: "A single boat on Crater Lake."
+    photos:
+      - src: ./oregon_lone_boat_crater_lake_08_26_2025.webp
+        alt: "A single boat on Crater Lake."
+      - src: ./oregon_cleetwood_cove_dock_crater_lake_08_26_2025.webp
+        alt: "Dock at Cleetwood Cove, Crater Lake."
+      - src: ./oregon_crater_lake_wizard_island_dawn_08_26_2025.webp
+        alt: "Wizard Island at dawn, Crater Lake."
+      - src: ./oregon_end_of_maintained_trail_sign_08_26_2025.webp
+        alt: "End of maintained trail sign."
+      - src: ./oregon_golden_chipmunk_on_rocks_08_26_2025.webp
+        alt: "A golden chipmunk on rocks."
+      - src: ./oregon_crater_lake_caldera_blue_water_08_26_2025.webp
+        alt: "Crater Lake caldera with blue water."
+      - src: ./oregon_rocky_trail_volcanic_forest_08_26_2025.webp
+        alt: "Rocky trail through volcanic forest."
+  - title: "Day 4 — August 28, 2025"
+    cover: ./oregon_heceta_head_lighthouse_fog_coast_08_28_2025.webp
+    coverAlt: "Heceta Head Lighthouse on the foggy coast."
+    photos:
+      - src: ./oregon_heceta_head_lighthouse_fog_coast_08_28_2025.webp
+        alt: "Heceta Head Lighthouse on the foggy coast."
+      - src: ./oregon_cape_creek_arch_bridge_fog_08_28_2025.webp
+        alt: "Cape Creek arch bridge in fog."
+      - src: ./oregon_sea_lions_resting_on_dock_08_28_2025.webp
+        alt: "Sea lions resting on a dock."
+      - src: ./oregon_yaquina_head_lighthouse_overcast_08_28_2025.webp
+        alt: "Yaquina Head Lighthouse under overcast sky."
+      - src: ./oregon_newport_fishing_boats_harbor_08_28_2025.webp
+        alt: "Fishing boats in Newport harbor."
+      - src: ./oregon_keepers_house_foggy_forest_08_28_2025.webp
+        alt: "Keeper's house in foggy forest."
+      - src: ./oregon_heceta_head_lighthouse_red_dome_08_28_2025.webp
+        alt: "Red dome of Heceta Head Lighthouse."
+  - title: "Day 5 — August 29, 2025"
+    cover: ./oregon_portland_japanese_garden_koi_pond_08_29_2025.webp
+    coverAlt: "Koi pond at Portland Japanese Garden."
+    photos:
+      - src: ./oregon_portland_japanese_garden_koi_pond_08_29_2025.webp
+        alt: "Koi pond at Portland Japanese Garden."

@@ -1,0 +1,34 @@
+---
+/**
+ * Simple card for displaying links to photos CollectionEntries.
+ */
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+    photos: CollectionEntry<"photos">;
+}
+
+const { photos } = Astro.props;
+---
+
+<a href={"/photos/" + photos.id}>
+    <div
+        class="group border border-line transition-all duration-150 hover:border-primary w-full hard-shadow hover:hard-shadow-hover relative hover:-translate-y-1 aspect-video"
+    >
+        <div
+            class="inset-0 bg-linear-to-tr from-black/50 via-black/10 to-transparent absolute"
+        >
+        </div>
+        <Image
+            src={photos.data.cover}
+            alt={photos.data.title + " cover"}
+            class="object-cover w-full h-full"
+        />
+        <div
+            class="absolute left-2 bottom-2 font-crimson text-white italic text-3xl text-shadow"
+        >
+            {photos.data.title}
+        </div>
+    </div>
+</a>

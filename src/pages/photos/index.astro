@@ -1,0 +1,14 @@
+---
+import ImageCard from "@components/ImageCard.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const allPhotos = await getCollection("photos");
+const pageTitle = "Photos";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <div class="flex flex-col w-full gap-4">
+        {allPhotos.map((photos) => <ImageCard photos={photos} />)}
+    </div>
+</BaseLayout>

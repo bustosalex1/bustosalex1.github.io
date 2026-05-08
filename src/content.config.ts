@@ -1,4 +1,4 @@
-import { defineCollection } from "astro:content";
+import { defineCollection, type ImageFunction } from "astro:content";
 import { z } from "astro/zod";
 import { file, glob } from "astro/loaders";
 
@@ -35,7 +35,7 @@ const postCollection = defineCollection({
         }),
 });
 
-const photoSchema = ({ image }: { image: (path?: string) => z.ZodType }) =>
+const photoSchema = (image: ImageFunction) =>
     z.object({
         src: image(),
         caption: z.string().optional(),
@@ -52,14 +52,14 @@ const photoCollection = defineCollection({
                 cover: image(),
                 dateRange: z.string(),
                 description: z.string().optional(),
-                photos: z.array(photoSchema({ image })).optional(),
+                photos: z.array(photoSchema(image)).optional(),
                 sections: z
                     .array(
                         z.object({
                             title: z.string().optional(),
                             cover: image(),
                             coverAlt: z.string(),
-                            photos: z.array(photoSchema({ image })),
+                            photos: z.array(photoSchema(image)),
                         }),
                     )
                     .optional(),
