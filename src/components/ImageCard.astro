@@ -26,9 +26,12 @@ const { photos } = Astro.props;
             class="object-cover w-full h-full"
         />
         <div
-            class="absolute left-2 bottom-2 font-crimson text-white italic text-3xl text-shadow"
+            class="absolute left-2 bottom-2 font-crimson text-white italic text-xl md:text-3xl text-shadow"
         >
             {photos.data.title}
+        </div>
+        <div class="absolute right-2 bottom-2 text-xs text-white font-mono">
+            {photos.data.dateRange}
         </div>
     </div>
 </a>

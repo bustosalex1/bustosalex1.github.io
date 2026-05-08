@@ -62,7 +62,7 @@ const entry = Astro.props;
                     ))}
                 </div>
             ) : entry.data.photos ? (
-                <div class="grid grid-cols-2 md:grid-cols-3 diagonal-lines border-l border-r border-b border-line bg-secondary-bg hard-shadow">
+                <div class="grid grid-cols-1 md:grid-cols-3 diagonal-lines border-l border-r border-b border-line bg-secondary-bg hard-shadow">
                     {entry.data.photos.map((photo) => (
                         <div class="aspect-square">
                             <Image
