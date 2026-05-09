@@ -2,8 +2,9 @@
 title: "Oregon"
 location: "Oregon"
 cover: ./oregon_trillium_lake_hood_reflection_08_25_2025.webp
-dateRange: "August, 2025"
-description: "Photos from my trip to Oregon."
+startDate: "2025-08-24"
+endDate: "2025-08-29"
+description: "Photos from my first time in Oregon. Went on a roadtrip with my grandma."
 sections:
   - title: "Day 1 — August 24, 2025"
     cover: ./oregon_timberline_lodge_mountain_view_08_24_2025.webp

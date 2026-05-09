@@ -50,7 +50,16 @@ const photoCollection = defineCollection({
                 title: z.string(),
                 location: z.string(),
                 cover: image(),
-                dateRange: z.string(),
+                startDate: z
+                    .string()
+                    .or(z.date())
+                    .transform((val) => new Date(val)),
+                endDate: z
+                    .string()
+                    .or(z.date())
+                    .transform((val) => new Date(val))
+                    .optional(),
+                yearOnly: z.boolean().optional(),
                 description: z.string().optional(),
                 photos: z.array(photoSchema(image)).optional(),
                 sections: z
@@ -59,6 +68,16 @@ const photoCollection = defineCollection({
                             title: z.string().optional(),
                             cover: image(),
                             coverAlt: z.string(),
+                            startDate: z
+                                .string()
+                                .or(z.date())
+                                .transform((val) => new Date(val))
+                                .optional(),
+                            endDate: z
+                                .string()
+                                .or(z.date())
+                                .transform((val) => new Date(val))
+                                .optional(),
                             photos: z.array(photoSchema(image)),
                         }),
                     )
