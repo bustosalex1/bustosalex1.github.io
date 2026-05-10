@@ -46,11 +46,11 @@ const dateText = entry.data.endDate
         entry.data.photos && (
             <div class="w-full border border-line hard-shadow bg-secondary-bg diagonal-lines grid grid-cols-3">
                 {entry.data.photos.map((p) => (
-                    <div class="aspect-square">
+                    <div class="aspect-square overflow-hidden">
                         <Image
                             src={p.src}
                             alt={p.alt ?? ""}
-                            class="w-full h-full object-cover"
+                            class="w-full h-full object-cover hover:scale-105 duration-300 transition-all ease-in-out"
                         />
                     </div>
                 ))}
@@ -63,11 +63,17 @@ const dateText = entry.data.endDate
             <div class="w-full flex flex-col gap-4">
                 {entry.data.sections.map((s) => (
                     <div class="w-full flex flex-col border border-line hard-shadow">
-                        <div class="p-1 border-b border-line italic font-crimson text-lg">{s.title}</div>
+                        <div class="p-1 border-b border-line italic font-crimson text-lg">
+                            {s.title}
+                        </div>
                         <div class="bg-secondary-bg diagonal-lines grid grid-cols-3 w-full">
                             {s.photos.map((p) => (
-                            <div class="aspect-square">
-                                <Image class="w-full h-full object-cover" src={p.src} alt={p.alt ?? ""}/>
+                                <div class="aspect-square overflow-hidden">
+                                    <Image
+                                        class="w-full h-full object-cover hover:scale-105 transition-all ease-in-out duration-300"
+                                        src={p.src}
+                                        alt={p.alt ?? ""}
+                                    />
                                 </div>
                             ))}
                         </div>
