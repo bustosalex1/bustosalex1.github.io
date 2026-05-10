@@ -9,6 +9,7 @@ sections:
   - title: "Columbia River Gorge & Mount Hood"
     location: "Mount Hood, OR"
     startDate: "2025-08-24"
+    endDate: "2025-08-25"
     photos:
       - src: ./oregon_timberline_lodge_mountain_view_08_24_2025.webp
         alt: "Timberline Lodge with mountain view."
@@ -22,9 +23,6 @@ sections:
         alt: "A forest trail through evergreens."
       - src: ./oregon_multnomah_falls_through_leaves_08_24_2025.webp
         alt: "Multnomah Falls through leaves."
-  - title: "Day 2 — August 25, 2025"
-    startDate: "2025-08-25"
-    photos:
       - src: ./oregon_trillium_lake_hood_reflection_08_25_2025.webp
         alt: "Mount Hood reflected in Trillium Lake."
   - title: "Crater Lake National Park"

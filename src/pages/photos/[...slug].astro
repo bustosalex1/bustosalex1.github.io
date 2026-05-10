@@ -45,7 +45,9 @@ const dateText = formatDateRange(
 
     {
         entry.data.photos && (
-            <div class="w-full border border-line hard-shadow bg-secondary-bg diagonal-lines grid grid-cols-3">
+            <div
+                class={`w-full border border-line hard-shadow bg-secondary-bg diagonal-lines grid ${entry.data.photos.length < 3 ? "grid-cols-1" : "grid-cols-3"}`}
+            >
                 {entry.data.photos.map((p) => (
                     <div class="aspect-square overflow-hidden">
                         <Image
@@ -74,7 +76,9 @@ const dateText = formatDateRange(
                                 </div>
                             )}
                         </div>
-                        <div class="bg-secondary-bg diagonal-lines grid grid-cols-3 w-full">
+                        <div
+                            class={`bg-secondary-bg diagonal-lines grid w-full ${s.photos.length < 3 ? "grid-cols-1" : "grid-cols-3"}`}
+                        >
                             {s.photos.map((p) => (
                                 <div class="aspect-square overflow-hidden">
                                     <Image
