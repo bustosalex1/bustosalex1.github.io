@@ -4,15 +4,12 @@
  */
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
-import Location from "~icons/carbon/location-filled";
-import LocationTag from "./LocationTag.svelte";
 interface Props {
     photos: CollectionEntry<"photos">;
 }
 
 const { photos } = Astro.props;
 
-// TODO: bruh what even is this
 function formatDate(d: Date): string {
     if (photos.data.yearOnly) return `${d.getUTCFullYear()}`;
     return d.toLocaleDateString("en-US", { month: "short", year: "numeric" });
@@ -42,16 +39,6 @@ function formatDateRange(start: Date, end?: Date): string {
 }
 
 const displayDate = formatDateRange(photos.data.startDate, photos.data.endDate);
-
-let locations: undefined | string[] = undefined;
-if (photos.data.sections) {
-    locations = [];
-    for (const s of photos.data.sections) {
-        if (s.location !== undefined) {
-            locations.push(s.location);
-        }
-    }
-}
 ---
 
 <a href={"/photos/" + photos.id}>
@@ -69,22 +56,18 @@ if (photos.data.sections) {
                 class="object-cover w-full h-full"
             />
             <div
-                class="absolute left-2 bottom-2 font-crimson text-white italic text-xl md:text-3xl text-shadow"
+                class="absolute left-2 bottom-2 text-white flex flex-col items-start gap-1"
             >
-                {photos.data.title}
-            </div>
-        </div>
-        <div
-            class="md:absolute md:right-2 md:bottom-2 flex flex-row px-2 items-center text-xs md:text-white md:border md:border-white font-mono divide-x divide-white"
-        >
-            <div
-                class="pr-2 py-1 flex flex-row gap-2 items-center whitespace-nowrap"
-            >
-                {locations && <LocationTag locations={locations} client:load />}
-                <Location class="h-4 w-4" />
-            </div>
-            <div class="text-shadow-hero pl-2 py-1 whitespace-nowrap">
-                {displayDate}
+                <div
+                    class="font-crimson italic text-xl md:text-3xl text-shadow-hero"
+                >
+                    {photos.data.title}
+                </div>
+                <div
+                    class="text-shadow-soft whitespace-nowrap text-xs font-mono"
+                >
+                    {displayDate}
+                </div>
             </div>
         </div>
     </div>

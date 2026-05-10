@@ -32,6 +32,7 @@ sections:
   - title: "Day 3 — August 26, 2025"
     cover: ./oregon_lone_boat_crater_lake_08_26_2025.webp
     coverAlt: "A single boat on Crater Lake."
+    location: "Crater Lake, OR"
     photos:
       - src: ./oregon_lone_boat_crater_lake_08_26_2025.webp
         alt: "A single boat on Crater Lake."
@@ -49,6 +50,7 @@ sections:
         alt: "Rocky trail through volcanic forest."
   - title: "Day 4 — August 28, 2025"
     cover: ./oregon_heceta_head_lighthouse_fog_coast_08_28_2025.webp
+    location: "Oregon Coast, OR"
     coverAlt: "Heceta Head Lighthouse on the foggy coast."
     photos:
       - src: ./oregon_heceta_head_lighthouse_fog_coast_08_28_2025.webp
@@ -68,6 +70,7 @@ sections:
   - title: "Day 5 — August 29, 2025"
     cover: ./oregon_portland_japanese_garden_koi_pond_08_29_2025.webp
     coverAlt: "Koi pond at Portland Japanese Garden."
+    location: "Portland, OR"
     photos:
       - src: ./oregon_portland_japanese_garden_koi_pond_08_29_2025.webp
         alt: "Koi pond at Portland Japanese Garden."
