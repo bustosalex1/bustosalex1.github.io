@@ -5,6 +5,7 @@
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import Location from "~icons/carbon/location-filled";
+import LocationTag from "./LocationTag.svelte";
 interface Props {
     photos: CollectionEntry<"photos">;
 }
@@ -41,34 +42,48 @@ function formatDateRange(start: Date, end?: Date): string {
 }
 
 const displayDate = formatDateRange(photos.data.startDate, photos.data.endDate);
+
+let locations: undefined | string[] = undefined;
+if (photos.data.sections) {
+    locations = [];
+    for (const s of photos.data.sections) {
+        if (s.location !== undefined) {
+            locations.push(s.location);
+        }
+    }
+}
 ---
 
 <a href={"/photos/" + photos.id}>
     <div
-        class="group border border-line transition-all duration-150 hover:border-primary w-full hard-shadow hover:hard-shadow-hover relative hover:-translate-y-1 aspect-video"
+        class="group border border-line transition-all duration-150 hover:border-primary w-full hard-shadow hover:hard-shadow-hover hover:-translate-y-1 bg-secondary-bg relative"
     >
-        <div
-            class="inset-0 bg-linear-to-tr from-black/50 via-black/10 to-transparent absolute"
-        >
-        </div>
-        <Image
-            src={photos.data.cover}
-            alt={photos.data.title + " cover"}
-            class="object-cover w-full h-full"
-        />
-        <div
-            class="absolute left-2 bottom-2 font-crimson text-white italic text-xl md:text-3xl text-shadow"
-        >
-            {photos.data.title}
-        </div>
-        <div
-            class="absolute right-2 bottom-2 flex flex-row px-2 items-center border border-white text-xs text-white font-mono divide-x divide-white"
-        >
-            <div class="pr-2 py-1 flex flex-row gap-2 items-center">
-                <Location class="h-4 w-4" />
-                {photos.data.location}
+        <div class="relative aspect-video">
+            <div
+                class="inset-0 bg-linear-to-tr from-black/50 via-black/10 to-transparent absolute"
+            >
             </div>
-            <div class="text-shadow-hero pl-2 py-1">
+            <Image
+                src={photos.data.cover}
+                alt={photos.data.title + " cover"}
+                class="object-cover w-full h-full"
+            />
+            <div
+                class="absolute left-2 bottom-2 font-crimson text-white italic text-xl md:text-3xl text-shadow"
+            >
+                {photos.data.title}
+            </div>
+        </div>
+        <div
+            class="md:absolute md:right-2 md:bottom-2 flex flex-row px-2 items-center text-xs md:text-white md:border md:border-white font-mono divide-x divide-white"
+        >
+            <div
+                class="pr-2 py-1 flex flex-row gap-2 items-center whitespace-nowrap"
+            >
+                {locations && <LocationTag locations={locations} client:load />}
+                <Location class="h-4 w-4" />
+            </div>
+            <div class="text-shadow-hero pl-2 py-1 whitespace-nowrap">
                 {displayDate}
             </div>
         </div>

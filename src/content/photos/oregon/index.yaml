@@ -9,6 +9,7 @@ sections:
   - title: "Day 1 — August 24, 2025"
     cover: ./oregon_timberline_lodge_mountain_view_08_24_2025.webp
     coverAlt: "Timberline Lodge with mountain view."
+    location: "Mount Hood, OR"
     photos:
       - src: ./oregon_timberline_lodge_mountain_view_08_24_2025.webp
         alt: "Timberline Lodge with mountain view."
