@@ -7,9 +7,8 @@ endDate: "2025-08-29"
 description: "Photos from my first time in Oregon. Went on a roadtrip with my grandma."
 sections:
   - title: "Columbia River Gorge & Mount Hood"
-    cover: ./oregon_timberline_lodge_mountain_view_08_24_2025.webp
-    coverAlt: "Timberline Lodge with mountain view."
     location: "Mount Hood, OR"
+    startDate: "2025-08-24"
     photos:
       - src: ./oregon_timberline_lodge_mountain_view_08_24_2025.webp
         alt: "Timberline Lodge with mountain view."
@@ -24,15 +23,13 @@ sections:
       - src: ./oregon_multnomah_falls_through_leaves_08_24_2025.webp
         alt: "Multnomah Falls through leaves."
   - title: "Day 2 — August 25, 2025"
-    cover: ./oregon_trillium_lake_hood_reflection_08_25_2025.webp
-    coverAlt: "Mount Hood reflected in Trillium Lake."
+    startDate: "2025-08-25"
     photos:
       - src: ./oregon_trillium_lake_hood_reflection_08_25_2025.webp
         alt: "Mount Hood reflected in Trillium Lake."
   - title: "Crater Lake National Park"
-    cover: ./oregon_lone_boat_crater_lake_08_26_2025.webp
-    coverAlt: "A single boat on Crater Lake."
     location: "Crater Lake, OR"
+    startDate: "2025-08-26"
     photos:
       - src: ./oregon_lone_boat_crater_lake_08_26_2025.webp
         alt: "A single boat on Crater Lake."
@@ -49,9 +46,8 @@ sections:
       - src: ./oregon_rocky_trail_volcanic_forest_08_26_2025.webp
         alt: "Rocky trail through volcanic forest."
   - title: "Oregon Coast"
-    cover: ./oregon_heceta_head_lighthouse_fog_coast_08_28_2025.webp
     location: "Oregon Coast, OR"
-    coverAlt: "Heceta Head Lighthouse on the foggy coast."
+    startDate: "2025-08-28"
     photos:
       - src: ./oregon_heceta_head_lighthouse_fog_coast_08_28_2025.webp
         alt: "Heceta Head Lighthouse on the foggy coast."
@@ -68,9 +64,8 @@ sections:
       - src: ./oregon_heceta_head_lighthouse_red_dome_08_28_2025.webp
         alt: "Red dome of Heceta Head Lighthouse."
   - title: "Portland"
-    cover: ./oregon_portland_japanese_garden_koi_pond_08_29_2025.webp
-    coverAlt: "Koi pond at Portland Japanese Garden."
     location: "Portland, OR"
+    startDate: "2025-08-29"
     photos:
       - src: ./oregon_portland_japanese_garden_koi_pond_08_29_2025.webp
         alt: "Koi pond at Portland Japanese Garden."

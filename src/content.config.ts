@@ -67,8 +67,6 @@ const photoCollection = defineCollection({
                         z.object({
                             title: z.string().optional(),
                             location: z.string().optional(),
-                            cover: image(),
-                            coverAlt: z.string(),
                             startDate: z
                                 .string()
                                 .or(z.date())

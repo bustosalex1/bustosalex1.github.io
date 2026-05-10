@@ -7,9 +7,8 @@ endDate: "2025-12-14"
 description: "Photos from a trip to Panama."
 sections:
   - title: "Panama City"
-    cover: ./panama_casco_viejo_balcony_building_12_07_2025.webp
     location: "Panama City, PA"
-    coverAlt: "A balcony on a building in Casco Viejo."
+    startDate: "2025-12-07"
     photos:
       - src: ./panama_casco_viejo_balcony_building_12_07_2025.webp
         alt: "A balcony on a building in Casco Viejo."
@@ -24,9 +23,8 @@ sections:
       - src: ./panama_miraflores_locks_red_tanker_12_07_2025.webp
         alt: "A red tanker at Miraflores Locks."
   - title: "Guna Yala"
-    cover: ./panama_san_blas_palm_beach_12_08_2025.webp
     location: "Guna Yala, PA"
-    coverAlt: "Palm trees framing a beach in San Blas."
+    startDate: "2025-12-08"
     photos:
       - src: ./panama_san_blas_palm_beach_12_08_2025.webp
         alt: "Palm trees framing a beach in San Blas."
@@ -44,8 +42,7 @@ sections:
         alt: "A sleeping calico cat."
   - title: "Santa Catalina"
     location: "Santa Catalina, PA"
-    cover: ./panama_sunset_palms_infinity_pool_12_10_2025.webp
-    coverAlt: "Sunset over palms and an infinity pool."
+    startDate: "2025-12-10"
     photos:
       - src: ./panama_beach_islands_small_boat_12_10_2025.webp
         alt: "A beach with islands and a small boat."
@@ -55,8 +52,7 @@ sections:
         alt: "A boat near a rocky island beach."
   - title: "Boquete"
     location: "Boquete, PA"
-    cover: ./panama_sunrise_clouds_mountain_silhouette_12_13_2025.webp
-    coverAlt: "Sunrise clouds and mountain silhouette."
+    startDate: "2025-12-13"
     photos:
       - src: ./panama_sunrise_clouds_mountain_silhouette_12_13_2025.webp
         alt: "Sunrise clouds and mountain silhouette."
