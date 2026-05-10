@@ -30,7 +30,7 @@ function formatDateRange(start: Date, end?: Date): string {
 
     if (start.getUTCFullYear() === end.getUTCFullYear()) {
         if (start.getUTCMonth() === end.getUTCMonth()) {
-            return `${start.toLocaleDateString("en-US", { month: "short", day: "numeric" })} - ${formatFullDate(end)}`;
+            return `${start.toLocaleDateString("en-US", { month: "short", day: "numeric" })} - ${end.getUTCDate()}, ${end.getUTCFullYear()}`;
         }
         return `${start.toLocaleDateString("en-US", { month: "short", day: "numeric" })} - ${formatFullDate(end)}`;
     }
@@ -59,7 +59,7 @@ const displayDate = formatDateRange(photos.data.startDate, photos.data.endDate);
                 class="absolute left-2 bottom-2 text-white flex flex-col items-start gap-1"
             >
                 <div
-                    class="font-crimson italic text-xl md:text-3xl text-shadow-hero"
+                    class="font-crimson italic text-xl md:text-3xl text-shadow-hero transition-all duration-150"
                 >
                     {photos.data.title}
                 </div>
