@@ -16,7 +16,8 @@ export function formatDateRange(
         return `${startYear}`;
     }
 
-    if (!end) return fmt(start, { month: "short", day: "numeric", year: "numeric" });
+    if (!end)
+        return fmt(start, { month: "short", day: "numeric", year: "numeric" });
 
     const endYear = end.getUTCFullYear();
     const startMD = fmt(start, { month: "short", day: "numeric" });
