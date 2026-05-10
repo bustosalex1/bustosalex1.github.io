@@ -34,7 +34,7 @@ const dateText = formatDateRange(
             <div class="grow border-b border-line"></div>
         </div>
         <div
-            class="md:border md:border-line pb-4 md:pb-1 md:pt-1 md:px-2 font-mono text-xs text-ink whitespace-nowrap"
+            class="md:border md:border-line pb-4 md:pb-1 md:pt-1 md:px-2 font-mono text-xs text-ink-secondary whitespace-nowrap"
         >
             {dateText}
         </div>
@@ -64,8 +64,15 @@ const dateText = formatDateRange(
             <div class="w-full flex flex-col gap-4">
                 {entry.data.sections.map((s) => (
                     <div class="w-full flex flex-col border border-line hard-shadow">
-                        <div class="p-1 border-b border-line italic font-crimson text-lg">
-                            {s.title}
+                        <div class="border-b border-line flex flex-row items-stretch">
+                            <span class="italic font-crimson text-lg p-1">
+                                {s.title}
+                            </span>
+                            {s.startDate && (
+                                <div class="ml-auto border-l border-line px-2 text-xs font-mono text-ink-secondary whitespace-nowrap content-center">
+                                    {formatDateRange(s.startDate, s.endDate)}
+                                </div>
+                            )}
                         </div>
                         <div class="bg-secondary-bg diagonal-lines grid grid-cols-3 w-full">
                             {s.photos.map((p) => (
