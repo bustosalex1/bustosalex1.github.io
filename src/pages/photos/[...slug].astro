@@ -76,3 +76,10 @@ const photos = entry.data.photos
         <PhotoGallery client:load {sections} {photos} />
     </div>
 </BaseLayout>
+
+<script>
+    document.querySelectorAll<HTMLImageElement>("img").forEach((img) => {
+        img.style.cursor = "pointer";
+        img.addEventListener("click", () => window.open(img.src, "_blank"));
+    });
+</script>
