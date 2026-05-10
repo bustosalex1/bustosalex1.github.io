@@ -1,9 +1,8 @@
 ---
 import { getCollection } from "astro:content";
-import { getImage } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import PhotoGallery from "@components/PhotoGallery.svelte";
 
 export async function getStaticPaths() {
     const photos = await getCollection("photos");
@@ -27,54 +26,56 @@ function formatFullDate(d: Date): string {
 const dateText = entry.data.endDate
     ? `${formatFullDate(entry.data.startDate)} - ${formatFullDate(entry.data.endDate)}`
     : formatFullDate(entry.data.startDate);
-
-// Run each photo through Astro's image pipeline at build time so we can hand
-// plain optimized URLs to the Svelte component.
-async function processPhoto(p: { src: ImageMetadata; alt?: string }) {
-    const img = await getImage({ src: p.src });
-    return {
-        src: img.src,
-        width: p.src.width,
-        height: p.src.height,
-        alt: p.alt ?? "",
-    };
-}
-
-const sections = entry.data.sections
-    ? await Promise.all(
-          entry.data.sections.map(async (s) => ({
-              title: s.title,
-              photos: await Promise.all(s.photos.map(processPhoto)),
-          })),
-      )
-    : undefined;
-
-const photos = entry.data.photos
-    ? await Promise.all(entry.data.photos.map(processPhoto))
-    : undefined;
 ---
 
 <BaseLayout pageTitle={`Photos - ${entry.data.title}`}>
-    <div class="flex flex-col">
-        <div class="flex flex-col w-full">
-            <div class="flex flex-row w-full gap-2 items-center">
-                <h1 class="font-crimson italic text-3xl text-ink p-2">
-                    {entry.data.title}
-                </h1>
-                <div class="grow border-b border-line"></div>
-                <div
-                    class="border border-line py-1 px-2 font-mono text-xs text-ink"
-                >
-                    {dateText}
-                </div>
-            </div>
-            <div class="font-crimson text-ink p-2 w-full text-lg">
-                {entry.data.description}
-            </div>
+    <div class="flex flex-row w-full gap-2 items-center">
+        <h1 class="font-crimson italic text-3xl text-ink py-2 pr-2">
+            {entry.data.title}
+        </h1>
+        <div class="grow border-b border-line"></div>
+        <div class="border border-line py-1 px-2 font-mono text-xs text-ink">
+            {dateText}
         </div>
-
-        <PhotoGallery client:load {sections} {photos} />
     </div>
+    <div class="font-crimson text-ink pb-4 pt-2 px-2 w-full text-lg">
+        {entry.data.description}
+    </div>
+
+    {
+        entry.data.photos && (
+            <div class="w-full border border-line hard-shadow bg-secondary-bg diagonal-lines grid grid-cols-3">
+                {entry.data.photos.map((p) => (
+                    <div class="aspect-square">
+                        <Image
+                            src={p.src}
+                            alt={p.alt ?? ""}
+                            class="w-full h-full object-cover"
+                        />
+                    </div>
+                ))}
+            </div>
+        )
+    }
+
+    {
+        entry.data.sections && (
+            <div class="w-full flex flex-col gap-4">
+                {entry.data.sections.map((s) => (
+                    <div class="w-full flex flex-col border border-line hard-shadow">
+                        <div class="p-1 border-b border-line italic font-crimson text-lg">{s.title}</div>
+                        <div class="bg-secondary-bg diagonal-lines grid grid-cols-3 w-full">
+                            {s.photos.map((p) => (
+                            <div class="aspect-square">
+                                <Image class="w-full h-full object-cover" src={p.src} alt={p.alt ?? ""}/>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                ))}
+            </div>
+        )
+    }
 </BaseLayout>
 
 <script>
