@@ -6,67 +6,67 @@ startDate: "2025-12-06"
 endDate: "2025-12-14"
 description: "Photos from a trip to Panama."
 sections:
-    - title: "Panama City"
-      cover: ./panama_casco_viejo_balcony_building_12_07_2025.webp
-      location: "Panama City, PA"
-      coverAlt: "A balcony on a building in Casco Viejo."
-      photos:
-          - src: ./panama_casco_viejo_balcony_building_12_07_2025.webp
-            alt: "A balcony on a building in Casco Viejo."
-          - src: ./panama_casco_viejo_cathedral_tower_12_07_2025.webp
-            alt: "A cathedral tower in Casco Viejo."
-          - src: ./panama_suv_flags_causeway_sunset_12_07_2025.webp
-            alt: "SUVs with flags on the Amador Causeway at sunset."
-          - src: ./panama_cargo_ship_in_lock_12_07_2025.webp
-            alt: "A cargo ship in the Miraflores Locks."
-          - src: ./panama_wallenius_ship_miraflores_locks_12_07_2025.webp
-            alt: "A Wallenius ship passing through Miraflores Locks."
-          - src: ./panama_miraflores_locks_red_tanker_12_07_2025.webp
-            alt: "A red tanker at Miraflores Locks."
-    - title: "Guna Yala"
-      cover: ./panama_san_blas_palm_beach_12_08_2025.webp
-      location: "Guna Yala, PA"
-      coverAlt: "Palm trees framing a beach in San Blas."
-      photos:
-          - src: ./panama_san_blas_palm_beach_12_08_2025.webp
-            alt: "Palm trees framing a beach in San Blas."
-          - src: ./panama_flag_san_blas_sandbar_12_08_2025.webp
-            alt: "A flag on a sandbar in San Blas."
-          - src: ./panama_guna_yala_stilt_village_12_08_2025.webp
-            alt: "A stilt village in Guna Yala."
-          - src: ./panama_yellow_boat_mangrove_water_12_08_2025.webp
-            alt: "A yellow boat in mangrove water."
-          - src: ./panama_colorful_boats_turquoise_water_12_08_2025.webp
-            alt: "Colorful boats in turquoise water."
-          - src: ./panama_palms_tropical_beach_view_12_08_2025.webp
-            alt: "Palm trees and tropical beach view."
-          - src: ./panama_sleeping_calico_cat_portrait_12_08_2025.webp
-            alt: "A sleeping calico cat."
-    - title: "Santa Catalina, PA"
-      location: "Santa Catalina, PA"
-      cover: ./panama_sunset_palms_infinity_pool_12_10_2025.webp
-      coverAlt: "Sunset over palms and an infinity pool."
-      photos:
-          - src: ./panama_beach_islands_small_boat_12_10_2025.webp
-            alt: "A beach with islands and a small boat."
-          - src: ./panama_sunset_palm_pool_pacific_12_10_2025.webp
-            alt: "Sunset, palm trees, pool, and the Pacific."
-          - src: ./panama_boat_rocky_island_beach_12_10_2025.webp
-            alt: "A boat near a rocky island beach."
-    - title: "Boquete, PA"
-      location: "Boquete, PA"
-      cover: ./panama_sunrise_clouds_mountain_silhouette_12_13_2025.webp
-      coverAlt: "Sunrise clouds and mountain silhouette."
-      photos:
-          - src: ./panama_sunrise_clouds_mountain_silhouette_12_13_2025.webp
-            alt: "Sunrise clouds and mountain silhouette."
-          - src: ./panama_antenna_towers_baru_sunrise_12_13_2025.webp
-            alt: "Antenna towers on Barú at sunrise."
-          - src: ./panama_baru_summit_communication_towers_12_13_2025.webp
-            alt: "Communication towers at the summit of Barú."
-          - src: ./panama_mountain_clouds_summit_flora_12_13_2025.webp
-            alt: "Mountain clouds and summit flora."
-          - src: ./panama_beyond_adventure_4x4_baru_12_13_2025.webp
-            alt: "A 4x4 on Volcán Barú."
-          - src: ./panama_christmas_summit_breakfast_picnic_12_13_2025.webp
-            alt: "Christmas summit breakfast picnic."
+  - title: "Panama City"
+    cover: ./panama_casco_viejo_balcony_building_12_07_2025.webp
+    location: "Panama City, PA"
+    coverAlt: "A balcony on a building in Casco Viejo."
+    photos:
+      - src: ./panama_casco_viejo_balcony_building_12_07_2025.webp
+        alt: "A balcony on a building in Casco Viejo."
+      - src: ./panama_casco_viejo_cathedral_tower_12_07_2025.webp
+        alt: "A cathedral tower in Casco Viejo."
+      - src: ./panama_suv_flags_causeway_sunset_12_07_2025.webp
+        alt: "SUVs with flags on the Amador Causeway at sunset."
+      - src: ./panama_cargo_ship_in_lock_12_07_2025.webp
+        alt: "A cargo ship in the Miraflores Locks."
+      - src: ./panama_wallenius_ship_miraflores_locks_12_07_2025.webp
+        alt: "A Wallenius ship passing through Miraflores Locks."
+      - src: ./panama_miraflores_locks_red_tanker_12_07_2025.webp
+        alt: "A red tanker at Miraflores Locks."
+  - title: "Guna Yala"
+    cover: ./panama_san_blas_palm_beach_12_08_2025.webp
+    location: "Guna Yala, PA"
+    coverAlt: "Palm trees framing a beach in San Blas."
+    photos:
+      - src: ./panama_san_blas_palm_beach_12_08_2025.webp
+        alt: "Palm trees framing a beach in San Blas."
+      - src: ./panama_flag_san_blas_sandbar_12_08_2025.webp
+        alt: "A flag on a sandbar in San Blas."
+      - src: ./panama_guna_yala_stilt_village_12_08_2025.webp
+        alt: "A stilt village in Guna Yala."
+      - src: ./panama_yellow_boat_mangrove_water_12_08_2025.webp
+        alt: "A yellow boat in mangrove water."
+      - src: ./panama_colorful_boats_turquoise_water_12_08_2025.webp
+        alt: "Colorful boats in turquoise water."
+      - src: ./panama_palms_tropical_beach_view_12_08_2025.webp
+        alt: "Palm trees and tropical beach view."
+      - src: ./panama_sleeping_calico_cat_portrait_12_08_2025.webp
+        alt: "A sleeping calico cat."
+  - title: "Santa Catalina"
+    location: "Santa Catalina, PA"
+    cover: ./panama_sunset_palms_infinity_pool_12_10_2025.webp
+    coverAlt: "Sunset over palms and an infinity pool."
+    photos:
+      - src: ./panama_beach_islands_small_boat_12_10_2025.webp
+        alt: "A beach with islands and a small boat."
+      - src: ./panama_sunset_palm_pool_pacific_12_10_2025.webp
+        alt: "Sunset, palm trees, pool, and the Pacific."
+      - src: ./panama_boat_rocky_island_beach_12_10_2025.webp
+        alt: "A boat near a rocky island beach."
+  - title: "Boquete"
+    location: "Boquete, PA"
+    cover: ./panama_sunrise_clouds_mountain_silhouette_12_13_2025.webp
+    coverAlt: "Sunrise clouds and mountain silhouette."
+    photos:
+      - src: ./panama_sunrise_clouds_mountain_silhouette_12_13_2025.webp
+        alt: "Sunrise clouds and mountain silhouette."
+      - src: ./panama_antenna_towers_baru_sunrise_12_13_2025.webp
+        alt: "Antenna towers on Barú at sunrise."
+      - src: ./panama_baru_summit_communication_towers_12_13_2025.webp
+        alt: "Communication towers at the summit of Barú."
+      - src: ./panama_mountain_clouds_summit_flora_12_13_2025.webp
+        alt: "Mountain clouds and summit flora."
+      - src: ./panama_beyond_adventure_4x4_baru_12_13_2025.webp
+        alt: "A 4x4 on Volcán Barú."
+      - src: ./panama_christmas_summit_breakfast_picnic_12_13_2025.webp
+        alt: "Christmas summit breakfast picnic."
