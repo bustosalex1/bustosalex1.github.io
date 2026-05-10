@@ -4,7 +4,7 @@ location: "Panama"
 cover: ./panama_suv_flags_causeway_sunset_12_07_2025.webp
 startDate: "2025-12-06"
 endDate: "2025-12-14"
-description: "Photos from my trip to Panama."
+description: "Photos from a trip to Panama."
 sections:
   - title: "Panama City"
     cover: ./panama_casco_viejo_balcony_building_12_07_2025.webp
@@ -32,8 +32,6 @@ sections:
         alt: "Palm trees framing a beach in San Blas."
       - src: ./panama_flag_san_blas_sandbar_12_08_2025.webp
         alt: "A flag on a sandbar in San Blas."
-      - src: ./panama_flag_beach_volleyball_net_12_08_2025.webp
-        alt: "A flag and beach volleyball net."
       - src: ./panama_guna_yala_stilt_village_12_08_2025.webp
         alt: "A stilt village in Guna Yala."
       - src: ./panama_yellow_boat_mangrove_water_12_08_2025.webp
@@ -49,8 +47,6 @@ sections:
     cover: ./panama_sunset_palms_infinity_pool_12_10_2025.webp
     coverAlt: "Sunset over palms and an infinity pool."
     photos:
-      - src: ./panama_sunset_palms_infinity_pool_12_10_2025.webp
-        alt: "Sunset over palms and an infinity pool."
       - src: ./panama_beach_islands_small_boat_12_10_2025.webp
         alt: "A beach with islands and a small boat."
       - src: ./panama_sunset_palm_pool_pacific_12_10_2025.webp
@@ -64,8 +60,6 @@ sections:
     photos:
       - src: ./panama_sunrise_clouds_mountain_silhouette_12_13_2025.webp
         alt: "Sunrise clouds and mountain silhouette."
-      - src: ./panama_vertical_sunrise_clouds_baru_12_13_2025.webp
-        alt: "Sunrise clouds over Volcán Barú."
       - src: ./panama_antenna_towers_baru_sunrise_12_13_2025.webp
         alt: "Antenna towers on Barú at sunrise."
       - src: ./panama_baru_summit_communication_towers_12_13_2025.webp

@@ -4,7 +4,7 @@ location: "Georgia"
 cover: ./atlanta_brick_building_green_dome_03_25_2026.webp
 startDate: "2026-01-01"
 yearOnly: true
-description: "Random photos from around Atlanta."
+description: "Just some random photos from around Atlanta."
 photos:
   - src: ./atlanta_brick_building_green_dome_03_25_2026.webp
     alt: "A brick building with a green dome."
