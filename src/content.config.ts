@@ -1,6 +1,7 @@
-import { defineCollection } from "astro:content";
+import { defineCollection, type ImageFunction } from "astro:content";
 import { z } from "astro/zod";
 import { file, glob } from "astro/loaders";
+
 const quotesCollection = defineCollection({
     loader: file("src/content/quotes/index.json"),
     schema: z.object({
@@ -13,6 +14,7 @@ const quotesCollection = defineCollection({
         aboutCharacter: z.string().optional(),
     }),
 });
+
 const postCollection = defineCollection({
     loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/posts" }),
     schema: ({ image }) =>
@@ -32,7 +34,70 @@ const postCollection = defineCollection({
             math: z.boolean().optional(),
         }),
 });
+
+const photoSchema = (image: ImageFunction) =>
+    z.object({
+        src: image(),
+        caption: z.string().optional(),
+        alt: z.string().optional(),
+    });
+
+const photoCollection = defineCollection({
+    loader: glob({ pattern: "**/index.yaml", base: "./src/content/photos" }),
+    schema: ({ image }) =>
+        z
+            .object({
+                title: z.string(),
+                location: z.string(),
+                cover: image(),
+                startDate: z
+                    .string()
+                    .or(z.date())
+                    .transform((val) => new Date(val)),
+                endDate: z
+                    .string()
+                    .or(z.date())
+                    .transform((val) => new Date(val))
+                    .optional(),
+                yearOnly: z.boolean().optional(),
+                description: z.string().optional(),
+                photos: z.array(photoSchema(image)).optional(),
+                sections: z
+                    .array(
+                        z.object({
+                            title: z.string().optional(),
+                            location: z.string().optional(),
+                            startDate: z
+                                .string()
+                                .or(z.date())
+                                .transform((val) => new Date(val))
+                                .optional(),
+                            endDate: z
+                                .string()
+                                .or(z.date())
+                                .transform((val) => new Date(val))
+                                .optional(),
+                            photos: z.array(photoSchema(image)),
+                        }),
+                    )
+                    .optional(),
+            })
+            .refine(
+                (data) => {
+                    const hasPhotos = data.photos && data.photos.length > 0;
+                    const hasSections =
+                        data.sections && data.sections.length > 0;
+                    return hasPhotos || hasSections;
+                },
+                {
+                    message:
+                        "photos must have either `photos` or `sections` with at least one entry",
+                },
+            ),
+});
+
 export const collections = {
     posts: postCollection,
+    photos: photoCollection,
     quotes: quotesCollection,
 };

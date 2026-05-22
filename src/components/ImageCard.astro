@@ -1,0 +1,51 @@
+---
+/**
+ * Simple card for displaying links to photos CollectionEntries.
+ */
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+import { formatDateRange } from "@utils/formatDateRange";
+interface Props {
+    photos: CollectionEntry<"photos">;
+}
+
+const { photos } = Astro.props;
+
+const displayDate = formatDateRange(
+    photos.data.startDate,
+    photos.data.endDate,
+    photos.data.yearOnly,
+);
+---
+
+<a href={"/photos/" + photos.id}>
+    <div
+        class="group border border-line transition-all duration-150 hover:border-primary w-full hard-shadow hover:hard-shadow-hover hover:-translate-y-1 bg-secondary-bg relative"
+    >
+        <div class="relative aspect-video">
+            <div
+                class="inset-0 bg-linear-to-tr from-black/50 via-black/10 to-transparent absolute"
+            >
+            </div>
+            <Image
+                src={photos.data.cover}
+                alt={photos.data.title + " cover"}
+                class="object-cover w-full h-full"
+            />
+            <div
+                class="absolute left-2 bottom-2 text-white flex flex-col items-start gap-1"
+            >
+                <div
+                    class="font-crimson italic text-xl md:text-3xl text-shadow-hero transition-all duration-150"
+                >
+                    {photos.data.title}
+                </div>
+                <div
+                    class="text-shadow-soft whitespace-nowrap text-xs font-mono"
+                >
+                    {displayDate}
+                </div>
+            </div>
+        </div>
+    </div>
+</a>

@@ -14,7 +14,12 @@
     let { url }: Props = $props();
     const links = [
         { title: "Posts", link: "/" },
-        { title: "Quotes I Like", link: "/experiments/quotes/source", base: "/experiments/quotes" },
+        { title: "Photos", link: "/photos" },
+        {
+            title: "Quotes I Like",
+            link: "/experiments/quotes/source",
+            base: "/experiments/quotes",
+        },
     ];
 
     /**

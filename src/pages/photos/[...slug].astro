@@ -1,0 +1,122 @@
+---
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { formatDateRange } from "@utils/formatDateRange";
+
+export async function getStaticPaths() {
+    const photos = await getCollection("photos");
+    return photos.map((photo) => ({
+        params: { slug: photo.id },
+        props: photo,
+    }));
+}
+
+type Props = CollectionEntry<"photos">;
+const entry = Astro.props;
+
+const dateText = formatDateRange(
+    entry.data.startDate,
+    entry.data.endDate,
+    entry.data.yearOnly,
+);
+---
+
+<BaseLayout pageTitle={`Photos - ${entry.data.title}`}>
+    <!-- title section -->
+    <div
+        class="group border border-line w-full hard-shadow bg-secondary-bg relative mb-4"
+    >
+        <div class="relative w-full h-20 overflow-hidden">
+            <Image
+                src={entry.data.cover}
+                alt={entry.data.title + " cover"}
+                class="object-cover w-full h-full"
+            />
+            <div
+                class="inset-0 bg-linear-to-tr from-black/50 via-black/10 to-transparent absolute"
+            >
+            </div>
+            <div
+                class="absolute left-2 top-0 bottom-0 text-white content-center"
+            >
+                <div class="flex flex-col items-start gap-1">
+                    <div
+                        class="font-crimson italic text-4xl text-shadow-hero transition-all duration-150"
+                    >
+                        {entry.data.title}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            class="p-2 border-y border-line text-ink-secondary whitespace-nowrap text-xs font-mono"
+        >
+            {dateText}
+        </div>
+        <div class="p-4 text-lg font-crimson">
+            {entry.data.description}
+        </div>
+    </div>
+    <!--optional photos section, if `sections` doesn't exist-->
+    {
+        entry.data.photos && (
+            <div
+                class={`w-full border border-line hard-shadow bg-secondary-bg diagonal-lines grid ${entry.data.photos.length < 3 ? "grid-cols-1" : "grid-cols-1 md:grid-cols-3"}`}
+            >
+                {entry.data.photos.map((p) => (
+                    <div class="aspect-square overflow-hidden">
+                        <Image
+                            src={p.src}
+                            alt={p.alt ?? ""}
+                            class="w-full h-full object-cover"
+                        />
+                    </div>
+                ))}
+            </div>
+        )
+    }
+
+    <!--otherwise, a section for... `sections`-->
+    {
+        entry.data.sections && (
+            <div class="w-full flex flex-col gap-4">
+                {entry.data.sections.map((s) => (
+                    <div class="w-full flex flex-col border border-line hard-shadow bg-secondary-bg">
+                        <div class="border-b border-line flex flex-col md:flex-row md:items-stretch justify-between">
+                            <span class="italic font-crimson text-lg text-nowrap py-1 px-2">
+                                {s.title}
+                            </span>
+                            {s.startDate && (
+                                <div class="text-xs font-mono text-ink-secondary whitespace-nowrap content-center border-t p-2 md:border-t-0 md:border-l border-line">
+                                    {formatDateRange(s.startDate, s.endDate)}
+                                </div>
+                            )}
+                        </div>
+                        <div
+                            class={`bg-secondary-bg diagonal-lines grid w-full ${s.photos.length < 3 ? "grid-cols-1" : "grid-cols-1 md:grid-cols-3"}`}
+                        >
+                            {s.photos.map((p) => (
+                                <div class="aspect-square overflow-hidden">
+                                    <Image
+                                        class="w-full h-full object-cover transition-all ease-in-out duration-300"
+                                        src={p.src}
+                                        alt={p.alt ?? ""}
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                ))}
+            </div>
+        )
+    }
+</BaseLayout>
+
+<script>
+    document.querySelectorAll<HTMLImageElement>("img").forEach((img) => {
+        img.style.cursor = "pointer";
+        img.addEventListener("click", () => window.open(img.src, "_blank"));
+    });
+</script>

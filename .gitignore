@@ -19,3 +19,6 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+# original photo source files (JPEG raws alongside album WebP outputs)
+src/content/photos/*/src/

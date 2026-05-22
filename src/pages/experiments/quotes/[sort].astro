@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 
 type SortParam = { params: { sort: "source" | "author" | "character" } };
@@ -22,10 +23,7 @@ const groupings = allQuotes.reduce(
         let key = quote[sort];
 
         if (key === undefined) {
-            if (
-                sort === "character" &&
-                quote.aboutCharacter !== undefined
-            ) {
+            if (sort === "character" && quote.aboutCharacter !== undefined) {
                 key = quote.aboutCharacter;
             } else {
                 key = "Unknown";
@@ -38,7 +36,7 @@ const groupings = allQuotes.reduce(
         acc[key].push(quote);
         return acc;
     },
-    {} as Record<string, (typeof allQuotes)[number]["data"][]>,
+    {} as Record<string, CollectionEntry<"quotes">["data"][]>,
 );
 
 const groupedQuotes = Object.entries(groupings).sort((a, b) =>
