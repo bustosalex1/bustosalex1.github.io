@@ -3,7 +3,13 @@ import ImageCard from "@components/ImageCard.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
-const allPhotos = await getCollection("photos");
+let allPhotos = await getCollection("photos");
+
+// sort by most recent
+allPhotos = allPhotos.sort((p1, p2) => {
+    return p2.data.startDate.getTime() - p1.data.startDate.getTime();
+});
+
 const pageTitle = "Photos";
 ---
 
