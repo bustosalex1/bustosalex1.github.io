@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../../../../.astro/collections/photos.schema.json
+title: "Death Valley"
+location: "Death Valley National Park"
+cover: ./death_valley_sunset_glare_over_salt_pan_06_23_2025.webp
+startDate: "2025-06-23"
+description: "Was in Las Vegas for a class and was able to take a detour to Death Valley for a day trip."
+photos:
+    # Badwater Basin
+    - src: ./death_valley_badwater_basin_boardwalk_06_23_2025.webp
+      alt: "Badwater Basin boardwalk."
+    - src: ./death_valley_badwater_basin_elevation_sign_06_23_2025.webp
+      alt: "Badwater Basin elevation sign."
+
+    # Salt flats
+    - src: ./death_valley_salt_flats_wide_panorama_06_23_2025.webp
+      alt: "Wide panorama of the salt flats."
+    - src: ./death_valley_salt_crust_texture_closeup_06_23_2025.webp
+      alt: "Closeup of the salt crust texture."
+    - src: ./death_valley_rocky_overlook_toward_salt_flats_06_23_2025.webp
+      alt: "Rocky overlook toward the salt flats."
+
+    # Roads
+    - src: ./death_valley_road_descending_to_salt_flats_06_23_2025.webp
+      alt: "Road descending to the salt flats."
+    - src: ./death_valley_straight_road_sunbeams_through_valley_06_23_2025.webp
+      alt: "Straight road with sunbeams through the valley."
+    - src: ./death_valley_empty_desert_road_at_mountains_06_23_2025.webp
+      alt: "Empty desert road at the mountains."
+    - src: ./death_valley_artists_drive_winding_canyon_road_06_23_2025.webp
+      alt: "Winding canyon road at Artists Drive."
+
+    # Sea level elevation
+    - src: ./death_valley_sea_level_elevation_sign_at_sunset_06_23_2025.webp
+      alt: "Sea level elevation sign at sunset."
+
+    # Mesquite Dunes
+    - src: ./death_valley_mesquite_dunes_pastel_dusk_06_23_2025.webp
+      alt: "Mesquite Dunes at pastel dusk."
+    - src: ./death_valley_mesquite_dunes_footprint_ridge_twilight_06_23_2025.webp
+      alt: "Footprint ridge on the Mesquite Dunes at twilight."
+    - src: ./death_valley_silhouettes_on_mesquite_dune_at_sunset_06_23_2025.webp
+      alt: "Silhouettes on a Mesquite dune at sunset."
+
+    # Sunset & Golden Hour
+    - src: ./death_valley_artists_palette_colorful_hills_06_23_2025.webp
+      alt: "Colorful hills at Artists Palette."
+    - src: ./death_valley_balanced_rock_cairn_06_23_2025.webp
+      alt: "A balanced rock cairn."
+    - src: ./death_valley_zabriskie_point_badlands_wide_06_23_2025.webp
+      alt: "Wide view of the badlands at Zabriskie Point."
+    - src: ./death_valley_zabriskie_point_golden_hour_ridges_06_23_2025.webp
+      alt: "Golden hour ridges at Zabriskie Point."
+    - src: ./death_valley_zabriskie_point_valley_sunset_06_23_2025.webp
+      alt: "Small valley at sunset, Zabriskie Point."
+    - src: ./death_valley_sun_over_badlands_hills_06_23_2025.webp
+      alt: "The sun over the badlands hills."
+    - src: ./death_valley_sunrays_over_rolling_badlands_06_23_2025.webp
+      alt: "Sunrays over rolling badlands."
+    - src: ./death_valley_sunset_glare_over_salt_pan_06_23_2025.webp
+      alt: "Sunset glare over the salt pan."
