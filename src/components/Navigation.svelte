@@ -106,8 +106,8 @@ title of the website (my name).
     {#if show}
         <div
             class="absolute top-full -left-px -right-px bg-secondary-bg border border-line flex flex-col items-stretch"
-            in:slide={{ axis: "y", duration: 250, easing: backOut }}
-            out:slide={{ axis: "y", duration: 250, easing: backIn }}
+            in:slide={{ axis: "y", duration: 300, easing: backOut }}
+            out:slide={{ axis: "y", duration: 300, easing: backIn }}
         >
             {#each links as { title, link, base }, i (link)}
                 <a
