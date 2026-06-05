@@ -15,7 +15,11 @@ const rehypePlugins = [rehypeKatex, rehypeCaptionImages, rehypeCaptionTables];
 
 // https://astro.build/config
 export default defineConfig({
-    integrations: [svelte(), mdx({ remarkPlugins, rehypePlugins, gfm: true }), sitemap()],
+    integrations: [
+        svelte(),
+        mdx({ remarkPlugins, rehypePlugins, gfm: true }),
+        sitemap(),
+    ],
     site: "https://bustosalex1.github.io",
     markdown: {
         shikiConfig: {
