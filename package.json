@@ -17,7 +17,10 @@
     "dependencies": {
         "@fontsource/crimson-text": "^5.2.7",
         "@fontsource/fira-code": "^5.2.7",
-        "katex": "^0.16.47"
+        "@threlte/core": "^8.5.16",
+        "@threlte/extras": "^9.21.0",
+        "katex": "^0.16.47",
+        "three": "^0.184.0"
     },
     "devDependencies": {
         "@astrojs/markdown-remark": "^7.2.0",
