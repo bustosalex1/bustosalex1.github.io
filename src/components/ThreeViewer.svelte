@@ -4,7 +4,7 @@
     import { Bounds, Edges, Gizmo, OrbitControls } from "@threlte/extras";
 </script>
 
-<div class="w-full border border-line hard-shadow bg-secondary-bg">
+<div class="w-full border border-line hard-shadow bg-secondary-bg aspect-video">
     <Canvas>
         <T.PerspectiveCamera makeDefault position={[10, 5, 10]} lookAt.y={0.5}>
             <OrbitControls
