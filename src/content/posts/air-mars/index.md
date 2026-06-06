@@ -16,7 +16,7 @@ In my second semester at Georgia Tech I took a class called Engineering
 Graphics, which was basically a course on learning SolidWorks. The class
 included a group project where I worked with some friends to conceptualize an
 aerial drone to explore Mars. The parts that I designed for the drone can be
-seen in Figure 2. I also was in charge of keeping everyone's parts organized in
+seen below. I also was in charge of keeping everyone's parts organized in
 a single assembly and creating various renders for our final presentation.
 
 ![Parts I designed](./parts.webp "Parts I designed.")

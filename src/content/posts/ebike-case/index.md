@@ -16,7 +16,7 @@ Recently I purchased a kit to turn my regular bike into an electric bike. It
 came with a hub-style motor, 1000W controller, a throttle, and a battery. To
 secure the controller onto the bike frame, the kit came with a bag, which
 worked, but it was kind of... not visually appealing and didn't really allow for
-neat wire management. Figure 2 shows what my bike looked like with the bag
+neat wire management. The photo below shows what my bike looked like with the bag
 mount. To solve these problems, I decided to 3D print a case that would allow
 for neater wire management and an overall cleaner design. I ended up designing a
 4 part case that used screws and brass heat-set inserts to secure everything
