@@ -2,6 +2,8 @@
 /**
  * Tag that can be used to show relevant topics for a post or project.
  */
+import { slugify } from "@utils/slugify";
+
 interface Props {
     tag: string;
     link?: boolean;
@@ -15,7 +17,7 @@ const { tag, link = true, class: className } = Astro.props;
     link ? (
         <a
             class={`px-2 py-0.5 text-xs uppercase hover:text-primary hover:bg-primary/10 duration-150 transition-all whitespace-nowrap font-mono ${className ?? "text-ink-tertiary"}`}
-            href={"/tags/" + tag}
+            href={`/tags/${slugify(tag)}`}
         >
             {tag}
         </a>

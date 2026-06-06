@@ -2,10 +2,19 @@
 import { getCollection } from "astro:content";
 import Tag from "@components/Tag.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import { slugify } from "@utils/slugify";
 
 const allPosts = await getCollection("posts");
 
-const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
+const allTags = allPosts.map((post) => post.data.tags).flat();
+const tagMap = new Map<string, string>();
+for (const tag of allTags) {
+    const slug = slugify(tag);
+    if (!tagMap.has(slug)) {
+        tagMap.set(slug, tag);
+    }
+}
+const tags = [...tagMap.values()];
 const pageTitle = "Tags";
 ---
 
