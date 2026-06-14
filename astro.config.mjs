@@ -31,6 +31,7 @@ export default defineConfig({
         processor: unified({ remarkPlugins, rehypePlugins }),
     },
     vite: {
+        assetsInclude: ["**/*.glb", "**/*.mp4"],
         plugins: [
             Icons({
                 compiler: "svelte",
