@@ -109,5 +109,40 @@
         "quote": "You can't plant if you haven't botany.",
         "additionalSourceInfo": "near Virginia-Highland",
         "source": "Intown Ace Hardware"
+    },
+    {
+        "id": "captives-war-sovran",
+        "quote": "Challenging that which we do not understand yields unexpected insight.",
+        "character": "The Sovran",
+        "source": "The Faith of Beasts",
+        "author": "James S.A. Corey"
+    },
+    {
+        "id": "captives-war-vaudai-bored",
+        "quote": "But if we hurry, we will learn things no one has ever told the Carryx. The key to unmaking the deathless would justify our moiety. Our children and their children and theirs for generations. We are insignificant, the war is all that matters! Plus which, it is interesting and I am bored!",
+        "character": "Vaudai",
+        "source": "The Faith of Beasts",
+        "author": "James S.A. Corey"
+    },
+    {
+        "id": "captives-war-vaudai-grief",
+        "quote": "\"Have you said the things?\" Vaudai asked. \"Has the grief passed?\"",
+        "character": "Vaudai",
+        "source": "The Faith of Beasts",
+        "author": "James S.A. Corey"
+    },
+    {
+        "id": "blindsight-europa",
+        "quote": "It was all there, just the other side of a fifteen-minute splice job and a cervical socket. Why endure the cramped and smelly confines of real-life space travel to go visit pond scum on Europa?",
+        "character": "Siri Keeton",
+        "source": "Blindsight",
+        "author": "Peter Watts"
+    },
+    {
+        "id": "blindsight-rorschach",
+        "quote": "We crept through Rorschach's belly in fits and starts, focusing as best we could on the tasks at hand, trying to ignore the ghosts that tickled our midbrains. Sometimes the walls flexed subtly around us. Sometimes we only thought they did. Sometimes we took refuge in our diving bell while waves of charge and magnetism spiraled languidly past, like boluses of ectoplasm coursing down the intestine of some poltergeist god.",
+        "character": "Siri Keeton",
+        "source": "Blindsight",
+        "author": "Peter Watts"
     }
 ]
