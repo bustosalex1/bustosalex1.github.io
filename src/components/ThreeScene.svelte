@@ -7,6 +7,7 @@
         Sky,
         useGltf,
     } from "@threlte/extras";
+    import { MediaQuery } from "svelte/reactivity";
     import {
         ACESFilmicToneMapping,
         Box3,
@@ -14,22 +15,33 @@
         LineBasicMaterial,
         LineSegments,
         MeshStandardMaterial,
+        OrthographicCamera,
         Vector3,
         type Group,
         type Mesh,
     } from "three";
+    import type { OrbitControls as OrbitControlsImpl } from "three/addons";
+
+    const md = new MediaQuery("min-width: 768px");
 
     interface Props {
         model: string;
+        /**
+         * Called once the model is loaded and the camera has been framed,
+         * passing this component's `resetView` function up to the parent so it
+         * can wire it to a DOM button outside <Canvas>.
+         */
+        onResetReady: (fn: () => void) => void;
     }
 
-    let { model }: Props = $props();
+    let { model, onResetReady }: Props = $props();
+
+    const { renderer, camera, invalidate } = useThrelte();
 
     // Tone mapping converts the HDR (high dynamic range) render output into
     // the LDR (low dynamic range) range that screens can display. Without it,
     // bright areas would clip to solid white. `toneMappingExposure` controls
     // overall scene brightness.
-    const { renderer } = useThrelte();
     $effect.pre(() => {
         renderer.toneMapping = ACESFilmicToneMapping;
         renderer.toneMappingExposure = 1.0;
@@ -39,13 +51,56 @@
     const gridRadius = 5;
 
     // $effect.pre fires before DOM updates, ensuring setupModel mutates the
-    // scene *before* <T is={$gltf.scene} /> renders for the first time. This
-    // prevents a 1-frame flash of incorrectly scaled model.
+    // scene before things are rendered.
     $effect.pre(() => {
         if ($gltf !== undefined) {
             setupModel($gltf);
         }
     });
+
+    let controls: OrbitControlsImpl | undefined = $state();
+
+    // Snapshot of camera state taken after `Bounds` frames the model. Not
+    // $state because nothing reactive reads it.
+    let savedCameraState:
+        | {
+              position: Vector3;
+              target: Vector3;
+              zoom: number;
+          }
+        | undefined;
+
+    /**
+     * Called by `Bounds` via `onFit` after the camera has been framed on the
+     * model. Snapshots the camera state and hands `resetView` up to the
+     * parent.
+     */
+    function saveCameraState() {
+        if (!controls) return;
+        const cam = $camera;
+        savedCameraState = {
+            position: cam.position.clone(),
+            target: controls.target.clone(),
+            zoom: cam instanceof OrthographicCamera ? cam.zoom : 1,
+        };
+        onResetReady(resetView);
+    }
+
+    /** Restores the camera to the position saved by `saveCameraState`. */
+    function resetView() {
+        if (!savedCameraState || !controls) return;
+        const cam = $camera;
+        cam.position.copy(savedCameraState.position);
+        controls.target.copy(savedCameraState.target);
+        if (cam instanceof OrthographicCamera) {
+            cam.zoom = savedCameraState.zoom;
+            cam.updateProjectionMatrix();
+        }
+
+        controls.enabled = true;
+        controls.update();
+        invalidate();
+    }
 
     /**
      * Scales and centers the model to fit the grid + a margin, applies a gray
@@ -103,6 +158,7 @@
 
 <T.OrthographicCamera makeDefault position={[10, 5, 10]}>
     <OrbitControls
+        bind:ref={controls}
         autoRotate={true}
         autoRotateSpeed={0.75}
         enableDamping={true}
@@ -111,12 +167,14 @@
         rotateSpeed={1.0}
         zoomSpeed={1.0}
     >
-        <Gizmo />
+        {#if md.current}
+            <Gizmo />
+        {/if}
     </OrbitControls>
 </T.OrthographicCamera>
 
 <!-- Procedural sky dome for image-based lighting. The Sky is rendered to a
-cubemap on mount and set as scene.environment; MeshStandardMaterials then use
+cubemap on mount and set as scene.environment; `MeshStandardMaterials` then use
 it for diffuse + specular IBL. The sky itself is hidden. -->
 <T.Group visible={false}>
     <Sky
@@ -130,7 +188,7 @@ it for diffuse + specular IBL. The sky itself is hidden. -->
 
 <!-- don't render overall scene until GLTF has been processed -->
 {#if $gltf}
-    <Bounds margin={1.0} animate={false}>
+    <Bounds margin={1.0} animate={false} onFit={saveCameraState}>
         <T.PolarGridHelper args={[gridRadius, 16, 8]} />
         <T is={$gltf?.scene} />
     </Bounds>
