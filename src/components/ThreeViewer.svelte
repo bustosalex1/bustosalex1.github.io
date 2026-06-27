@@ -15,7 +15,7 @@
     let resetView: (() => void) | undefined = $state();
 </script>
 
-<figure class="w-full my-0 border border-line hard-shadow">
+<figure class="w-full my-0 border border-line hard-shadow overflow-hidden">
     <div
         class="aspect-video relative bg-secondary-bg cursor-grab active:cursor-grabbing"
     >
