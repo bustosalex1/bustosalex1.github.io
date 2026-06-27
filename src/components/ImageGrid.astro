@@ -28,9 +28,11 @@ const { images, caption, rows, cols } = Astro.props;
                         alt={alt}
                         class="object-cover h-full w-full"
                     />
-                    <div class="absolute left-0 right-0 bottom-0 border-t border-line-secondary bg-secondary-bg text-xs font-mono p-1 ">
-                        {String.fromCharCode(97 + i)}. {caption}
-                    </div>
+                    {caption && (
+                        <div class="absolute left-0 right-0 bottom-0 border-t border-line-secondary bg-secondary-bg text-xs font-mono p-1 ">
+                            {String.fromCharCode(97 + i)}. {caption}
+                        </div>
+                    )}
                 </div>
             ))
         }
