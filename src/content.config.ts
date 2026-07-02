@@ -65,7 +65,7 @@ const photoCollection = defineCollection({
                 sections: z
                     .array(
                         z.object({
-                            title: z.string().optional(),
+                            title: z.string(),
                             location: z.string().optional(),
                             startDate: z
                                 .string()
