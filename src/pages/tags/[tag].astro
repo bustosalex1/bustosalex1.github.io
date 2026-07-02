@@ -17,9 +17,11 @@ export const getStaticPaths = async () => {
     }
 
     return [...slugMap.entries()].map(([slug, displayTag]) => {
-        const filteredPosts = allPosts.filter((post) =>
-            post.data.tags.some((t) => slugify(t) === slug),
-        );
+        const filteredPosts = allPosts
+            .filter((post) => post.data.tags.some((t) => slugify(t) === slug))
+            .sort((a, b) => {
+                return b.data.pubDate.getTime() - a.data.pubDate.getTime();
+            });
         return {
             params: { tag: slug },
             props: { posts: filteredPosts, displayTag },
@@ -32,15 +34,17 @@ interface TagProps {
     displayTag: string;
 }
 
-const { tag } = Astro.params;
 const { posts, displayTag } = Astro.props as TagProps;
 ---
 
 <BaseLayout pageTitle={`Tag: ${displayTag}`}>
     <div
-        class="font-bold p-2 w-full border-line bg-secondary-bg font-mono text-sm border mb-4 hard-shadow"
+        class="flex flex-row text-ink items-center font-bold w-full font-mono text-sm mb-4"
     >
-        Posts tagged with <span class="uppercase">{displayTag}</span>
+        <div>
+            Posts tagged with <span class="uppercase">{displayTag}</span>
+        </div>
+        <div class="flex-1 min-w-0 border-t ml-3 border-line h-0"></div>
     </div>
     <div class="flex flex-col gap-4">
         {posts.map((post) => <ProjectCard post={post} />)}
