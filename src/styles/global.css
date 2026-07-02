@@ -116,7 +116,7 @@
     }
 
     & :where(h1, h2, h3, h4, h5, h6) {
-        @apply font-mono text-ink mb-5 p-0;
+        @apply font-mono text-ink mb-5 p-0 scroll-mt-2;
     }
 
     & :where(h2) {
