@@ -17,7 +17,9 @@
 
     const { headings }: Props = $props();
 
-    let activeSlug: string | undefined = $state(undefined);
+    //svelte-ignore state_referenced_locally - this is an intentional initial
+    //value.
+    let activeSlug: string | undefined = $state(headings[0]?.slug ?? undefined);
 
     // wire up intersection observer
     onMount(() => {
