@@ -4,6 +4,8 @@ import type { CollectionEntry } from "astro:content";
 import { Image } from "astro:assets";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { formatDateRange } from "@utils/formatDateRange";
+import type { MarkdownHeading } from "astro";
+import TableOfContents from "@components/TableOfContents.svelte";
 
 export async function getStaticPaths() {
     const photos = await getCollection("photos");
@@ -21,9 +23,18 @@ const dateText = formatDateRange(
     entry.data.endDate,
     entry.data.yearOnly,
 );
+
+// build a list of post-like headings for images, if `sections` is defined, so
+// that we can optionally render a table of contents section.
+const headings: MarkdownHeading[] | undefined = entry.data.sections
+    ? entry.data.sections.map((s) => {
+          return { slug: s.title, text: s.title, depth: 1 };
+      })
+    : undefined;
 ---
 
 <BaseLayout pageTitle={`Photos - ${entry.data.title}`}>
+    {headings && <TableOfContents client:load headings={headings} />}
     <!-- title section -->
     <div
         class="group border border-line w-full hard-shadow bg-secondary-bg relative mb-4"
@@ -85,7 +96,10 @@ const dateText = formatDateRange(
                 {entry.data.sections.map((s) => (
                     <div class="w-full flex flex-col border border-line hard-shadow bg-secondary-bg">
                         <div class="border-b border-line flex flex-col md:flex-row md:items-stretch justify-between">
-                            <span class="italic font-crimson text-lg text-nowrap py-1 px-2">
+                            <span
+                                class="italic font-crimson text-lg text-nowrap py-1 px-2"
+                                id={s.title}
+                            >
                                 {s.title}
                             </span>
                             {s.startDate && (
