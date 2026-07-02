@@ -101,10 +101,10 @@ const headings: MarkdownHeading[] = groupedQuotes.map(([k, _]) => {
         {
             groupedQuotes.map(([key, quoteList]) => (
                 <div
-                    class="flex flex-col divide-y divide-line border border-line bg-secondary-bg hard-shadow scroll-mt-2"
+                    class="flex flex-col divide-y divide-line border-l border-r border-b border-line bg-secondary-bg hard-shadow scroll-mt-2"
                     id={key}
                 >
-                    <div class="flex flex-row sticky top-0 bg-secondary-bg">
+                    <div class="flex flex-row sticky top-2 bg-secondary-bg border-t border-line before:absolute before:bottom-full before:left-0 before:right-0 before:h-2 before:mb-px before:-mx-px before:bg-bg">
                         <a
                             class="font-semibold p-2 text-ink font-mono text-sm"
                             href={`#${key}`}
