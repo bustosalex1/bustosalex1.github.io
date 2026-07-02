@@ -28,7 +28,7 @@ const dateText = formatDateRange(
 // that we can optionally render a table of contents section.
 const headings: MarkdownHeading[] | undefined = entry.data.sections
     ? entry.data.sections.map((s) => {
-          return { slug: s.title, text: s.title, depth: 1 };
+          return { slug: s.id, text: s.title, depth: 1 };
       })
     : undefined;
 ---
@@ -102,7 +102,7 @@ const headings: MarkdownHeading[] | undefined = entry.data.sections
                 {entry.data.sections.map((s) => (
                     <div
                         class="w-full flex flex-col border-l border-r border-b border-line hard-shadow bg-secondary-bg scroll-mt-2"
-                        id={s.title}
+                        id={s.id}
                     >
                         <div class="border-y border-line flex flex-col md:flex-row md:items-stretch justify-between sticky top-2 bg-secondary-bg before:absolute before:bottom-full before:left-0 before:right-0 before:h-2 before:mb-px before:-mx-px before:bg-bg">
                             <span class="italic font-crimson text-lg text-nowrap py-1 px-2">

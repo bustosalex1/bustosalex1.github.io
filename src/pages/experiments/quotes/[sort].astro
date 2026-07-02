@@ -4,6 +4,7 @@ import TableOfContents from "@components/TableOfContents.svelte";
 import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 import type { MarkdownHeading } from "astro";
+import { slugify } from "@utils/slugify";
 
 type SortParam = { params: { sort: "source" | "author" | "character" } };
 
@@ -47,7 +48,7 @@ const groupedQuotes = Object.entries(groupings).sort((a, b) =>
 
 const headings: MarkdownHeading[] = groupedQuotes.map(([k, _]) => {
     return {
-        slug: k,
+        slug: slugify(k),
         text: k,
         depth: 1,
     };
@@ -102,12 +103,12 @@ const headings: MarkdownHeading[] = groupedQuotes.map(([k, _]) => {
             groupedQuotes.map(([key, quoteList]) => (
                 <div
                     class="flex flex-col divide-y divide-line border-l border-r border-b border-line bg-secondary-bg hard-shadow scroll-mt-2"
-                    id={key}
+                    id={slugify(key)}
                 >
                     <div class="flex flex-row sticky top-2 bg-secondary-bg border-t border-line before:absolute before:bottom-full before:left-0 before:right-0 before:h-2 before:mb-px before:-mx-px before:bg-bg">
                         <a
                             class="font-semibold p-2 text-ink font-mono text-sm"
-                            href={`#${key}`}
+                            href={`#${slugify(key)}`}
                         >
                             {key}
                         </a>
