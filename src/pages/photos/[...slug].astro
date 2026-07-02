@@ -34,7 +34,13 @@ const headings: MarkdownHeading[] | undefined = entry.data.sections
 ---
 
 <BaseLayout pageTitle={`Photos - ${entry.data.title}`}>
-    {headings && <TableOfContents client:load headings={headings} />}
+    {
+        headings && (
+            <Fragment slot="aside">
+                <TableOfContents client:load headings={headings} />
+            </Fragment>
+        )
+    }
     <!-- title section -->
     <div
         class="group border border-line w-full hard-shadow bg-secondary-bg relative mb-4"

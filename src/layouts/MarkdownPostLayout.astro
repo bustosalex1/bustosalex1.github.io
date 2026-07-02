@@ -18,7 +18,9 @@ const { data, headings } = Astro.props;
 
 <BaseLayout pageTitle={data.title} math={data.math}>
     <ArticleTitle data={data} />
-    <TableOfContents client:load headings={headings} />
+    <Fragment slot="aside">
+        <TableOfContents client:load headings={headings} />
+    </Fragment>
     <Article>
         <slot />
     </Article>

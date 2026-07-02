@@ -1,7 +1,9 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+import TableOfContents from "@components/TableOfContents.svelte";
 import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
+import type { MarkdownHeading } from "astro";
 
 type SortParam = { params: { sort: "source" | "author" | "character" } };
 
@@ -42,10 +44,21 @@ const groupings = allQuotes.reduce(
 const groupedQuotes = Object.entries(groupings).sort((a, b) =>
     a[0].localeCompare(b[0]),
 );
+
+const headings: MarkdownHeading[] = groupedQuotes.map(([k, _]) => {
+    return {
+        slug: k,
+        text: k,
+        depth: 1,
+    };
+});
 ---
 
 <BaseLayout pageTitle="Quotes I Like">
     <!-- title section -->
+    <Fragment slot="aside">
+        <TableOfContents headings={headings} client:load />
+    </Fragment>
     <div class="border-line border bg-secondary-bg hard-shadow">
         <h1
             class="pt-10 pb-10 px-2 text-4xl text-center font-crimson italic text-ink"

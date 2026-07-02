@@ -38,16 +38,20 @@ const { pageTitle } = Astro.props;
         </script>
     </head>
 
-    <body class="bg-bg flex flex-col min-h-screen">
-        <!--In the future, I feel like I may want the option to add stuff in the side bars, which is why the header and the content slot both have the same breakpoints.-->
+    <body class="bg-bg flex flex-col min-h-screen overflow-x-hidden">
         <div class="w-[90vw] max-w-175 mx-auto mt-4">
             <Header />
         </div>
 
         <div
-            class="relative flex flex-col w-[90vw] max-w-175 mx-auto mt-4 grow"
+            class="relative grid mt-4 grow grid-cols-[minmax(0,1fr)_minmax(0px,min(43.75rem,90vw))_minmax(0,1fr)]"
         >
-            <slot />
+            <div class="col-start-2 flex flex-col">
+                <slot />
+            </div>
+            <div class="col-start-3">
+                <slot name="aside" />
+            </div>
         </div>
 
         <div class="w-[90vw] max-w-175 mx-auto">
