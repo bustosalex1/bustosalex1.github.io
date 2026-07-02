@@ -1,7 +1,10 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+import TableOfContents from "@components/TableOfContents.svelte";
 import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
+import type { MarkdownHeading } from "astro";
+import { slugify } from "@utils/slugify";
 
 type SortParam = { params: { sort: "source" | "author" | "character" } };
 
@@ -42,10 +45,21 @@ const groupings = allQuotes.reduce(
 const groupedQuotes = Object.entries(groupings).sort((a, b) =>
     a[0].localeCompare(b[0]),
 );
+
+const headings: MarkdownHeading[] = groupedQuotes.map(([k, _]) => {
+    return {
+        slug: slugify(k),
+        text: k,
+        depth: 1,
+    };
+});
 ---
 
 <BaseLayout pageTitle="Quotes I Like">
     <!-- title section -->
+    <Fragment slot="aside">
+        <TableOfContents headings={headings} client:load />
+    </Fragment>
     <div class="border-line border bg-secondary-bg hard-shadow">
         <h1
             class="pt-10 pb-10 px-2 text-4xl text-center font-crimson italic text-ink"
@@ -87,12 +101,14 @@ const groupedQuotes = Object.entries(groupings).sort((a, b) =>
     <div class="flex flex-col gap-4 pt-4">
         {
             groupedQuotes.map(([key, quoteList]) => (
-                <div class="flex flex-col divide-y divide-line border border-line bg-secondary-bg hard-shadow">
-                    <div class="flex flex-row sticky top-0 bg-secondary-bg">
+                <div
+                    class="flex flex-col divide-y divide-line border-l border-r border-b border-line bg-secondary-bg hard-shadow scroll-mt-2"
+                    id={slugify(key)}
+                >
+                    <div class="flex flex-row sticky top-2 bg-secondary-bg border-t border-line before:absolute before:bottom-full before:left-0 before:right-0 before:h-2 before:mb-px before:-mx-px before:bg-bg">
                         <a
                             class="font-semibold p-2 text-ink font-mono text-sm"
-                            id={key}
-                            href={`#${key}`}
+                            href={`#${slugify(key)}`}
                         >
                             {key}
                         </a>

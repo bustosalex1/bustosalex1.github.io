@@ -116,13 +116,13 @@
     }
 
     & :where(h1, h2, h3, h4, h5, h6) {
-        @apply font-mono text-ink mb-5 p-0;
+        @apply font-mono text-ink mb-5 p-0 scroll-mt-2;
     }
 
     & :where(h2) {
-        @apply flex flex-row items-center text-lg;
+        @apply flex flex-row items-center text-base md:text-lg;
 
-        /* After primary headers, fill the remaining space with diagonal lines. */
+        /* After primary headers, fill the remaining space with a single lines. */
         &::after {
             content: "";
             @apply grow border-t border-line ml-4;

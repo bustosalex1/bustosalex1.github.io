@@ -1,6 +1,7 @@
 import { defineCollection, type ImageFunction } from "astro:content";
 import { z } from "astro/zod";
 import { file, glob } from "astro/loaders";
+import { slugify } from "@utils/slugify";
 
 const quotesCollection = defineCollection({
     loader: file("src/content/quotes/index.json"),
@@ -64,21 +65,26 @@ const photoCollection = defineCollection({
                 photos: z.array(photoSchema(image)).optional(),
                 sections: z
                     .array(
-                        z.object({
-                            title: z.string().optional(),
-                            location: z.string().optional(),
-                            startDate: z
-                                .string()
-                                .or(z.date())
-                                .transform((val) => new Date(val))
-                                .optional(),
-                            endDate: z
-                                .string()
-                                .or(z.date())
-                                .transform((val) => new Date(val))
-                                .optional(),
-                            photos: z.array(photoSchema(image)),
-                        }),
+                        z
+                            .object({
+                                title: z.string(),
+                                location: z.string().optional(),
+                                startDate: z
+                                    .string()
+                                    .or(z.date())
+                                    .transform((val) => new Date(val))
+                                    .optional(),
+                                endDate: z
+                                    .string()
+                                    .or(z.date())
+                                    .transform((val) => new Date(val))
+                                    .optional(),
+                                photos: z.array(photoSchema(image)),
+                            })
+                            .transform((section) => ({
+                                ...section,
+                                id: slugify(section.title),
+                            })),
                     )
                     .optional(),
             })

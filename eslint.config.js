@@ -20,6 +20,11 @@ export default [
         },
     },
     {
+        rules: {
+            "svelte/no-unused-svelte-ignore": "off",
+        },
+    },
+    {
         files: ["**/*.svelte", "**/*.svelte.ts"],
         languageOptions: {
             parserOptions: {

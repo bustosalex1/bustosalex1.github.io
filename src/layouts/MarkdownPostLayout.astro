@@ -6,15 +6,21 @@
 import BaseLayout from "./BaseLayout.astro";
 import Article from "@components/Article.astro";
 import ArticleTitle from "@components/ArticleTitle.astro";
+import TableOfContents from "@components/TableOfContents.svelte";
 import type { CollectionEntry } from "astro:content";
+import type { MarkdownHeading } from "astro";
 interface Props {
     data: CollectionEntry<"posts">["data"];
+    headings: MarkdownHeading[];
 }
-const { data } = Astro.props;
+const { data, headings } = Astro.props;
 ---
 
 <BaseLayout pageTitle={data.title} math={data.math}>
     <ArticleTitle data={data} />
+    <Fragment slot="aside">
+        <TableOfContents client:load headings={headings} />
+    </Fragment>
     <Article>
         <slot />
     </Article>
