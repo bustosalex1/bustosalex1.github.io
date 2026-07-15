@@ -2,11 +2,9 @@
 title: "3D Printed E-Bike Controller Case"
 pubDate: 2020-05-30
 description: "An actual box."
-author: "Alex Bustos"
 image: "./installed-case.webp"
 imageAlt: "a picture of an e-bike with a 3D printed controller case"
 useImage: true
-project: true
 tags: ["3D printing", "CAD"]
 ---
 

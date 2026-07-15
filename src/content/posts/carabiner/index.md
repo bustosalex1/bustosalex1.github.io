@@ -2,11 +2,9 @@
 title: "Machined Aluminum Carabiner"
 pubDate: 2019-12-7
 description: "Learning about CNC."
-author: "Alex Bustos"
 image: "./toolpaths.webp"
 useImage: true
 imageAlt: "an image of CAM toolpaths for a small aluminum carabiner"
-project: true
 tags: ["machining", "CAD", "CAM"]
 ---
 

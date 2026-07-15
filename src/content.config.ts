@@ -21,7 +21,6 @@ const postCollection = defineCollection({
     schema: ({ image }) =>
         z.object({
             title: z.string(),
-            author: z.string(),
             description: z.string(),
             pubDate: z
                 .string()
@@ -31,7 +30,6 @@ const postCollection = defineCollection({
             imageAlt: z.string(),
             useImage: z.boolean().optional(),
             tags: z.string().array(),
-            project: z.boolean().optional(),
             math: z.boolean().optional(),
         }),
 });

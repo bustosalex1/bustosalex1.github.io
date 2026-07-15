@@ -2,10 +2,8 @@
 title: "Air Mars Engineering Graphics Project"
 pubDate: 2018-04-12
 description: "A CAD project for school."
-author: "Alex Bustos"
 image: "./render.webp"
 imageAlt: "A picture of a fixed wing drone on Mars."
-project: true
 useImage: true
 tags: ["CAD", "School"]
 ---
