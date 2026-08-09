@@ -85,7 +85,7 @@
     },
     {
         "id": "blue-mars-nadia-work",
-        "quote": "She went around that afternoon feeling happy, and that evening when she joined Art she said, \"Hey! I did some work today.\"<br>\"Well!\" Art said. \"Let's go out and celebrate.\"",
+        "quote": "She went around that afternoon feeling happy, and that evening when she joined Art she said, &ldquo;Hey! I did some work today.&rdquo;<br>&ldquo;Well!&rdquo; Art said. &ldquo;Let's go out and celebrate.&rdquo;",
         "source": "Blue Mars",
         "author": "Kim Stanley Robinson",
         "aboutCharacter": "Nadia Cherneshevsky"
@@ -126,7 +126,7 @@
     },
     {
         "id": "captives-war-vaudai-grief",
-        "quote": "\"Have you said the things?\" Vaudai asked. \"Has the grief passed?\"",
+        "quote": "&ldquo;Have you said the things?&rdquo; Vaudai asked. &ldquo;Has the grief passed?&rdquo;",
         "character": "Vaudai",
         "source": "The Faith of Beasts",
         "author": "James S.A. Corey"
@@ -144,5 +144,12 @@
         "character": "Siri Keeton",
         "source": "Blindsight",
         "author": "Peter Watts"
+    },
+    {
+        "id": "mountain-in-the-sea-farther-away",
+        "quote": "&ldquo;When I walked out of the building, the colors were not as bright as they should have been. It was as if the sun had gone behind a cloud&mdash; but the sun was right there in the sky. Right there, where it had been when we walked into the prison. Only now it was dim enough for me to look right at it. And the sound was muted, as if...&rdquo;<br><br>&ldquo;As if,&rdquo; Evrim said, &ldquo;everything had moved a bit farther away.&rdquo;",
+        "character": "Dr. Ha Nguyen",
+        "source": "The Mountain in the Sea",
+        "author": "Ray Nayler"
     }
 ]
