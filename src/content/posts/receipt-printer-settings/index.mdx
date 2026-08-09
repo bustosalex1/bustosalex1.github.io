@@ -1,0 +1,73 @@
+---
+title: "How much does it cost to change the settings on an Epson TM-T20III?"
+pubDate: 2026-08-09
+description: "Not much, but it is non-zero."
+image: "./receipt-printer-cover.webp"
+useImage: false
+imageAlt: "An image of a thermal receipt printer."
+tags: ["Thermal Printer", "Tinkering"]
+math: true
+---
+
+import ImageGrid from "@components/ImageGrid.astro";
+import p1 from "./epson-settings-p1.webp";
+import p2 from "./epson-settings-p2.webp";
+import p3 from "./epson-settings-p3.webp";
+
+## Context
+
+I recently purchased a used Epson TM-T20III thermal receipt printer to tinker
+with, and I was surprised to discover that-- despite the printer only having a
+single button-- you can manipulate the printer's settings without having to use
+some external app. To do this, the printer prints menus and a user can use the
+button to navigate through them and modify settings.
+
+Navigating to a new menu simply results in a new menu "page" being printed. For
+example, here's a video of me adjusting the print speed setting.
+
+<figure>
+    <video controls playsinline>
+        <source src="/epson-settings.mp4" type="video/mp4" />
+    </video>
+    <figcaption>Changing print speed settings.</figcaption>
+</figure>
+
+And scans of each of the menus I navigated through.
+
+<ImageGrid
+    images={[
+        [p1, "scan of a printed receipt", undefined],
+        [p2, "scan of a printed receipt", undefined],
+        [p3, "scan of a printed receipt", undefined],
+    ]}
+    caption="Thermal printer menu interface."
+    cols="grid-cols-3"
+    rows="grid-rows-1"
+/>
+
+## Getting to the Point
+
+To answer the question posed in the title: I paid \$24.99 for a pack of 10
+phenol-free thermal paper rolls. So, about \$2.50 per roll. At 230' of paper per
+roll, we get a cost per millimeter of
+$0.00003566\frac{\text{\textdollar}}{\text{mm}}$.
+
+I measured the total length of the paper used in the video above to be 680mm. So
+the cost to change the print speed setting is simply:
+
+$$
+\begin{align*}
+\text{Cost to change settings} &= \text{Length of paper used} \times \text{Cost per length of paper} \\
+&= 680\text{ mm} \times 0.00003566 \frac{\$}{\text{mm}} \\
+&= \$0.02425
+\end{align*}
+$$
+
+So, at least for this particular setting and paper, it cost around $0.02.
+
+## Wrap-Up
+
+The point of this post isn't _really_ to figure out how much it costs to change
+settings on this specific printer. I was just surprised by this interface (which
+I've since learned is standard in most receipt printers) and thought it was
+particularly interesting and clever.
