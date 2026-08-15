@@ -21,6 +21,7 @@
             link: "/experiments/quotes/source",
             base: "/experiments/quotes",
         },
+        { title: "Book Notes", link: "/experiments/books" },
     ];
 
     /**

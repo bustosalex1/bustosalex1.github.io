@@ -1,0 +1,19 @@
+---
+import BookCard from "@components/BookCard.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const allBooks = await getCollection("books");
+
+const filteredBooks = allBooks.sort((b1, b2) => {
+    return b2.data.pubDate.getTime() - b1.data.pubDate.getTime();
+});
+
+const pageTitle = "Book Notes";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <div class="flex flex-col w-full gap-4">
+        {filteredBooks.map((book) => <BookCard book={book} />)}
+    </div>
+</BaseLayout>

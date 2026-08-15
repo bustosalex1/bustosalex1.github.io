@@ -1,0 +1,41 @@
+---
+/**
+ * A layout for rendering posts written in Markdown or MDX (so... all of them
+ * right now).
+ */
+import BaseLayout from "./BaseLayout.astro";
+import Article from "@components/Article.astro";
+import TableOfContents from "@components/TableOfContents.svelte";
+import type { CollectionEntry } from "astro:content";
+import type { MarkdownHeading } from "astro";
+interface Props {
+    data: CollectionEntry<"books">["data"];
+    headings: MarkdownHeading[];
+}
+const { data, headings } = Astro.props;
+---
+
+<BaseLayout pageTitle={data.title}>
+    <div
+        class="group border border-line w-full hard-shadow bg-secondary-bg relative mb-4"
+    >
+        <div class="flex flex-col items-start w-full p-4 gap-1">
+            <div
+                class="font-crimson italic text-4xl transition-all duration-150"
+            >
+                {data.title}
+            </div>
+        </div>
+        <div
+            class="p-2 border-t border-line text-ink-secondary whitespace-nowrap text-xs font-mono"
+        >
+            by {data.author}
+        </div>
+    </div>
+    <Fragment slot="aside">
+        <TableOfContents client:load headings={headings} />
+    </Fragment>
+    <Article>
+        <slot />
+    </Article>
+</BaseLayout>
