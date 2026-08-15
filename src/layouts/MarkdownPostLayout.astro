@@ -10,14 +10,15 @@ import TableOfContents from "@components/TableOfContents.svelte";
 import type { CollectionEntry } from "astro:content";
 import type { MarkdownHeading } from "astro";
 interface Props {
-    data: CollectionEntry<"posts">["data"];
+    data: CollectionEntry<"posts">["data"] | CollectionEntry<"books">["data"];
+    math?: boolean;
     headings: MarkdownHeading[];
 }
-const { data, headings } = Astro.props;
+const { data, headings, math } = Astro.props;
 ---
 
-<BaseLayout pageTitle={data.title} math={data.math}>
-    <ArticleTitle data={data} />
+<BaseLayout pageTitle={data.title} math={math}>
+    <ArticleTitle {...data} posted={true} />
     <Fragment slot="aside">
         <TableOfContents client:load headings={headings} />
     </Fragment>
