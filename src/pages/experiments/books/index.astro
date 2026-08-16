@@ -13,6 +13,26 @@ const pageTitle = "Book Notes";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
+    <div
+        class="w-full flex flex-col border-line hard-shadow bg-secondary-bg border mb-4"
+    >
+        <h1 class="text-4xl text-ink font-crimson italic p-4">Book Notes</h1>
+        <details>
+            <summary
+                class="list-none py-2 px-4 text-sm font-mono text-ink-secondary cursor-pointer font-semibold border-line border-t w-full transition-all duration-150 hover:bg-primary/10 hover:text-primary"
+                >What is this?</summary
+            >
+            <p
+                class="font-crimson leading-normal text-ink text-lg p-4 border-t border-line"
+            >
+                I often find myself enjoying a particular book, and then
+                promptly forgetting the details of what I've read in a few
+                months. This is my attempt to recall some of how I felt about
+                about books I've read. So, these are less so book reviews,
+                moreso book notes.
+            </p>
+        </details>
+    </div>
     <div class="flex flex-col w-full gap-4">
         {filteredBooks.map((book) => <BookCard book={book} />)}
     </div>
