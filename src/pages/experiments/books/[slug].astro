@@ -1,6 +1,6 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
-import MarkdownBookLayout from "@layouts/MarkdownBookLayout.astro";
+import MarkdownPostLayout from "@layouts/MarkdownPostLayout.astro";
 import { render } from "astro:content";
 export async function getStaticPaths() {
     const books = await getCollection("books");
@@ -15,6 +15,6 @@ const book = Astro.props;
 const { Content, headings } = await render(book);
 ---
 
-<MarkdownBookLayout data={book.data} headings={headings}>
+<MarkdownPostLayout data={book.data} headings={headings}>
     <Content />
-</MarkdownBookLayout>
+</MarkdownPostLayout>

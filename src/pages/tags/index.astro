@@ -5,8 +5,12 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import { slugify } from "@utils/slugify";
 
 const allPosts = await getCollection("posts");
+const allBooks = await getCollection("books");
 
-const allTags = allPosts.map((post) => post.data.tags).flat();
+const allTags = [
+    ...allPosts.map((post) => post.data.tags),
+    ...allBooks.map((book) => book.data.tags),
+].flat();
 const tagMap = new Map<string, string>();
 for (const tag of allTags) {
     const slug = slugify(tag);

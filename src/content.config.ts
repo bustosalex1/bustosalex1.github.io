@@ -105,7 +105,6 @@ const bookCollection = defineCollection({
     schema: () =>
         z.object({
             title: z.string(),
-            description: z.string(),
             author: z.string(),
             tags: z.string().array(),
             pubDate: z
