@@ -47,7 +47,7 @@ appeals to me. Well, that, and breakfast.
 ## Thoughts on Evrim
 
 I suspect maybe this is the point of the character, but at least initially I
-expected _more_ out of Evrim. For them to make some superhuman discovery, maybe.
+expected more out of Evrim. For them to make some superhuman discovery, maybe.
 When they were first introduced, I kind of got Jukka Sarasti vibes from Peter
 Watts' _Blindsight_, and I assumed Evrim was going to be playing 4D chess the
 whole book. Other characters even suspect similarly. For example, from Dr.
