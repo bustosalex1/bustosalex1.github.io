@@ -1,0 +1,46 @@
+---
+import BookCard from "@components/BookCard.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import ChevronRight from "~icons/carbon/chevron-right";
+import { getCollection } from "astro:content";
+
+const allBooks = await getCollection("books");
+
+const filteredBooks = allBooks.sort((b1, b2) => {
+    return b2.data.pubDate.getTime() - b1.data.pubDate.getTime();
+});
+
+const pageTitle = "Book Notes";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <div
+        class="w-full flex flex-col border-line hard-shadow bg-secondary-bg border mb-4"
+    >
+        <h1
+            class="p-5 text-3xl md:text-4xl text-left text-ink font-crimson italic"
+        >
+            Book Notes
+        </h1>
+        <details class="group">
+            <summary
+                class="list-none p-2 text-sm font-mono text-ink-secondary cursor-pointer border-line border-t w-full transition-all duration-150 hover:bg-primary/10 hover:text-primary flex flex-row items-center justify-between"
+                >What is this?
+                <ChevronRight
+                    class="transition-all h-4 w-4 duration-150 text-ink-tertiary group-open:rotate-90 group-hover:text-primary"
+                /></summary
+            >
+            <p
+                class="font-crimson leading-normal text-ink text-lg p-4 border-t border-line"
+            >
+                I often find myself enjoying a particular book, and then
+                forgetting its details after a few months. This is an attempt to
+                record some of my thoughts about books I've read. So, these
+                aren't really intended to be reviews, just notes.
+            </p>
+        </details>
+    </div>
+    <div class="flex flex-col w-full gap-4">
+        {filteredBooks.map((book) => <BookCard book={book} />)}
+    </div>
+</BaseLayout>

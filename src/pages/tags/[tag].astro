@@ -1,12 +1,17 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import ProjectCard from "@components/ProjectCard.astro";
+import BookCard from "@components/BookCard.astro";
 import { type CollectionEntry, getCollection } from "astro:content";
 import { slugify } from "@utils/slugify";
 
 export const getStaticPaths = async () => {
     const allPosts = await getCollection("posts");
-    const allTags = allPosts.map((post) => post.data.tags).flat();
+    const allBooks = await getCollection("books");
+    const allTags = [
+        ...allPosts.map((post) => post.data.tags),
+        ...allBooks.map((book) => book.data.tags),
+    ].flat();
 
     const slugMap = new Map<string, string>();
     for (const tag of allTags) {
@@ -19,22 +24,28 @@ export const getStaticPaths = async () => {
     return [...slugMap.entries()].map(([slug, displayTag]) => {
         const filteredPosts = allPosts
             .filter((post) => post.data.tags.some((t) => slugify(t) === slug))
-            .sort((a, b) => {
-                return b.data.pubDate.getTime() - a.data.pubDate.getTime();
-            });
+            .sort(
+                (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime(),
+            );
+        const filteredBooks = allBooks
+            .filter((book) => book.data.tags.some((t) => slugify(t) === slug))
+            .sort(
+                (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime(),
+            );
         return {
             params: { tag: slug },
-            props: { posts: filteredPosts, displayTag },
+            props: { posts: filteredPosts, books: filteredBooks, displayTag },
         };
     });
 };
 
 interface TagProps {
     posts: CollectionEntry<"posts">[];
+    books: CollectionEntry<"books">[];
     displayTag: string;
 }
 
-const { posts, displayTag } = Astro.props as TagProps;
+const { posts, books, displayTag } = Astro.props as TagProps;
 ---
 
 <BaseLayout pageTitle={`Tag: ${displayTag}`}>
@@ -42,11 +53,12 @@ const { posts, displayTag } = Astro.props as TagProps;
         class="flex flex-row text-ink items-center font-bold w-full font-mono text-sm mb-4"
     >
         <div>
-            Posts tagged with <span class="uppercase">{displayTag}</span>
+            Tagged with <span class="uppercase">{displayTag}</span>
         </div>
         <div class="flex-1 min-w-0 border-t ml-3 border-line h-0"></div>
     </div>
     <div class="flex flex-col gap-4">
         {posts.map((post) => <ProjectCard post={post} />)}
+        {books.map((book) => <BookCard book={book} />)}
     </div>
 </BaseLayout>

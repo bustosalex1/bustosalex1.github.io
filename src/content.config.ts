@@ -100,8 +100,23 @@ const photoCollection = defineCollection({
             ),
 });
 
+const bookCollection = defineCollection({
+    loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/books" }),
+    schema: () =>
+        z.object({
+            title: z.string(),
+            author: z.string(),
+            tags: z.string().array(),
+            pubDate: z
+                .string()
+                .or(z.date())
+                .transform((val) => new Date(val)),
+        }),
+});
+
 export const collections = {
     posts: postCollection,
     photos: photoCollection,
     quotes: quotesCollection,
+    books: bookCollection,
 };

@@ -1,0 +1,52 @@
+---
+/**
+ * Clickable card providing a title and date of an entry from the `books`
+ * content collection.
+ */
+import type { CollectionEntry } from "astro:content";
+import FormattedDate from "@components/FormattedDate.astro";
+import Tag from "./Tag.astro";
+interface Props {
+    book: CollectionEntry<"books">;
+}
+
+const { book }: Props = Astro.props;
+---
+
+<a href={"/experiments/books/" + book.id}>
+    <div
+        class="group flex flex-col sm:flex-row border border-line transition-all duration-150 hover:border-primary bg-secondary-bg overflow-x-hidden hard-shadow hover:-translate-y-1 hover:hard-shadow-hover"
+    >
+        <!--div containing title text, tagline and other stuff-->
+        <div class="flex flex-col w-full">
+            <!--flex row for title, description, and date.-->
+            <div
+                class="flex flex-row w-full justify-between flex-nowrap px-4 pt-4 items-center"
+            >
+                <h1
+                    class="font-bold font-mono text-sm group-hover:text-primary text-ink transition-all duration-150 text-wrap"
+                >
+                    {book.data.title}
+                </h1>
+                <FormattedDate
+                    date={book.data.pubDate}
+                    class="text-ink-tertiary ml-auto sm:ml-0 sm:pt-0 shrink-0 whitespace-nowrap"
+                />
+            </div>
+            <div
+                class="flex flex-row w-full justify-between flex-nowrap px-4 items-center pb-4 sm:pb-0"
+            >
+                <div class="italic text-ink-secondary font-crimson">
+                    by {book.data.author}
+                </div>
+            </div>
+
+            <!--tags-->
+            <div
+                class="flex-row ml-auto items-stretch mt-auto justify-end border-l border-t border-line divide-x divide-line hidden sm:flex"
+            >
+                {book.data.tags.map((tag) => <Tag tag={tag} link={false} />)}
+            </div>
+        </div>
+    </div>
+</a>
