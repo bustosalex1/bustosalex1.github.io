@@ -8,10 +8,9 @@ tags: ["cyberpunk", "near-future", "cephalopods"]
 ## Premise
 
 In _The Mountain in the Sea_, marine biologist Dr. Ha Nguyen works with
-humanity's only sentient android (a label many characters in the novel find
-contentious) Evrim and Mongolian mercenary drone operator Altantsetseg to
-investigate what they believe to be a civilization of intelligent octopuses near
-the Con Dao archipelago off the coast of Vietnam.
+humanity's only (allegedly) sentient android Evrim and Mongolian mercenary drone
+operator Altantsetseg to investigate what they believe to be a civilization of
+intelligent octopuses near the Con Dao archipelago off the coast of Vietnam.
 
 Some chapters focus on two other characters whose storylines loosely intertwine
 with the main plot: Rustem, a Tatar hacker contracted to find an exploit in
@@ -31,8 +30,8 @@ right chord for me. From the opening scene:
 
 Yeah that rules.
 
-For me, the core of this, I think, is characters with access to a ton of
-technology surrounded mostly by nature. Something about that premise just
+For me, the core of this, I think, is characters who have access to a ton of
+technology but are surrounded mostly by nature. Something about that premise
 appeals to me. Well, that, and breakfast.
 
 > In the makeshift kitchen, Altantsetseg sat eating a hard-boiled egg. The table
@@ -57,12 +56,12 @@ Nguyen:
 > _How much does Evrim know? Everything all humans know? Or just some things?
 > How does that work? How smart is that brain?_
 
-And there are some scenes where Evrim displays flashes of superhuman ability,
-but those moments felt more to me like Evrim being a living calculator rather
-than a superhuman strategist. There's a scene, for example, where they spot
-something in a video recording that would've required software or specialized
-tooling for a human to identify. For the most part, I felt Evrim became more
-alive and more relatable as the storyline progressed.
+And there are some scenes where Evrim displays flashes of superhuman skill, but
+those moments felt more to me like Evrim being a living calculator rather than a
+superhuman strategist. There's a scene, for example, where they spot something
+in a video recording that would've required software or specialized tooling for
+a human to identify. For the most part, I felt Evrim became more alive and more
+relatable as the storyline progressed.
 
 ## Point-Fives
 
@@ -81,7 +80,7 @@ Hey look, this book predicted GPT-4o!
 
 Jokes aside, it's impressive that Nayler nailed AI sycophancy so accurately and
 came up with, in my opinion, such a plausible extrapolation of it, especially
-considering that this book came out in October 2022-- a month before ChatGPT was
+considering that this book came out in October 2022--a month before ChatGPT was
 released!
 
 Later in the book there's a bit of a reveal that Kamran, a character I'd
@@ -105,7 +104,7 @@ finds harmful about these pseudo-relationships.
 > be there.
 
 This all seems like a pretty plausible fixture of the actual near future to me,
-if not something that's already going on right now to some limited degree.
+if not something that's already going on to some degree.
 
 ## Moravec's Paradox
 
@@ -113,13 +112,13 @@ if not something that's already going on right now to some limited degree.
 > Electricity and salt water are a bad combination. Rust, decay, short circuits.
 > Expensive. _We make better robots. Cheaper to maintain, more expendable._
 
-One of the side characters, Eiko, is abducted and forced to work onboard the
+One of the side characters, Eiko, is abducted and forced to work on board the
 _Sea Wolf_, an autonomous fishing vessel. A shipboard AI makes all of the
 strategic business decisions for the ship: where to go, how long Eiko and the
 crew have to work, even how much they get fed. It felt a bit like a paperclip
-maximizer for marine protein (and therefore money). Like the quote suggests,
-Eiko and the rest of the crew are forced to do all the work that robots would be
-too expensive to do-- mostly hauling catches out of the water, then gutting and
+maximizer for marine protein (and therefore money). As the quote suggests, Eiko
+and the rest of the crew are forced to do all the work that robots would be too
+expensive to do-- mostly hauling catches out of the water, then gutting and
 processing the fish. Cool to see a reasoned-through plot that hinges
 significantly on Moravec's Paradox.
 
@@ -133,5 +132,4 @@ which I was surprised to learn are real locations off the coast of Australia
 where gloomy octopuses are known to gather and reside. Wikipedia even calls them
 "non-human settlements." So cool!
 
-Anyways, I liked this book. Favorite part was the general atmosphere and
-setting.
+Anyway, I liked this book, especially the atmosphere and setting.
