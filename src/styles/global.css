@@ -92,7 +92,7 @@
         line-height: 0;
     }
 
-    & :where(figure img) {
+    & :where(figure img, figure video) {
         @apply max-h-[75vh] w-auto my-0 mx-auto;
     }
 
