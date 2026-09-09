@@ -1,9 +1,81 @@
 ---
 title: "Machined Wooden Pencil Case"
 pubDate: 2026-09-15
-description: "A case for my pencils."
+description: "Works with pens, too!"
 image: "./pencil-case-cover.webp"
 useImage: true
 imageAlt: "A machined wooden pencil case holding two pencils."
 tags: ["CAD", "Woodworking", "Machining"]
 ---
+
+import ImageGrid from "@components/ImageGrid.astro";
+import ThreeViewer from "@components/ThreeViewer.svelte";
+import modelSrc from "./pencil-case.glb";
+
+import pencilCaseGap from "./pencil-case-gap.webp";
+import pencilCaseInProgress from "./pencil-case-in-progress.webp";
+import pencilCaseUnfinishedFit from "./pencil-case-unfinished-fit.webp";
+import pencilCaseUnfinishedTop from "./pencil-case-unfinished-top.webp";
+import pencilCaseUnfinishedSide from "./pencil-case-unfinished-side.webp";
+import pencilCaseUnfinishedChamfer from "./pencil-case-unfinished-chamfer.webp";
+import pencilCaseFinishingSetup from "./pencil-case-finishing-setup.webp";
+
+## Has this ever happened to you?
+
+Since the end of college, I've been a one pencil / one pen kinda guy. Recently--
+and by recently I mean like... 6 months ago-- I tossed my $25 rOtring 600
+mechanical pencil in my bag, and when I removed it I was shocked to see that the
+metal tube at the tip of the pencil was _bent_.
+
+And it was at this moment that I decided to do something about this. I'd
+recently joined a local makerspace, and I was looking for a project to do to
+familiarize myself with their CNC wood router, so I figured I'd try and make a
+nice case for the two writing utensils I use most regularly -- my rOtring
+mechanical pencil and rOtring pen.
+
+## Design
+
+The design for this was pretty straightforward-- I iterated a bit on the initial
+design via 3D printing and made small refinements here and there, but for the
+most part the general shape remained the same across interations.
+
+The design I settled on is a two part case, with magnets to hold the two pieces
+together and a lip to align them, shown below.
+
+<ThreeViewer model={modelSrc} caption="Pencil case design." client:load />
+
+## Manufacturing
+
+![a CNC machine milling wood](./pencil-case-in-progress.webp "Pencil case being milled.")
+
+![Side profile of a milled wooden pencil case](./pencil-case-gap.webp "Gap between case parts.")
+
+<ImageGrid
+    images={[
+        [
+            pencilCaseUnfinishedTop,
+            "Top of a milled wooden pencil case.",
+            undefined,
+        ],
+        [
+            pencilCaseUnfinishedChamfer,
+            "Bottom of milled wooden pencil case.",
+            undefined,
+        ],
+        [
+            pencilCaseUnfinishedSide,
+            "Side of a milled wooden pencil case.",
+            undefined,
+        ],
+        [pencilCaseUnfinishedFit, "Milled wooden pencil case.", undefined],
+    ]}
+    caption="Pencil case straight off CNC router."
+    cols="grid-cols-2"
+    rows="grid-rows-2"
+/>
+
+## Wood Finishing is Hard, Apparently
+
+![Parts for a wooden pencil case being finished with Danish oil](./pencil-case-finishing-setup.webp "Finishing setup.")
+
+## Conclusion
