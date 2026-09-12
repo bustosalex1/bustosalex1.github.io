@@ -22,25 +22,26 @@ import pencilCaseFinishingSetup from "./pencil-case-finishing-setup.webp";
 
 ## Has this ever happened to you?
 
-Since the end of college, I've been a one pencil / one pen kinda guy. Recently--
-and by recently I mean like... 6 months ago-- I tossed my $25 rOtring 600
-mechanical pencil in my bag, and when I removed it I was shocked to see that the
-metal tube at the tip of the pencil was _bent_.
+Recently, I tossed my rOtring 600 mechanical pencil into my bag and headed to a
+local coffee shop. All was well, until I got to the coffee shop. I opened my bag
+to retrieve my prized writing utensil, and was greeted instead with disaster:
+the metal tube at the tip of my pencil was _bent_.
 
-And it was at this moment that I decided to do something about this. I'd
-recently joined a local makerspace, and I was looking for a project to do to
-familiarize myself with their CNC wood router, so I figured I'd try and make a
-nice case for the two writing utensils I use most regularly -- my rOtring
-mechanical pencil and rOtring pen.
+This actually did happen, and actually is part of the motivation for this
+project. Around the same time though, I'd joined a local makerspace and was
+searching for a project to get familiar with some of the tools at the space. So,
+I figured I'd kill two birds with one stone, and try to make a case to protect
+my pencils from situations like the aforementioned.
 
 ## Design
 
-The design for this was pretty straightforward-- I iterated a bit on the initial
-design via 3D printing and made small refinements here and there, but for the
-most part the general shape remained the same across interations.
+The design for this project was straightforward: a two part case with two slots
+for rOtring pens or pencils, magnets to hold the case together, and a lip to
+align the two parts.
 
-The design I settled on is a two part case, with magnets to hold the two pieces
-together and a lip to align them, shown below.
+I iterated on the details a bit via 3D printing and made some small refinements
+here and there, but I didn't change the general shape of the design from its
+initial inception. The final design is below.
 
 <ThreeViewer model={modelSrc} caption="Pencil case design." client:load />
 
@@ -48,7 +49,49 @@ together and a lip to align them, shown below.
 
 ![a CNC machine milling wood](./pencil-case-in-progress.webp "Pencil case being milled.")
 
+Manufacturing was fairly clear-cut. I machined both pieces out of a single piece
+of maple, using blue tape and super glue for workholding. The biggest challenge
+I ran into was just working around the age of the Techno LC 4896 CNC router at
+the makerspace.
+
+This machine is probably in the ballpark of 20 years old, which presented some
+interesting quirks. Most notably, 2D and 3D adaptive toolpaths don't work,
+presumably due to the specs of the control processor. I ended up just using 2D
+pockets for everything.
+
+I also ran into a problem that I would categorize as probably more of a skill
+issue than anything else. The first time I tried milling out the case, I wound
+up with this huge gap between the two parts of the case, which are supposed to
+be flush.
+
 ![Side profile of a milled wooden pencil case](./pencil-case-gap.webp "Gap between case parts.")
+
+The culprit wound up being a discrepancy between setups in my CAM. This machine
+doesn't have a tool setter, so the way to set different tool heights is to touch
+off the tool on the top of the stock. I had two setups for this project: facing
+and everything else. For my second setup, I'd set my stock mode in Fusion to
+`From Preceding Setup` with `Continue Rest Machining` checked. I'd interpreted
+this as "the stock for the current setup is whatever's left from the previous
+setup".
+
+Apparently that is _not_ what this means; it means that the stock is literally
+the same as the stock dimensions from the previous setup. In this case, that
+meant whatever height got faced off in my initial setup was not getting
+accounted for in later operations.
+
+The fix for this was easy-- I just set the stock dimensions for the second setup
+manually, but it tripped me up for a minute. With that out of the way, the rest
+of the machining went smoothly.
+
+<figure>
+    <video autoplay muted loop playsinline>
+        <source src="/chamfer-operation.mp4" type="video/mp4" />
+    </video>
+    <figcaption>Chamfer operation using 3D printed workholding.</figcaption>
+</figure>
+
+I made a 3D printed jig to hold each part of the case in place to machine the
+chamfers on the top and bottom of the case.
 
 <ImageGrid
     images={[
@@ -69,13 +112,16 @@ together and a lip to align them, shown below.
         ],
         [pencilCaseUnfinishedFit, "Milled wooden pencil case.", undefined],
     ]}
-    caption="Pencil case straight off CNC router."
+    caption="Machined, unfinished pencil case."
     cols="grid-cols-2"
     rows="grid-rows-2"
 />
 
 ## Wood Finishing is Hard, Apparently
 
+With the manufacturing done, I felt like I was nearing the end of the project.
+
+I did some research and settled on
 ![Parts for a wooden pencil case being finished with Danish oil](./pencil-case-finishing-setup.webp "Finishing setup.")
 
 ## Conclusion
