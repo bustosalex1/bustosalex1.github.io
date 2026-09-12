@@ -6,15 +6,15 @@ startDate: "2026-08-24"
 endDate: "2026-08-26"
 description: "Photos from a trip to Lake Tahoe."
 photos:
-  - src: ./lake_tahoe_secret_cove_close_08_22_2026.webp
-    alt: "A closeup of Secret Cove at Lake Tahoe."
-  - src: ./lake_tahoe_secret_cove_wide_08_22_2026.webp
-    alt: "A wide shot of Secret Cove at Lake Tahoe."
-  - src: ./lake_tahoe_sunset_rocks_08_22_2026.webp
-    alt: "Rocks at sunset at Lake Tahoe."
-  - src: ./lake_tahoe_sunset_water_08_22_2026.webp
-    alt: "Lake Tahoe at sunset."
-  - src: ./lake_tahoe_blue_jay_08_23_2026.webp
-    alt: "A blue jay at Lake Tahoe."
-  - src: ./lake_tahoe_emerald_bay_wide_08_23_2026.webp
-    alt: "A wide shot of Emerald Bay at Lake Tahoe."
+    - src: ./lake_tahoe_secret_cove_close_08_22_2026.webp
+      alt: "A closeup of Secret Cove at Lake Tahoe."
+    - src: ./lake_tahoe_secret_cove_wide_08_22_2026.webp
+      alt: "A wide shot of Secret Cove at Lake Tahoe."
+    - src: ./lake_tahoe_sunset_rocks_08_22_2026.webp
+      alt: "Rocks at sunset at Lake Tahoe."
+    - src: ./lake_tahoe_sunset_water_08_22_2026.webp
+      alt: "Lake Tahoe at sunset."
+    - src: ./lake_tahoe_blue_jay_08_23_2026.webp
+      alt: "A blue jay at Lake Tahoe."
+    - src: ./lake_tahoe_emerald_bay_wide_08_23_2026.webp
+      alt: "A wide shot of Emerald Bay at Lake Tahoe."
