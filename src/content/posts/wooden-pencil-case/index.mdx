@@ -1,6 +1,6 @@
 ---
 title: "Machined Wooden Pencil Case"
-pubDate: 2026-09-14
+pubDate: 2026-09-16
 description: "Works with pens, too!"
 image: "./pencil-case-cover.webp"
 useImage: true
@@ -12,13 +12,10 @@ import ImageGrid from "@components/ImageGrid.astro";
 import ThreeViewer from "@components/ThreeViewer.svelte";
 import modelSrc from "./pencil-case.glb";
 
-import pencilCaseGap from "./pencil-case-gap.webp";
-import pencilCaseInProgress from "./pencil-case-in-progress.webp";
 import pencilCaseUnfinishedFit from "./pencil-case-unfinished-fit.webp";
 import pencilCaseUnfinishedTop from "./pencil-case-unfinished-top.webp";
 import pencilCaseUnfinishedSide from "./pencil-case-unfinished-side.webp";
 import pencilCaseUnfinishedChamfer from "./pencil-case-unfinished-chamfer.webp";
-import pencilCaseFinishingSetup from "./pencil-case-finishing-setup.webp";
 
 ## Has this ever happened to you?
 
@@ -29,19 +26,19 @@ the metal tube at the tip of my pencil was _bent_.
 
 This actually did happen, and actually is part of the motivation for this
 project. Around the same time though, I'd joined a local makerspace and was
-searching for a project to get familiar with some of the tools at the space. So,
-I figured I'd kill two birds with one stone, and try to make a case to protect
-my pencils from situations like the aforementioned.
+searching for a project to get familiar with some of the tools there. So, I
+figured I'd kill two birds with one stone, and try to make a case to protect my
+pens and pencils from situations like this.
 
 ## Design
 
-The design for this project was straightforward: a two part case with two slots
+The design for this project was straightforward: a two-part case with two slots
 for rOtring pens or pencils, magnets to hold the case together, and a lip to
 align the two parts.
 
 I iterated on the details a bit via 3D printing and made some small refinements
-here and there, but I didn't change the general shape of the design from its
-initial inception. The final design is below.
+here and there, but I didn't significantly change the general shape of the
+design from the original concept. The final design is below.
 
 <ThreeViewer model={modelSrc} caption="Pencil case design." client:load />
 
@@ -49,10 +46,10 @@ initial inception. The final design is below.
 
 ![a CNC machine milling wood](./pencil-case-in-progress.webp "Pencil case being milled.")
 
-Manufacturing was fairly clear-cut. I machined both pieces out of a single piece
-of maple, using blue tape and super glue for workholding. The biggest challenge
-I ran into was just working around the age of the Techno LC 4896 CNC router at
-the makerspace.
+Manufacturing was fairly clear-cut. I machined both halves of the case from a
+single piece of maple, using blue tape and super glue for workholding. The
+biggest challenge I ran into was just working around the age of the Techno LC
+4896 CNC router at the makerspace.
 
 This machine is probably in the ballpark of 20 years old, which presented some
 interesting quirks. Most notably, 2D and 3D adaptive toolpaths don't work,
@@ -61,8 +58,7 @@ pockets for everything.
 
 I also ran into a problem that I would categorize as probably more of a skill
 issue than anything else. The first time I tried milling out the case, I wound
-up with this huge gap between the two parts of the case, which are designed to
-be flush.
+up with this huge gap between the two parts, which are designed to be flush.
 
 ![Side profile of a milled wooden pencil case](./pencil-case-gap.webp "Gap between case parts.")
 
@@ -74,14 +70,14 @@ and everything else. For my second setup, I'd set my stock mode in Fusion to
 this as "the stock for the current setup is whatever's left from the previous
 setup".
 
-Apparently that is _not_ what this means; it means that the stock is literally
-the same as the stock dimensions from the previous setup. In this case, that
-meant whatever height got faced off in my initial setup was not getting
-accounted for in later operations.
+This turned out to be true for toolpaths, but importantly, these settings do
+_not_ update the stock box points, which still come from the original stock
+definition. And because I used one of these points as my origin, whatever height
+got faced off in my initial setup wasn't accounted for in later operations.
 
-The fix for this was easy-- I just set the stock dimensions for the second setup
-manually, but this definitely tripped me up. With that out of the way though,
-the rest of the machining went smoothly.
+Fortunately, the fix for this was easy-- I just set the stock dimensions for the
+second setup manually. With that out of the way, the rest of the machining went
+smoothly.
 
 <figure>
     <video autoplay muted loop playsinline>
@@ -90,8 +86,9 @@ the rest of the machining went smoothly.
     <figcaption>Chamfer operation using 3D printed workholding.</figcaption>
 </figure>
 
-I also made a 3D printed jig (shown above) to hold each part of the case in
-place to machine the chamfers on the top and bottom of the case.
+To machine the chamfers on the exterior of each part, I used a 3D printed jig
+for workholding, shown above. The milled parts prior to sanding or finishing are
+shown below.
 
 <ImageGrid
     images={[
@@ -119,48 +116,53 @@ place to machine the chamfers on the top and bottom of the case.
 
 ## Wood Finishing is Hard, Apparently
 
-Having finished machining the case parts and after sanding them down through 320
-grit sandpaper, I was feeling like I was basically done with this project. Oh,
-how wrong I was.
+After machining the case, I sanded the parts using progressively finer
+sandpaper, up to 320 grit. At this point, I felt like I was almost done with the
+project; in hindsight, I realize I was getting ahead of myself.
 
-Having no prior experience finishing wood, I selected Danish oil as my finish
-partly because it seemed like the most fool proof option, and partly because an
-oil-based finish seemd like it would be easier to apply than a surface finish
-like wipe-on poly to a part like this with lots of nooks and crannies.
+I chose Danish oil to finish the case, partly because I'd read it was the most
+foolproof option, and partly because an oil-based finish seemed like it would be
+easier to apply than a surface finish like wipe-on poly to parts like this with
+small channels and crevices.
 
-The problems I experienced with this process were almost entirely due to me not
-doing enough research. For some reason, it never occurred to me until halfway
-through the finishing process to watch a video demonstrating proper application
-of Danish oil.
-
-Instead, I read a few written explanations, one of which used the phrase "flood
-the wood". Somehow, this specific term must've become ingrained in my brain,
-because for the first few coats I did exactly that: I poured copious amounts of
-Danish oil onto each part, trying my best to "flood the wood". Some of the
-aftermath is visible below.
+The problems I experienced with the finishing process were almost entirely due
+to insufficient research. It didn't occur to me until halfway through the
+finishing process-- after I'd already applied several coats of oil-- to watch a
+video demonstrating proper application. Instead, I read a few written
+explanations, one of which used the phrase "flood the wood", which for some
+reason really stuck with me. So, for the first few coats I did exactly that: I
+poured copious amounts of finish onto the parts, trying my best to flood them
+with oil. Some of the aftermath is visible below.
 
 ![Parts for a wooden pencil case being finished with Danish oil](./pencil-case-finishing-setup.webp "Finishing setup.")
 
-Ultimately, this seemed to be more messy and annoying than anything else. After
+This mistake seemed to be more messy and annoying than anything else. After
 waiting about 15 minutes for the wood to absorb the oil, I would still wipe off
-any excess, so (as far as I can tell) these early coats didn't ruin my part,
-they just made for an unpleasant application process.
+any excess, so-- as far as I can tell-- these early coats didn't ruin my parts;
+they just made for an unpleasant and tedious application process.
 
-Eventually I figured things out and applied later coats using a clean shop rag
-to wipe the oil on which made for a much cleaner, easier experience.
+Eventually I watched a video, figured things out, and applied later coats by
+dipping a clean shop rag into the oil and then wiping it onto each part, which
+made for a much cleaner experience.
 
-Between the last few layers, I also used 400 grit sandpaper and #0000 steel wool
-on the outside of the case, which I think made it pretty smooth. Unfortunately,
-because the interior of the case had a bunch of small holes and channels, I
-wasn't really able to sand it between coats, so the inside of the case is
-kinda... rough. This is probably my biggest gripe with the case, or the thing
-that I'm not super pleased with. The outside of the case, in my opinion, looks
-and feels great, but the inside leaves a lot to be desired. Definitely going to
-keep this in mind for other projects.
+Between the last few coats, I also used 400 grit sandpaper and #0000 steel wool
+on the outside of the case, which gave the exterior a great finish.
+Unfortunately, because of the geometric complexity of the inside of the case, I
+wasn't able to give it the same treatment, so the interior is noticeably rougher
+than the exterior. This, in my opinion, is the case's biggest shortcoming. It's
+hard to notice at a distance, but can certainly be felt, and can make the case a
+bit hard to open at times. I'm definitely going to be keeping this in mind for
+future projects.
+
+Between testing out finishes, making mistakes, waiting for oil to cure in
+between coats, and just generally dragging my feet, this process took me several
+weeks to get to a finished product. Finally, I used CA glue to fasten magnets
+into each case part. And with that, I called it done.
 
 ## Conclusion
 
-This was a fun project. Although I'm not completely satisifed with the end
-result, I'm happy enough, and I'm happy with what I learned along the way.
+This was a fun project. Although it's far from perfect, I use this case daily to
+carry my pen and pencil. It works well enough, and I'm happy with what I
+learned.
 
 ![Wooden pencil case on a table.](./pencil-case-final-shot.webp "Finished pencil case.")
