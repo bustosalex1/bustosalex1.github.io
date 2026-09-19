@@ -41,6 +41,11 @@ const photoSchema = (image: ImageFunction) =>
         alt: z.string().optional(),
     });
 
+const photoRowSchema = (image: ImageFunction) =>
+    z.object({
+        row: z.array(photoSchema(image)).min(1),
+    });
+
 const photoCollection = defineCollection({
     loader: glob({ pattern: "**/index.yaml", base: "./src/content/photos" }),
     schema: ({ image }) =>
@@ -60,7 +65,7 @@ const photoCollection = defineCollection({
                     .optional(),
                 yearOnly: z.boolean().optional(),
                 description: z.string().optional(),
-                photos: z.array(photoSchema(image)).optional(),
+                photos: z.array(photoRowSchema(image)).optional(),
                 sections: z
                     .array(
                         z
@@ -77,7 +82,7 @@ const photoCollection = defineCollection({
                                     .or(z.date())
                                     .transform((val) => new Date(val))
                                     .optional(),
-                                photos: z.array(photoSchema(image)),
+                                photos: z.array(photoRowSchema(image)),
                             })
                             .transform((section) => ({
                                 ...section,
