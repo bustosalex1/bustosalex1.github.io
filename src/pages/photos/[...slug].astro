@@ -79,16 +79,18 @@ const headings: MarkdownHeading[] | undefined = entry.data.sections
     <!--optional photos section, if `sections` doesn't exist-->
     {
         entry.data.photos && (
-            <div
-                class={`w-full border border-line hard-shadow bg-secondary-bg diagonal-lines grid ${entry.data.photos.length < 3 ? "grid-cols-1" : "grid-cols-1 md:grid-cols-3"}`}
-            >
-                {entry.data.photos.map((p) => (
-                    <div class="aspect-square overflow-hidden">
-                        <Image
-                            src={p.src}
-                            alt={p.alt ?? ""}
-                            class="w-full h-full object-cover"
-                        />
+            <div class="w-full border border-line hard-shadow bg-secondary-bg diagonal-lines flex flex-col">
+                {entry.data.photos.map(({ row }) => (
+                    <div class="flex flex-col w-full md:flex-row">
+                        {row.map((p) => (
+                            <div class="w-full min-w-0 overflow-hidden md:flex-1">
+                                <Image
+                                    src={p.src}
+                                    alt={p.alt ?? ""}
+                                    class="w-full h-auto md:h-full md:object-cover"
+                                />
+                            </div>
+                        ))}
                     </div>
                 ))}
             </div>
@@ -114,16 +116,18 @@ const headings: MarkdownHeading[] | undefined = entry.data.sections
                                 </div>
                             )}
                         </div>
-                        <div
-                            class={`bg-secondary-bg diagonal-lines grid w-full ${s.photos.length < 3 ? "grid-cols-1" : "grid-cols-1 md:grid-cols-3"}`}
-                        >
-                            {s.photos.map((p) => (
-                                <div class="aspect-square overflow-hidden">
-                                    <Image
-                                        class="w-full h-full object-cover transition-all ease-in-out duration-300"
-                                        src={p.src}
-                                        alt={p.alt ?? ""}
-                                    />
+                        <div class="bg-secondary-bg diagonal-lines flex flex-col w-full">
+                            {s.photos.map(({ row }) => (
+                                <div class="flex flex-col w-full md:flex-row">
+                                    {row.map((p) => (
+                                        <div class="w-full min-w-0 overflow-hidden md:flex-1">
+                                            <Image
+                                                class="w-full h-auto md:h-full md:object-cover"
+                                                src={p.src}
+                                                alt={p.alt ?? ""}
+                                            />
+                                        </div>
+                                    ))}
                                 </div>
                             ))}
                         </div>
