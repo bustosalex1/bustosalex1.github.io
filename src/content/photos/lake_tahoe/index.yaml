@@ -2,8 +2,8 @@
 title: "Lake Tahoe"
 location: "California"
 cover: ./lake_tahoe_emerald_bay_wide_08_23_2026.webp
-startDate: "2026-08-24"
-endDate: "2026-08-26"
+startDate: "2026-08-22"
+endDate: "2026-08-24"
 description: "Photos from a trip to Lake Tahoe."
 photos:
     - row:
