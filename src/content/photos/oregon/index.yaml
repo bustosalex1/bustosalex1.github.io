@@ -35,8 +35,8 @@ sections:
       startDate: "2025-08-26"
       photos:
           - row:
-                - src: ./oregon_lone_boat_crater_lake_08_26_2025.webp
-                  alt: "A single boat on Crater Lake."
+                - src: ./oregon_crater_lake_wizard_island_dawn_08_26_2025.webp
+                  alt: "Wizard Island at dawn, Crater Lake."
           - row:
                 - src: ./oregon_cleetwood_cove_dock_crater_lake_08_26_2025.webp
                   alt: "Dock at Cleetwood Cove, Crater Lake."
@@ -50,8 +50,8 @@ sections:
                 - src: ./oregon_crater_lake_caldera_blue_water_08_26_2025.webp
                   alt: "Crater Lake caldera with blue water."
           - row:
-                - src: ./oregon_crater_lake_wizard_island_dawn_08_26_2025.webp
-                  alt: "Wizard Island at dawn, Crater Lake."
+                - src: ./oregon_lone_boat_crater_lake_08_26_2025.webp
+                  alt: "A single boat on Crater Lake."
     - title: "Oregon Coast"
       location: "Oregon Coast, OR"
       startDate: "2025-08-28"
