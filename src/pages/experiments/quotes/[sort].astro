@@ -61,19 +61,13 @@ const headings: MarkdownHeading[] = groupedQuotes.map(([k, _]) => {
         <TableOfContents headings={headings} client:load />
     </Fragment>
     <div class="border-line border bg-secondary-bg hard-shadow">
-        <h1
-            class="p-5 text-3xl md:text-4xl text-left font-crimson italic text-ink"
-        >
+        <h1 class="p-5 text-3xl md:text-4xl text-left font-crimson italic text-ink">
             Quotes I Like
         </h1>
-        <div
-            class="flex flex-row items-stretch w-full h-11 border-line border-t"
-        >
+        <div class="flex flex-row items-stretch w-full h-11 border-line border-t">
             <div class="grow diagonal-lines"></div>
             <div class="flex flex-row w-fit">
-                <div
-                    class="whitespace-nowrap p-2 border-l border-line font-mono border-r content-center text-center text-ink text-sm"
-                >
+                <div class="whitespace-nowrap p-2 border-l border-line font-mono border-r content-center text-center text-ink text-sm">
                     Sort by
                 </div>
                 <select
@@ -82,16 +76,22 @@ const headings: MarkdownHeading[] = groupedQuotes.map(([k, _]) => {
                 >
                     <option
                         value="/experiments/quotes/source/"
-                        selected={sort === "source"}>Source Material</option
+                        selected={sort === "source"}
                     >
+                        Source Material
+                    </option>
                     <option
                         value="/experiments/quotes/author/"
-                        selected={sort === "author"}>Author</option
+                        selected={sort === "author"}
                     >
+                        Author
+                    </option>
                     <option
                         value="/experiments/quotes/character/"
-                        selected={sort === "character"}>Character</option
+                        selected={sort === "character"}
                     >
+                        Character
+                    </option>
                 </select>
             </div>
         </div>
@@ -99,56 +99,54 @@ const headings: MarkdownHeading[] = groupedQuotes.map(([k, _]) => {
 
     <!-- quote groups -->
     <div class="flex flex-col gap-4 pt-4">
-        {
-            groupedQuotes.map(([key, quoteList]) => (
-                <div
-                    class="flex flex-col divide-y divide-line border-l border-r border-b border-line bg-secondary-bg hard-shadow scroll-mt-2"
-                    id={slugify(key)}
-                >
-                    <div class="flex flex-row sticky top-2 bg-secondary-bg border-t border-line before:absolute before:bottom-full before:left-0 before:right-0 before:h-2 before:mb-px before:-mx-px before:bg-bg">
-                        <a
-                            class="font-semibold p-2 text-ink font-mono text-sm"
-                            href={`#${slugify(key)}`}
-                        >
-                            {key}
-                        </a>
-                    </div>
-                    {quoteList.map((quote) => (
-                        <div class="flex flex-col w-full">
-                            <div class="border-b border-line border-dashed p-8 font-crimson text-lg text-ink">
-                                <Fragment set:html={quote.quote} />
-                            </div>
-                            <div class="flex flex-row h-10 items-stretch overflow-x-auto w-full text-ink-secondary font-mono text-sm">
-                                <div class="grow" />
-                                {quote.character !== undefined && (
-                                    <div class="border-r border-line border-dashed content-center px-2 whitespace-nowrap">
-                                        &mdash; {quote.character}
-                                    </div>
-                                )}
-                                <div
-                                    class={`content-center px-2 whitespace-nowrap ${quote.aboutCharacter !== undefined ? "border-r border-dashed border-line" : ""}`}
-                                >
-                                    <em>{quote.source}</em>
-                                    {quote.additionalSourceInfo && (
-                                        <Fragment>
-                                            {" "}
-                                            {quote.additionalSourceInfo}
-                                        </Fragment>
-                                    )}
-                                    {quote.author && (
-                                        <Fragment> by {quote.author}</Fragment>
-                                    )}
-                                </div>
-                                {quote.aboutCharacter !== undefined && (
-                                    <div class="content-center px-2 whitespace-nowrap">
-                                        Regarding {quote.aboutCharacter}
-                                    </div>
-                                )}
-                            </div>
-                        </div>
-                    ))}
+        {groupedQuotes.map(([key, quoteList]) => (
+            <div
+                class="flex flex-col divide-y divide-line border-l border-r border-b border-line bg-secondary-bg hard-shadow scroll-mt-2"
+                id={slugify(key)}
+            >
+                <div class="flex flex-row sticky top-2 bg-secondary-bg border-t border-line before:absolute before:bottom-full before:left-0 before:right-0 before:h-2 before:mb-px before:-mx-px before:bg-bg">
+                    <a
+                        class="font-semibold p-2 text-ink font-mono text-sm"
+                        href={`#${slugify(key)}`}
+                    >
+                        {key}
+                    </a>
                 </div>
-            ))
-        }
+                {quoteList.map((quote) => (
+                    <div class="flex flex-col w-full">
+                        <div class="border-b border-line border-dashed p-8 font-crimson text-lg text-ink">
+                            <Fragment set:html={quote.quote} />
+                        </div>
+                        <div class="flex flex-row h-10 items-stretch overflow-x-auto w-full text-ink-secondary font-mono text-sm">
+                            <div class="grow" />
+                            {quote.character !== undefined && (
+                                <div class="border-r border-line border-dashed content-center px-2 whitespace-nowrap">
+                                    &mdash; {quote.character}
+                                </div>
+                            )}
+                            <div
+                                class={`content-center px-2 whitespace-nowrap ${quote.aboutCharacter !== undefined ? "border-r border-dashed border-line" : ""}`}
+                            >
+                                <em>{quote.source}</em>
+                                {quote.additionalSourceInfo && (
+                                    <Fragment>
+                                        {" "}
+                                        {quote.additionalSourceInfo}
+                                    </Fragment>
+                                )}
+                                {quote.author && (
+                                    <Fragment> by {quote.author}</Fragment>
+                                )}
+                            </div>
+                            {quote.aboutCharacter !== undefined && (
+                                <div class="content-center px-2 whitespace-nowrap">
+                                    Regarding {quote.aboutCharacter}
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                ))}
+            </div>
+        ))}
     </div>
 </BaseLayout>
