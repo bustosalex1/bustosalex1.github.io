@@ -16,9 +16,7 @@
 </script>
 
 <figure class="w-full my-0 border border-line hard-shadow overflow-hidden">
-    <div
-        class="aspect-video relative bg-secondary-bg"
-    >
+    <div class="aspect-video relative bg-secondary-bg">
         <Canvas>
             <ThreeScene {model} onResetReady={(fn) => (resetView = fn)} />
         </Canvas>
