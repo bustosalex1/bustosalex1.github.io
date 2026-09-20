@@ -161,6 +161,7 @@
         bind:ref={controls}
         autoRotate={true}
         autoRotateSpeed={0.75}
+        cursorStyle="grab"
         enableDamping={true}
         enableZoom={true}
         zoomToCursor={false}
