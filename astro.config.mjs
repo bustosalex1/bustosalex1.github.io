@@ -15,11 +15,7 @@ const rehypePlugins = [rehypeKatex, rehypeCaptionImages, rehypeCaptionTables];
 
 // https://astro.build/config
 export default defineConfig({
-    integrations: [
-        svelte(),
-        mdx({ remarkPlugins, rehypePlugins, gfm: true }),
-        sitemap(),
-    ],
+    integrations: [svelte(), mdx(), sitemap()],
     site: "https://bustosalex1.github.io",
     markdown: {
         shikiConfig: {
@@ -28,7 +24,11 @@ export default defineConfig({
                 dark: "dracula",
             },
         },
-        processor: unified({ remarkPlugins, rehypePlugins }),
+        processor: unified({
+            remarkPlugins,
+            rehypePlugins,
+            gfm: true,
+        }),
     },
     vite: {
         assetsInclude: ["**/*.glb", "**/*.mp4"],

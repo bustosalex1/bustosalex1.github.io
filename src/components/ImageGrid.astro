@@ -20,28 +20,20 @@ const { images, caption, rows, cols } = Astro.props;
 <!-- TODO: this container should be <figure> so <figcaption> is semantically valid -->
 <div>
     <div class={`grid ${cols} ${rows} gap-2 pb-2 overflow-clip`}>
-        {
-            images.map(([src, alt, caption], i) => (
-                <div class="not-prose h-full w-full relative border border-line hard-shadow">
-                    <Image
-                        src={src}
-                        alt={alt}
-                        class="object-cover h-full w-full"
-                    />
-                    {caption && (
-                        <div class="absolute left-0 right-0 bottom-0 border-t border-line-secondary bg-secondary-bg text-xs font-mono p-1 ">
-                            {String.fromCharCode(97 + i)}. {caption}
-                        </div>
-                    )}
-                </div>
-            ))
-        }
+        {images.map(([src, alt, caption], i) => (
+            <div class="not-prose h-full w-full relative border border-line hard-shadow">
+                <Image src={src} alt={alt} class="object-cover h-full w-full" />
+                {caption && (
+                    <div class="absolute left-0 right-0 bottom-0 border-t border-line-secondary bg-secondary-bg text-xs font-mono p-1">
+                        {String.fromCharCode(97 + i)}. {caption}
+                    </div>
+                )}
+            </div>
+        ))}
     </div>
-    {
-        caption && (
-            <figcaption class="border-l border-r border-b border-line hard-shadow">
-                {caption}
-            </figcaption>
-        )
-    }
+    {caption && (
+        <figcaption class="border-l border-r border-b border-line hard-shadow">
+            {caption}
+        </figcaption>
+    )}
 </div>

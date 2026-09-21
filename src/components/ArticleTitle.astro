@@ -29,61 +29,55 @@ const {
 ---
 
 <div class="border border-line bg-secondary-bg hard-shadow mb-4">
-    {
-        useImage && image && imageAlt ? (
-            <div class="relative w-full overflow-hidden">
-                <Image
-                    src={image}
-                    alt={imageAlt}
-                    class="object-cover w-full h-full"
-                />
-                <div class="absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-transparent" />
-                <div class="absolute bottom-0 left-0 right-0 flex flex-col items-start gap-1 p-5 text-white">
-                    <h1 class="text-3xl md:text-4xl font-crimson italic text-shadow-hero">
-                        {title}
-                    </h1>
-                    {description && (
-                        <p class="max-w-3xl text-sm font-mono text-white/80 text-shadow-soft">
-                            {description}
-                        </p>
-                    )}
-                </div>
-            </div>
-        ) : (
-            <div class="flex flex-col items-start gap-1 p-5">
-                <h1 class="text-3xl md:text-4xl text-left font-crimson italic text-ink">
+    {useImage && image && imageAlt ? (
+        <div class="relative w-full overflow-hidden">
+            <Image
+                src={image}
+                alt={imageAlt}
+                class="object-cover w-full h-full"
+            />
+            <div class="absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-transparent" />
+            <div class="absolute bottom-0 left-0 right-0 flex flex-col items-start gap-1 p-5 text-white">
+                <h1 class="text-3xl md:text-4xl font-crimson italic text-shadow-hero">
                     {title}
                 </h1>
-                {author ? (
-                    <p class="italic font-crimson text-ink-secondary text-lg">
-                        by {author}
+                {description && (
+                    <p class="max-w-3xl text-sm font-mono text-white/80 text-shadow-soft">
+                        {description}
                     </p>
-                ) : (
-                    description && (
-                        <p class="text-sm font-mono text-ink-secondary">
-                            {description}
-                        </p>
-                    )
                 )}
             </div>
-        )
-    }
+        </div>
+    ) : (
+        <div class="flex flex-col items-start gap-1 p-5">
+            <h1 class="text-3xl md:text-4xl text-left font-crimson italic text-ink">
+                {title}
+            </h1>
+            {author ? (
+                <p class="italic font-crimson text-ink-secondary text-lg">
+                    by {author}
+                </p>
+            ) : (
+                description && (
+                    <p class="text-sm font-mono text-ink-secondary">
+                        {description}
+                    </p>
+                )
+            )}
+        </div>
+    )}
 
     <!--metadata strip shared by image and non-image titles-->
-    <div
-        class="flex flex-row items-stretch w-full border-t border-line text-xs font-mono text-ink-secondary whitespace-nowrap overflow-x-auto"
-    >
+    <div class="flex flex-row items-stretch w-full border-t border-line text-xs font-mono text-ink-secondary whitespace-nowrap overflow-x-auto">
         <div class="flex items-center px-3 py-2">
             <FormattedDate date={pubDate} posted={posted} />
         </div>
-        {
-            tags && (
-                <div class="flex flex-row items-stretch ml-auto border-l border-line divide-x divide-line">
-                    {tags.map((tag) => (
-                        <Tag tag={tag} class="px-2.5 text-ink-tertiary" />
-                    ))}
-                </div>
-            )
-        }
+        {tags && (
+            <div class="flex flex-row items-stretch ml-auto border-l border-line divide-x divide-line">
+                {tags.map((tag) => (
+                    <Tag tag={tag} class="px-2.5 text-ink-tertiary" />
+                ))}
+            </div>
+        )}
     </div>
 </div>
