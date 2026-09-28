@@ -1,5 +1,6 @@
 <script lang="ts">
     import { Canvas } from "@threlte/core";
+    import Reset from "~icons/carbon/reset";
     import ThreeScene from "./ThreeScene.svelte";
 
     interface Props {
@@ -11,7 +12,7 @@
 
     // Populated via the `onResetReady` callback from `ThreeScene` once the
     // model loads and the camera is framed. Stays undefined until then, which
-    // keeps the button hidden via the `{#if}` below.
+    // keeps the reset button disabled.
     let resetView: (() => void) | undefined = $state();
 </script>
 
@@ -20,22 +21,20 @@
         <Canvas>
             <ThreeScene {model} onResetReady={(fn) => (resetView = fn)} />
         </Canvas>
-        {#if resetView}
-            <div class="bg-secondary-bg absolute bottom-3 right-3 z-10">
-                <button
-                    onclick={resetView}
-                    class="font-mono text-xs px-3 py-1.5 border border-line bg-secondary-bg text-ink-secondary hover:text-primary hover:bg-primary/10 transition-all duration-150 cursor-pointer select-none"
-                >
-                    Reset View
-                </button>
-            </div>
-        {/if}
     </div>
-    {#if caption}
-        <figcaption
-            class="font-mono text-sm text-left m-0 p-2 text-ink border-t border-line bg-secondary-bg"
+    <figcaption class="caption-with-control">
+        <button
+            type="button"
+            aria-label="Reset view"
+            title="Reset view"
+            disabled={!resetView}
+            onclick={resetView}
+            class="order-first flex w-9 min-h-9 shrink-0 cursor-pointer select-none items-center justify-center border-r border-line text-ink-secondary transition-all duration-150 disabled:cursor-default disabled:opacity-50 enabled:hover:bg-primary/10 enabled:hover:text-primary"
         >
-            {caption}
-        </figcaption>
-    {/if}
+            <Reset class="w-4 h-4" />
+        </button>
+        {#if caption}
+            <span class="caption-text">{caption}</span>
+        {/if}
+    </figcaption>
 </figure>
