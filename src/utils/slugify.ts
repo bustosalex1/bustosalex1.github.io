@@ -1,5 +1,7 @@
-/** Converts a string to a URL-safe slug: lowercase, Unicode normalized,
- *  spaces and special characters replaced with hyphens, and trimmed. */
+/**
+ * Converts a string to a URL-safe slug: lowercase, Unicode normalized, spaces
+ * and special characters replaced with hyphens, and trimmed.
+ */
 export function slugify(str: string): string {
     return str
         .normalize("NFKD")

@@ -5,7 +5,7 @@ description: "An actual box."
 image: "./installed-case.webp"
 imageAlt: "a picture of an e-bike with a 3D printed controller case"
 useImage: true
-tags: ["3D printing", "CAD"]
+tags: ["3D Printing", "CAD"]
 ---
 
 ## Intro

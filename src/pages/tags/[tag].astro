@@ -78,7 +78,7 @@ const { tag } = Astro.params;
                             value={`/tags/${option.slug}/`}
                             selected={option.slug === tag}
                         >
-                            {option.displayTag.toUpperCase()}
+                            {option.displayTag}
                         </option>
                     ))}
                 </select>
