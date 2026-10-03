@@ -21,6 +21,10 @@ export const getStaticPaths = async () => {
         }
     }
 
+    const tagOptions = [...slugMap.entries()]
+        .map(([slug, displayTag]) => ({ slug, displayTag }))
+        .sort((a, b) => a.displayTag.localeCompare(b.displayTag));
+
     return [...slugMap.entries()].map(([slug, displayTag]) => {
         const filteredPosts = allPosts
             .filter((post) => post.data.tags.some((t) => slugify(t) === slug))
@@ -34,25 +38,52 @@ export const getStaticPaths = async () => {
             );
         return {
             params: { tag: slug },
-            props: { posts: filteredPosts, books: filteredBooks, displayTag },
+            props: {
+                posts: filteredPosts,
+                books: filteredBooks,
+                displayTag,
+                tagOptions,
+            },
         };
     });
 };
+
+interface TagOption {
+    slug: string;
+    displayTag: string;
+}
 
 interface TagProps {
     posts: CollectionEntry<"posts">[];
     books: CollectionEntry<"books">[];
     displayTag: string;
+    tagOptions: TagOption[];
 }
 
-const { posts, books, displayTag } = Astro.props as TagProps;
+const { posts, books, displayTag, tagOptions } = Astro.props as TagProps;
+const { tag } = Astro.params;
 ---
 
 <BaseLayout pageTitle={`Tag: ${displayTag}`}>
     <div class="flex flex-row text-ink items-center font-bold w-full font-mono text-sm mb-4">
-        <div>
-            Tagged with <span class="uppercase">{displayTag}</span>
-        </div>
+        <label class="flex flex-row items-center gap-2">
+            Tagged with
+            <span class="inline-grid hard-shadow">
+                <select
+                    class="field-sizing-content font-mono text-sm font-semibold text-ink uppercase px-1 py-0 bg-secondary-bg border border-line cursor-pointer"
+                    onchange="window.location = this.value"
+                >
+                    {tagOptions.map((option) => (
+                        <option
+                            value={`/tags/${option.slug}/`}
+                            selected={option.slug === tag}
+                        >
+                            {option.displayTag.toUpperCase()}
+                        </option>
+                    ))}
+                </select>
+            </span>
+        </label>
         <div class="flex-1 min-w-0 border-t ml-3 border-line h-0"></div>
     </div>
     <div class="flex flex-col gap-4">
