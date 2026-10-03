@@ -5,7 +5,7 @@ description: "Learning about CNC."
 image: "./toolpaths.webp"
 useImage: true
 imageAlt: "an image of CAM toolpaths for a small aluminum carabiner"
-tags: ["machining", "CAD", "CAM"]
+tags: ["Machining", "CAD", "CAM"]
 ---
 
 ## Background

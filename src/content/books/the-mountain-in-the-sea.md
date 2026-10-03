@@ -2,7 +2,7 @@
 title: "The Mountain in the Sea"
 pubDate: 2026-09-05
 author: "Ray Nayler"
-tags: ["cyberpunk", "near-future", "cephalopods"]
+tags: ["Cyberpunk", "Near-Future", "Cephalopods"]
 ---
 
 ## Premise
