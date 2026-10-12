@@ -20,9 +20,10 @@ const version = await import.meta.env.WEBSITE_VERSION;
         <RSS class="w-5 h-5" aria-hidden="true" />
     </a>
     <div class="grow diagonal-lines border-r border-line"></div>
-    <span class="inline-block mx-auto font-mono content-center px-4 text-sm text-ink-tertiary">
-        Alex's website <b class="text-ink-secondary">v{version}</b> on{" "}
-        <span class="transition-all duration:150 text-ink-secondary hover:text-primary">
+    <span class="inline-block mx-auto font-mono content-center px-4 text-sm text-ink-tertiary whitespace-nowrap">
+        Alex's website <b class="text-ink-secondary">v{version}</b>
+        <span class="hidden md:inline"> on </span>
+        <span class="transition-all duration-150 text-ink-secondary hover:text-primary hidden md:inline">
             <a
                 href={`https://github.com/bustosalex1/bustosalex1.github.io/tree/${commitHash}`}
             >
