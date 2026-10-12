@@ -16,7 +16,7 @@ const rehypePlugins = [rehypeKatex, rehypeCaptionImages, rehypeCaptionTables];
 // https://astro.build/config
 export default defineConfig({
     integrations: [svelte(), mdx(), sitemap()],
-    site: "https://bustosalex1.github.io",
+    site: "https://alexbustos.com",
     markdown: {
         shikiConfig: {
             themes: {
