@@ -5,11 +5,20 @@
  * used to generate whatever build is currently being viewed.
  */
 import GitBranch from "~icons/octicon/git-branch-16";
+import RSS from "~icons/material-symbols/rss-feed-rounded";
 const commitHash = await import.meta.env.COMMIT_HASH;
 const version = await import.meta.env.WEBSITE_VERSION;
 ---
 
 <footer class="h-11 mb-20 border border-line flex flex-row w-full items-stretch bg-secondary-bg hard-shadow mt-4">
+    <a
+        href="/rss.xml"
+        aria-label="RSS feed"
+        title="RSS feed"
+        class="flex h-full aspect-square shrink-0 cursor-pointer select-none items-center justify-center border-r border-line text-ink-secondary transition-all duration-150 hover:bg-primary/10 hover:text-primary focus-visible:bg-primary/10 focus-visible:text-primary"
+    >
+        <RSS class="w-5 h-5" aria-hidden="true" />
+    </a>
     <div class="grow diagonal-lines border-r border-line"></div>
     <span class="inline-block mx-auto font-mono content-center px-4 text-sm text-ink-tertiary">
         Alex's website <b class="text-ink-secondary">v{version}</b> on{" "}
