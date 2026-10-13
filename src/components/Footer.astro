@@ -21,14 +21,15 @@ const version = await import.meta.env.WEBSITE_VERSION;
     </a>
     <div class="grow diagonal-lines border-r border-line"></div>
     <span class="inline-block mx-auto font-mono content-center px-4 text-sm text-ink-tertiary whitespace-nowrap">
-        Alex's website <b class="text-ink-secondary">v{version}</b>
+        Alex's website{" "}
+        <b class="font-semibold text-ink-secondary">v{version}</b>
         <span class="hidden md:inline"> on </span>
         <span class="transition-all duration-150 text-ink-secondary hover:text-primary hidden md:inline">
             <a
                 href={`https://github.com/bustosalex1/bustosalex1.github.io/tree/${commitHash}`}
             >
                 <GitBranch class="inline-block align-text-top" />
-                <b>{commitHash}</b>
+                <b class="font-semibold">{commitHash}</b>
             </a>
         </span>
     </span>

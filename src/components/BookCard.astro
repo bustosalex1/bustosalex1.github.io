@@ -19,7 +19,7 @@ const { book }: Props = Astro.props;
         <div class="flex flex-col w-full">
             <!--flex row for title, description, and date.-->
             <div class="flex flex-row w-full justify-between flex-nowrap px-4 pt-4 items-center">
-                <h1 class="font-bold font-mono text-sm group-hover:text-primary text-ink transition-all duration-150 text-wrap">
+                <h1 class="font-semibold font-mono text-sm group-hover:text-primary text-ink transition-all duration-150 text-wrap">
                     {book.data.title}
                 </h1>
                 <FormattedDate

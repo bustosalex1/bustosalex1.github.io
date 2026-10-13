@@ -61,7 +61,7 @@ title of the website (my name).
 >
     <a
         href="/"
-        class="font-bold whitespace-nowrap text-white transition-all duration-150 content-center px-4 border-line border-r font-mono text-sm bg-primary"
+        class="font-semibold whitespace-nowrap text-white transition-all duration-150 content-center px-4 border-line border-r font-mono text-sm bg-primary"
     >
         Alex Bustos
     </a>
