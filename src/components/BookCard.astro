@@ -35,7 +35,7 @@ const { book }: Props = Astro.props;
 
             <!--tags-->
             <div class="flex-row ml-auto items-stretch mt-auto justify-end border-l border-t border-line divide-x divide-line hidden sm:flex">
-                {book.data.tags.map((tag) => (
+                {book.data.tags.slice(0, 3).map((tag) => (
                     <Tag tag={tag} link={false} />
                 ))}
             </div>
