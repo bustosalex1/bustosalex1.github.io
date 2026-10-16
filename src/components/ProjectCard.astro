@@ -47,7 +47,7 @@ const { post }: Props = Astro.props;
 
             <!--tags-->
             <div class="flex flex-row ml-auto items-stretch mt-auto justify-end border-l border-t border-line divide-x divide-line">
-                {post.data.tags.map((tag) => (
+                {post.data.tags.slice(0, 3).map((tag) => (
                     <Tag tag={tag} link={false} />
                 ))}
             </div>
