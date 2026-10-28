@@ -7,10 +7,10 @@ tags: ["Science Fiction", "First Contact", "Jesuits", "Tragedy"]
 
 ## Premise
 
-In _The Sparrow_, the discovery of alien radio signals in 2019 at the Aricebo
+In _The Sparrow_, the discovery of alien radio signals in 2019 at the Arecibo
 Telescope in Puerto Rico leads Father Emilio Sandoz, along with fellow Jesuits
-D.W. Yarbrough, Alan Pace, and Mark Robichaux, as well as friends George and
-Anne Edwards, Jimmy Quinn, and Sophia Mendez to embark on an interstellar
+D.W. Yarbrough, Alan Pace, and Marc Robichaux, as well as friends George and
+Anne Edwards, Jimmy Quinn, and Sofia Mendes, to embark on an interstellar
 journey to the source of the signals: the planet Rakhat. On Rakhat, the party
 makes first contact with two intelligent species, the Runa and the Jana'ata.
 Through a series of small but consequential and compounding missteps, all
@@ -21,7 +21,7 @@ The book alternates between chapters detailing the timeline of the mission and
 chapters focusing on the aftermath and fallout once Emilio returns home to Earth
 and must answer to his peers in the Society of Jesus-- Father General Vincenzo
 Giuliani, John Candotti, Edward Behr, Felipe Reyes, and Johannes Voelker-- for
-the distastrous outcome of the mission.
+the disastrous outcome of the mission.
 
 ## How did we get here?
 
@@ -36,15 +36,15 @@ doesn't exactly keep the ending a secret. From the prologue:
 > They meant no harm.
 
 So, the outcome of the mission is known; the mystery is _how_ things went down.
-And to that point, I want to speed run the series of events that cascasdes into
+And to that point, I want to speed run the series of events that cascades into
 the disastrous finale at the end of the book.
 
-1. Astronomer Jimmy Quinn discovers an alien radio signal at the Aricebo
+1. Astronomer Jimmy Quinn discovers an alien radio signal at the Arecibo
    Telescope. Humanity comes to interpret these signals as strange but beautiful
    songs.
 2. Emilio Sandoz (a friend of Jimmy's) and the Society of Jesus act quickly and
    decide to procure the resources to travel to the source of the signal. They
-   assemble a team, retrofit a hollowed out asteroid called _The Stella Maris_,
+   assemble a team, retrofit a hollowed-out asteroid called _The Stella Maris_,
    and embark on a journey across interstellar space.
 3. Some years later, the crew arrives at Rakhat. They take a lander to the
    surface equipped with survival supplies, an ultralight aircraft for scouting,
@@ -55,17 +55,17 @@ the disastrous finale at the end of the book.
    There, they make first contact with the Runa, a species of nonviolent
    villagers who regularly travel to harvest natural resources. It is clear to
    the landing party that the Runa lack the technological capability to produce
-   the signal recorded at Aricebo. Regardless, they are friendly and welcoming,
+   the signal recorded at Arecibo. Regardless, they are friendly and welcoming,
    and the crew is able to remain in their village, called Kashan, and begin
    exchanging languages and customs. Emilio's primary point of contact with the
    Runa is a child named Askama, who he becomes quite close with.
 6. Some time later, one of the Jesuits, D.W. Yarbrough, gets sick, and the group
-   forms a plan to have Sophia and Marc take the ultralight aircraft to return
+   forms a plan to have Sofia and Marc take the ultralight aircraft to return
    to the lander to procure medical supplies. Due to heavy overgrowth at the
-   original landing site, the ultralight crashes, so Sophia and Marc are forced
-   to fly the lander back to the Runa village. In doing so, they accidentally
-   use up critical fuel reserves that would have allowed them to make return
-   trips to _The Stella Maris_. The crew is now effectively trapped on Rakhat.
+   original landing site, the ultralight crashes, so Sofia and Marc decide to
+   fly the lander back to the Runa village. In doing so, they accidentally use
+   up critical fuel reserves that would have allowed them to make return trips
+   to _The Stella Maris_. The crew is now effectively trapped on Rakhat.
 7. The crew makes contact with a member of the second intelligent species on
    Rakhat: an enterprising Jana'ata named Supaari VaGayjur. After an initial
    miscommunication, Supaari and the crew develop a working relationship, and
@@ -82,17 +82,15 @@ the disastrous finale at the end of the book.
    maintain a protective attitude towards the Runa, but nevertheless impose
    incredibly strict population enforcement, both for themselves and the Runa,
    so as to keep Rakhat's planetary ecosystem balanced.
-9. While the rest of the crew is away with Supaari visiting the nearby city of
-   Gayjur, Anne Edwards and D.W. Yarbrough are killed by a rogue Jana'ata,
-   called a VaHaptaa. Upon his return, Supaari explains that these individuals
-   still adhere to the predatory nature of their ancient ancestors and are
-   scorned and outcast from Jana'ata societned and outcast from Jana'ata
-   societned and outcast from Jana'ata societned and outcast from Jana'ata
-   society.
+9. While George, Jimmy, and Marc are away with Supaari visiting the nearby
+   city of Gayjur, Anne Edwards and D.W. Yarbrough are killed by a rogue
+   Jana'ata, called a VaHaptaa. Upon his return, Supaari explains that these
+   individuals still adhere to the predatory nature of their ancient ancestors
+   and are scorned and outcast from Jana'ata society.
 10. The Jana'ata government in Gayjur discover the Runa's increased population
-    numbers, and send soldiers out to cull the Runa newborns. The crew encourage
+    numbers and send soldiers out to cull the Runa newborns. Sofia encourages
     the Runa to resist, which results in the death of many Runa villagers, along
-    with Sophia, Jimmy, and George. At this point only Marc and Emilio remain
+    with Sofia, Jimmy, and George. At this point only Marc and Emilio remain
     alive. They are taken captive by the Jana'ata soldiers, until they are
     eventually rescued by Supaari.
 11. For a while, Emilio and Marc live with Supaari in Gayjur. Supaari eventually
@@ -111,10 +109,10 @@ the disastrous finale at the end of the book.
 12. Emilio continues living with Supaari after the procedure. Eventually,
     Supaari sells Emilio-- effectively into slavery-- to the poet Hlavin
     Kitheri, the creator of the original songs picked up by the radio telescope
-    at Aricebo. In exchange, Supaari is granted the privilege of being allowed
+    at Arecibo. In exchange, Supaari is granted the privilege of being allowed
     to have children (recall the Jana'ata's strict population controls).
 13. Emilio is severely mistreated by Kitheri. After some time, a second landing
-    crew from Earth (sent by the United Nations) arrives at Rakhat, and are led
+    crew from Earth (sent by the United Nations) arrives at Rakhat and is led
     to Kitheri's residence by Askama, the Runa child who befriended Emilio in
     Kashan. Prior to their arrival, in a desolate and hopeless state, Emilio
     resolves to kill the next person to open the door to his cell. When Askama
@@ -140,7 +138,7 @@ renounce his belief completely. Towards the end of the book there's a passage:
 > life and gives meaning to it by caring passionately about us, and
 > remembering."
 >
-> "Matthew ten, verse twenty-nine," Vincenzo Giuliani said quitely. "'Not one
+> "Matthew ten, verse twenty-nine," Vincenzo Giuliani said quietly. "'Not one
 > sparrow can fall to the ground without your Father knowing it.'"
 >
 > "But the sparrow still falls," Felipe said.
@@ -153,4 +151,4 @@ book has its particular title.
 This book was pretty good. I thought the dialogue did a particularly good job of
 displaying each character's unique personality.
 
-I think the book delivered on it's premise-- the ending was in fact devastating.
+I think the book delivered on its premise-- the ending was in fact devastating.
