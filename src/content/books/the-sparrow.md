@@ -17,7 +17,7 @@ series of small but consequential and compounding missteps, all members of the
 crew--except for Emilio--perish on Rakhat and leave behind a devastating legacy.
 
 The book alternates between chapters detailing the timeline of the mission and
-chapters focusing the aftermath once Emilio returns home to Earth and must
+chapters focusing on the aftermath once Emilio returns home to Earth and must
 answer to his peers in the Society of Jesus-- Father General Vincenzo Giuliani,
 John Candotti, Edward Behr, Felipe Reyes, and Johannes Voelker-- for the
 disastrous outcome of the mission.
@@ -54,7 +54,7 @@ mission's tragic finale.
 5. The crew uses the ultralight aircraft to find a small nearby settlement.
    There, they make first contact with the Runa, a species of nonviolent
    villagers whose livelihood involves traveling around Rakhat to harvest
-   natural resources. It;s clear to the crew that the Runa lack the
+   natural resources. It's clear to the crew that the Runa lack the
    technological capability to produce the signal recorded at Arecibo.
    Regardless, they are friendly and welcoming, so the crew remains in their
    village, called Kashan, and the two species exchange languages and customs.
@@ -75,7 +75,7 @@ mission's tragic finale.
    for great profit due to their unique and highly valued aroma. Supaari
    promises to take the crew to the Jana'ata city of Gayjur, where the radio
    signals originated.
-8. The crew begin to plant gardens as they settle into their life on Rakhat. In
+8. The crew begins to plant gardens as they settle into their life on Rakhat. In
    doing so, they inadvertently introduce the Runa to agriculture, causing their
    population to swell. It's revealed that before the Runa and the Jana'ata
    evolved into sentience, the Jana'ata were a predatory species who preyed on
@@ -86,8 +86,8 @@ mission's tragic finale.
 9. While George, Jimmy, and Marc are away with Supaari visiting the nearby city
    of Gayjur, Anne Edwards and D.W. Yarbrough are killed by a rogue Jana'ata,
    called a VaHaptaa.
-10. The Jana'ata government in Gayjur discover the Runa's increased population
-    numbers and send soldiers out to cull the Runa newborns. Sofia encourages
+10. The Jana'ata government in Gayjur discovers the Runa's increased population
+    numbers and sends soldiers out to cull the Runa newborns. Sofia encourages
     the Runa to resist, which results in the death of many Runa villagers, along
     with Sofia, Jimmy, and George. At this point only Marc and Emilio remain
     alive. They are taken captive by the Jana'ata soldiers. Eventually, they are
@@ -115,8 +115,8 @@ mission's tragic finale.
     Kitheri's residence by Askama, the Runa child who befriended Emilio in
     Kashan. Prior to their arrival, in a desolate and hopeless state, Emilio
     resolves to kill the next person to open the door to his cell. When Askama
-    opens the door, before he has time to react, he throws himself at her and
-    kills her.
+    opens the door, before he recognizes her, he throws himself at her and kills
+    her.
 
 Having written all this out, I don't know if this really qualifies as a speed
 run, but that's the gist of what happens. "A series of consequential accidents"
