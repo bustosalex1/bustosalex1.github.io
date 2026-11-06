@@ -3,7 +3,8 @@
 
 @font-face {
     font-family: "iA Writer Quattro S";
-    src: url("/fonts/ia-writer-quattro/iAWriterQuattroS-Regular.woff2") format("woff2");
+    src: url("/fonts/ia-writer-quattro/iAWriterQuattroS-Regular.woff2")
+        format("woff2");
     font-style: normal;
     font-weight: 400;
     font-display: swap;
@@ -11,7 +12,8 @@
 
 @font-face {
     font-family: "iA Writer Quattro S";
-    src: url("/fonts/ia-writer-quattro/iAWriterQuattroS-Bold.woff2") format("woff2");
+    src: url("/fonts/ia-writer-quattro/iAWriterQuattroS-Bold.woff2")
+        format("woff2");
     font-style: normal;
     font-weight: 700;
     font-display: swap;
