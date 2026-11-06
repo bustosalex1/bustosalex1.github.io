@@ -67,11 +67,11 @@ const headings: MarkdownHeading[] = groupedQuotes.map(([k, _]) => {
         <div class="flex flex-row items-stretch w-full h-11 border-line border-t">
             <div class="grow diagonal-lines"></div>
             <div class="flex flex-row w-fit">
-                <div class="whitespace-nowrap p-2 border-l border-line font-mono border-r content-center text-center text-ink text-sm">
+                <div class="whitespace-nowrap p-2 border-l border-line border-r content-center text-center text-ink text-sm">
                     Sort by
                 </div>
                 <select
-                    class="p-2 w-fit cursor-pointer content-center font-mono text-ink text-sm"
+                    class="p-2 w-fit cursor-pointer content-center text-ink text-sm"
                     onchange="window.location = this.value"
                 >
                     <option
@@ -106,7 +106,7 @@ const headings: MarkdownHeading[] = groupedQuotes.map(([k, _]) => {
             >
                 <div class="flex flex-row sticky top-2 bg-secondary-bg border-t border-line before:absolute before:bottom-full before:left-0 before:right-0 before:h-2 before:mb-px before:-mx-px before:bg-bg">
                     <a
-                        class="font-semibold p-2 text-ink font-mono text-sm"
+                        class="font-bold p-2 text-ink text-sm"
                         href={`#${slugify(key)}`}
                     >
                         {key}
@@ -117,7 +117,7 @@ const headings: MarkdownHeading[] = groupedQuotes.map(([k, _]) => {
                         <div class="border-b border-line border-dashed p-8 font-crimson text-lg text-ink">
                             <Fragment set:html={quote.quote} />
                         </div>
-                        <div class="flex flex-row h-10 items-stretch overflow-x-auto w-full text-ink-secondary font-mono text-sm">
+                        <div class="flex flex-row h-10 items-stretch overflow-x-auto w-full text-ink-secondary text-sm">
                             <div class="grow" />
                             {quote.character !== undefined && (
                                 <div class="border-r border-line border-dashed content-center px-2 whitespace-nowrap">

@@ -39,7 +39,7 @@ to provide a way to embed other web projects on my website.
     <div
         class="flex flex-row justify-between border-b border-line items-center"
     >
-        <div class="font-mono font-semibold text-sm px-2">{title}</div>
+        <div class="font-sans font-bold text-sm px-2">{title}</div>
 
         <div
             class="flex flex-row h-8 items-stretch divide-line divide-x border-l border-line"
