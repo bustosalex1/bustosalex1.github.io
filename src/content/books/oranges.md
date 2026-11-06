@@ -12,16 +12,15 @@ involved in its booming citrus industry. At times, he discusses both the history
 of Florida’s largest citrus growing regions (the Ridge and Indian River) as well
 as the history of citrus fruits themselves.
 
-At times, he discusses the history of oranges and how every culture ever revered
-them as though they were manna from heaven.
-
 ## Seriously, Though
 
 This book legitimately is all about oranges, and I actually did learn
 interesting things about oranges and the American citrus industry.
 
 For example, there is (or at least, was?) a feud between Florida and California
-citrus farmers. Florida farmers claim California oranges are too dry, and conversely, California farmers claim Florida oranges are too juicy. From the book:
+citrus farmers. Florida farmers claim California oranges are too dry, and,
+somewhat predictably, California farmers claim Florida oranges are too juicy.
+From the book:
 
 > Californians say that if you want to eat a Florida orange you have to get into
 > a bathtub first... In Florida, it is said that you can run over a California
@@ -43,17 +42,11 @@ considered a viable pest management strategy.
 
 Besides pests and disease, I learned that
 
-On top of pests and disease, McPhee describes how the Florida environment can be surprisingly hostile towards citrus farmers. 
-Fruits are often damaged by lightning and high winds from the region’s frequent thunderstorms. And, every once in a while, a freeze will descend upon Florida. The ones that are cold enough and last long enough can decimate a grove’s entire harvest.
-
-
-On top of pests, McPhee describes how the environment itself can be remarkably
-hostile towards orange groves. Specifically, lightning from common
-thunderstorms, as well as high winds that can cause fruits to get slashed (and
-rendered unviable for selling) by branches whipping around. But, by far the most
-damaging event McPhee describes are freezes. Every once in a while, a freeze
-will descend upon Florida. Severe freezes of particularly low temperatures and
-long durations can be enough to wipe out an entire grove’s harvest of oranges.
+On top of pests and disease, McPhee describes how the Florida environment can be
+surprisingly hostile for citrus trees. Fruits are often damaged by lightning and
+high winds from the region’s frequent thunderstorms. And, every once in a while,
+a freeze will descend upon Florida. If a freeze is particularly severe and
+long-lasting, it can wipe out a grove's entire orange harvest.
 
 ## Funny Stuff
 
@@ -83,8 +76,8 @@ most prized oranges are grown, McPhee describes an interesting organization:
 
 ### The Frozen People
 
-At the time of writing, orange juice concentrate was quite popular across the
-United States, and accounted for much of the growth in Florida’s citrus
+At the time of writing, frozen orange juice concentrate was quite popular across
+the United States, and accounted for much of the growth in Florida’s citrus
 industry. At one point, McPhee notes that concentrate producers in Florida are
 referred to as "the frozen people."
 
@@ -109,20 +102,28 @@ deal with, as well as mitigration strategies.
 > called to him, 'Hey, Snake Man, how are you?' Snake Man stopped, and he looked
 > at the whole bunch of them, and he said, 'My name is Walt.'"
 
-## A Specter is Haunting Florida
+## The Spreading Decline
 
-I read this book knowing about
-[citrus greening disease](https://en.wikipedia.org/wiki/Citrus_greening_disease),
+Early in the book, McPhee describes a disease called "the spreading decline." He
+writes:
+
+> The nematode feeds on small roots and increasingly cuts off the food supply of
+> the tree, which dies slowly, from the top down, as more and more skeletal
+> branches appear each year and the amount of fruit steadily decreases. When
+> people in Florida are feeling depressed and miserable with some unspecific
+> malady, they sometimes tell one another that they have the spreading decline.
+> Since no one has yet found a way to kill the nematodes without killing the
+> tree, decline brings economic disaster. Whole groves of affected trees and a
+> surrounding margin of healthy trees often have to be bulldozed into a great
+> pyre and burned; after the land they stand on is fumigated, it must be left
+> empty for three years.
+
+I realize these are different afflictions spread by different vectors, but going
+into this book I was aware of
+[citrus greening disease](https://en.wikipedia.org/wiki/Citrus_greening_disease)
 and how it has
-[decimated the Florida citrus industry from the 2000s onwards](https://epi.ufl.edu/2025/11/10/citrus-greening-disease-in-florida-what-to-know/).
-In the book, McPhee talks about the biggest threat to Florida citrus being
-freezes, which, if severe enough, can destroy citrus trees in a few hours. It’s
-weird knowing that citrus greening disease has likely completely changed the
-landscape of the Florida McPhee wrote about.
-
-There’s brief section in the book where he mentions an infection called "the
-spreading decline":
-
-> quote needed
-
-Which seems to be as close as he gets to something like citrus greening disease.
+[decimated the Florida citrus industry since the early 2000s](https://epi.ufl.edu/2025/11/10/citrus-greening-disease-in-florida-what-to-know/).
+I don't think this is the perfect description, but reading about the severity of
+the spreading decline felt sort of like foreshadowing to me. It was just a bit
+eerie reading all about this thriving industry that I knew only exists now as a
+shadow of what it was at the time of McPhee's writing.
