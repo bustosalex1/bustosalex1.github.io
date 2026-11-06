@@ -1,6 +1,24 @@
 @import "tailwindcss";
 @plugin '@tailwindcss/typography';
 
+@font-face {
+    font-family: "iA Writer Quattro S";
+    src: url("/fonts/ia-writer-quattro/iAWriterQuattroS-Regular.woff2")
+        format("woff2");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "iA Writer Quattro S";
+    src: url("/fonts/ia-writer-quattro/iAWriterQuattroS-Bold.woff2")
+        format("woff2");
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+}
+
 /*
 * `prose-inline-code:` selector for only selecting inline code (instead of also
 * selecting code blocks) in typography `prose` blocks.
@@ -52,6 +70,7 @@
 
     --font-crimson: "Crimson Text", serif;
     --font-mono: "Fira Code", monospace;
+    --font-sans: "iA Writer Quattro S", ui-sans-serif, system-ui, sans-serif;
 }
 
 @utility hard-shadow {
@@ -98,7 +117,7 @@
 
     & :where(figcaption) {
         counter-increment: figure;
-        @apply font-mono text-sm text-left m-0 p-2 text-ink border-t border-line bg-secondary-bg;
+        @apply font-sans text-sm text-left m-0 p-2 text-ink border-t border-line bg-secondary-bg;
 
         &::before {
             content: "Figure " counter(figure, decimal) ". ";
@@ -137,11 +156,16 @@
     }
 
     & :where(h1, h2, h3, h4, h5, h6) {
-        @apply font-mono font-semibold text-ink mb-5 p-0 scroll-mt-2;
+        @apply font-sans font-bold text-ink mb-5 p-0 scroll-mt-2;
+    }
+
+    /* Separate an opening heading from ArticleTitle while keeping its paragraph close. */
+    & > :where(h1, h2, h3, h4, h5, h6):first-child {
+        @apply mt-4;
     }
 
     & :where(h2) {
-        @apply flex flex-row items-center text-base md:text-lg;
+        @apply flex flex-row items-center text-lg md:text-xl;
 
         /* After primary headers, fill the remaining space with a single lines. */
         &::after {
@@ -151,7 +175,7 @@
     }
 
     & :where(h3) {
-        @apply flex flex-row items-center text-sm border-y-0 py-2 pl-4;
+        @apply flex flex-row items-center text-base border-y-0 py-2 pl-4;
 
         /* Line after heading text, extending to the right edge. */
         &::after {
@@ -162,7 +186,7 @@
 
     /* Table styling for markdown posts.*/
     & :where(table) {
-        @apply font-mono text-xs w-full border-collapse border border-line my-0 py-0 bg-secondary-bg hard-shadow;
+        @apply font-sans text-sm w-full border-collapse border border-line my-0 py-0 bg-secondary-bg hard-shadow;
     }
 
     & :where(tr) {
@@ -174,7 +198,11 @@
     }
 
     & :where(thead th) {
-        @apply p-2 text-ink border-b border-line border-r;
+        @apply font-bold p-2 text-ink border-b border-line border-r;
+    }
+
+    & :where(figcaption strong, table strong) {
+        @apply font-bold;
     }
 
     & :where(thead th:last-child) {
@@ -190,7 +218,7 @@
     }
 
     & :where(table caption) {
-        @apply text-left p-2 border-t border-x border-line text-xs bg-secondary-bg;
+        @apply text-left p-2 border-t border-x border-line text-sm bg-secondary-bg;
     }
 
     & :where(table caption)::before {

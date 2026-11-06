@@ -42,7 +42,7 @@ const {
                     {title}
                 </h1>
                 {description && (
-                    <p class="max-w-3xl text-sm font-mono text-white/80 text-shadow-soft">
+                    <p class="max-w-3xl text-sm text-white/80 text-shadow-soft">
                         {description}
                     </p>
                 )}
@@ -54,14 +54,10 @@ const {
                 {title}
             </h1>
             {author ? (
-                <p class="italic font-crimson text-ink-secondary text-lg">
-                    by {author}
-                </p>
+                <p class="text-ink-secondary text-sm">by {author}</p>
             ) : (
                 description && (
-                    <p class="text-sm font-mono text-ink-secondary">
-                        {description}
-                    </p>
+                    <p class="text-sm text-ink-secondary">{description}</p>
                 )
             )}
         </div>

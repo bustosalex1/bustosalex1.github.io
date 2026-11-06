@@ -61,7 +61,7 @@ title of the website (my name).
 >
     <a
         href="/"
-        class="font-semibold whitespace-nowrap text-white transition-all duration-150 content-center px-4 border-line border-r font-mono text-sm bg-primary"
+        class="font-bold whitespace-nowrap text-white transition-all duration-150 content-center px-4 border-line border-r text-sm bg-primary"
     >
         Alex Bustos
     </a>
@@ -76,7 +76,7 @@ title of the website (my name).
                         (url === "/" && link === "/") ||
                         (url === "" && link === "/"),
                 },
-                "hover:text-primary transition-all duration-150 px-4 border-line content-center whitespace-nowrap border-r hidden md:block font-mono text-sm text-ink relative hover:bg-primary/10",
+                "hover:text-primary transition-all duration-150 px-4 border-line content-center whitespace-nowrap border-r hidden md:block text-sm text-ink relative hover:bg-primary/10",
             ]}
         >
             {title}
@@ -121,7 +121,7 @@ title of the website (my name).
                                 (url === "/" && link === "/") ||
                                 (url === "" && link === "/"),
                         },
-                        "hover:text-primary hover:bg-primary/10 transition-all duration-150 px-4 border-line content-center whitespace-nowrap h-11 font-mono text-sm",
+                        "hover:text-primary hover:bg-primary/10 transition-all duration-150 px-4 border-line content-center whitespace-nowrap h-11 text-sm",
                         { "border-b": i < links.length - 1 },
                     ]}
                 >
