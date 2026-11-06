@@ -8,9 +8,9 @@ tags: ["Food History", "Nonfiction", "Citrus", "Horticulture"]
 ## Premise
 
 In _Oranges_, John McPhee travels around 1960s Florida interviewing the people
-involved in its booming citrus industry. At times, he discusses both the history
-of Florida’s largest citrus growing regions (the Ridge and Indian River) as well
-as the history of citrus fruits themselves.
+involved in its booming citrus industry. At times, he discusses the history of
+Florida’s largest citrus-growing regions (the Ridge and Indian River) as well as
+the history of citrus fruits themselves.
 
 ## Seriously, Though
 
@@ -40,13 +40,12 @@ passages like this make me think citrus farmers have a lot to worry about.
 I was also surprised to hear that "spray these oranges with nerve gas" was
 considered a viable pest management strategy.
 
-Besides pests and disease, I learned that
-
 On top of pests and disease, McPhee describes how the Florida environment can be
-surprisingly hostile for citrus trees. Fruits are often damaged by lightning and
-high winds from the region’s frequent thunderstorms. And, every once in a while,
-a freeze will descend upon Florida. If a freeze is particularly severe and
-long-lasting, it can wipe out a grove's entire orange harvest.
+surprisingly hostile for citrus trees, which are often damaged by lightning from
+the region's frequent thunderstorms. High winds from these storms can also
+damage fruits. And, every once in a while, a freeze will descend upon Florida.
+If a freeze is particularly severe and long-lasting, it can wipe out a grove's
+entire orange harvest.
 
 ## Funny Stuff
 
@@ -58,10 +57,10 @@ some of the highlights.
 
 ### Apple Country
 
-While in Florida, McPhee has a the following interaction with a citrus farmer:
+While in Florida, McPhee has the following interaction with a citrus farmer:
 
-> A tractor gave me a ride out to my car when I left the picking crew one day,
-> and I’ve forgotten what I said to him when I jumped up behind him, but
+> A tractor driver gave me a ride out to my car when I left the picking crew one
+> day, and I’ve forgotten what I said to him when I jumped up behind him, but
 > whatever it was he turned to me and said, “You come from apple country.”
 
 ### The Sons of Rest
@@ -84,7 +83,7 @@ referred to as "the frozen people."
 ### Snake Man
 
 During an interview, a citrus farmer describes a variety of larger pests they
-deal with, as well as mitigration strategies.
+deal with, as well as mitigation strategies.
 
 > "There are mice, of course, and rats, and what you call land turtles (we call
 > them gophers), and what you call gophers (we call them salamanders). There are
