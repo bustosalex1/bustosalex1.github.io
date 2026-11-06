@@ -21,16 +21,14 @@ This book legitimately is all about oranges, and I actually did learn
 interesting things about oranges and the American citrus industry.
 
 For example, there is (or at least, was?) a feud between Florida and California
-citrus farmers. Florida farmers claim California oranges are too dry, and
-somewhat expectedly, California farmers claim Florida oranges are too juicy.
-From the book:
+citrus farmers. Florida farmers claim California oranges are too dry, and conversely, California farmers claim Florida oranges are too juicy. From the book:
 
 > Californians say that if you want to eat a Florida orange you have to get into
 > a bathtub first... In Florida, it is said that you can run over a California
 > orange with a ten-ton truck and not even wet the pavement.
 
-I also learned that citrus farming is (or seems) immensely difficult. I’d
-concede this partially due to a lack of domain knowledge on my part, but
+I also learned that citrus farming is (or at least seems) quite difficult. I’d
+concede this is partially due to a lack of domain knowledge on my part, but
 passages like this make me think citrus farmers have a lot to worry about.
 
 > In varying amounts, he feeds the trees nitrogen, phosphorus, potassium,
@@ -40,10 +38,14 @@ passages like this make me think citrus farmers have a lot to worry about.
 > arsenal ranging from a fine mist of petroleum to parathion, a deadly nerve gas
 > developed by German scientists during the Second World War.
 
-I was also surprised to hear that "spray these oranges with nerve gas" was (is?)
+I was also surprised to hear that "spray these oranges with nerve gas" was
 considered a viable pest management strategy.
 
 Besides pests and disease, I learned that
+
+On top of pests and disease, McPhee describes how the Florida environment can be surprisingly hostile towards citrus farmers. 
+Fruits are often damaged by lightning and high winds from the region’s frequent thunderstorms. And, every once in a while, a freeze will descend upon Florida. The ones that are cold enough and last long enough can decimate a grove’s entire harvest.
+
 
 On top of pests, McPhee describes how the environment itself can be remarkably
 hostile towards orange groves. Specifically, lightning from common
@@ -88,7 +90,7 @@ referred to as "the frozen people."
 
 ### Snake Man
 
-During an interview, a citrus farmer describes some of the larger pests they
+During an interview, a citrus farmer describes a variety of larger pests they
 deal with, as well as mitigration strategies.
 
 > "There are mice, of course, and rats, and what you call land turtles (we call
@@ -107,7 +109,7 @@ deal with, as well as mitigration strategies.
 > called to him, 'Hey, Snake Man, how are you?' Snake Man stopped, and he looked
 > at the whole bunch of them, and he said, 'My name is Walt.'"
 
-## The Shadow Hanging Over Everything
+## A Specter is Haunting Florida
 
 I read this book knowing about
 [citrus greening disease](https://en.wikipedia.org/wiki/Citrus_greening_disease),
