@@ -2,7 +2,7 @@
 title: "Oranges"
 pubDate: 2026-11-06
 author: "John McPhee"
-tags: ["Food History", "Nonfiction", "Citrus", "Horticulture"]
+tags: ["Nonfiction", "Citrus", "Horticulture"]
 ---
 
 ## Premise
