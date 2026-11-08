@@ -3,6 +3,7 @@ import ts from "typescript-eslint";
 import svelte from "eslint-plugin-svelte";
 import prettier from "eslint-config-prettier";
 import globals from "globals";
+import sonarjs from "eslint-plugin-sonarjs";
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -20,7 +21,10 @@ export default [
         },
     },
     {
+        plugins: { sonarjs },
         rules: {
+            complexity: ["error", 20],
+            "sonarjs/cognitive-complexity": ["error", 15],
             "svelte/no-unused-svelte-ignore": "off",
         },
     },

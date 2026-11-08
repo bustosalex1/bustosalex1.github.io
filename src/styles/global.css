@@ -108,6 +108,39 @@ html {
 }
 
 /* Article styling rules */
+.prose .sidenote,
+.prose .sidenote-reference {
+    @apply hidden;
+}
+
+.prose .sidenote,
+.prose .sidenote-wrapper[id] {
+    @apply scroll-mt-8;
+}
+
+@media screen and (min-width: 80rem) {
+    .prose:has(.sidenote) {
+        @apply flow-root;
+    }
+
+    .prose .sidenote {
+        @apply block float-right clear-right w-52 mt-0 -mr-56 mb-4 ml-4 pl-3 border-l border-line-secondary text-base font-normal wrap-anywhere text-ink-secondary;
+    }
+
+    .prose .sidenote-number::after {
+        content: ".";
+    }
+
+    .prose .sidenote-reference {
+        @apply inline;
+    }
+
+    .prose .footnote-reference,
+    .prose .sidenote-footnotes {
+        @apply hidden;
+    }
+}
+
 .prose {
     counter-reset: figure table;
 

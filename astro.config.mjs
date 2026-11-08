@@ -7,11 +7,17 @@ import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import rehypeCaptionImages from "./src/utils/rehype-caption-images.ts";
 import rehypeCaptionTables from "./src/utils/rehype-caption-tables.ts";
+import rehypeSidenotes from "./src/utils/rehype-sidenotes.ts";
 import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
 
 const remarkPlugins = [remarkMath];
-const rehypePlugins = [rehypeKatex, rehypeCaptionImages, rehypeCaptionTables];
+const rehypePlugins = [
+    rehypeKatex,
+    rehypeCaptionImages,
+    rehypeCaptionTables,
+    rehypeSidenotes,
+];
 
 // https://astro.build/config
 export default defineConfig({
@@ -28,6 +34,9 @@ export default defineConfig({
             remarkPlugins,
             rehypePlugins,
             gfm: true,
+            remarkRehype: {
+                footnoteLabel: "Footnotes",
+            },
         }),
     },
     vite: {

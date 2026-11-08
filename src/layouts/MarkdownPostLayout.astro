@@ -19,7 +19,11 @@ const { data, headings } = Astro.props;
 <BaseLayout pageTitle={data.title}>
     <ArticleTitle {...data} posted={true} />
     <Fragment slot="aside">
-        <TableOfContents client:load headings={headings} />
+        <!-- filter out footnotes section heading; when the TOC is visible, they are displayed as sidenotes, and the section itself is hidden. -->
+        <TableOfContents
+            client:load
+            headings={headings.filter((h) => h.slug !== "footnote-label")}
+        />
     </Fragment>
     <Article>
         <slot />

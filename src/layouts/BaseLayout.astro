@@ -44,11 +44,11 @@ const { pageTitle } = Astro.props;
         </div>
 
         <div class="relative grid mt-4 grow grid-cols-[minmax(0,1fr)_minmax(0px,min(43.75rem,90vw))_minmax(0,1fr)]">
-            <div class="col-start-2 flex flex-col">
-                <slot />
-            </div>
-            <div class="col-start-3">
+            <div class="col-start-1 row-start-1 min-w-0">
                 <slot name="aside" />
+            </div>
+            <div class="col-start-2 row-start-1 flex flex-col">
+                <slot />
             </div>
         </div>
 

@@ -66,15 +66,17 @@
 
 <!-- top-19 is kinda hacky; it is basically the distance from the top of the viewport to the location of the TOC widget, but it depends on things like the height and spacing of the nav bar.-->
 <div class="mx-4 hidden xl:block sticky top-19 max-w-full">
-    <div class="flex flex-col items-start min-w-40 w-fit max-w-full">
+    <div
+        class="flex flex-col items-start min-w-40 w-fit max-w-full ml-auto text-left"
+    >
         {#each headings as heading (heading.slug)}
             <a
                 href={`#${heading.slug}`}
                 class={[
-                    "text-xs py-0.5 px-3 border-l border-line transition-all duration-150 font-mono text-ink-tertiary w-full truncate",
+                    "text-xs py-0.5 px-3 border-r border-line transition-all duration-150 font-mono text-ink-tertiary w-full truncate",
                     {
-                        "text-primary border-primary bg-primary/10 border-l-3":
-                            activeSlug === heading.slug,
+                        "text-primary border-primary bg-primary/10 shadow-[inset_-2px_0_0_var(--color-primary)]":
+                            activeSlug === heading.slug, // inset shadow instead of a border so that text is not moved when the heading is active.
                     },
                 ]}
             >
