@@ -1,6 +1,11 @@
 @import "tailwindcss";
 @plugin '@tailwindcss/typography';
 
+/* Keep the layout steady when navigating between short and scrolling pages. */
+html {
+    scrollbar-gutter: stable;
+}
+
 @font-face {
     font-family: "iA Writer Quattro S";
     src: url("/fonts/ia-writer-quattro/iAWriterQuattroS-Regular.woff2")
