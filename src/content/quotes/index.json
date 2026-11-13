@@ -21,6 +21,13 @@
         "character": "Eedy Karn"
     },
     {
+        "id": "andor-partagaz",
+        "quote": "Really? It's an assignment. Calibrate your enthusiasm.",
+        "source": "Andor",
+        "additionalSourceInfo": "S2E6",
+        "character": "Major Partagaz"
+    },
+    {
         "id": "sopranos-cookie-shit",
         "quote": "Log off. That cookie shit makes me nervous.",
         "source": "The Sopranos",
@@ -32,6 +39,13 @@
         "quote": "All this from a slice of <em>gabagool</em>?",
         "source": "The Sopranos",
         "additionalSourceInfo": "S3E3",
+        "character": "Tony Soprano"
+    },
+    {
+        "id": "sopranos-toxic-person",
+        "quote": "What am I, a toxic person?",
+        "source": "The Sopranos",
+        "additionalSourceInfo": "S4E6",
         "character": "Tony Soprano"
     },
     {
@@ -151,5 +165,18 @@
         "character": "Dr. Ha Nguyen",
         "source": "The Mountain in the Sea",
         "author": "Ray Nayler"
+    },
+    {
+        "id": "maul-afraid",
+        "quote": "It's not that you are afraid. It's that you are weak.",
+        "character": "Maul",
+        "source": "Maul: Shadow Lord",
+        "additionalSourceInfo": "S1E3"
+    },
+    {
+        "id": "jack-sparrow-less-in-it",
+        "quote": "The world's still the same. There's just... less in it.",
+        "character": "Jack Sparrow",
+        "source": "Pirates of the Caribbean: At World's End"
     }
 ]
