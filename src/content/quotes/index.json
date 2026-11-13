@@ -42,7 +42,7 @@
         "character": "Tony Soprano"
     },
     {
-        "id": "sopranos-gabagool",
+        "id": "sopranos-toxic-person",
         "quote": "What am I, a toxic person?",
         "source": "The Sopranos",
         "additionalSourceInfo": "S4E6",
@@ -167,7 +167,7 @@
         "author": "Ray Nayler"
     },
     {
-        "id": "maul-scaried",
+        "id": "maul-afraid",
         "quote": "It's not that you are afraid. It's that you are weak.",
         "character": "Maul",
         "source": "Maul: Shadow Lord",
